@@ -189,7 +189,7 @@
         <h3>Your top tips</h3>
         <ul id="tipList"></ul>
         <p class="note">This quiz gives general guidance only. It is not a full assessment.</p>
-        <span class="btn soon" id="quizCta" data-k="scorecard" data-label="Get your full Security Scorecard — $79">Coming soon</span>
+        <a class="btn" id="quizCta" href="https://buy.stripe.com/4gMcN74XW4ZObIr4uwd7q00">Get your full Security Scorecard — $79</a>
       </div>
     </div>
   </section>
@@ -203,19 +203,19 @@
           <h3>Security Scorecard</h3>
           <div class="price">$79 <small>one-time</small></div>
           <ul><li>A grade from A to F with the reasons</li><li>Your top 5 risks in plain English</li><li>A fix list in order, with free tools</li><li>A 30-day plan, plus a public check of your email domain records</li></ul>
-          <p style="margin-top:16px"><span class="btn soon" data-k="scorecard" data-label="Get the Scorecard">Coming soon</span></p>
+          <p style="margin-top:16px"><a class="btn" href="https://buy.stripe.com/4gMcN74XW4ZObIr4uwd7q00">Get the Scorecard</a></p>
         </div>
         <div class="pkg">
           <h3>Done-for-you Online Presence</h3>
           <div class="price">$99 <small>per month</small></div>
           <ul><li>4 Google Business posts a month</li><li>8 social posts for the platforms you use</li><li>Reply drafts for your reviews</li><li>Written in your voice from a 5-minute form</li></ul>
-          <p style="margin-top:16px"><span class="btn soon" data-k="monthly" data-label="Start monthly">Coming soon</span></p>
+          <p style="margin-top:16px"><a class="btn" href="https://buy.stripe.com/bJebJ38a8gIwbIr8KMd7q02">Start monthly</a></p>
         </div>
         <div class="pkg">
           <h3>Security + AI Starter Kit</h3>
           <div class="price">$24 <small>download</small></div>
           <ul><li>One-page security checklist</li><li>Scam spotting guide and password manager setup</li><li>Backup plan, Wi-Fi basics, payment safety rule</li><li>20 ready-to-use AI prompts for small business</li></ul>
-          <p style="margin-top:16px"><span class="btn soon" data-k="kit" data-label="Get the Kit">Coming soon</span></p>
+          <p style="margin-top:16px"><a class="btn" href="https://buy.stripe.com/bJe6oJcqoak87sbd12d7q01">Get the Kit</a></p>
         </div>
       </div>
     </div>
@@ -284,8 +284,8 @@
 </footer>
 
 <script>
-// Payment links. Replace each placeholder with the real https:// link; buttons stay "Coming soon" until then.
-var LINKS = { scorecard: "[scorecard payment link]", monthly: "[monthly payment link]", kit: "[kit payment link]" };
+// Payment links. Any link that does not start with https:// shows as a "Coming soon" button.
+var LINKS = { scorecard: "https://buy.stripe.com/4gMcN74XW4ZObIr4uwd7q00", monthly: "https://buy.stripe.com/bJebJ38a8gIwbIr8KMd7q02", kit: "https://buy.stripe.com/bJe6oJcqoak87sbd12d7q01" };
 var TIPS = ["Turn on two-step login for your business email first. It blocks most account takeovers and takes about 15 minutes.", "Start a password manager (Bitwarden has a free tier) and replace reused passwords, beginning with email and banking.", "Give each person their own login so you can tell who did what and remove access when someone leaves.", "Turn on automatic updates on every computer and phone. Updates fix the holes attackers use.", "Set up an automatic backup, ideally to the cloud plus one copy that is not always connected.", "Restore three files from your backup to a different folder this month. A backup you never tested is a hope, not a backup.", "Adopt a two-person rule: any change to payment details gets a phone call to a number you already have.", "Take 20 minutes with your team to cover the warning signs of phishing emails and fake invoices.", "Change the router admin password and set up a separate guest network for customers.", "Ask your email provider to confirm SPF, DKIM, and DMARC are on, so it is harder to fake email from your business."];
 (function () {
   document.querySelectorAll('[data-k]').forEach(function (el) {
