@@ -28,6 +28,7 @@
   "name": "Collar City Tech Help",
   "description": "Small business security reports and done-for-you online presence for businesses in Troy, Albany and the Capital Region of New York. Run by Alex Baldwin, a UAlbany cybersecurity student. Services are delivered online.",
   "slogan": "Plain-English security help for small businesses",
+  "priceRange": "$24-$99",
   "founder": {"@type": "Person", "name": "Alex Baldwin"},
   "address": {"@type": "PostalAddress", "addressLocality": "Troy", "addressRegion": "NY", "addressCountry": "US"},
   "url": "https://collarcitytechhelp.com/",
@@ -147,6 +148,13 @@
     .btn { display: block; text-align: center; }
   }
 
+  .btn.alt { background: #fff; color: var(--navy); border: 2px solid var(--navy); padding: 12px 26px; }
+  .btn.alt:hover, .btn.alt:focus { background: var(--soft); }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 16px; }
+  .fine { font-size: 0.9rem; color: var(--muted); margin: 8px 0 0; }
+  .badge { display: inline-block; background: var(--navy); color: #fff; font-size: 0.8rem; font-weight: bold; letter-spacing: 1px; padding: 3px 10px; margin-bottom: 8px; }
+  #result .trust { font-size: 0.95rem; color: var(--muted); margin: 10px 0 0; }
+  .step a { display: block; margin-top: 4px; }
   .btn.soon { background: #fff; color: var(--navy); border: 2px solid var(--navy); cursor: default; padding: 12px 26px; }
   .btn.soon:hover { background: #fff; }
   .quiz { max-width: 680px; margin-top: 20px; }
@@ -179,6 +187,7 @@
       <a href="#quiz">Free quiz</a>
       <a href="#offers">Offers</a>
       <a href="#how">How it works</a>
+      <a href="#about">About</a>
       <a href="#faq">Questions</a>
       <a href="/blog/">Blog</a>
       <a href="#contact">Contact</a>
@@ -188,9 +197,10 @@
 
 <main id="top">
   <div class="wrap hero">
-    <h1>Simple, affordable security and online help for small businesses in Troy and the Capital Region.</h1>
-    <p class="lead">Based in Troy, NY. Run by a UAlbany cybersecurity student. 100% online, so no visits and no access to your devices.</p>
-    <a class="btn" href="#quiz">Take the free 3-minute quiz</a>
+    <h1>Plain-English security checkups for small businesses in Troy and the Capital Region.</h1>
+    <p class="lead">Take the free 3-minute quiz to see your score. Want the full picture? The $79 Security Scorecard gives you a grade, your top 5 risks, and a fix list in order, by email in 2 business days.</p>
+    <p class="ctas"><a class="btn" href="#quiz">Take the free 3-minute quiz</a> <a class="btn alt" href="#offers">See the $79 Scorecard</a></p>
+    <p class="note">Based in Troy, NY. Run by Alex Baldwin, a UAlbany cybersecurity student. 100% online: no visits, no passwords, no access to your devices.</p>
   </div>
 
   <section id="quiz" class="soft">
@@ -208,7 +218,10 @@
         <h3>Your top tips</h3>
         <ul id="tipList"></ul>
         <p class="note">This quiz gives general guidance only. It is not a full assessment.</p>
-        <a class="btn" id="quizCta" href="https://buy.stripe.com/4gMcN74XW4ZObIr4uwd7q00">Get your full Security Scorecard — $79</a>
+        <h3 id="ctaHead">Want the full picture?</h3>
+        <p id="ctaText"></p>
+        <a class="btn" id="quizCta" href="https://buy.stripe.com/4gMcN74XW4ZObIr4uwd7q00">Get my Security Scorecard — $79</a>
+        <p class="trust">Full refund within 7 days. No passwords needed. Your report arrives by email in 2 business days.</p>
       </div>
     </div>
   </section>
@@ -219,22 +232,27 @@
       <p class="intro">Clear prices, delivered by email. No visits, no passwords, no access to your systems.</p>
       <div class="packages">
         <div class="pkg">
+          <span class="badge">START HERE</span>
           <h3>Security Scorecard</h3>
           <div class="price">$79 <small>one-time</small></div>
+          <p>Know exactly what to fix first. Your written report arrives by email in 2 business days.</p>
           <ul><li>A grade from A to F with the reasons</li><li>Your top 5 risks in plain English</li><li>A fix list in order, with free tools</li><li>A 30-day plan, plus a public check of your email domain records</li></ul>
-          <p style="margin-top:16px"><a class="btn" href="https://buy.stripe.com/4gMcN74XW4ZObIr4uwd7q00">Get the Scorecard</a></p>
+          <p style="margin-top:16px"><a class="btn" href="https://buy.stripe.com/4gMcN74XW4ZObIr4uwd7q00">Get my Scorecard — $79</a></p>
+          <p class="fine">Full refund within 7 days. <a href="#sample">See a sample report</a></p>
         </div>
         <div class="pkg">
           <h3>Done-for-you Online Presence</h3>
           <div class="price">$99 <small>per month</small></div>
           <ul><li>4 Google Business posts a month</li><li>8 social posts for the platforms you use</li><li>Reply drafts for your reviews</li><li>Written in your voice from a 5-minute form</li></ul>
           <p style="margin-top:16px"><a class="btn" href="https://buy.stripe.com/bJebJ38a8gIwbIr8KMd7q02">Start monthly</a></p>
+          <p class="fine">Delivered within 3 business days of your form. Cancel anytime by replying "cancel".</p>
         </div>
         <div class="pkg">
           <h3>Security + AI Starter Kit</h3>
           <div class="price">$24 <small>download</small></div>
           <ul><li>One-page security checklist</li><li>Scam spotting guide and password manager setup</li><li>Backup plan, Wi-Fi basics, payment safety rule</li><li>20 ready-to-use AI prompts for small business</li></ul>
           <p style="margin-top:16px"><a class="btn" href="https://buy.stripe.com/bJe6oJcqoak87sbd12d7q01">Get the Kit</a></p>
+          <p class="fine">Sent by email after payment, usually the same day.</p>
         </div>
       </div>
     </div>
@@ -244,9 +262,9 @@
     <div class="wrap">
       <h2>How it works</h2>
       <div class="steps">
-        <div class="step"><div class="n">1</div><h3>Pay securely</h3><p>Use the payment link for the offer you want.</p></div>
-        <div class="step"><div class="n">2</div><h3>Fill out a short form</h3><p>Tell us about your business. Never type a password.</p></div>
-        <div class="step"><div class="n">3</div><h3>Get it by email</h3><p>Your report or content arrives in your inbox.</p></div>
+        <div class="step"><div class="n">1</div><h3>Pay securely</h3><p>Choose your offer and pay with our secure Stripe checkout.</p></div>
+        <div class="step"><div class="n">2</div><h3>Fill out a short form</h3><p>Tell us about your business. Never type a password.</p><a href="/scorecard-form/">Scorecard questionnaire (about 10 minutes)</a><a href="/content-form/">Monthly content form (about 5 minutes)</a></div>
+        <div class="step"><div class="n">3</div><h3>Get it by email</h3><p>Scorecard report in 2 business days. Monthly content in 3. Starter Kit usually the same day.</p></div>
       </div>
     </div>
   </section>
@@ -268,15 +286,23 @@
     </div>
   </section>
 
-  <section id="faq" class="faq soft">
+  <section id="about" class="soft">
+    <div class="wrap">
+      <h2>Who is behind this</h2>
+      <p class="intro">I'm Alex Baldwin, a cybersecurity student at UAlbany. I started Collar City Tech Help in Troy to give small businesses a clear, affordable way to see where they stand on security.</p>
+      <p class="intro">It's a new business, so there are no reviews yet. That is why the quiz is free, refunds are 7 days, and I'm upfront about how this works: your report is prepared with AI tools and I review it before it reaches you. I never ask for passwords and never log in to your accounts. Questions first? <a href="mailto:collarcitytechhelp@gmail.com?subject=Question%20for%20Collar%20City%20Tech%20Help">Email me</a>.</p>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
     <div class="wrap">
       <h2>Questions people ask</h2>
       <h3>Do you need my passwords?</h3>
       <p>No, never. Please never send us a password or account number.</p>
       <h3>Do you access my computers?</h3>
       <p>No. It is all done from your answers and public records.</p>
-      <h3>Is it really AI?</h3>
-      <p>Yes. It is AI-powered and reviewed by a cybersecurity student.</p>
+      <h3>Who prepares my report?</h3>
+      <p>Your report is prepared with AI tools and reviewed under the oversight of Alex Baldwin, a UAlbany cybersecurity student. We say so up front because you should know.</p>
       <h3>Can you guarantee I won't be hacked?</h3>
       <p>No one can. We help you get much safer.</p>
       <h3>Refunds?</h3>
@@ -334,6 +360,9 @@ var TIPS = ["Turn on two-step login for your business email first. It blocks mos
     document.getElementById('scoreNum').textContent = score;
     var msg = score >= 9 ? 'Strong. You have most of the basics covered.' : score >= 6 ? 'A decent start with a few gaps worth closing.' : 'There is real room to improve, and the good news is the first fixes are quick.';
     document.getElementById('scoreMsg').textContent = msg;
+    var cta = score >= 9 ? ['A written second opinion', 'You are in good shape. The Scorecard adds a written report with a public check of your email records (SPF, DKIM and DMARC), so you can confirm nothing is slipping.'] : score >= 6 ? ['Close the last gaps', 'You have the basics. The Scorecard shows the few gaps that are left and the order to fix them, with free tools for each.'] : ['Know what to fix first', 'A few gaps is normal. The Scorecard turns them into a short fix list in order, so you are not guessing where to start.'];
+    document.getElementById('ctaHead').textContent = cta[0];
+    document.getElementById('ctaText').textContent = cta[1];
     var ul = document.getElementById('tipList');
     ul.innerHTML = '';
     var shown = tips.slice(0, 3);
