@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Collar City Tech Help | Tech help for small businesses in Troy, NY</title>
-<meta name="description" content="Friendly, in-person tech help for small businesses in Troy, NY and nearby towns. A basic security checkup and simple AI tools that save you time. Start with a free 20-minute tech checkup.">
+<title>Collar City Tech Help | Online security and help for small businesses</title>
+<meta name="description" content="Simple, affordable security and online help for small businesses. 100% online, AI-powered and reviewed by a cybersecurity student. Take the free 3-minute security quiz.">
 <link rel="canonical" href="https://collarcitytechhelp.com/">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Collar City Tech Help">
-<meta property="og:title" content="Collar City Tech Help | Tech help for small businesses in Troy, NY">
-<meta property="og:description" content="Friendly, in-person tech help for small businesses in Troy, NY. A basic security checkup and simple AI tools that save you time. Start with a free 20-minute checkup.">
+<meta property="og:title" content="Collar City Tech Help | Online security and help for small businesses">
+<meta property="og:description" content="Simple, affordable security and online help for small businesses. 100% online, AI-powered and reviewed by a cybersecurity student. Take the free 3-minute security quiz.">
 <meta property="og:url" content="https://collarcitytechhelp.com/">
 <meta property="og:image" content="https://collarcitytechhelp.com/cct-logo.jpg">
 <meta property="og:image:alt" content="Collar City Tech Help logo">
@@ -19,23 +19,57 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "ProfessionalService",
   "name": "Collar City Tech Help",
-  "description": "In-person tech help for small businesses: a basic security checkup and simple AI tools that save time.",
+  "description": "Online security reports and done-for-you online presence for small businesses, AI-powered and reviewed by a cybersecurity student.",
   "url": "https://collarcitytechhelp.com/",
   "email": "collarcitytechhelp@gmail.com",
   "logo": "https://collarcitytechhelp.com/cct-logo.jpg",
   "image": "https://collarcitytechhelp.com/cct-logo.jpg",
-  "areaServed": [
-    {"@type": "City", "name": "Troy, NY"},
-    {"@type": "City", "name": "Lansingburgh, NY"},
-    {"@type": "City", "name": "Waterford, NY"},
-    {"@type": "City", "name": "Cohoes, NY"},
-    {"@type": "City", "name": "Watervliet, NY"},
-    {"@type": "City", "name": "Brunswick, NY"},
-    {"@type": "City", "name": "East Greenbush, NY"},
-    {"@type": "City", "name": "Albany, NY"}
-  ]
+  "areaServed": "US",
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://collarcitytechhelp.com/"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "price": "79",
+        "priceCurrency": "USD",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Security Scorecard"
+        }
+      },
+      {
+        "@type": "Offer",
+        "price": "99",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "99",
+          "priceCurrency": "USD",
+          "unitText": "MONTH"
+        },
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Done-for-you Online Presence"
+        }
+      },
+      {
+        "@type": "Offer",
+        "price": "24",
+        "priceCurrency": "USD",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Small Business Security + AI Starter Kit"
+        }
+      }
+    ]
+  }
 }
 </script>
 <style>
@@ -94,16 +128,39 @@
     .two, .why { grid-template-columns: 1fr; gap: 24px; }
     .btn { display: block; text-align: center; }
   }
+
+  .btn.soon { background: #fff; color: var(--navy); border: 2px solid var(--navy); cursor: default; padding: 12px 26px; }
+  .btn.soon:hover { background: #fff; }
+  .quiz { max-width: 680px; margin-top: 20px; }
+  .q { border: 1px solid var(--line); border-radius: 4px; padding: 14px 16px; margin: 0 0 12px; background: #fff; }
+  .q legend { padding: 0 6px; font-weight: bold; color: var(--navy); }
+  .q p { margin: 0 0 8px; }
+  .q label { display: inline-block; margin-right: 22px; cursor: pointer; padding: 6px 0; }
+  .q input { width: 18px; height: 18px; margin-right: 6px; vertical-align: -3px; accent-color: #1e407d; }
+  button.btn { border: 0; cursor: pointer; font-family: inherit; }
+  #result { display: none; border: 2px solid var(--navy); border-radius: 4px; padding: 22px; margin-top: 22px; background: #fff; }
+  #result .score { color: var(--navy); font-size: 2.6rem; font-weight: bold; line-height: 1.1; }
+  #qerr { color: #8a1c1c; display: none; margin: 8px 0 0; }
+  .sample { border: 1px solid var(--line); border-radius: 4px; padding: 22px; background: #fff; max-width: 720px; margin-top: 20px; }
+  .sample .label { display: inline-block; background: var(--navy); color: #fff; font-weight: bold; font-size: 0.85rem; letter-spacing: 1px; padding: 4px 10px; margin-bottom: 12px; }
+  .sample table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 0.95rem; }
+  .sample th, .sample td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+  .sample th { background: var(--soft); color: var(--navy); }
+  .tablewrap { overflow-x: auto; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
+  .step { border-top: 4px solid var(--navy); padding-top: 10px; }
+  .step .n { color: var(--navy); font-weight: bold; font-size: 1.6rem; }
+  @media (max-width: 800px) { .steps { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
-
 <header>
   <div class="wrap">
     <a class="brand" href="#top"><img src="cct-logo.jpg" width="48" height="48" alt="Collar City Tech Help logo"><span>Collar City Tech Help</span></a>
     <nav aria-label="Main">
-      <a href="#what">What we do</a>
-      <a href="#packages">Packages</a>
+      <a href="#quiz">Free quiz</a>
+      <a href="#offers">Offers</a>
+      <a href="#how">How it works</a>
       <a href="#faq">Questions</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -112,104 +169,82 @@
 
 <main id="top">
   <div class="wrap hero">
-    <h1>Friendly tech help for small businesses in Troy, NY</h1>
-    <p class="lead">We help small business owners stay safer online and save time with simple AI tools. In plain English, in person, at a fair price.</p>
-    <a class="btn" href="mailto:collarcitytechhelp@gmail.com?subject=Free%2020-minute%20tech%20checkup&amp;body=Hi%2C%20I%27d%20like%20to%20book%20a%20free%2020-minute%20tech%20checkup.%0A%0AMy%20name%3A%0AMy%20business%3A">Book a free 20-minute checkup</a>
+    <h1>Simple, affordable security and online help for small businesses.</h1>
+    <p class="lead">100% online. AI-powered, reviewed by a cybersecurity student.</p>
+    <a class="btn" href="#quiz">Take the free 3-minute quiz</a>
   </div>
 
-  <section id="what">
+  <section id="quiz" class="soft">
     <div class="wrap">
-      <h2>What we do</h2>
-      <p class="intro">We do two things for small businesses. Both come with a clear price and a plain explanation of every change.</p>
-      <div class="two">
-        <div>
-          <h3>A basic security checkup</h3>
-          <p>One bad email can cause a lot of trouble for a small business. We check:</p>
-          <ul>
-            <li>Passwords, and a password manager that you own</li>
-            <li>Two-factor login on email, banking, and social media</li>
-            <li>Automatic backups of your important files</li>
-            <li>Computer and phone updates</li>
-            <li>Your business Wi-Fi</li>
-            <li>How to spot phishing emails (we can talk with your staff, too)</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Simple AI tools that save time</h3>
-          <p>We set up easy tools, then teach you to use them yourself:</p>
-          <ul>
-            <li>Email: draft replies to common questions, for you to review and send</li>
-            <li>Scheduling: an online booking link for customers</li>
-            <li>Social media: a month of posts from your photos and ideas</li>
-            <li>Google reviews: polite replies, written fast</li>
-            <li>Menus, flyers, and FAQs</li>
-          </ul>
-        </div>
+      <h2>Free 3-minute security quiz</h2>
+      <p class="intro">Ten yes or no questions. You get a score out of 10 and three tips right away. Everything happens in your browser: we collect nothing and send nothing anywhere.</p>
+      <form class="quiz" id="quizForm" novalidate>
+        <fieldset class="q"><legend>Question 1 of 10</legend><p>Is two-step login (a code or app approval) turned on for your business email?</p><label><input type="radio" name="q0" value="1"> Yes</label><label><input type="radio" name="q0" value="0"> No or not sure</label></fieldset><fieldset class="q"><legend>Question 2 of 10</legend><p>Do you use a password manager instead of reusing passwords?</p><label><input type="radio" name="q1" value="1"> Yes</label><label><input type="radio" name="q1" value="0"> No or not sure</label></fieldset><fieldset class="q"><legend>Question 3 of 10</legend><p>Does every employee have their own login, with nothing shared?</p><label><input type="radio" name="q2" value="1"> Yes</label><label><input type="radio" name="q2" value="0"> No or not sure</label></fieldset><fieldset class="q"><legend>Question 4 of 10</legend><p>Do your computers and phones install updates automatically?</p><label><input type="radio" name="q3" value="1"> Yes</label><label><input type="radio" name="q3" value="0"> No or not sure</label></fieldset><fieldset class="q"><legend>Question 5 of 10</legend><p>Are your important files backed up automatically?</p><label><input type="radio" name="q4" value="1"> Yes</label><label><input type="radio" name="q4" value="0"> No or not sure</label></fieldset><fieldset class="q"><legend>Question 6 of 10</legend><p>Have you ever tested restoring a backup?</p><label><input type="radio" name="q5" value="1"> Yes</label><label><input type="radio" name="q5" value="0"> No or not sure</label></fieldset><fieldset class="q"><legend>Question 7 of 10</legend><p>Does a second person confirm any change to payment or bank details?</p><label><input type="radio" name="q6" value="1"> Yes</label><label><input type="radio" name="q6" value="0"> No or not sure</label></fieldset><fieldset class="q"><legend>Question 8 of 10</legend><p>Has your staff been shown how to spot scam emails and fake invoices?</p><label><input type="radio" name="q7" value="1"> Yes</label><label><input type="radio" name="q7" value="0"> No or not sure</label></fieldset><fieldset class="q"><legend>Question 9 of 10</legend><p>Is your Wi-Fi router's admin password changed from the default?</p><label><input type="radio" name="q8" value="1"> Yes</label><label><input type="radio" name="q8" value="0"> No or not sure</label></fieldset><fieldset class="q"><legend>Question 10 of 10</legend><p>Does your email domain have SPF, DKIM, and DMARC set up (or do you know it does)?</p><label><input type="radio" name="q9" value="1"> Yes</label><label><input type="radio" name="q9" value="0"> No or not sure</label></fieldset>
+        <button type="submit" class="btn">See my score</button>
+        <p id="qerr" role="alert">Please answer all 10 questions.</p>
+      </form>
+      <div id="result" aria-live="polite">
+        <div class="score"><span id="scoreNum"></span> out of 10</div>
+        <p id="scoreMsg"></p>
+        <h3>Your top tips</h3>
+        <ul id="tipList"></ul>
+        <p class="note">This quiz gives general guidance only. It is not a full assessment.</p>
+        <span class="btn soon" id="quizCta" data-k="scorecard" data-label="Get your full Security Scorecard — $79">Coming soon</span>
       </div>
     </div>
   </section>
 
-  <section id="who" class="soft">
+  <section id="offers">
     <div class="wrap">
-      <h2>Who it's for</h2>
-      <p class="intro">Owners of small businesses with 1 to 20 employees and no IT person. That includes dental, insurance, accounting, and real estate offices, plus downtown shops, cafes, salons, and contractors.</p>
-      <p class="intro">We work in Troy first, and also in Lansingburgh, Waterford, Cohoes, Watervliet, Brunswick, East Greenbush, and Albany.</p>
-    </div>
-  </section>
-
-  <section id="packages">
-    <div class="wrap">
-      <h2>Packages</h2>
-      <p class="intro">Clear prices. We sign a simple written agreement before any paid work starts.</p>
+      <h2>What we offer</h2>
+      <p class="intro">Clear prices, delivered by email. No visits, no passwords, no access to your systems.</p>
       <div class="packages">
         <div class="pkg">
-          <h3>Starter Setup</h3>
-          <div class="price">$299 <small>one-time</small></div>
-          <p>A security checkup, plus one AI time-saver set up and taught.</p>
+          <h3>Security Scorecard</h3>
+          <div class="price">$79 <small>one-time</small></div>
+          <ul><li>A grade from A to F with the reasons</li><li>Your top 5 risks in plain English</li><li>A fix list in order, with free tools</li><li>A 30-day plan, plus a public check of your email domain records</li></ul>
+          <p style="margin-top:16px"><span class="btn soon" data-k="scorecard" data-label="Get the Scorecard">Coming soon</span></p>
         </div>
         <div class="pkg">
-          <h3>Full Setup</h3>
-          <div class="price">$599 <small>one-time</small></div>
-          <p>A security checkup, plus up to three AI time-savers and a one-page cheat sheet for your staff.</p>
-        </div>
-        <div class="pkg">
-          <h3>Monthly Help</h3>
+          <h3>Done-for-you Online Presence</h3>
           <div class="price">$99 <small>per month</small></div>
-          <p>Your questions answered, small fixes, and a monthly security check.</p>
+          <ul><li>4 Google Business posts a month</li><li>8 social posts for the platforms you use</li><li>Reply drafts for your reviews</li><li>Written in your voice from a 5-minute form</li></ul>
+          <p style="margin-top:16px"><span class="btn soon" data-k="monthly" data-label="Start monthly">Coming soon</span></p>
+        </div>
+        <div class="pkg">
+          <h3>Security + AI Starter Kit</h3>
+          <div class="price">$24 <small>download</small></div>
+          <ul><li>One-page security checklist</li><li>Scam spotting guide and password manager setup</li><li>Backup plan, Wi-Fi basics, payment safety rule</li><li>20 ready-to-use AI prompts for small business</li></ul>
+          <p style="margin-top:16px"><span class="btn soon" data-k="kit" data-label="Get the Kit">Coming soon</span></p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="checkup" class="soft">
+  <section id="how" class="soft">
     <div class="wrap">
-      <h2>Start with a free 20-minute tech checkup</h2>
-      <p class="intro">We talk (by phone, video, or in person) about what takes the most time in your week and how you handle passwords, backups, and suspicious emails. Then we tell you honestly whether we can help and what we would suggest.</p>
-      <p class="intro">No pressure and no obligation.</p>
-      <a class="btn" href="mailto:collarcitytechhelp@gmail.com?subject=Free%2020-minute%20tech%20checkup&amp;body=Hi%2C%20I%27d%20like%20to%20book%20a%20free%2020-minute%20tech%20checkup.%0A%0AMy%20name%3A%0AMy%20business%3A">Book a free 20-minute checkup</a>
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h3>Pay securely</h3><p>Use the payment link for the offer you want.</p></div>
+        <div class="step"><div class="n">2</div><h3>Fill out a short form</h3><p>Tell us about your business. Never type a password.</p></div>
+        <div class="step"><div class="n">3</div><h3>Get it by email</h3><p>Your report or content arrives in your inbox.</p></div>
+      </div>
     </div>
   </section>
 
-  <section id="why">
+  <section id="sample">
     <div class="wrap">
-      <h2>Why Collar City Tech Help</h2>
-      <div class="why">
-        <div>
-          <h3>Local</h3>
-          <p>We are based in Troy and come to you. Big IT companies often will not visit for a small job.</p>
-        </div>
-        <div>
-          <h3>Plain English</h3>
-          <p>No jargon. We explain what we are doing and why before we do it.</p>
-        </div>
-        <div>
-          <h3>Studying cybersecurity</h3>
-          <p>Your checkup is done by a cybersecurity student at UAlbany who takes safe habits seriously.</p>
-        </div>
-        <div>
-          <h3>Honest</h3>
-          <p>We tell you what you need and what you do not. If we cannot help, we say so.</p>
-        </div>
+      <h2>See a sample</h2>
+      <p class="intro">An excerpt from a Scorecard for a made-up business, so you know what you get.</p>
+      <div class="sample">
+        <span class="label">SAMPLE: MADE-UP BUSINESS</span>
+        <h3>Security Scorecard: Maple &amp; Main Bakery (sample)</h3>
+        <p><b style="color:#1e407d;font-size:1.6rem">Grade: C+</b></p>
+        <p>You have the basics in place for money and email, but passwords, backups, and email protection leave gaps. Most important first step: turn on two-step login for your business email. It takes about 15 minutes.</p>
+        <div class="tablewrap"><table><tr><th>Area</th><th>Status</th><th>Why</th></tr>
+        <tr><td>Two-step login</td><td>Needs work</td><td>On for the bank, off for email and social media.</td></tr>
+        <tr><td>Backups</td><td>Needs work</td><td>A weekly backup exists but has never been tested.</td></tr>
+        <tr><td>Payments</td><td>Good</td><td>Two people must approve payment changes.</td></tr></table></div>
       </div>
     </div>
   </section>
@@ -218,34 +253,78 @@
     <div class="wrap">
       <h2>Questions people ask</h2>
       <h3>Do you need my passwords?</h3>
-      <p>No. You always type your own. We never ask for your passwords and never store them.</p>
-      <h3>Can you promise we will never be hacked?</h3>
-      <p>No, and be careful of anyone who does. We can make your business much safer than before.</p>
-      <h3>What happens in the free checkup?</h3>
-      <p>It is a short talk, about 20 minutes. We ask a few simple questions, then tell you what we would fix first. You do not have to buy anything.</p>
-      <h3>Do I need to know a lot about computers?</h3>
-      <p>No. We start where you are and explain each step. We also teach you to use the tools, so you are not stuck without us.</p>
-      <h3>Where do you work?</h3>
-      <p>In Troy and nearby towns, in person. Some help, like a quick question, can be done by phone or video.</p>
+      <p>No, never. Please never send us a password or account number.</p>
+      <h3>Do you access my computers?</h3>
+      <p>No. It is all done from your answers and public records.</p>
+      <h3>Is it really AI?</h3>
+      <p>Yes. It is AI-powered and reviewed by a cybersecurity student.</p>
+      <h3>Can you guarantee I won't be hacked?</h3>
+      <p>No one can. We help you get much safer.</p>
+      <h3>Refunds?</h3>
+      <p>Full refund within 7 days if you are not happy.</p>
+      <h3>Where are you?</h3>
+      <p>Troy, NY, serving businesses anywhere online.</p>
     </div>
   </section>
 
   <section id="contact">
     <div class="wrap">
       <h2>Contact</h2>
-      <p class="intro">Send us an email. We will write back to set up your free checkup.</p>
-      <p><a href="mailto:collarcitytechhelp@gmail.com">collarcitytechhelp@gmail.com</a></p>
-      <a class="btn" href="mailto:collarcitytechhelp@gmail.com?subject=Free%2020-minute%20tech%20checkup&amp;body=Hi%2C%20I%27d%20like%20to%20book%20a%20free%2020-minute%20tech%20checkup.%0A%0AMy%20name%3A%0AMy%20business%3A">Book a free 20-minute checkup</a>
+      <p class="intro">Questions before you buy? Send us an email.</p>
+      <a class="btn" href="mailto:collarcitytechhelp@gmail.com?subject=Question%20for%20Collar%20City%20Tech%20Help">Email collarcitytechhelp@gmail.com</a>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <p>&copy; 2026 Collar City Tech Help</p>
-    <p>Serving Troy, NY and nearby towns.</p>
-    <p>We cannot promise you will never be hacked, and we do not give legal advice.</p>
+    <p>&copy; 2026 Collar City Tech Help &middot; Based in Troy, NY</p>
+    <p>Collar City Tech Help uses AI tools to prepare our work. Everything is reviewed under the oversight of Alex Baldwin, a UAlbany cybersecurity student. We provide general guidance, not legal advice, and no service can guarantee you'll never be hacked.</p>
   </div>
 </footer>
+
+<script>
+// Payment links. Replace each placeholder with the real https:// link; buttons stay "Coming soon" until then.
+var LINKS = { scorecard: "[scorecard payment link]", monthly: "[monthly payment link]", kit: "[kit payment link]" };
+var TIPS = ["Turn on two-step login for your business email first. It blocks most account takeovers and takes about 15 minutes.", "Start a password manager (Bitwarden has a free tier) and replace reused passwords, beginning with email and banking.", "Give each person their own login so you can tell who did what and remove access when someone leaves.", "Turn on automatic updates on every computer and phone. Updates fix the holes attackers use.", "Set up an automatic backup, ideally to the cloud plus one copy that is not always connected.", "Restore three files from your backup to a different folder this month. A backup you never tested is a hope, not a backup.", "Adopt a two-person rule: any change to payment details gets a phone call to a number you already have.", "Take 20 minutes with your team to cover the warning signs of phishing emails and fake invoices.", "Change the router admin password and set up a separate guest network for customers.", "Ask your email provider to confirm SPF, DKIM, and DMARC are on, so it is harder to fake email from your business."];
+(function () {
+  document.querySelectorAll('[data-k]').forEach(function (el) {
+    var url = LINKS[el.getAttribute('data-k')];
+    if (url && url.indexOf('https://') === 0) {
+      var a = document.createElement('a');
+      a.className = 'btn';
+      a.href = url;
+      a.textContent = el.getAttribute('data-label');
+      if (el.id) a.id = el.id;
+      el.parentNode.replaceChild(a, el);
+    }
+  });
+  var form = document.getElementById('quizForm');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var score = 0, tips = [], answered = 0;
+    for (var i = 0; i < 10; i++) {
+      var c = form.querySelector('input[name=q' + i + ']:checked');
+      if (!c) continue;
+      answered++;
+      if (c.value === '1') score++; else tips.push(TIPS[i]);
+    }
+    var err = document.getElementById('qerr');
+    if (answered < 10) { err.style.display = 'block'; return; }
+    err.style.display = 'none';
+    document.getElementById('scoreNum').textContent = score;
+    var msg = score >= 9 ? 'Strong. You have most of the basics covered.' : score >= 6 ? 'A decent start with a few gaps worth closing.' : 'There is real room to improve, and the good news is the first fixes are quick.';
+    document.getElementById('scoreMsg').textContent = msg;
+    var ul = document.getElementById('tipList');
+    ul.innerHTML = '';
+    var shown = tips.slice(0, 3);
+    if (shown.length === 0) shown = ['Keep it up: review these ten items twice a year and after anyone joins or leaves.'];
+    shown.forEach(function (t) { var li = document.createElement('li'); li.textContent = t; ul.appendChild(li); });
+    var r = document.getElementById('result');
+    r.style.display = 'block';
+    r.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+})();
+</script>
 </body>
 </html>
