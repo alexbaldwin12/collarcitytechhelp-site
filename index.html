@@ -4,48 +4,94 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Collar City Tech Help | Tech help for small businesses in Troy, NY</title>
-<meta name="description" content="Friendly, in-person tech help for small businesses in Troy, NY and nearby towns. A basic security checkup and AI tools that save you time. Start with a free 20-minute tech checkup.">
-<link rel="icon" href="cct-logo.jpg">
+<meta name="description" content="Friendly, in-person tech help for small businesses in Troy, NY and nearby towns. A basic security checkup and simple AI tools that save you time. Start with a free 20-minute tech checkup.">
+<link rel="canonical" href="https://collarcitytechhelp.com/">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Collar City Tech Help">
+<meta property="og:title" content="Collar City Tech Help | Tech help for small businesses in Troy, NY">
+<meta property="og:description" content="Friendly, in-person tech help for small businesses in Troy, NY. A basic security checkup and simple AI tools that save you time. Start with a free 20-minute checkup.">
+<meta property="og:url" content="https://collarcitytechhelp.com/">
+<meta property="og:image" content="https://collarcitytechhelp.com/cct-logo.jpg">
+<meta property="og:image:alt" content="Collar City Tech Help logo">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Collar City Tech Help",
+  "description": "In-person tech help for small businesses: a basic security checkup and simple AI tools that save time.",
+  "url": "https://collarcitytechhelp.com/",
+  "email": "collarcitytechhelp@gmail.com",
+  "logo": "https://collarcitytechhelp.com/cct-logo.jpg",
+  "image": "https://collarcitytechhelp.com/cct-logo.jpg",
+  "areaServed": [
+    {"@type": "City", "name": "Troy, NY"},
+    {"@type": "City", "name": "Lansingburgh, NY"},
+    {"@type": "City", "name": "Waterford, NY"},
+    {"@type": "City", "name": "Cohoes, NY"},
+    {"@type": "City", "name": "Watervliet, NY"},
+    {"@type": "City", "name": "Brunswick, NY"},
+    {"@type": "City", "name": "East Greenbush, NY"},
+    {"@type": "City", "name": "Albany, NY"}
+  ]
+}
+</script>
 <style>
-  :root { --navy: #1e407d; --text: #1a1a1a; --muted: #555; --line: #d9dde3; --soft: #f4f6f9; }
+  :root { --navy: #1e407d; --navy-dark: #163160; --text: #1a1a1a; --muted: #4a4a4a; --line: #d9dde3; --soft: #f4f6f9; }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { margin: 0; background: #fff; color: var(--text); font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 1.6; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: #fff; color: var(--text); font-family: Arial, Helvetica, sans-serif; font-size: 17px; line-height: 1.6; }
   a { color: var(--navy); }
-  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
   header { border-bottom: 1px solid var(--line); }
   header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 14px; }
-  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 1.1rem; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 1.15rem; }
   .brand img { width: 48px; height: 48px; display: block; }
-  nav a { margin-left: 18px; text-decoration: none; font-size: 0.95rem; }
+  nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+  nav a { text-decoration: none; font-size: 1rem; color: var(--navy); padding: 6px 0; }
   nav a:hover { text-decoration: underline; }
-  .hero { padding: 56px 0 48px; }
-  h1 { color: var(--navy); font-size: 2.3rem; line-height: 1.2; margin: 0 0 16px; }
-  h2 { color: var(--navy); font-size: 1.6rem; margin: 0 0 12px; }
-  h3 { margin: 0 0 4px; font-size: 1.1rem; }
+  .hero { padding-top: 64px; padding-bottom: 56px; }
+  h1 { color: var(--navy); font-size: 2.4rem; line-height: 1.2; margin: 0 0 16px; max-width: 700px; }
+  h2 { color: var(--navy); font-size: 1.7rem; line-height: 1.25; margin: 0 0 14px; }
+  h3 { color: var(--text); font-size: 1.15rem; margin: 0 0 6px; }
   p { margin: 0 0 14px; }
-  .lead { font-size: 1.2rem; color: var(--muted); max-width: 640px; }
-  .btn { display: inline-block; background: var(--navy); color: #fff; text-decoration: none; padding: 14px 26px; border-radius: 4px; font-weight: bold; font-size: 1rem; }
-  .btn:hover { background: #163160; }
-  section { padding: 44px 0; border-top: 1px solid var(--line); }
-  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-  .two ul { margin: 6px 0 0; padding-left: 20px; }
-  .two li { margin-bottom: 6px; }
-  .packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
-  .pkg { border: 1px solid var(--line); border-top: 4px solid var(--navy); border-radius: 4px; padding: 20px; background: #fff; }
-  .pkg .price { color: var(--navy); font-size: 1.9rem; font-weight: bold; margin: 4px 0 8px; }
-  .pkg .price small { font-size: 0.95rem; font-weight: normal; color: var(--muted); }
-  .pkg p { font-size: 0.98rem; color: var(--muted); margin: 0; }
-  .free { background: var(--soft); }
-  .note { font-size: 0.9rem; color: var(--muted); margin-top: 16px; }
-  footer { border-top: 1px solid var(--line); padding: 24px 0 36px; font-size: 0.9rem; color: var(--muted); }
+  .lead { font-size: 1.2rem; color: var(--muted); max-width: 640px; margin-bottom: 24px; }
+  .btn { display: inline-block; background: var(--navy); color: #fff; text-decoration: none; padding: 14px 28px; border-radius: 4px; font-weight: bold; font-size: 1rem; }
+  .btn:hover, .btn:focus { background: var(--navy-dark); }
+  a:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+  section { padding: 52px 0; border-top: 1px solid var(--line); }
+  .intro { max-width: 680px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 20px; }
+  ul { margin: 8px 0 0; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  .packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px; }
+  .pkg { border: 1px solid var(--line); border-top: 4px solid var(--navy); border-radius: 4px; padding: 22px; background: #fff; }
+  .pkg h3 { margin-bottom: 2px; }
+  .price { color: var(--navy); font-size: 2rem; font-weight: bold; margin: 4px 0 10px; line-height: 1.2; }
+  .price small { font-size: 1rem; font-weight: normal; color: var(--muted); }
+  .pkg p { color: var(--muted); margin: 0; }
+  .soft { background: var(--soft); }
+  .why { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px; margin-top: 20px; }
+  .why p { margin: 0; color: var(--muted); }
+  .faq h3 { margin-top: 22px; color: var(--navy); }
+  .faq h3:first-of-type { margin-top: 8px; }
+  .faq p { max-width: 680px; margin-bottom: 0; }
+  .note { font-size: 0.95rem; color: var(--muted); }
+  footer { border-top: 1px solid var(--line); padding: 28px 0 40px; font-size: 0.95rem; color: var(--muted); }
+  footer p { margin: 0 0 8px; max-width: 760px; }
+  @media (max-width: 800px) {
+    .packages { grid-template-columns: 1fr; }
+  }
   @media (max-width: 720px) {
-    body { font-size: 17px; }
-    h1 { font-size: 1.8rem; }
-    .hero { padding: 36px 0 32px; }
-    .two, .packages { grid-template-columns: 1fr; }
-    header .wrap { flex-direction: column; align-items: flex-start; }
-    nav a { margin: 0 14px 0 0; }
+    .wrap { padding: 0 20px; }
+    header .wrap { flex-direction: column; align-items: flex-start; gap: 8px; }
+    h1 { font-size: 1.9rem; }
+    h2 { font-size: 1.5rem; }
+    .hero { padding-top: 40px; padding-bottom: 36px; }
+    section { padding: 40px 0; }
+    .two, .why { grid-template-columns: 1fr; gap: 24px; }
     .btn { display: block; text-align: center; }
   }
 </style>
@@ -54,10 +100,11 @@
 
 <header>
   <div class="wrap">
-    <a class="brand" href="#top"><img src="cct-logo.jpg" alt="Collar City Tech Help logo"><span>Collar City Tech Help</span></a>
-    <nav>
+    <a class="brand" href="#top"><img src="cct-logo.jpg" width="48" height="48" alt="Collar City Tech Help logo"><span>Collar City Tech Help</span></a>
+    <nav aria-label="Main">
       <a href="#what">What we do</a>
       <a href="#packages">Packages</a>
+      <a href="#faq">Questions</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -66,31 +113,32 @@
 <main id="top">
   <div class="wrap hero">
     <h1>Friendly tech help for small businesses in Troy, NY</h1>
-    <p class="lead">We help you stay safer online and save time with simple AI tools. In plain English, in person, at a price a small business can afford.</p>
-    <a class="btn" href="mailto:collarcitytechhelp@gmail.com?subject=Free%20tech%20checkup">Book a free 20-minute tech checkup</a>
+    <p class="lead">We help small business owners stay safer online and save time with simple AI tools. In plain English, in person, at a fair price.</p>
+    <a class="btn" href="mailto:collarcitytechhelp@gmail.com?subject=Free%2020-minute%20tech%20checkup&amp;body=Hi%2C%20I%27d%20like%20to%20book%20a%20free%2020-minute%20tech%20checkup.%0A%0AMy%20name%3A%0AMy%20business%3A">Book a free 20-minute checkup</a>
   </div>
 
   <section id="what">
     <div class="wrap">
       <h2>What we do</h2>
+      <p class="intro">We do two things for small businesses. Both come with a clear price and a plain explanation of every change.</p>
       <div class="two">
         <div>
-          <h3>Basic security checkup</h3>
-          <p>One phishing email can take down a small business. We make your business much safer than before by checking:</p>
+          <h3>A basic security checkup</h3>
+          <p>One bad email can cause a lot of trouble for a small business. We check:</p>
           <ul>
-            <li>Passwords and a password manager you own</li>
+            <li>Passwords, and a password manager that you own</li>
             <li>Two-factor login on email, banking, and social media</li>
             <li>Automatic backups of your important files</li>
             <li>Computer and phone updates</li>
             <li>Your business Wi-Fi</li>
-            <li>A short talk for staff on spotting phishing emails</li>
+            <li>How to spot phishing emails (we can talk with your staff, too)</li>
           </ul>
         </div>
         <div>
-          <h3>AI time-savers</h3>
-          <p>We set up simple AI tools that save you hours, then teach you to use them yourself:</p>
+          <h3>Simple AI tools that save time</h3>
+          <p>We set up easy tools, then teach you to use them yourself:</p>
           <ul>
-            <li>Email: draft replies to common questions for you to review and send</li>
+            <li>Email: draft replies to common questions, for you to review and send</li>
             <li>Scheduling: an online booking link for customers</li>
             <li>Social media: a month of posts from your photos and ideas</li>
             <li>Google reviews: polite replies, written fast</li>
@@ -101,59 +149,103 @@
     </div>
   </section>
 
-  <section id="who">
+  <section id="who" class="soft">
     <div class="wrap">
       <h2>Who it's for</h2>
-      <p>Owners of small businesses in Troy and nearby towns (Lansingburgh, Waterford, Cohoes, Watervliet, Brunswick, East Greenbush, and Albany) who have 1 to 20 employees and no IT person. That includes small offices like dental, insurance, accounting, and real estate, plus downtown shops, cafes, salons, and contractors.</p>
-      <p>Big IT companies are built for bigger businesses, and we are a local neighbor who is good with tech. We explain every change before we make it.</p>
+      <p class="intro">Owners of small businesses with 1 to 20 employees and no IT person. That includes dental, insurance, accounting, and real estate offices, plus downtown shops, cafes, salons, and contractors.</p>
+      <p class="intro">We work in Troy first, and also in Lansingburgh, Waterford, Cohoes, Watervliet, Brunswick, East Greenbush, and Albany.</p>
     </div>
   </section>
 
   <section id="packages">
     <div class="wrap">
       <h2>Packages</h2>
-      <p>Clear prices. A simple written agreement before any paid work.</p>
+      <p class="intro">Clear prices. We sign a simple written agreement before any paid work starts.</p>
       <div class="packages">
         <div class="pkg">
           <h3>Starter Setup</h3>
           <div class="price">$299 <small>one-time</small></div>
-          <p>A security checkup plus one AI time-saver set up and taught.</p>
+          <p>A security checkup, plus one AI time-saver set up and taught.</p>
         </div>
         <div class="pkg">
           <h3>Full Setup</h3>
           <div class="price">$599 <small>one-time</small></div>
-          <p>A security checkup plus up to three AI time-savers and a one-page cheat sheet for your staff.</p>
+          <p>A security checkup, plus up to three AI time-savers and a one-page cheat sheet for your staff.</p>
         </div>
         <div class="pkg">
           <h3>Monthly Help</h3>
           <div class="price">$99 <small>per month</small></div>
-          <p>Questions answered, small fixes, and a monthly security check.</p>
+          <p>Your questions answered, small fixes, and a monthly security check.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="checkup" class="free">
+  <section id="checkup" class="soft">
     <div class="wrap">
       <h2>Start with a free 20-minute tech checkup</h2>
-      <p>We'll talk (by phone, video, or in person) about what takes up the most time in your week and how you handle passwords, backups, and suspicious emails. Then we'll tell you honestly whether we can help, and what we'd recommend. No pressure and no obligation.</p>
-      <a class="btn" href="mailto:collarcitytechhelp@gmail.com?subject=Free%20tech%20checkup">Email us to book</a>
+      <p class="intro">We talk (by phone, video, or in person) about what takes the most time in your week and how you handle passwords, backups, and suspicious emails. Then we tell you honestly whether we can help and what we would suggest.</p>
+      <p class="intro">No pressure and no obligation.</p>
+      <a class="btn" href="mailto:collarcitytechhelp@gmail.com?subject=Free%2020-minute%20tech%20checkup&amp;body=Hi%2C%20I%27d%20like%20to%20book%20a%20free%2020-minute%20tech%20checkup.%0A%0AMy%20name%3A%0AMy%20business%3A">Book a free 20-minute checkup</a>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap">
+      <h2>Why Collar City Tech Help</h2>
+      <div class="why">
+        <div>
+          <h3>Local</h3>
+          <p>We are based in Troy and come to you. Big IT companies often will not visit for a small job.</p>
+        </div>
+        <div>
+          <h3>Plain English</h3>
+          <p>No jargon. We explain what we are doing and why before we do it.</p>
+        </div>
+        <div>
+          <h3>Studying cybersecurity</h3>
+          <p>Your checkup is done by a cybersecurity student at UAlbany who takes safe habits seriously.</p>
+        </div>
+        <div>
+          <h3>Honest</h3>
+          <p>We tell you what you need and what you do not. If we cannot help, we say so.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq soft">
+    <div class="wrap">
+      <h2>Questions people ask</h2>
+      <h3>Do you need my passwords?</h3>
+      <p>No. You always type your own. We never ask for your passwords and never store them.</p>
+      <h3>Can you promise we will never be hacked?</h3>
+      <p>No, and be careful of anyone who does. We can make your business much safer than before.</p>
+      <h3>What happens in the free checkup?</h3>
+      <p>It is a short talk, about 20 minutes. We ask a few simple questions, then tell you what we would fix first. You do not have to buy anything.</p>
+      <h3>Do I need to know a lot about computers?</h3>
+      <p>No. We start where you are and explain each step. We also teach you to use the tools, so you are not stuck without us.</p>
+      <h3>Where do you work?</h3>
+      <p>In Troy and nearby towns, in person. Some help, like a quick question, can be done by phone or video.</p>
     </div>
   </section>
 
   <section id="contact">
     <div class="wrap">
       <h2>Contact</h2>
-      <p>Send us an email and we'll reply to set up your free checkup. We serve Troy, NY and nearby towns.</p>
-      <p><a class="btn" href="mailto:collarcitytechhelp@gmail.com?subject=Tech%20help%20question">Email collarcitytechhelp@gmail.com</a></p>
-      <p class="note">Our work makes your business much safer than before, but no one can promise you will never be hacked. We do not offer legal advice or legal compliance services.</p>
+      <p class="intro">Send us an email. We will write back to set up your free checkup.</p>
+      <p><a href="mailto:collarcitytechhelp@gmail.com">collarcitytechhelp@gmail.com</a></p>
+      <a class="btn" href="mailto:collarcitytechhelp@gmail.com?subject=Free%2020-minute%20tech%20checkup&amp;body=Hi%2C%20I%27d%20like%20to%20book%20a%20free%2020-minute%20tech%20checkup.%0A%0AMy%20name%3A%0AMy%20business%3A">Book a free 20-minute checkup</a>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap">&copy; <span id="yr">2026</span> Collar City Tech Help &middot; Troy, NY</div>
+  <div class="wrap">
+    <p>&copy; 2026 Collar City Tech Help</p>
+    <p>Serving Troy, NY and nearby towns.</p>
+    <p>We cannot promise you will never be hacked, and we do not give legal advice.</p>
+  </div>
 </footer>
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 </body>
 </html>
