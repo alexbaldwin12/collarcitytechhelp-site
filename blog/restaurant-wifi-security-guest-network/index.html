@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Restaurant and Cafe Wifi Security: How to Set Up a Guest Network</title>
+<meta name="description" content="Offer free wifi without exposing your register, office computer or cameras. A step-by-step guest network setup for restaurants and cafes.">
+<link rel="canonical" href="https://collarcitytechhelp.com/blog/restaurant-wifi-security-guest-network/">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Collar City Tech Help">
+<meta property="og:title" content="Restaurant and Cafe Wifi Security: How to Set Up a Guest Network">
+<meta property="og:description" content="Offer free wifi without exposing your register, office computer or cameras. A step-by-step guest network setup for restaurants and cafes.">
+<meta property="og:url" content="https://collarcitytechhelp.com/blog/restaurant-wifi-security-guest-network/">
+<meta property="og:image" content="https://collarcitytechhelp.com/cct-logo.jpg">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "Restaurant and Cafe Wifi Security: How to Set Up a Guest Network",
+ "description": "Offer free wifi without exposing your register, office computer or cameras. A step-by-step guest network setup for restaurants and cafes.",
+ "datePublished": "2026-10-08",
+ "dateModified": "2026-10-08",
+ "mainEntityOfPage": "https://collarcitytechhelp.com/blog/restaurant-wifi-security-guest-network/",
+ "author": {
+  "@type": "Person",
+  "name": "Alex Baldwin"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "Collar City Tech Help",
+  "logo": {
+   "@type": "ImageObject",
+   "url": "https://collarcitytechhelp.com/cct-logo.jpg"
+  }
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Do I really need a separate guest wifi network?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "If you give customers wifi, yes, it is the simplest way to keep their devices away from your office computer, printer and cameras. Most modern routers include a guest network setting."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Should I use WPA3 or WPA2 for guest wifi?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Choose WPA3 if your router offers it. If it does not, WPA2 is the usual minimum. Avoid open or WEP networks."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I put my card reader on the guest network?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Do not guess. Payment setups differ, so follow your payment provider's instructions or ask them which network the device should use."
+   }
+  }
+ ]
+}
+</script>
+<style>
+  :root { --navy: #1e407d; --navy-dark: #163160; --text: #1a1a1a; --muted: #4a4a4a; --line: #d9dde3; --soft: #f4f6f9; }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: #fff; color: var(--text); font-family: Arial, Helvetica, sans-serif; font-size: 17px; line-height: 1.6; }
+  a { color: var(--navy); }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  .narrow { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  header { border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 14px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 1.15rem; }
+  .brand img { width: 48px; height: 48px; display: block; }
+  nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+  nav a { text-decoration: none; font-size: 1rem; color: var(--navy); padding: 6px 0; }
+  nav a:hover { text-decoration: underline; }
+  h1 { color: var(--navy); font-size: 2.2rem; line-height: 1.2; margin: 8px 0 12px; }
+  h2 { color: var(--navy); font-size: 1.5rem; line-height: 1.25; margin: 34px 0 12px; }
+  h3 { color: var(--text); font-size: 1.15rem; margin: 22px 0 6px; }
+  p { margin: 0 0 14px; }
+  ul, ol { margin: 8px 0 16px; padding-left: 24px; }
+  li { margin-bottom: 6px; }
+  blockquote { margin: 16px 0; padding: 4px 18px; border-left: 4px solid var(--navy); background: var(--soft); }
+  .crumbs { font-size: 0.95rem; color: var(--muted); margin: 28px 0 0; }
+  .byline { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+  .btn { display: inline-block; background: var(--navy); color: #fff; text-decoration: none; padding: 14px 28px; border-radius: 4px; font-weight: bold; font-size: 1rem; }
+  .btn:hover, .btn:focus { background: var(--navy-dark); }
+  a:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+  .cta { border: 2px solid var(--navy); border-radius: 4px; padding: 24px; margin: 40px 0 20px; background: #fff; }
+  .cta h2 { margin-top: 0; }
+  .note { font-size: 0.95rem; color: var(--muted); }
+  .list { list-style: none; padding: 0; }
+  .list li { border-top: 1px solid var(--line); padding: 18px 0; margin: 0; }
+  .list li:last-child { border-bottom: 1px solid var(--line); }
+  .list h2 { margin: 0 0 6px; font-size: 1.3rem; }
+  .list p { margin: 0; color: var(--muted); }
+  footer { border-top: 1px solid var(--line); margin-top: 40px; padding: 28px 0 40px; font-size: 0.95rem; color: var(--muted); }
+  footer p { margin: 0 0 8px; max-width: 760px; }
+  @media (max-width: 720px) {
+    .wrap, .narrow { padding: 0 20px; }
+    header .wrap { flex-direction: column; align-items: flex-start; gap: 8px; }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.35rem; }
+    .btn { display: block; text-align: center; }
+  }
+
+  .cards { list-style:none; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; }
+  .cards li { border:1px solid var(--line); border-radius:4px; padding:14px 16px; margin:0; background:var(--soft); }
+  .cards a { font-weight:bold; }
+  .faq h3 { margin-top:18px; }
+  .pill { display:inline-block; background:var(--soft); border:1px solid var(--line); border-radius:20px; padding:2px 12px; font-size:.9rem; margin:2px 4px 2px 0; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/cct-logo.jpg" width="48" height="48" alt="Collar City Tech Help logo"><span>Collar City Tech Help</span></a>
+    <nav aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/areas/">Areas</a>
+      <a href="/industries/">Industries</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#quiz">Free quiz</a>
+    </nav>
+  </div>
+</header>
+<main>
+<div class="narrow">
+<p class="crumbs"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a></p>
+<article>
+<h1>Restaurant and Cafe Wifi Security: How to Set Up a Guest Network</h1>
+<p class="byline">By Alex Baldwin, Collar City Tech Help. Published October 8, 2026.</p>
+<p>If you run a restaurant or cafe in Troy, Albany or anywhere in the Capital Region, free wifi is part of the deal. Customers expect it. The part owners often skip is thinking about what else that wifi is connected to. When guests, the office laptop, the register and the security camera all share one network, a problem on one device can reach the others.</p><p>The fix is a separate guest network. Most routers sold in the last several years can do this, and it usually takes about an hour. Router menus differ by brand, so treat the names below as a guide to what to look for. This is general guidance, not legal advice.</p><h2>Why a separate guest network matters</h2><p>Your guests bring phones and laptops you know nothing about. Some may be infected without the owner knowing. If those devices sit on the same network as your office computer, they can try to see shared folders, printers and other equipment. A guest network gives visitors internet access and nothing else.</p><p>It also solves a practical problem. If your wifi password is written on the chalkboard, anyone who has ever eaten with you has it. On a guest network, that password only opens the guest door.</p><h2>Step 1: Find your router and log in to it</h2><p>Look for the box your internet provider installed, or one you bought yourself. The login address and default admin details are often printed on a label on the router. Open the address in a web browser on a computer that is connected to the router.</p><p>If the admin password is still the factory one from the label, change it now to a long, unique password. Store it in a password manager or a locked drawer, not on a sticky note by the register. Our guide on <a href="/blog/do-small-businesses-need-a-password-manager/">password managers for small businesses</a> explains the easy way to do that.</p><h2>Step 2: Update the router</h2><p>Look for a section called Firmware, Software Update or Administration. If an update is available, install it. Updates fix known problems in the router itself. If your provider manages the router remotely, ask them whether it is kept up to date.</p><h2>Step 3: Turn on the guest network</h2><p>Look for a setting called Guest Network, Guest Wi-Fi or Guest SSID. Switch it on and then set:</p><ul><li><strong>A name customers will recognize.</strong> Your business name plus the word Guest works well. Do not use the same name as your private network.</li><li><strong>A password.</strong> Make it different from your private wifi password. Something short and readable is fine, because it only protects the guest side.</li><li><strong>Encryption.</strong> Choose WPA3 if your router offers it. If not, choose WPA2. Avoid any option labeled Open, WEP or WPA only, unless you have a specific reason.</li></ul><h2>Step 4: Block guests from your own equipment</h2><p>Many routers have a checkbox on the guest settings page with a name like Client Isolation, AP Isolation or Allow guests to access my local network. You want guests isolated from each other and from your private network. Make sure local network access for guests is off.</p><p>If your router has no guest option at all, that is a good reason to replace it. A basic small business router or a home mesh system with guest support is not a large expense, and it is worth asking your internet provider what they offer.</p><h2>Step 5: Put the right devices on the right network</h2><p>Here is a simple sorting rule.</p><ul><li><strong>Guest network:</strong> customers, and maybe a tablet for the staff to stream music.</li><li><strong>Private network:</strong> office computer, printer, cameras, and anything that handles orders or money.</li></ul><p>Card readers and point of sale systems vary. Some use their own cellular connection, and some use your wifi or a wired connection. Check the setup instructions from your payment provider, or ask them directly, before you move any payment device. Do not guess on this one. If you accept cards, your provider can tell you what network setup they expect. This article cannot tell you whether you meet any card industry rules.</p><h2>Step 6: Test it</h2><ol><li>On your phone, connect to the guest network.</li><li>Open a website to confirm that the internet works.</li><li>Try to open your office printer's page or reach a shared folder. It should not work.</li><li>Switch back to your private network and confirm that your normal devices still work.</li></ol><p>If something on the private side stopped working, undo the last change and ask your internet provider for help. Write down what you changed so you can reverse it.</p><h2>Step 7: Keep it tidy</h2><ul><li>Change the guest password every few months, and the private password whenever someone with access leaves.</li><li>Remove old devices from your router's connected-device list. If you do not recognize one, find out what it is.</li><li>Turn off remote administration unless you truly need it. This setting lets someone reach your router's login page from outside your building.</li><li>Put a reminder on the calendar to look for router updates twice a year.</li></ul><h2>What about a splash page and terms?</h2><p>Some restaurants add a welcome page that customers click through. That is optional. If you want one, check whether your router offers it before paying for a separate service. Whether you need wording about acceptable use is a question for your own lawyer, because the answer depends on your situation.</p><h2>A quick Saturday-morning checklist</h2><ul><li>Router admin password changed from the default.</li><li>Router updates installed.</li><li>Guest network on, with its own name and password.</li><li>WPA3 or WPA2 selected.</li><li>Guests blocked from the private network.</li><li>Office computer, printer and cameras on the private side.</li><li>Payment devices set up the way your provider says.</li></ul><p>None of this requires special skills, and it protects the part of your business that customers never see. If you want a broader list for the whole shop, start with our <a href="/blog/small-business-cybersecurity-checklist/">small business cybersecurity checklist</a>. Restaurant and cafe owners can also see how we help on our <a href="/industries/restaurants-cafes/">restaurants and cafes page</a>, and neighbors in the Collar City can find more local guidance on our <a href="/areas/troy-ny/">Troy, NY page</a>.</p>
+<div class="cta">
+<h2>See where your business stands</h2>
+<p>Take our free 3-minute security quiz: ten yes/no questions, an instant score, and three tips. No signup needed.</p>
+<a class="btn" href="/#quiz">Take the free quiz</a>
+<p class="note">Want the full picture? The <a href="/#offers">Security Scorecard</a> is a personalized written report for $79, with a full refund within 7 days if you are not satisfied.</p>
+</div>
+</article>
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Collar City Tech Help &middot; Based in Troy, NY</p>
+    <p>Collar City Tech Help uses AI tools to prepare our work. Everything is reviewed under the oversight of Alex Baldwin, a UAlbany cybersecurity student. We provide general guidance, not legal advice, and no service can guarantee you'll never be hacked.</p>
+  </div>
+</footer>
+</body>
+</html>
