@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>This Month's Content | Collar City Tech Help</title>
+<meta name="description" content="Monthly content form for Collar City Tech Help clients.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://collarcitytechhelp.com/content-form/">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+  :root { --navy: #1e407d; --navy-dark: #163160; --text: #1a1a1a; --muted: #4a4a4a; --line: #d9dde3; --soft: #f4f6f9; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: #fff; color: var(--text); font-family: Arial, Helvetica, sans-serif; font-size: 17px; line-height: 1.6; }
+  a { color: var(--navy); }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  header { border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 14px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 1.15rem; }
+  .brand img { width: 48px; height: 48px; display: block; }
+  nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+  nav a { text-decoration: none; font-size: 1rem; color: var(--navy); padding: 6px 0; }
+  nav a:hover { text-decoration: underline; }
+  .hero { padding-top: 64px; padding-bottom: 56px; }
+  h1 { color: var(--navy); font-size: 2.4rem; line-height: 1.2; margin: 0 0 16px; max-width: 700px; }
+  h2 { color: var(--navy); font-size: 1.7rem; line-height: 1.25; margin: 0 0 14px; }
+  h3 { color: var(--text); font-size: 1.15rem; margin: 0 0 6px; }
+  p { margin: 0 0 14px; }
+  .lead { font-size: 1.2rem; color: var(--muted); max-width: 640px; margin-bottom: 24px; }
+  .btn { display: inline-block; background: var(--navy); color: #fff; text-decoration: none; padding: 14px 28px; border-radius: 4px; font-weight: bold; font-size: 1rem; }
+  .btn:hover, .btn:focus { background: var(--navy-dark); }
+  a:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+  section { padding: 52px 0; border-top: 1px solid var(--line); }
+  .intro { max-width: 680px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 20px; }
+  ul { margin: 8px 0 0; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  .packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px; }
+  .pkg { border: 1px solid var(--line); border-top: 4px solid var(--navy); border-radius: 4px; padding: 22px; background: #fff; }
+  .pkg h3 { margin-bottom: 2px; }
+  .price { color: var(--navy); font-size: 2rem; font-weight: bold; margin: 4px 0 10px; line-height: 1.2; }
+  .price small { font-size: 1rem; font-weight: normal; color: var(--muted); }
+  .pkg p { color: var(--muted); margin: 0; }
+  .soft { background: var(--soft); }
+  .why { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px; margin-top: 20px; }
+  .why p { margin: 0; color: var(--muted); }
+  .faq h3 { margin-top: 22px; color: var(--navy); }
+  .faq h3:first-of-type { margin-top: 8px; }
+  .faq p { max-width: 680px; margin-bottom: 0; }
+  .note { font-size: 0.95rem; color: var(--muted); }
+  footer { border-top: 1px solid var(--line); padding: 28px 0 40px; font-size: 0.95rem; color: var(--muted); }
+  footer p { margin: 0 0 8px; max-width: 760px; }
+  @media (max-width: 800px) {
+    .packages { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) {
+    .wrap { padding: 0 20px; }
+    header .wrap { flex-direction: column; align-items: flex-start; gap: 8px; }
+    h1 { font-size: 1.9rem; }
+    h2 { font-size: 1.5rem; }
+    .hero { padding-top: 40px; padding-bottom: 36px; }
+    section { padding: 40px 0; }
+    .two, .why { grid-template-columns: 1fr; gap: 24px; }
+    .btn { display: block; text-align: center; }
+  }
+
+  .btn.soon { background: #fff; color: var(--navy); border: 2px solid var(--navy); cursor: default; padding: 12px 26px; }
+  .btn.soon:hover { background: #fff; }
+  .quiz { max-width: 680px; margin-top: 20px; }
+  .q { border: 1px solid var(--line); border-radius: 4px; padding: 14px 16px; margin: 0 0 12px; background: #fff; }
+  .q legend { padding: 0 6px; font-weight: bold; color: var(--navy); }
+  .q p { margin: 0 0 8px; }
+  .q label { display: inline-block; margin-right: 22px; cursor: pointer; padding: 6px 0; }
+  .q input { width: 18px; height: 18px; margin-right: 6px; vertical-align: -3px; accent-color: #1e407d; }
+  button.btn { border: 0; cursor: pointer; font-family: inherit; }
+  #result { display: none; border: 2px solid var(--navy); border-radius: 4px; padding: 22px; margin-top: 22px; background: #fff; }
+  #result .score { color: var(--navy); font-size: 2.6rem; font-weight: bold; line-height: 1.1; }
+  #qerr { color: #8a1c1c; display: none; margin: 8px 0 0; }
+  .sample { border: 1px solid var(--line); border-radius: 4px; padding: 22px; background: #fff; max-width: 720px; margin-top: 20px; }
+  .sample .label { display: inline-block; background: var(--navy); color: #fff; font-weight: bold; font-size: 0.85rem; letter-spacing: 1px; padding: 4px 10px; margin-bottom: 12px; }
+  .sample table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 0.95rem; }
+  .sample th, .sample td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+  .sample th { background: var(--soft); color: var(--navy); }
+  .tablewrap { overflow-x: auto; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
+  .step { border-top: 4px solid var(--navy); padding-top: 10px; }
+  .step .n { color: var(--navy); font-weight: bold; font-size: 1.6rem; }
+  @media (max-width: 800px) { .steps { grid-template-columns: 1fr; } }
+
+  .formwrap { max-width: 680px; }
+  .note { background: #fff; border: 2px solid var(--navy); border-radius: 4px; padding: 14px 16px; font-weight: bold; color: var(--navy); margin: 16px 0 24px; }
+  .field { margin: 0 0 20px; }
+  .field > label, .field > .lab { display: block; font-weight: bold; margin-bottom: 6px; }
+  .field .hint { display: block; font-weight: normal; color: var(--muted); font-size: 0.92rem; }
+  .field input[type=text], .field input[type=email], .field input[type=url], .field select, .field textarea { width: 100%; box-sizing: border-box; font: inherit; padding: 10px 12px; border: 1px solid #8b95a5; border-radius: 4px; background: #fff; color: var(--text); }
+  .field textarea { min-height: 110px; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid var(--navy); outline-offset: 1px; }
+  .checks label { display: block; font-weight: normal; padding: 6px 0; cursor: pointer; }
+  .checks input { width: 18px; height: 18px; margin-right: 8px; vertical-align: -3px; accent-color: #1e407d; }
+  .req { color: #8a1c1c; }
+  h2.sec { color: var(--navy); font-size: 1.25rem; margin: 32px 0 14px; padding-top: 8px; border-top: 1px solid var(--line); }
+  button.btn { border: 0; cursor: pointer; font-family: inherit; font-size: 1rem; }
+  .hp { position: absolute; left: -9999px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/cct-logo.jpg" width="48" height="48" alt="Collar City Tech Help logo"><span>Collar City Tech Help</span></a>
+    <nav aria-label="Main"><a href="/">Home</a></nav>
+  </div>
+</header>
+<main><div class="wrap hero formwrap">
+<h1>This Month's Content</h1>
+<p class="lead">5 minutes. Tell us what's happening and we'll write your posts.</p>
+<p class="note">Never type a password or account number into this form.</p>
+<form action="https://formsubmit.co/collarcitytechhelp@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="New monthly content form">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_next" value="https://collarcitytechhelp.com/thanks-content/">
+<input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<div class="field"><label for="f1">Business name <span class=req aria-hidden=true>*</span></label><input type="text" id="f1" name="Business name" required></div><div class="field"><label for="f2">Email we deliver to <span class=req aria-hidden=true>*</span><span class="hint">Must match your subscription email.</span></label><input type="email" id="f2" name="email" required></div><fieldset class="field checks" style="border:0;padding:0;margin:0 0 20px"><legend class="lab" style="font-weight:bold;padding:0;margin-bottom:6px">Which platforms? (We always write the Google Business posts.)</legend><label><input type="checkbox" name="Platforms" value="Google Business Profile"> Google Business Profile</label><label><input type="checkbox" name="Platforms" value="Facebook"> Facebook</label><label><input type="checkbox" name="Platforms" value="Instagram"> Instagram</label><label><input type="checkbox" name="Platforms" value="LinkedIn"> LinkedIn</label><label><input type="checkbox" name="Platforms" value="X"> X</label><label><input type="checkbox" name="Platforms" value="Nextdoor"> Nextdoor</label></fieldset><div class="field"><label for="f3">What&#x27;s happening this month? Specials, events, new items, holidays, news <span class=req aria-hidden=true>*</span></label><textarea id="f3" name="This month" required></textarea></div><div class="field"><label for="f4">Hours or schedule changes?</label><textarea id="f4" name="Hours changes"></textarea></div><div class="field"><label for="f5">Anything to promote most?</label><input type="text" id="f5" name="Promote most"></div><div class="field"><label for="f6">Your style <span class=req aria-hidden=true>*</span></label><select id="f6" name="Style" required><option value="">Choose one</option><option>Friendly and casual</option><option>Professional</option><option>Fun and playful</option><option>Warm and family-style</option></select></div><div class="field"><label for="f7">Words or topics to avoid</label><input type="text" id="f7" name="Avoid"></div><div class="field"><label for="f8">Paste any new Google reviews you&#x27;d like reply drafts for</label><textarea id="f8" name="Reviews"></textarea></div><div class="field"><label for="f9">Photos you&#x27;ll post: describe them in a few words so captions match</label><textarea id="f9" name="Photos"></textarea></div><p class="hint">Please do not paste card numbers or customer personal details.</p>
+<button type="submit" class="btn">Submit</button>
+</form>
+</div><script>
+document.querySelector('form').addEventListener('submit', function (e) {
+  if (!document.querySelector('input[name="Platforms"]:checked')) { e.preventDefault(); alert('Please choose at least one platform.'); }
+});
+</script>
+</main>
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Collar City Tech Help &middot; Based in Troy, NY</p>
+    <p>Collar City Tech Help uses AI tools to prepare our work. Everything is reviewed under the oversight of Alex Baldwin, a UAlbany cybersecurity student. We provide general guidance, not legal advice, and no service can guarantee you'll never be hacked.</p>
+  </div>
+</footer>
+</body>
+</html>

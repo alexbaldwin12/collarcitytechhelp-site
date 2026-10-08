@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security Scorecard Questionnaire | Collar City Tech Help</title>
+<meta name="description" content="Questionnaire for your Collar City Tech Help Security Scorecard.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://collarcitytechhelp.com/scorecard-form/">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+  :root { --navy: #1e407d; --navy-dark: #163160; --text: #1a1a1a; --muted: #4a4a4a; --line: #d9dde3; --soft: #f4f6f9; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: #fff; color: var(--text); font-family: Arial, Helvetica, sans-serif; font-size: 17px; line-height: 1.6; }
+  a { color: var(--navy); }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  header { border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 14px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 1.15rem; }
+  .brand img { width: 48px; height: 48px; display: block; }
+  nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+  nav a { text-decoration: none; font-size: 1rem; color: var(--navy); padding: 6px 0; }
+  nav a:hover { text-decoration: underline; }
+  .hero { padding-top: 64px; padding-bottom: 56px; }
+  h1 { color: var(--navy); font-size: 2.4rem; line-height: 1.2; margin: 0 0 16px; max-width: 700px; }
+  h2 { color: var(--navy); font-size: 1.7rem; line-height: 1.25; margin: 0 0 14px; }
+  h3 { color: var(--text); font-size: 1.15rem; margin: 0 0 6px; }
+  p { margin: 0 0 14px; }
+  .lead { font-size: 1.2rem; color: var(--muted); max-width: 640px; margin-bottom: 24px; }
+  .btn { display: inline-block; background: var(--navy); color: #fff; text-decoration: none; padding: 14px 28px; border-radius: 4px; font-weight: bold; font-size: 1rem; }
+  .btn:hover, .btn:focus { background: var(--navy-dark); }
+  a:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+  section { padding: 52px 0; border-top: 1px solid var(--line); }
+  .intro { max-width: 680px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 20px; }
+  ul { margin: 8px 0 0; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  .packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px; }
+  .pkg { border: 1px solid var(--line); border-top: 4px solid var(--navy); border-radius: 4px; padding: 22px; background: #fff; }
+  .pkg h3 { margin-bottom: 2px; }
+  .price { color: var(--navy); font-size: 2rem; font-weight: bold; margin: 4px 0 10px; line-height: 1.2; }
+  .price small { font-size: 1rem; font-weight: normal; color: var(--muted); }
+  .pkg p { color: var(--muted); margin: 0; }
+  .soft { background: var(--soft); }
+  .why { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px; margin-top: 20px; }
+  .why p { margin: 0; color: var(--muted); }
+  .faq h3 { margin-top: 22px; color: var(--navy); }
+  .faq h3:first-of-type { margin-top: 8px; }
+  .faq p { max-width: 680px; margin-bottom: 0; }
+  .note { font-size: 0.95rem; color: var(--muted); }
+  footer { border-top: 1px solid var(--line); padding: 28px 0 40px; font-size: 0.95rem; color: var(--muted); }
+  footer p { margin: 0 0 8px; max-width: 760px; }
+  @media (max-width: 800px) {
+    .packages { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) {
+    .wrap { padding: 0 20px; }
+    header .wrap { flex-direction: column; align-items: flex-start; gap: 8px; }
+    h1 { font-size: 1.9rem; }
+    h2 { font-size: 1.5rem; }
+    .hero { padding-top: 40px; padding-bottom: 36px; }
+    section { padding: 40px 0; }
+    .two, .why { grid-template-columns: 1fr; gap: 24px; }
+    .btn { display: block; text-align: center; }
+  }
+
+  .btn.soon { background: #fff; color: var(--navy); border: 2px solid var(--navy); cursor: default; padding: 12px 26px; }
+  .btn.soon:hover { background: #fff; }
+  .quiz { max-width: 680px; margin-top: 20px; }
+  .q { border: 1px solid var(--line); border-radius: 4px; padding: 14px 16px; margin: 0 0 12px; background: #fff; }
+  .q legend { padding: 0 6px; font-weight: bold; color: var(--navy); }
+  .q p { margin: 0 0 8px; }
+  .q label { display: inline-block; margin-right: 22px; cursor: pointer; padding: 6px 0; }
+  .q input { width: 18px; height: 18px; margin-right: 6px; vertical-align: -3px; accent-color: #1e407d; }
+  button.btn { border: 0; cursor: pointer; font-family: inherit; }
+  #result { display: none; border: 2px solid var(--navy); border-radius: 4px; padding: 22px; margin-top: 22px; background: #fff; }
+  #result .score { color: var(--navy); font-size: 2.6rem; font-weight: bold; line-height: 1.1; }
+  #qerr { color: #8a1c1c; display: none; margin: 8px 0 0; }
+  .sample { border: 1px solid var(--line); border-radius: 4px; padding: 22px; background: #fff; max-width: 720px; margin-top: 20px; }
+  .sample .label { display: inline-block; background: var(--navy); color: #fff; font-weight: bold; font-size: 0.85rem; letter-spacing: 1px; padding: 4px 10px; margin-bottom: 12px; }
+  .sample table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 0.95rem; }
+  .sample th, .sample td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+  .sample th { background: var(--soft); color: var(--navy); }
+  .tablewrap { overflow-x: auto; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
+  .step { border-top: 4px solid var(--navy); padding-top: 10px; }
+  .step .n { color: var(--navy); font-weight: bold; font-size: 1.6rem; }
+  @media (max-width: 800px) { .steps { grid-template-columns: 1fr; } }
+
+  .formwrap { max-width: 680px; }
+  .note { background: #fff; border: 2px solid var(--navy); border-radius: 4px; padding: 14px 16px; font-weight: bold; color: var(--navy); margin: 16px 0 24px; }
+  .field { margin: 0 0 20px; }
+  .field > label, .field > .lab { display: block; font-weight: bold; margin-bottom: 6px; }
+  .field .hint { display: block; font-weight: normal; color: var(--muted); font-size: 0.92rem; }
+  .field input[type=text], .field input[type=email], .field input[type=url], .field select, .field textarea { width: 100%; box-sizing: border-box; font: inherit; padding: 10px 12px; border: 1px solid #8b95a5; border-radius: 4px; background: #fff; color: var(--text); }
+  .field textarea { min-height: 110px; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid var(--navy); outline-offset: 1px; }
+  .checks label { display: block; font-weight: normal; padding: 6px 0; cursor: pointer; }
+  .checks input { width: 18px; height: 18px; margin-right: 8px; vertical-align: -3px; accent-color: #1e407d; }
+  .req { color: #8a1c1c; }
+  h2.sec { color: var(--navy); font-size: 1.25rem; margin: 32px 0 14px; padding-top: 8px; border-top: 1px solid var(--line); }
+  button.btn { border: 0; cursor: pointer; font-family: inherit; font-size: 1rem; }
+  .hp { position: absolute; left: -9999px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/cct-logo.jpg" width="48" height="48" alt="Collar City Tech Help logo"><span>Collar City Tech Help</span></a>
+    <nav aria-label="Main"><a href="/">Home</a></nav>
+  </div>
+</header>
+<main><div class="wrap hero formwrap">
+<h1>Security Scorecard Questionnaire</h1>
+<p class="lead">Takes about 10 minutes. Answer honestly; there are no wrong answers. "Not sure" is a fine answer.</p>
+<p class="note">Never type a password or account number into this form.</p>
+<form action="https://formsubmit.co/collarcitytechhelp@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="New Security Scorecard questionnaire">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_next" value="https://collarcitytechhelp.com/thanks-scorecard/">
+<input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<h2 class="sec">About your business</h2><div class="field"><label for="f1">Business name <span class=req aria-hidden=true>*</span></label><input type="text" id="f1" name="Business name" required></div><div class="field"><label for="f2">Your name <span class=req aria-hidden=true>*</span></label><input type="text" id="f2" name="Your name" required></div><div class="field"><label for="f3">Email to send your report to <span class=req aria-hidden=true>*</span><span class="hint">Must match the email used to pay.</span></label><input type="email" id="f3" name="email" required></div><div class="field"><label for="f4">Business website</label><input type="url" id="f4" name="Business website"></div><div class="field"><label for="f5">The domain your business email uses, e.g. yourshop.com <span class=req aria-hidden=true>*</span><span class="hint">If you use a free email like Gmail or Yahoo, write that, for example &quot;gmail.com&quot;.</span></label><input type="text" id="f5" name="Email domain" required></div><div class="field"><label for="f6">Industry <span class=req aria-hidden=true>*</span></label><select id="f6" name="Industry" required><option value="">Choose one</option><option>Dental/medical office</option><option>Insurance</option><option>Accounting/bookkeeping</option><option>Real estate</option><option>Law office</option><option>Restaurant/cafe</option><option>Salon/spa</option><option>Retail</option><option>Contractor/trades</option><option>Other</option></select></div><div class="field"><label for="f7">How many people use computers or phones for work? <span class=req aria-hidden=true>*</span></label><select id="f7" name="Team size" required><option value="">Choose one</option><option>1</option><option>2-5</option><option>6-10</option><option>11-20</option><option>20+</option></select></div><div class="field"><label for="f8">Do you store customer information like names, addresses, payment info, or records? <span class=req aria-hidden=true>*</span></label><select id="f8" name="Stores customer info" required><option value="">Choose one</option><option>Yes</option><option>No</option><option>Not sure</option></select></div><h2 class="sec">Passwords and logins</h2><div class="field"><label for="f9">Do people reuse the same password across work accounts? <span class=req aria-hidden=true>*</span></label><select id="f9" name="Password reuse" required><option value="">Choose one</option><option>Often</option><option>Sometimes</option><option>Rarely</option><option>Not sure</option></select></div><div class="field"><label for="f10">Do you use a password manager (like Bitwarden, 1Password, Apple Passwords)? <span class=req aria-hidden=true>*</span></label><select id="f10" name="Password manager" required><option value="">Choose one</option><option>Yes</option><option>No</option><option>Not sure</option></select></div><div class="field"><label for="f11">Is two-step login (a code or app approval) turned on for business email? <span class=req aria-hidden=true>*</span></label><select id="f11" name="Two-step: email" required><option value="">Choose one</option><option>Yes</option><option>No</option><option>Not sure</option></select></div><div class="field"><label for="f12">Is two-step login turned on for your bank / payment accounts? <span class=req aria-hidden=true>*</span></label><select id="f12" name="Two-step: bank" required><option value="">Choose one</option><option>Yes</option><option>No</option><option>Not sure</option></select></div><div class="field"><label for="f13">Is two-step login turned on for social media accounts? <span class=req aria-hidden=true>*</span></label><select id="f13" name="Two-step: social" required><option value="">Choose one</option><option>Yes</option><option>No</option><option>Not sure</option></select></div><div class="field"><label for="f14">Do staff share one login for anything? <span class=req aria-hidden=true>*</span></label><select id="f14" name="Shared login" required><option value="">Choose one</option><option>Yes</option><option>No</option><option>Not sure</option></select></div><h2 class="sec">Devices and updates</h2><div class="field"><label for="f15">Do computers and phones install updates automatically? <span class=req aria-hidden=true>*</span></label><select id="f15" name="Auto updates" required><option value="">Choose one</option><option>Yes</option><option>No</option><option>Not sure</option></select></div><div class="field"><label for="f16">Are work computers locked with a password or PIN when unattended? <span class=req aria-hidden=true>*</span></label><select id="f16" name="Screen lock" required><option value="">Choose one</option><option>Yes</option><option>No</option><option>Not sure</option></select></div><div class="field"><label for="f17">Do any work devices run old systems (e.g. Windows 7/8/10 past support, very old phones)? <span class=req aria-hidden=true>*</span></label><select id="f17" name="Old systems" required><option value="">Choose one</option><option>Yes</option><option>No</option><option>Not sure</option></select></div><h2 class="sec">Backups</h2><div class="field"><label for="f18">Are important files backed up automatically? <span class=req aria-hidden=true>*</span></label><select id="f18" name="Backups" required><option value="">Choose one</option><option>Yes, to the cloud</option><option>Yes, to a drive</option><option>No</option><option>Not sure</option></select></div><div class="field"><label for="f19">Have you ever tried restoring a backup to make sure it works? <span class=req aria-hidden=true>*</span></label><select id="f19" name="Restore tested" required><option value="">Choose one</option><option>Yes</option><option>No</option></select></div><h2 class="sec">Email and scams</h2><div class="field"><label for="f20">Has anyone received a fake invoice, fake &quot;password reset&quot;, or suspicious payment request in the last year? <span class=req aria-hidden=true>*</span></label><select id="f20" name="Scam attempts" required><option value="">Choose one</option><option>Yes</option><option>No</option><option>Not sure</option></select></div><div class="field"><label for="f21">Has staff had any training on spotting scam emails? <span class=req aria-hidden=true>*</span></label><select id="f21" name="Scam training" required><option value="">Choose one</option><option>Yes</option><option>No</option></select></div><div class="field"><label for="f22">Who can approve sending money or changing payment details? <span class=req aria-hidden=true>*</span></label><select id="f22" name="Payment approval" required><option value="">Choose one</option><option>One person</option><option>Two people must approve</option><option>Not sure</option></select></div><h2 class="sec">Wi-Fi and network</h2><div class="field"><label for="f23">Do customers use the same Wi-Fi as your work devices? <span class=req aria-hidden=true>*</span></label><select id="f23" name="Shared Wi-Fi" required><option value="">Choose one</option><option>Yes</option><option>No, separate guest network</option><option>Not sure</option></select></div><div class="field"><label for="f24">Has the router&#x27;s default admin password been changed? <span class=req aria-hidden=true>*</span></label><select id="f24" name="Router password changed" required><option value="">Choose one</option><option>Yes</option><option>No</option><option>Not sure</option></select></div><h2 class="sec">Wrap-up</h2><div class="field"><label for="f25">Anything that&#x27;s worried you or gone wrong recently?</label><textarea id="f25" name="Worries"></textarea></div><div class="field"><label for="f26">Biggest tech headache that eats your time?</label><textarea id="f26" name="Biggest headache"></textarea></div>
+<button type="submit" class="btn">Submit</button>
+</form>
+</div></main>
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Collar City Tech Help &middot; Based in Troy, NY</p>
+    <p>Collar City Tech Help uses AI tools to prepare our work. Everything is reviewed under the oversight of Alex Baldwin, a UAlbany cybersecurity student. We provide general guidance, not legal advice, and no service can guarantee you'll never be hacked.</p>
+  </div>
+</footer>
+</body>
+</html>
