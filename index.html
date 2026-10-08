@@ -164,6 +164,13 @@
   .q label { display: inline-block; margin-right: 22px; cursor: pointer; padding: 6px 0; }
   .q input { width: 18px; height: 18px; margin-right: 6px; vertical-align: -3px; accent-color: #1e407d; }
   button.btn { border: 0; cursor: pointer; font-family: inherit; }
+  .optin { background: var(--soft); border: 1px solid var(--line); border-radius: 4px; padding: 16px 18px; margin: 18px 0; }
+  .optin h3 { margin-top: 0; }
+  .optin label { display: block; font-weight: bold; margin: 8px 0 4px; }
+  .optin label.chk { font-weight: normal; }
+  .optin input[type=email] { width: 100%; max-width: 380px; padding: 10px; font-size: 1rem; border: 1px solid #8a93a3; border-radius: 4px; }
+  .optin .btn { border: 0; cursor: pointer; font-family: inherit; margin-top: 10px; }
+  .hp { position: absolute; left: -9999px; }
   #result { display: none; border: 2px solid var(--navy); border-radius: 4px; padding: 22px; margin-top: 22px; background: #fff; }
   #result .score { color: var(--navy); font-size: 2.6rem; font-weight: bold; line-height: 1.1; }
   #qerr { color: #8a1c1c; display: none; margin: 8px 0 0; }
@@ -189,6 +196,7 @@
       <a href="#how">How it works</a>
       <a href="#about">About</a>
       <a href="#faq">Questions</a>
+      <a href="/checklist/">Free checklist</a>
       <a href="/blog/">Blog</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -206,9 +214,10 @@
   <section id="quiz" class="soft">
     <div class="wrap">
       <h2>Free 3-minute security quiz</h2>
-      <p class="intro">Ten yes or no questions. You get a score out of 10 and three tips right away. Everything happens in your browser: we collect nothing and send nothing anywhere.</p>
+      <p class="intro">Ten yes or no questions. You get a score out of 10 and three tips right away. Your answers are scored in your browser and are not sent to us. At the end you can choose to email yourself a copy of your results.</p>
       <form class="quiz" id="quizForm" novalidate>
         <fieldset class="q"><legend>Question 1 of 10</legend><p>Is two-step login (a code or app approval) turned on for your business email?</p><label><input type="radio" name="q0" value="1"> Yes</label><label><input type="radio" name="q0" value="0"> No or not sure</label></fieldset><fieldset class="q"><legend>Question 2 of 10</legend><p>Do you use a password manager instead of reusing passwords?</p><label><input type="radio" name="q1" value="1"> Yes</label><label><input type="radio" name="q1" value="0"> No or not sure</label></fieldset><fieldset class="q"><legend>Question 3 of 10</legend><p>Does every employee have their own login, with nothing shared?</p><label><input type="radio" name="q2" value="1"> Yes</label><label><input type="radio" name="q2" value="0"> No or not sure</label></fieldset><fieldset class="q"><legend>Question 4 of 10</legend><p>Do your computers and phones install updates automatically?</p><label><input type="radio" name="q3" value="1"> Yes</label><label><input type="radio" name="q3" value="0"> No or not sure</label></fieldset><fieldset class="q"><legend>Question 5 of 10</legend><p>Are your important files backed up automatically?</p><label><input type="radio" name="q4" value="1"> Yes</label><label><input type="radio" name="q4" value="0"> No or not sure</label></fieldset><fieldset class="q"><legend>Question 6 of 10</legend><p>Have you ever tested restoring a backup?</p><label><input type="radio" name="q5" value="1"> Yes</label><label><input type="radio" name="q5" value="0"> No or not sure</label></fieldset><fieldset class="q"><legend>Question 7 of 10</legend><p>Does a second person confirm any change to payment or bank details?</p><label><input type="radio" name="q6" value="1"> Yes</label><label><input type="radio" name="q6" value="0"> No or not sure</label></fieldset><fieldset class="q"><legend>Question 8 of 10</legend><p>Has your staff been shown how to spot scam emails and fake invoices?</p><label><input type="radio" name="q7" value="1"> Yes</label><label><input type="radio" name="q7" value="0"> No or not sure</label></fieldset><fieldset class="q"><legend>Question 9 of 10</legend><p>Is your Wi-Fi router's admin password changed from the default?</p><label><input type="radio" name="q8" value="1"> Yes</label><label><input type="radio" name="q8" value="0"> No or not sure</label></fieldset><fieldset class="q"><legend>Question 10 of 10</legend><p>Does your email domain have SPF, DKIM, and DMARC set up (or do you know it does)?</p><label><input type="radio" name="q9" value="1"> Yes</label><label><input type="radio" name="q9" value="0"> No or not sure</label></fieldset>
+        <p id="qprog" class="note" aria-live="polite">0 of 10 answered</p>
         <button type="submit" class="btn">See my score</button>
         <p id="qerr" role="alert">Please answer all 10 questions.</p>
       </form>
@@ -218,6 +227,23 @@
         <h3>Your top tips</h3>
         <ul id="tipList"></ul>
         <p class="note">This quiz gives general guidance only. It is not a full assessment.</p>
+        <div class="optin" id="optin">
+          <h3>Want these results in your inbox?</h3>
+          <p>We will email your score and tips, plus our free 10-minute security checklist, followed by a few short tips. Unsubscribe any time by replying STOP.</p>
+          <form id="optinForm" novalidate>
+            <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="_subject" value="Quiz opt-in: results requested">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="Quiz score" id="optScore" value="">
+            <input type="hidden" name="Gaps (tips shown)" id="optGaps" value="">
+            <label for="optEmail">Your email</label>
+            <input type="email" id="optEmail" name="Email" autocomplete="email" required>
+            <label class="chk"><input type="checkbox" id="optConsent"> Yes, email me my results and a few follow-up tips.</label>
+            <button type="submit" class="btn alt" id="optBtn">Email me my results</button>
+            <p id="optMsg" role="status" class="note"></p>
+          </form>
+          <p class="note">Or grab the <a href="/checklist/">free 10-minute security checklist</a> on its own.</p>
+        </div>
         <h3 id="ctaHead">Want the full picture?</h3>
         <p id="ctaText"></p>
         <a class="btn" id="quizCta" href="https://buy.stripe.com/4gMcN74XW4ZObIr4uwd7q00">Get my Security Scorecard — $79</a>
@@ -323,6 +349,8 @@
 
 <footer>
   <div class="wrap">
+    <p><strong>Areas:</strong> <a href="/areas/troy-ny/">Troy</a> &middot; <a href="/areas/albany-ny/">Albany</a> &middot; <a href="/areas/schenectady-ny/">Schenectady</a> &middot; <a href="/areas/cohoes-ny/">Cohoes</a> &middot; <a href="/areas/watervliet-ny/">Watervliet</a> &middot; <a href="/areas/waterford-ny/">Waterford</a> &middot; <a href="/areas/latham-ny/">Latham</a> &middot; <a href="/areas/clifton-park-ny/">Clifton Park</a> &middot; <a href="/areas/saratoga-springs-ny/">Saratoga Springs</a> &middot; <a href="/areas/east-greenbush-ny/">East Greenbush</a></p>
+    <p><strong>Industries:</strong> <a href="/industries/restaurants-cafes/">Restaurants and cafes</a> &middot; <a href="/industries/salons-barbers/">Salons and barbers</a> &middot; <a href="/industries/contractors-trades/">Contractors</a> &middot; <a href="/industries/dental-medical-offices/">Dental and medical offices</a> &middot; <a href="/industries/retail-shops/">Retail shops</a> &middot; <a href="/industries/real-estate-agents/">Real estate agents</a></p>
     <p>&copy; 2026 Collar City Tech Help &middot; Based in Troy, NY</p>
     <p>Collar City Tech Help uses AI tools to prepare our work. Everything is reviewed under the oversight of Alex Baldwin, a UAlbany cybersecurity student. We provide general guidance, not legal advice, and no service can guarantee you'll never be hacked.</p>
   </div>
@@ -345,6 +373,25 @@ var TIPS = ["Turn on two-step login for your business email first. It blocks mos
     }
   });
   var form = document.getElementById('quizForm');
+
+  var qp = document.getElementById('qprog');
+  function updProg() { var n = 0; for (var i = 0; i < 10; i++) if (form.querySelector('input[name=q' + i + ']:checked')) n++; if (qp) qp.textContent = n + ' of 10 answered'; }
+  form.addEventListener('change', updProg);
+  var lastScore = 0, lastGaps = '';
+  var of = document.getElementById('optinForm');
+  of.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var m = document.getElementById('optMsg'), em = document.getElementById('optEmail');
+    if (!em.value || em.value.indexOf('@') < 1) { m.textContent = 'Please enter a valid email address.'; return; }
+    if (!document.getElementById('optConsent').checked) { m.textContent = 'Please tick the box so we know you want the emails.'; return; }
+    document.getElementById('optScore').value = lastScore + ' out of 10';
+    document.getElementById('optGaps').value = lastGaps;
+    var b = document.getElementById('optBtn'); b.disabled = true; b.textContent = 'Sending...';
+    fetch('https://formsubmit.co/ajax/collarcitytechhelp@gmail.com', { method: 'POST', body: new FormData(of), headers: { 'Accept': 'application/json' } })
+      .then(function (r) { return r.json(); })
+      .then(function (j) { if (j && (j.success === true || j.success === 'true')) { m.textContent = 'Thank you. Your results are on the way. You can also download the checklist now: /checklist/'; of.querySelector('button').style.display = 'none'; } else { throw 1; } })
+      .catch(function () { b.disabled = false; b.textContent = 'Email me my results'; m.textContent = 'Sorry, that did not send. Email collarcitytechhelp@gmail.com and I will send your results by hand.'; });
+  });
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var score = 0, tips = [], answered = 0;
@@ -357,6 +404,7 @@ var TIPS = ["Turn on two-step login for your business email first. It blocks mos
     var err = document.getElementById('qerr');
     if (answered < 10) { err.style.display = 'block'; return; }
     err.style.display = 'none';
+    lastScore = score; lastGaps = tips.slice(0, 3).join(' | ');
     document.getElementById('scoreNum').textContent = score;
     var msg = score >= 9 ? 'Strong. You have most of the basics covered.' : score >= 6 ? 'A decent start with a few gaps worth closing.' : 'There is real room to improve, and the good news is the first fixes are quick.';
     document.getElementById('scoreMsg').textContent = msg;
