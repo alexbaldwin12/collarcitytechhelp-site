@@ -134,26 +134,11 @@ document.querySelector('form').addEventListener('submit', function (e) {
 <script>
 (function () {
   var form = document.querySelector('form');
-  var next = form.querySelector('input[name="_next"]').value;
-  form.addEventListener('submit', function (e) {
-    if (e.defaultPrevented) return;
-    e.preventDefault();
-    var btn = form.querySelector('button[type=submit]');
-    btn.disabled = true; btn.textContent = 'Sending...';
-    var data = new FormData(form);
-    var picked = [].map.call(form.querySelectorAll('input[name="Platforms"]:checked'), function (c) { return c.value; }).join(', ');
-    data.delete('Platforms'); data.append('Platforms', picked);
-    fetch('https://formsubmit.co/ajax/collarcitytechhelp@gmail.com', { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
-      .then(function (r) { return r.json(); })
-      .then(function (j) {
-        if (j && (j.success === true || j.success === 'true')) { window.location.href = next; }
-        else { throw new Error('failed'); }
-      })
-      .catch(function () {
-        btn.disabled = false; btn.textContent = 'Submit';
-        var m = document.getElementById('sendErr');
-        m.style.display = 'block';
-      });
+  form.addEventListener('submit', function () {
+    var boxes = form.querySelectorAll('input[name="Platforms"]');
+    var picked = [].filter.call(boxes, function (c) { return c.checked; }).map(function (c) { return c.value; }).join(', ');
+    [].forEach.call(boxes, function (c) { c.disabled = true; });
+    var h = document.createElement('input'); h.type = 'hidden'; h.name = 'Platforms'; h.value = picked; form.appendChild(h);
   });
 })();
 </script>

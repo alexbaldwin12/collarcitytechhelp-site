@@ -126,30 +126,7 @@
 <button type="submit" class="btn">Submit</button>
 <p id="sendErr" role="alert" style="display:none;color:#8a1c1c;font-weight:bold">Sorry, that did not send. Please try again, or email your answers to collarcitytechhelp@gmail.com.</p>
 </form>
-</div><script>
-(function () {
-  var form = document.querySelector('form');
-  var next = form.querySelector('input[name="_next"]').value;
-  form.addEventListener('submit', function (e) {
-    if (e.defaultPrevented) return;
-    e.preventDefault();
-    var btn = form.querySelector('button[type=submit]');
-    btn.disabled = true; btn.textContent = 'Sending...';
-    var data = new FormData(form);
-    fetch('https://formsubmit.co/ajax/collarcitytechhelp@gmail.com', { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
-      .then(function (r) { return r.json(); })
-      .then(function (j) {
-        if (j && (j.success === true || j.success === 'true')) { window.location.href = next; }
-        else { throw new Error('failed'); }
-      })
-      .catch(function () {
-        btn.disabled = false; btn.textContent = 'Submit';
-        var m = document.getElementById('sendErr');
-        m.style.display = 'block';
-      });
-  });
-})();
-</script>
+</div><!-- native POST (not AJAX) so FormSubmit sends the autoresponse email -->
 </main>
 <footer>
   <div class="wrap">
