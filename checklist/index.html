@@ -75,7 +75,8 @@
 <p class="byline">By Alex Baldwin, Collar City Tech Help, Troy, NY.</p>
 <p>Ten quick checks, about a minute each, written for owners who are not technical. Two-step login, passwords, updates, backups, who has access, fake invoices, lost devices, Wi-Fi, email protection and a simple "if something goes wrong" note. One page front and back, with tick boxes.</p>
 <h2>Get the checklist</h2>
-<form id="clForm" class="optform" novalidate>
+<form id="clForm" class="optform" action="https://formsubmit.co/collarcitytechhelp@gmail.com" method="POST" novalidate>
+<input type="hidden" name="_next" value="https://collarcitytechhelp.com/thanks-checklist/">
 <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 <input type="hidden" name="_subject" value="Checklist signup">
 <input type="hidden" name="_template" value="table">
@@ -98,15 +99,10 @@
 (function(){
  var f=document.getElementById('clForm');
  f.addEventListener('submit',function(e){
-  e.preventDefault();
   var m=document.getElementById('clMsg'),em=document.getElementById('clEmail');
-  if(!em.value||em.value.indexOf('@')<1){m.textContent='Please enter a valid email address.';return;}
-  if(!document.getElementById('clConsent').checked){m.textContent='Please tick the box so we know you want the follow-up tips.';return;}
-  var b=document.getElementById('clBtn');b.disabled=true;b.textContent='Sending...';
-  fetch('https://formsubmit.co/ajax/collarcitytechhelp@gmail.com',{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
-  .then(function(r){return r.json();})
-  .then(function(j){if(j&&(j.success===true||j.success==='true')){f.style.display='none';document.getElementById('dl').style.display='block';}else{throw 1;}})
-  .catch(function(){b.disabled=false;b.textContent='Get the free checklist';m.textContent='Sorry, that did not send. Email collarcitytechhelp@gmail.com and I will send it by hand.';});
+  if(!em.value||em.value.indexOf('@')<1){e.preventDefault();m.textContent='Please enter a valid email address.';return;}
+  if(!document.getElementById('clConsent').checked){e.preventDefault();m.textContent='Please tick the box so we know you want the follow-up tips.';return;}
+  var b=document.getElementById('clBtn');b.textContent='Sending...';
  });
 })();
 </script>

@@ -276,7 +276,8 @@
         <div class="optin" id="optin">
           <h3>Want these results in your inbox?</h3>
           <p>We will email your score and tips, plus our free 10-minute security checklist, followed by a few short tips. Unsubscribe any time by replying STOP.</p>
-          <form id="optinForm" novalidate>
+          <form id="optinForm" action="https://formsubmit.co/collarcitytechhelp@gmail.com" method="POST" novalidate>
+            <input type="hidden" name="_next" value="https://collarcitytechhelp.com/thanks-quiz/">
             <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
             <input type="hidden" name="_subject" value="Quiz opt-in: results requested">
             <input type="hidden" name="_template" value="table">
@@ -431,17 +432,12 @@ var TIPS = ["Turn on two-step login for your business email first. It blocks mos
   var lastScore = 0, lastGaps = '';
   var of = document.getElementById('optinForm');
   of.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var m = document.getElementById('optMsg'), em = document.getElementById('optEmail');
-    if (!em.value || em.value.indexOf('@') < 1) { m.textContent = 'Please enter a valid email address.'; return; }
-    if (!document.getElementById('optConsent').checked) { m.textContent = 'Please tick the box so we know you want the emails.'; return; }
+var m = document.getElementById('optMsg'), em = document.getElementById('optEmail');
+    if (!em.value || em.value.indexOf('@') < 1) { e.preventDefault(); m.textContent = 'Please enter a valid email address.'; return; }
+    if (!document.getElementById('optConsent').checked) { e.preventDefault(); m.textContent = 'Please tick the box so we know you want the emails.'; return; }
     document.getElementById('optScore').value = lastScore + ' out of 10';
     document.getElementById('optGaps').value = lastGaps;
-    var b = document.getElementById('optBtn'); b.disabled = true; b.textContent = 'Sending...';
-    fetch('https://formsubmit.co/ajax/collarcitytechhelp@gmail.com', { method: 'POST', body: new FormData(of), headers: { 'Accept': 'application/json' } })
-      .then(function (r) { return r.json(); })
-      .then(function (j) { if (j && (j.success === true || j.success === 'true')) { m.textContent = 'Thank you. Your results are on the way. You can also download the checklist now: /checklist/'; of.querySelector('button').style.display = 'none'; } else { throw 1; } })
-      .catch(function () { b.disabled = false; b.textContent = 'Email me my results'; m.textContent = 'Sorry, that did not send. Email collarcitytechhelp@gmail.com and I will send your results by hand.'; });
+    document.getElementById('optBtn').textContent = 'Sending...';
   });
   form.addEventListener('submit', function (e) {
     e.preventDefault();
