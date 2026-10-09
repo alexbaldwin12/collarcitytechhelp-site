@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPF, DKIM and DMARC Explained for Small Businesses</title>
+<meta name="description" content="What SPF, DKIM and DMARC mean in plain English, how to ask your email provider about them, and how to look up your own records for free.">
+<link rel="canonical" href="https://collarcitytechhelp.com/blog/spf-dkim-dmarc-explained-small-business/">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Collar City Tech Help">
+<meta property="og:title" content="SPF, DKIM and DMARC Explained for Small Businesses">
+<meta property="og:description" content="What SPF, DKIM and DMARC mean in plain English, how to ask your email provider about them, and how to look up your own records for free.">
+<meta property="og:url" content="https://collarcitytechhelp.com/blog/spf-dkim-dmarc-explained-small-business/">
+<meta property="og:image" content="https://collarcitytechhelp.com/cct-logo.jpg">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "SPF, DKIM and DMARC Explained for Small Businesses",
+ "description": "What SPF, DKIM and DMARC mean in plain English, how to ask your email provider about them, and how to look up your own records for free.",
+ "datePublished": "2026-10-09",
+ "dateModified": "2026-10-09",
+ "mainEntityOfPage": "https://collarcitytechhelp.com/blog/spf-dkim-dmarc-explained-small-business/",
+ "author": {
+  "@type": "Person",
+  "name": "Alex Baldwin"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "Collar City Tech Help",
+  "logo": {
+   "@type": "ImageObject",
+   "url": "https://collarcitytechhelp.com/cct-logo.jpg"
+  }
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What are SPF, DKIM and DMARC in simple terms?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "SPF lists which servers may send email for your domain. DKIM adds a digital signature to your messages. DMARC tells receiving servers what to do with mail that fails those checks, and where to send reports."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What does it mean if I have no DMARC record?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It means you have not published instructions for receivers, and you will not get reports about mail sent in your name. It does not mean your email was hacked. A common first step is adding a record with the none policy once SPF and DKIM are working."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does the Security Scorecard log in to my email?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. The Scorecard only uses public DNS lookups of your email domain, covering SPF, DKIM at common selectors, DMARC and MX, plus your answers to a short questionnaire. We never log in to your accounts."
+   }
+  }
+ ]
+}
+</script>
+<style>
+  :root { --navy: #1e407d; --navy-dark: #163160; --text: #1a1a1a; --muted: #4a4a4a; --line: #d9dde3; --soft: #f4f6f9; }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: #fff; color: var(--text); font-family: Arial, Helvetica, sans-serif; font-size: 17px; line-height: 1.6; }
+  a { color: var(--navy); }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  .narrow { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  header { border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 14px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 1.15rem; }
+  .brand img { width: 48px; height: 48px; display: block; }
+  nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+  nav a { text-decoration: none; font-size: 1rem; color: var(--navy); padding: 6px 0; }
+  nav a:hover { text-decoration: underline; }
+  h1 { color: var(--navy); font-size: 2.2rem; line-height: 1.2; margin: 8px 0 12px; }
+  h2 { color: var(--navy); font-size: 1.5rem; line-height: 1.25; margin: 34px 0 12px; }
+  h3 { color: var(--text); font-size: 1.15rem; margin: 22px 0 6px; }
+  p { margin: 0 0 14px; }
+  ul, ol { margin: 8px 0 16px; padding-left: 24px; }
+  li { margin-bottom: 6px; }
+  blockquote { margin: 16px 0; padding: 4px 18px; border-left: 4px solid var(--navy); background: var(--soft); }
+  .crumbs { font-size: 0.95rem; color: var(--muted); margin: 28px 0 0; }
+  .byline { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+  .btn { display: inline-block; background: var(--navy); color: #fff; text-decoration: none; padding: 14px 28px; border-radius: 4px; font-weight: bold; font-size: 1rem; }
+  .btn:hover, .btn:focus { background: var(--navy-dark); }
+  a:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+  .cta { border: 2px solid var(--navy); border-radius: 4px; padding: 24px; margin: 40px 0 20px; background: #fff; }
+  .cta h2 { margin-top: 0; }
+  .note { font-size: 0.95rem; color: var(--muted); }
+  .list { list-style: none; padding: 0; }
+  .list li { border-top: 1px solid var(--line); padding: 18px 0; margin: 0; }
+  .list li:last-child { border-bottom: 1px solid var(--line); }
+  .list h2 { margin: 0 0 6px; font-size: 1.3rem; }
+  .list p { margin: 0; color: var(--muted); }
+  footer { border-top: 1px solid var(--line); margin-top: 40px; padding: 28px 0 40px; font-size: 0.95rem; color: var(--muted); }
+  footer p { margin: 0 0 8px; max-width: 760px; }
+  @media (max-width: 720px) {
+    .wrap, .narrow { padding: 0 20px; }
+    header .wrap { flex-direction: column; align-items: flex-start; gap: 8px; }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.35rem; }
+    .btn { display: block; text-align: center; }
+  }
+
+  .cards { list-style:none; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; }
+  .cards li { border:1px solid var(--line); border-radius:4px; padding:14px 16px; margin:0; background:var(--soft); }
+  .cards a { font-weight:bold; }
+  .faq h3 { margin-top:18px; }
+  .pill { display:inline-block; background:var(--soft); border:1px solid var(--line); border-radius:20px; padding:2px 12px; font-size:.9rem; margin:2px 4px 2px 0; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/cct-logo.jpg" width="48" height="48" alt="Collar City Tech Help logo"><span>Collar City Tech Help</span></a>
+    <nav aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/areas/">Areas</a>
+      <a href="/industries/">Industries</a>
+      <a href="/services/">Services</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#quiz">Free quiz</a>
+    </nav>
+  </div>
+</header>
+<main>
+<div class="narrow">
+<p class="crumbs"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a></p>
+<article>
+<h1>SPF, DKIM and DMARC Explained for Small Businesses</h1>
+<p class="byline">By Alex Baldwin, Collar City Tech Help. Published October 9, 2026.</p>
+<p>Sooner or later a website host, an IT person or an email provider will mention SPF, DKIM and DMARC. They sound like alphabet soup, and most owners nod and move on. They are worth ten minutes, because they have to do with whether other people's mail servers can tell your real email from a fake one that uses your name. This post explains each one in plain English. It is general guidance, not legal advice, and setting these up does not guarantee that nobody will ever send mail pretending to be you.</p><h2>The big picture</h2><p>Anyone can type any name into the From line of an email. Mail servers that receive your messages have no built-in way to know whether a message really came from your business. SPF, DKIM and DMARC are three public settings that give them something to check. All three live in your domain's DNS, which is the public directory that says where your website and email go. Because they are public, anyone can look them up, including you.</p><h2>SPF: the list of who may send for you</h2><p>SPF stands for Sender Policy Framework. You publish a list of the mail servers allowed to send email for your domain. A receiving server checks the list. If the message came from a server that is not on it, the receiver treats the message with more suspicion.</p><p>SPF is stored as a DNS TXT record that begins with <strong>v=spf1</strong>. Google's example for a business that only sends mail through Google Workspace looks like this: v=spf1 include:_spf.google.com ~all. If you also send mail through a newsletter tool or an invoicing program, those senders normally need to be on the list too. Google's own page on <a href="https://knowledge.workspace.google.com/admin/security/set-up-spf">setting up SPF</a> has the details. Changes can take up to 48 hours to show up.</p><h2>DKIM: a signature on your mail</h2><p>DKIM stands for DomainKeys Identified Mail. Your email system adds a digital signature to each outgoing message. The matching public key sits in your DNS, so a receiving server can check that the message really was signed by your domain and was not altered on the way.</p><p>You do not create the signature by hand. Your email provider generates the key, and you or your web host publishes it in DNS. One detail to know: DKIM records are found under a name called a selector, which differs by provider. That means a lookup tool needs the right selector to find your record.</p><h2>DMARC: what to do when checks fail</h2><p>DMARC is the instruction sheet. It builds on SPF and DKIM and tells receiving servers what to do with mail that claims to be from your domain but fails those checks. A message passes DMARC if SPF or DKIM passes and lines up with the domain in the visible From address. According to Google's guide to <a href="https://knowledge.workspace.google.com/admin/security/set-up-dmarc">setting up DMARC</a>, you pick one of three policies:</p><ul><li><strong>none:</strong> deliver the message as usual, and send reports.</li><li><strong>quarantine:</strong> send it to the spam folder.</li><li><strong>reject:</strong> refuse the message.</li></ul><p>Google recommends starting with none, watching the reports, and moving toward quarantine or reject over time. The DMARC project also describes this rollout on <a href="https://dmarc.org/overview/">dmarc.org</a>. You will see the policy written as p=none, p=quarantine or p=reject inside a DNS TXT record. An address in the record, labeled rua, tells receivers where to send summary reports.</p><h2>What a missing DMARC record means</h2><p>If a lookup shows no DMARC record for your domain, it means you have not published any instructions. It does not mean your email has been hacked or that anything is broken today. Mail will usually still flow. Receivers just have no guidance from you, so each one decides on its own how to treat a failing message, and you get no reports about who is sending mail in your name. Adding a DMARC record with the none policy is a low-key first step, but get your SPF and DKIM working first. Google suggests letting them run for at least 48 hours before turning on DMARC.</p><h2>What to ask your email provider</h2><p>You do not need to touch DNS yourself. Send your provider, web host or IT person a short note like this:</p><ol><li>Is SPF set up for our domain, and does it include every service that sends email for us, such as invoicing or newsletter tools?</li><li>Is DKIM turned on for our domain, and what is our selector?</li><li>Do we have a DMARC record? If not, can you add one that starts with p=none and sends reports to an address we check?</li><li>Who gets the DMARC reports, and who will read them?</li></ol><p>Ask them to explain any change before they make it. A wrong SPF entry can send your own real mail to spam, so it is worth going slowly.</p><h2>How to check your records yourself, free</h2><p>You can look at your public records without logging in to anything. Google's <a href="https://toolbox.googleapps.com/apps/checkmx/">Check MX tool</a> in the Google Admin Toolbox checks the MX and SPF records for a domain, and lets you enter a DKIM selector if you know it. For DMARC, any free DNS lookup site that shows TXT records can find it. The DMARC record is published as a TXT record at _dmarc followed by your domain, for example _dmarc.yourbusiness.com. Searching only shows what is public, and these tools can differ in what they show, so treat the results as a starting point and not a final answer.</p><h2>How the quiz and the Scorecard fit in</h2><p>Our free <a href="https://collarcitytechhelp.com/#quiz">3-minute security quiz</a> does not look at DNS. It asks 10 yes/no questions about your habits, such as passwords, updates and backups, and gives an instant score. The $79 <a href="https://collarcitytechhelp.com/#offers">Security Scorecard</a> adds a written report. For that, we run public DNS lookups of your business email domain only, covering SPF, DKIM at common selectors, DMARC and MX. We do not log in to your email, your website or your devices, and we never ask for passwords. Because a DKIM record can sit under an uncommon selector, a lookup may not find one even when it exists, and the report says so plainly.</p><h2>Where to go next</h2><p>If your email account itself needs attention, start with our guide to <a href="/blog/how-to-turn-on-two-step-login-for-business-email/">two-step login for business email</a>. For a plan that covers more than email, see <a href="/blog/small-business-cybersecurity-checklist/">our small business cybersecurity checklist</a>, and if you are in the Collar City, our <a href="/areas/troy-ny/">Troy, NY page</a> has local details. Questions are welcome at collarcitytechhelp@gmail.com.</p>
+<div class="cta">
+<h2>See where your business stands</h2>
+<p>Take our free 3-minute security quiz: ten yes/no questions, an instant score, and three tips. No signup needed.</p>
+<a class="btn" href="/#quiz">Take the free quiz</a>
+<p class="note">Want the full picture? The <a href="/#offers">Security Scorecard</a> is a personalized written report for $79, with a full refund within 7 days if you are not satisfied.</p>
+</div>
+</article>
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Collar City Tech Help &middot; Based in Troy, NY &middot; Mail: PO Box 182, Waterford, NY 12188</p>
+    <p><a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a> &middot; <a href="/refunds/">Refunds</a></p>
+    <p>Collar City Tech Help uses AI tools to prepare our work. Everything is reviewed under the oversight of Alex Baldwin, a UAlbany cybersecurity student. We provide general guidance, not legal advice, and no service can guarantee you'll never be hacked.</p>
+  </div>
+</footer>
+</body>
+</html>
