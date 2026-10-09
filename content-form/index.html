@@ -140,6 +140,8 @@ document.querySelector('form').addEventListener('submit', function (e) {
     var btn = form.querySelector('button[type=submit]');
     btn.disabled = true; btn.textContent = 'Sending...';
     var data = new FormData(form);
+    var picked = [].map.call(form.querySelectorAll('input[name="Platforms"]:checked'), function (c) { return c.value; }).join(', ');
+    data.delete('Platforms'); data.append('Platforms', picked);
     fetch('https://formsubmit.co/ajax/collarcitytechhelp@gmail.com', { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
       .then(function (r) { return r.json(); })
       .then(function (j) {
