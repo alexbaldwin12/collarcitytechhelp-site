@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monthly Email-Domain Check (Coming Soon) | Collar City Tech Help</title>
+<meta name="description" content="A monthly check of your email-domain settings (SPF, DKIM, DMARC, MX) with a plain-English change report. Not a website scan. Planned $29/month.">
+<link rel="canonical" href="https://collarcitytechhelp.com/services/security-monitoring/">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Collar City Tech Help">
+<meta property="og:title" content="Monthly Email-Domain Check (Coming Soon) | Collar City Tech Help">
+<meta property="og:description" content="A monthly check of your email-domain settings (SPF, DKIM, DMARC, MX) with a plain-English change report. Not a website scan. Planned $29/month.">
+<meta property="og:url" content="https://collarcitytechhelp.com/services/security-monitoring/">
+<meta property="og:image" content="https://collarcitytechhelp.com/cct-logo.jpg">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://collarcitytechhelp.com/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Services",
+   "item": "https://collarcitytechhelp.com/services/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "Monthly Email-Domain Check (Coming Soon)",
+   "item": "https://collarcitytechhelp.com/services/security-monitoring/"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Does this scan my website?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. It never touches your website. It only reads public email-domain records, the kind anyone can look up."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Will it tell me if I have been hacked or my data leaked?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. It does not monitor for breaches or check for malware. If you think you are being hacked right now, contact your bank and IT provider and report it at ic3.gov."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Why would I want this?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "SPF, DKIM and DMARC help stop other people sending fake email that looks like it came from your business. They can change when you switch email tools or someone edits your DNS. A monthly look helps you notice that."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What if you cannot find my DKIM record?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "We check common selector names only. If we do not find one, it may still be set up. We will say that plainly and suggest asking your email provider to confirm."
+   }
+  }
+ ]
+}
+</script>
+<style>
+  :root { --navy: #1e407d; --navy-dark: #163160; --text: #1a1a1a; --muted: #4a4a4a; --line: #d9dde3; --soft: #f4f6f9; }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: #fff; color: var(--text); font-family: Arial, Helvetica, sans-serif; font-size: 17px; line-height: 1.6; }
+  a { color: var(--navy); }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  .narrow { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  header { border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 14px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 1.15rem; }
+  .brand img { width: 48px; height: 48px; display: block; }
+  nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+  nav a { text-decoration: none; font-size: 1rem; color: var(--navy); padding: 6px 0; }
+  nav a:hover { text-decoration: underline; }
+  h1 { color: var(--navy); font-size: 2.2rem; line-height: 1.2; margin: 8px 0 12px; }
+  h2 { color: var(--navy); font-size: 1.5rem; line-height: 1.25; margin: 34px 0 12px; }
+  h3 { color: var(--text); font-size: 1.15rem; margin: 22px 0 6px; }
+  p { margin: 0 0 14px; }
+  ul, ol { margin: 8px 0 16px; padding-left: 24px; }
+  li { margin-bottom: 6px; }
+  blockquote { margin: 16px 0; padding: 4px 18px; border-left: 4px solid var(--navy); background: var(--soft); }
+  .crumbs { font-size: 0.95rem; color: var(--muted); margin: 28px 0 0; }
+  .byline { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+  .btn { display: inline-block; background: var(--navy); color: #fff; text-decoration: none; padding: 14px 28px; border-radius: 4px; font-weight: bold; font-size: 1rem; }
+  .btn:hover, .btn:focus { background: var(--navy-dark); }
+  a:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+  .cta { border: 2px solid var(--navy); border-radius: 4px; padding: 24px; margin: 40px 0 20px; background: #fff; }
+  .cta h2 { margin-top: 0; }
+  .note { font-size: 0.95rem; color: var(--muted); }
+  .list { list-style: none; padding: 0; }
+  .list li { border-top: 1px solid var(--line); padding: 18px 0; margin: 0; }
+  .list li:last-child { border-bottom: 1px solid var(--line); }
+  .list h2 { margin: 0 0 6px; font-size: 1.3rem; }
+  .list p { margin: 0; color: var(--muted); }
+  footer { border-top: 1px solid var(--line); margin-top: 40px; padding: 28px 0 40px; font-size: 0.95rem; color: var(--muted); }
+  footer p { margin: 0 0 8px; max-width: 760px; }
+  @media (max-width: 720px) {
+    .wrap, .narrow { padding: 0 20px; }
+    header .wrap { flex-direction: column; align-items: flex-start; gap: 8px; }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.35rem; }
+    .btn { display: block; text-align: center; }
+  }
+
+  .cards { list-style:none; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; }
+  .cards li { border:1px solid var(--line); border-radius:4px; padding:14px 16px; margin:0; background:var(--soft); }
+  .cards a { font-weight:bold; }
+  .faq h3 { margin-top:18px; }
+  .pill { display:inline-block; background:var(--soft); border:1px solid var(--line); border-radius:20px; padding:2px 12px; font-size:.9rem; margin:2px 4px 2px 0; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/cct-logo.jpg" width="48" height="48" alt="Collar City Tech Help logo"><span>Collar City Tech Help</span></a>
+    <nav aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/areas/">Areas</a>
+      <a href="/industries/">Industries</a>
+      <a href="/services/">Services</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#quiz">Free quiz</a>
+    </nav>
+  </div>
+</header>
+<main>
+<div class="narrow">
+<style>
+.sf label{display:block;font-weight:bold;margin:14px 0 4px}.sf label.chk{font-weight:normal}.sf fieldset{border:0;padding:0;margin:14px 0}.sf legend{font-weight:bold}
+.sf input[type=text],.sf input[type=email],.sf textarea,.sf select{width:100%;max-width:520px;padding:10px;font-size:1rem;border:1px solid #8a93a3;border-radius:4px;font-family:inherit}
+.sf button{border:0;cursor:pointer;font-family:inherit;margin-top:16px}.hp{position:absolute;left:-9999px}.soon{display:inline-block;background:#fff3cd;border:1px solid #e0c36a;border-radius:20px;padding:2px 14px;font-weight:bold;font-size:.95rem}
+</style>
+<p class="crumbs"><a href="/">Home</a> &rsaquo; <a href="/services/">Services</a></p>
+<p><span class="soon">Coming soon</span></p>
+<h1>Monthly Email-Domain Security Monitoring</h1>
+<p class="byline">Coming soon: a short monthly report on the settings that help stop fake email from using your domain. &middot; Planned price: $29/month</p>
+<p>This service is coming soon. Join the waitlist and we will email you when it opens. The price is a plan and may change before launch.</p>
+<p>Please read this first. This does not scan your website. It does not check your site for malware or vulnerabilities, and it does not monitor for data breaches. It watches your email-domain settings (SPF, DKIM, DMARC and MX), which are public records that help stop fake email from using your business name.</p>
+<p>Each month we look those records up again, compare them with last month, and email you a short plain-English report. If something needs fixing, we give you the steps. We only use public DNS lookups on your own email domain. We never log in to anything or ask for access.</p>
+<h2>What is included</h2>
+<ul>
+<li>Monthly public DNS lookups on your email domain: SPF, DKIM (common selectors), DMARC and MX</li>
+<li>A comparison with last month: unchanged, changed, new or missing</li>
+<li>A short plain-English report by email</li>
+<li>Fix steps when something needs attention, with trusted help links</li>
+<li>A first baseline report within 2 business days of signing up</li>
+</ul>
+<h2>How it works</h2>
+<ol>
+<li>Join the waitlist. We will email you when the service opens.</li>
+<li>Tell us your email domain and email provider on the intake form. No passwords or logins.</li>
+<li>We send a baseline report within 2 business days. It is your starting snapshot.</li>
+<li>Each month we run the public lookups again and compare with last month.</li>
+<li>We email you a short change report within 2 business days of each check. Cancel anytime by replying cancel.</li>
+</ol>
+<h2>What is not included</h2>
+<ul>
+<li>No scan of your website</li>
+<li>No malware or vulnerability checks on your site</li>
+<li>No breach or leaked-password monitoring</li>
+<li>No monitoring of your computers, network, Wi-Fi or accounts</li>
+<li>No logins, remote access or probing of any kind</li>
+<li>No instant alerts, only one report each month</li>
+<li>No guarantee of security, no guarantee that email reaches inboxes, and no compliance claims</li>
+<li>We do not make the DNS changes for you</li>
+</ul>
+<h2>SAMPLE - Example Pizza Co.: a small sample</h2>
+<blockquote><p>SAMPLE ONLY. Example Pizza Co. and the domain examplepizza.example are made up, and these results are invented.</p><p>Summary: One change this month. Your DMARC policy went from none to quarantine.</p><p>MX: found, no change. SPF: found, no change. DKIM (common selectors): found, no change. DMARC: changed from policy none to policy quarantine.</p><p>What it means: your DMARC record now asks receiving mail servers to send suspicious messages that fail the checks to spam. If your own newsletter tool starts landing in spam, ask whoever set it up whether it needs to be added to your SPF record.</p><p>What this check does not cover: your website, malware, breaches or devices.</p></blockquote>
+<p class="note">This sample uses a made-up business. It is not a real client and not a testimonial.</p>
+<div class="cta"><h2>Join the waitlist</h2><p>This service is not open yet. Leave your email and we will tell you when it is.</p><form class="sf" novalidate>
+<input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<input type="hidden" name="_subject" value="Waitlist: Monthly Email-Domain Check (Coming Soon)"><input type="hidden" name="_template" value="table"><input type="hidden" name="Service" value="security-monitoring">
+<label for="wemail">Your email *</label><input type="email" id="wemail" name="Email" autocomplete="email" required>
+<label for="wbiz">Business name (optional)</label><input type="text" id="wbiz" name="Business" autocomplete="organization">
+<label class="chk"><input type="checkbox" data-need> Yes, email me when this opens. One email, then nothing else unless I reply. Planned price: $29/month.</label>
+<button type="submit" class="btn" data-label="Join the waitlist">Join the waitlist</button><p class="msg note" role="status"></p></form></div>
+<h2>Common questions</h2>
+<div class="faq">
+<h3>Does this scan my website?</h3>
+<p>No. It never touches your website. It only reads public email-domain records, the kind anyone can look up.</p>
+<h3>Will it tell me if I have been hacked or my data leaked?</h3>
+<p>No. It does not monitor for breaches or check for malware. If you think you are being hacked right now, contact your bank and IT provider and report it at ic3.gov.</p>
+<h3>Why would I want this?</h3>
+<p>SPF, DKIM and DMARC help stop other people sending fake email that looks like it came from your business. They can change when you switch email tools or someone edits your DNS. A monthly look helps you notice that.</p>
+<h3>What if you cannot find my DKIM record?</h3>
+<p>We check common selector names only. If we do not find one, it may still be set up. We will say that plainly and suggest asking your email provider to confirm.</p>
+</div>
+<p class="note">We provide general guidance and prepared work, not legal advice and not a guarantee of results. 7-day refund once paid services open.</p><script>
+(function(){var f=document.querySelector('form.sf');var btn=f.querySelector('button[type=submit]');var msg=f.querySelector('.msg');
+f.addEventListener('submit',function(e){e.preventDefault();
+ var d=new FormData(f);var names={};[].forEach.call(f.querySelectorAll('input[type=checkbox][data-multi]'),function(c){names[c.name]=1;});
+ Object.keys(names).forEach(function(n){var v=[].map.call(f.querySelectorAll('input[type=checkbox][data-multi][name="'+n+'"]:checked'),function(c){return c.value;}).join(', ');d.delete(n);d.append(n,v);});
+ var em=f.querySelector('input[type=email]');if(!em.value||em.value.indexOf('@')<1){msg.textContent='Please enter a valid email address.';return;}
+ var cs=f.querySelector('input[data-need]');if(cs&&!cs.checked){msg.textContent='Please tick the box so we know you agree.';return;}
+ var fs=f.querySelectorAll('fieldset');for(var q=0;q<fs.length;q++){var lg=fs[q].querySelector('legend');if(lg&&/\*\s*$/.test(lg.textContent)&&!fs[q].querySelector('input:checked')){msg.textContent='Please complete: '+lg.textContent.replace(/\*\s*$/,'');return;}}
+ var rq=f.querySelectorAll('input[required],textarea[required],select[required]');for(var r=0;r<rq.length;r++){if(rq[r].type==='checkbox'?!rq[r].checked:!rq[r].value){msg.textContent='Please fill in all required fields (*).';return;}}
+ btn.disabled=true;btn.textContent='Sending...';
+ fetch('https://formsubmit.co/ajax/collarcitytechhelp@gmail.com',{method:'POST',body:d,headers:{'Accept':'application/json'}}).then(function(r){return r.json();}).then(function(j){if(j&&(j.success===true||j.success==='true')){f.innerHTML='<p><strong>Thank you.</strong> We got it and will email you.</p>';}else{throw 1;}}).catch(function(){btn.disabled=false;btn.textContent=btn.getAttribute('data-label');msg.textContent='Sorry, that did not send. Email collarcitytechhelp@gmail.com instead.';});
+});})();
+</script>
+
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Collar City Tech Help &middot; Based in Troy, NY</p>
+    <p>Collar City Tech Help uses AI tools to prepare our work. Everything is reviewed under the oversight of Alex Baldwin, a UAlbany cybersecurity student. We provide general guidance, not legal advice, and no service can guarantee you'll never be hacked.</p>
+  </div>
+</footer>
+</body>
+</html>
