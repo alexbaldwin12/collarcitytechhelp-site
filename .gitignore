@@ -1,0 +1,11 @@
+# never commit video/audio or client data
+*.mp4
+*.mov
+*.m4v
+*.webm
+*.mkv
+*.wav
+*.mp3
+*.aiff
+*.m4a
+CLAUDE.md
