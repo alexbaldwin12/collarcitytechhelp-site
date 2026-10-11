@@ -98,3 +98,6 @@ p{margin:0 0 1em}.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
 h1[data-split] div,h2[data-split] div{padding-bottom:.14em;margin-bottom:-.14em}
 .optform label{display:block;font-weight:600;margin:14px 0 6px}.optform label.chk{font-weight:400}.optform button{display:inline-block}
 .sample{border:1px solid var(--line);border-radius:12px;padding:22px;background:#fff;margin-top:22px}.sample .label{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:.8rem;letter-spacing:.04em;padding:4px 10px;border-radius:999px;margin-bottom:10px}.sample table{border-collapse:collapse;width:100%;font-size:.96rem;margin:12px 0}.sample th,.sample td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}.sample th{background:var(--paper);color:var(--navy)}
+
+.svc .side{grid-column:1/-1}@media(min-width:900px){.svc .side{grid-column:auto}}
+.wrap>.prose{padding-left:0;padding-right:0}
