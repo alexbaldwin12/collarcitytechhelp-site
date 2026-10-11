@@ -234,6 +234,9 @@
   .step .n { color: var(--navy); font-weight: bold; font-size: 1.6rem; }
   @media (max-width: 800px) { .steps { grid-template-columns: 1fr; } }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/redesign.css">
 </head>
 <body>
 <header>
@@ -242,6 +245,7 @@
     <nav aria-label="Main">
       <a href="#quiz">Free quiz</a>
       <a href="#offers">Offers</a>
+      <a href="/websites/">Websites</a>
       <a href="#how">How it works</a>
       <a href="#about">About</a>
       <a href="#faq">Questions</a>
@@ -253,12 +257,22 @@
 </header>
 
 <main id="top">
-  <div class="wrap hero">
-    <h1>Is your small business secure? Find out in 3 minutes.</h1>
-    <p class="lead">Free quiz for small businesses anywhere in the U.S. Get a score and 3 tips, no signup. Want the full picture? The $79 Security Scorecard gives you a grade, your top 5 risks and a fix list, by email in 2 business days.</p>
-    <p class="ctas"><a class="btn" href="#quiz">Take the free 3-minute quiz</a> <a class="btn alt" href="#offers">See the $79 Scorecard</a></p>
-    <p class="note">Based in Troy, NY. Run by Alex Baldwin, a UAlbany cybersecurity student. 100% online: no visits, no passwords, no access to your devices.</p>
+  <div class="herobg">
+    <div class="wrap herogrid">
+      <div class="hero">
+        <h1 data-split="lines">Get your business online, secure, and found.</h1>
+        <p class="lead">Websites, security checkups and marketing for small businesses across the U.S. Take the free 3-minute quiz to see your security score, or get a free homepage mockup.</p>
+        <p class="ctas"><a class="btn" href="#quiz">Take the free 3-minute quiz</a> <a class="btn alt" href="/websites/">See Websites</a> </p>
+        <p class="note">Or see the <a href="#offers">$79 Security Scorecard</a>. Based in Troy, NY. Run by Alex Baldwin, a UAlbany cybersecurity student. 100% online: no visits, no passwords, no access to your devices.</p>
+      </div>
+      <div class="gauge" aria-hidden="true">
+        <div class="gtop"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52" fill="none" stroke-width="10"/><circle class="ring" cx="60" cy="60" r="52" fill="none" stroke-width="10" transform="rotate(-90 60 60)"/></svg><div><div><span class="gscore">7</span><span class="glabel"> out of 10</span></div><div class="glabel">Example quiz result</div></div></div>
+        <ul><li><span class="ok">&#10003;</span> Backups are running</li><li><span class="ok">&#10003;</span> Screens lock when unattended</li><li><span class="fix">!</span> Turn on two-step login for email</li></ul>
+        <p class="gnote">Example only. Your own score comes from your answers, scored in your browser.</p>
+      </div>
+    </div>
   </div>
+  <div class="trust"><div class="wrap"><span><b>No passwords</b> and no access to your devices</span><span><b>Plain English</b> reports and fix lists</span><span><b>Prepared with AI tools</b> and checked before it's sent, overseen by Alex Baldwin</span></div></div>
 
   <section id="quiz" class="soft">
     <div class="wrap">
@@ -480,5 +494,10 @@ var m = document.getElementById('optMsg'), em = document.getElementById('optEmai
   });
 })();
 </script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js" integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" integrity="sha384-eD5ubmuCcvTdCADWuSchJYE7wcj2nzNr0itbrh6w/KJyBiltSZ8w3VFRBSWu5YQ8" crossorigin="anonymous"></script>
+<script defer src="/assets/home.js"></script>
 </body>
 </html>
