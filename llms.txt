@@ -1,6 +1,6 @@
 # Collar City Tech Help
 
-> Small business security checkups and online-presence help, based in Troy, NY and delivered 100% online. Run by Alex Baldwin, a UAlbany cybersecurity student. Plain-English, affordable, no visits, no access to client systems.
+> Small business security checkups and online-presence help, based in Troy, NY and delivered 100% online. Run by Alex, founder, who has a background in cybersecurity. Plain-English, affordable, no visits, no access to client systems.
 
 ## What we offer
 - Free 3-minute security quiz (10 yes/no questions, instant score): https://collarcitytechhelp.com/#quiz
@@ -13,7 +13,7 @@
 Small businesses with 1-20 staff: restaurants and cafes, salons and barbers, contractors, dental and medical offices, retail shops, real estate agents, accountants. Capital Region NY first (Troy, Albany, Schenectady, Cohoes, Watervliet, Waterford, Latham, Clifton Park, Saratoga Springs, East Greenbush); available anywhere in the US because everything is online.
 
 ## Limits (stated honestly)
-General guidance only, not legal or compliance advice (not a HIPAA/PCI service). No service can guarantee a business will never be hacked. We never ask for passwords and never log in to client systems. Reports are prepared with AI tools and checked before it's sent, overseen by Alex Baldwin.
+General guidance only, not legal or compliance advice (not a HIPAA/PCI service). No service can guarantee a business will never be hacked. We never ask for passwords and never log in to client systems. Reports are prepared by Alex using modern tools, including AI, and checked before it is sent.
 
 ## Key pages
 - Areas: https://collarcitytechhelp.com/areas/
