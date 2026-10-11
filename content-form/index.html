@@ -10,6 +10,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#1e407d">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Collar City Tech Help">
+<meta property="og:title" content="This Month&#x27;s Content | Collar City Tech Help">
+<meta property="og:description" content="Monthly content form for Collar City Tech Help clients.">
+<meta property="og:url" content="https://collarcitytechhelp.com/content-form/">
+<meta property="og:image" content="https://collarcitytechhelp.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="/assets/kit/fonts/InstrumentSerif-normal-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/kit/fonts/fonts.css">
 <link rel="stylesheet" href="/assets/site.css">
@@ -23,8 +30,7 @@
 </div></header>
 <main id="main">
 <section class="phero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a></nav><h1 data-split>This Month's Content</h1></div></section>
-<div class="formcard"><div class="wrap">
-
+<div class="formcard">
 <p class="lead">5 minutes. Tell us what's happening and we'll write your posts.</p>
 <p class="note">Never type a password or account number into this form.</p>
 <form action="https://formsubmit.co/collarcitytechhelp@gmail.com" method="POST">
@@ -36,23 +42,7 @@
 <div class="field"><label for="f1">Business name <span class=req aria-hidden=true>*</span></label><input type="text" id="f1" name="Business name" required></div><div class="field"><label for="f2">Email we deliver to <span class=req aria-hidden=true>*</span><span class="hint">Must match your subscription email.</span></label><input type="email" id="f2" name="email" required></div><fieldset class="field checks" style="border:0;padding:0;margin:0 0 20px"><legend class="lab" style="font-weight:bold;padding:0;margin-bottom:6px">Which platforms? (We always write the Google Business posts.)</legend><label><input type="checkbox" name="Platforms" value="Google Business Profile"> Google Business Profile</label><label><input type="checkbox" name="Platforms" value="Facebook"> Facebook</label><label><input type="checkbox" name="Platforms" value="Instagram"> Instagram</label><label><input type="checkbox" name="Platforms" value="LinkedIn"> LinkedIn</label><label><input type="checkbox" name="Platforms" value="X"> X</label><label><input type="checkbox" name="Platforms" value="Nextdoor"> Nextdoor</label></fieldset><div class="field"><label for="f3">What&#x27;s happening this month? Specials, events, new items, holidays, news <span class=req aria-hidden=true>*</span></label><textarea id="f3" name="This month" required></textarea></div><div class="field"><label for="f4">Hours or schedule changes?</label><textarea id="f4" name="Hours changes"></textarea></div><div class="field"><label for="f5">Anything to promote most?</label><input type="text" id="f5" name="Promote most"></div><div class="field"><label for="f6">Your style <span class=req aria-hidden=true>*</span></label><select id="f6" name="Style" required><option value="">Choose one</option><option>Friendly and casual</option><option>Professional</option><option>Fun and playful</option><option>Warm and family-style</option></select></div><div class="field"><label for="f7">Words or topics to avoid</label><input type="text" id="f7" name="Avoid"></div><div class="field"><label for="f8">Paste any new Google reviews you&#x27;d like reply drafts for</label><textarea id="f8" name="Reviews"></textarea></div><div class="field"><label for="f9">Photos you&#x27;ll post: describe them in a few words so captions match</label><textarea id="f9" name="Photos"></textarea></div><p class="hint">Please do not paste card numbers or customer personal details.</p>
 <button type="submit" class="btn">Submit</button>
 <p id="sendErr" role="alert" style="display:none;color:#8a1c1c;font-weight:bold">Sorry, that did not send. Please try again, or email your answers to collarcitytechhelp@gmail.com.</p>
-</form>
-</div><script>
-document.querySelector('form').addEventListener('submit', function (e) {
-  if (!document.querySelector('input[name="Platforms"]:checked')) { e.preventDefault(); alert('Please choose at least one platform.'); }
-});
-</script>
-<script>
-(function () {
-  var form = document.querySelector('form');
-  form.addEventListener('submit', function () {
-    var boxes = form.querySelectorAll('input[name="Platforms"]');
-    var picked = [].filter.call(boxes, function (c) { return c.checked; }).map(function (c) { return c.value; }).join(', ');
-    [].forEach.call(boxes, function (c) { c.disabled = true; });
-    var h = document.createElement('input'); h.type = 'hidden'; h.name = 'Platforms'; h.value = picked; form.appendChild(h);
-  });
-})();
-</script></div></main>
+</form></div></main>
 <footer class="site-footer"><div class="wrap">
 <div class="fgrid">
 <div class="fbrand"><a class="brand" href="/"><img src="/cct-logo.jpg" width="44" height="44" alt="Collar City Tech Help logo"><span>Collar City Tech Help</span></a><p>Websites, security checkups and marketing for small businesses. Based in Troy, NY. 100% online.</p><p>Mail: PO Box 182, Waterford, NY 12188<br><a href="mailto:collarcitytechhelp@gmail.com">collarcitytechhelp@gmail.com</a></p></div>

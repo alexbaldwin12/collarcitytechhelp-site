@@ -9,6 +9,7 @@
     tog.addEventListener('click', function () { var o = nav.classList.toggle('open'); tog.setAttribute('aria-expanded', o ? 'true' : 'false'); tog.textContent = o ? 'Close' : 'Menu'; });
     nav.addEventListener('click', function (e) { if (e.target.tagName === 'A') { nav.classList.remove('open'); tog.setAttribute('aria-expanded', 'false'); tog.textContent = 'Menu'; } });
   }
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav && nav.classList.contains('open')) { nav.classList.remove('open'); tog.setAttribute('aria-expanded', 'false'); tog.textContent = 'Menu'; tog.focus(); } });
   document.querySelectorAll('.swiper').forEach(function (el) {
     var o = {}; try { o = JSON.parse(el.getAttribute('data-swiper') || '{}'); } catch (e) {}
     o.a11y = { enabled: true }; o.keyboard = { enabled: true }; if (window.Swiper) new Swiper(el, o);
