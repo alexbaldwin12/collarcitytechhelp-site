@@ -6,20 +6,20 @@
 <title>Small Business Security Checkups Across the U.S. | Collar City Tech Help</title>
 <meta name="description" content="Plain-English online security checkups for small businesses across the U.S. Free 3-minute quiz, or a $79 Security Scorecard. Free 3-minute security quiz, or a $79 Security Scorecard.">
 <link rel="canonical" href="https://collarcitytechhelp.com/">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1e407d">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Collar City Tech Help">
 <meta property="og:title" content="Small Business Security Checkups Across the U.S. | Collar City Tech Help">
 <meta property="og:description" content="Plain-English online security checkups for small businesses across the U.S. Free 3-minute quiz, or a $79 Security Scorecard. Free 3-minute security quiz, or a $79 Security Scorecard.">
 <meta property="og:url" content="https://collarcitytechhelp.com/">
 <meta property="og:image" content="https://collarcitytechhelp.com/og-image.png">
-<meta property="og:image:alt" content="Collar City Tech Help logo">
-<meta property="og:locale" content="en_US">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Small Business Security Checkups Across the U.S. | Collar City Tech Help">
-<meta name="twitter:description" content="Plain-English online security checkups for small businesses across the U.S. Free 3-minute quiz, or a $79 Security Scorecard. Free 3-minute security quiz, or a $79 Security Scorecard.">
-<meta name="twitter:image" content="https://collarcitytechhelp.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/kit/fonts/InstrumentSerif-normal-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/kit/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/kit/vendor/swiper-bundle.min.css">
+<link rel="stylesheet" href="/assets/site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -137,145 +137,32 @@
  ]
 }
 </script>
-<style>
-  :root { --navy: #1e407d; --navy-dark: #163160; --text: #1a1a1a; --muted: #4a4a4a; --line: #d9dde3; --soft: #f4f6f9; }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-  body { margin: 0; background: #fff; color: var(--text); font-family: Arial, Helvetica, sans-serif; font-size: 17px; line-height: 1.6; }
-  a { color: var(--navy); }
-  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
-  header { border-bottom: 1px solid var(--line); }
-  header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 14px; }
-  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 1.15rem; }
-  .brand img { width: 48px; height: 48px; display: block; }
-  nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
-  nav a { text-decoration: none; font-size: 1rem; color: var(--navy); padding: 6px 0; }
-  nav a:hover { text-decoration: underline; }
-  .hero { padding-top: 64px; padding-bottom: 56px; }
-  h1 { color: var(--navy); font-size: 2.4rem; line-height: 1.2; margin: 0 0 16px; max-width: 700px; }
-  h2 { color: var(--navy); font-size: 1.7rem; line-height: 1.25; margin: 0 0 14px; }
-  h3 { color: var(--text); font-size: 1.15rem; margin: 0 0 6px; }
-  p { margin: 0 0 14px; }
-  .lead { font-size: 1.2rem; color: var(--muted); max-width: 640px; margin-bottom: 24px; }
-  .btn { display: inline-block; background: var(--navy); color: #fff; text-decoration: none; padding: 14px 28px; border-radius: 4px; font-weight: bold; font-size: 1rem; }
-  .btn:hover, .btn:focus { background: var(--navy-dark); }
-  a:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
-  section { padding: 52px 0; border-top: 1px solid var(--line); }
-  .intro { max-width: 680px; }
-  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 20px; }
-  ul { margin: 8px 0 0; padding-left: 22px; }
-  li { margin-bottom: 6px; }
-  .packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px; }
-  .pkg { border: 1px solid var(--line); border-top: 4px solid var(--navy); border-radius: 4px; padding: 22px; background: #fff; }
-  .pkg h3 { margin-bottom: 2px; }
-  .price { color: var(--navy); font-size: 2rem; font-weight: bold; margin: 4px 0 10px; line-height: 1.2; }
-  .price small { font-size: 1rem; font-weight: normal; color: var(--muted); }
-  .pkg p { color: var(--muted); margin: 0; }
-  .soft { background: var(--soft); }
-  .why { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px; margin-top: 20px; }
-  .why p { margin: 0; color: var(--muted); }
-  .faq h3 { margin-top: 22px; color: var(--navy); }
-  .faq h3:first-of-type { margin-top: 8px; }
-  .faq p { max-width: 680px; margin-bottom: 0; }
-  .note { font-size: 0.95rem; color: var(--muted); }
-  footer { border-top: 1px solid var(--line); padding: 28px 0 40px; font-size: 0.95rem; color: var(--muted); }
-  footer p { margin: 0 0 8px; max-width: 760px; }
-  @media (max-width: 800px) {
-    .packages { grid-template-columns: 1fr; }
-  }
-  @media (max-width: 720px) {
-    .wrap { padding: 0 20px; }
-    header .wrap { flex-direction: column; align-items: flex-start; gap: 8px; }
-    h1 { font-size: 1.9rem; }
-    h2 { font-size: 1.5rem; }
-    .hero { padding-top: 24px; padding-bottom: 28px; }
-    .hero h1 { font-size: 1.9rem; }
-    .hero .lead { font-size: 1.05rem; margin-bottom: 16px; }
-    .hero .ctas .btn { display: block; text-align: center; margin-bottom: 10px; }
-    section { padding: 40px 0; }
-    .two, .why { grid-template-columns: 1fr; gap: 24px; }
-    .btn { display: block; text-align: center; }
-  }
-
-  .btn.alt { background: #fff; color: var(--navy); border: 2px solid var(--navy); padding: 12px 26px; }
-  .btn.alt:hover, .btn.alt:focus { background: var(--soft); }
-  .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 16px; }
-  .fine { font-size: 0.9rem; color: var(--muted); margin: 8px 0 0; }
-  .badge { display: inline-block; background: var(--navy); color: #fff; font-size: 0.8rem; font-weight: bold; letter-spacing: 1px; padding: 3px 10px; margin-bottom: 8px; }
-  #result .trust { font-size: 0.95rem; color: var(--muted); margin: 10px 0 0; }
-  .step a { display: block; margin-top: 4px; }
-  .btn.soon { background: #fff; color: var(--navy); border: 2px solid var(--navy); cursor: default; padding: 12px 26px; }
-  .btn.soon:hover { background: #fff; }
-  .quiz { max-width: 680px; margin-top: 20px; }
-  .q { border: 1px solid var(--line); border-radius: 4px; padding: 14px 16px; margin: 0 0 12px; background: #fff; }
-  .q legend { padding: 0 6px; font-weight: bold; color: var(--navy); }
-  .q p { margin: 0 0 8px; }
-  .q label { display: inline-block; margin-right: 22px; cursor: pointer; padding: 6px 0; }
-  .q input { width: 18px; height: 18px; margin-right: 6px; vertical-align: -3px; accent-color: #1e407d; }
-  button.btn { border: 0; cursor: pointer; font-family: inherit; }
-  .optin { background: var(--soft); border: 1px solid var(--line); border-radius: 4px; padding: 16px 18px; margin: 18px 0; }
-  .optin h3 { margin-top: 0; }
-  .optin label { display: block; font-weight: bold; margin: 8px 0 4px; }
-  .optin label.chk { font-weight: normal; }
-  .optin input[type=email] { width: 100%; max-width: 380px; padding: 10px; font-size: 1rem; border: 1px solid #8a93a3; border-radius: 4px; }
-  .optin .btn { border: 0; cursor: pointer; font-family: inherit; margin-top: 10px; }
-  .hp { position: absolute; left: -9999px; }
-  #result { display: none; border: 2px solid var(--navy); border-radius: 4px; padding: 22px; margin-top: 22px; background: #fff; }
-  #result .score { color: var(--navy); font-size: 2.6rem; font-weight: bold; line-height: 1.1; }
-  #qerr { color: #8a1c1c; display: none; margin: 8px 0 0; }
-  .sample { border: 1px solid var(--line); border-radius: 4px; padding: 22px; background: #fff; max-width: 720px; margin-top: 20px; }
-  .sample .label { display: inline-block; background: var(--navy); color: #fff; font-weight: bold; font-size: 0.85rem; letter-spacing: 1px; padding: 4px 10px; margin-bottom: 12px; }
-  .sample table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 0.95rem; }
-  .sample th, .sample td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
-  .sample th { background: var(--soft); color: var(--navy); }
-  .tablewrap { overflow-x: auto; }
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
-  .step { border-top: 4px solid var(--navy); padding-top: 10px; }
-  .step .n { color: var(--navy); font-weight: bold; font-size: 1.6rem; }
-  @media (max-width: 800px) { .steps { grid-template-columns: 1fr; } }
-</style>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/redesign.css">
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <a class="brand" href="#top"><img src="cct-logo.jpg" width="48" height="48" alt="Collar City Tech Help logo"><span>Collar City Tech Help</span></a>
-    <nav aria-label="Main">
-      <a href="#quiz">Free quiz</a>
-      <a href="#offers">Offers</a>
-      <a href="/websites/">Websites</a>
-      <a href="#how">How it works</a>
-      <a href="#about">About</a>
-      <a href="#faq">Questions</a>
-      <a href="/checklist/">Free checklist</a>
-      <a href="/blog/">Blog</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="/"><img src="/cct-logo.jpg" width="44" height="44" alt="Collar City Tech Help logo"><span>Collar City Tech Help</span></a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+<nav class="nav" id="site-nav" aria-label="Main"><a href="/websites/">Websites</a><a href="/security/">Security</a><a href="/marketing/">Marketing</a><a href="/#pricing">Pricing</a><a href="/samples/">Samples</a><a href="/blog/">Blog</a><a class="btn" href="/mockup/">Get a free mockup</a></nav>
+</div></header>
+<main id="main">
+<section class="hero"><div class="wrap herogrid">
+<div><h1 data-split>Get your business online, secure, and found.</h1>
+<p class="lead">Websites, security checkups and marketing for small businesses across the U.S. Based in Troy, NY.</p>
+<p class="ctas"><a class="btn big" href="/mockup/">Get a free homepage mockup</a><a class="btn alt big" href="#quiz">Take the free security quiz</a></p>
+<p class="note">No passwords, no access to your devices, and no commitment for the mockup. Or see the <a href="#pricing">$79 Security Scorecard</a>.</p></div>
+<div class="gauge" aria-hidden="true"><div class="gtop"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52" fill="none" stroke-width="10"/><circle class="ring" cx="60" cy="60" r="52" fill="none" stroke-width="10" transform="rotate(-90 60 60)"/></svg><div><div><span class="gscore">7</span><span class="glabel"> out of 10</span></div><div class="glabel">Example quiz result</div></div></div><ul><li><span class="ok">&#10003;</span> Backups are running</li><li><span class="ok">&#10003;</span> Screens lock when unattended</li><li><span class="fix">!</span> Turn on two-step login for email</li></ul><p class="gnote">Example only. Your own score comes from your answers, scored in your browser.</p></div>
+</div></section>
+<div class="trust"><div class="wrap"><span><b>You own your site</b> and your domain</span><span><b>Plain English</b>, no jargon</span><span><b>Month to month</b>, no long contracts</span></div></div>
 
-<main id="top">
-  <div class="herobg">
-    <div class="wrap herogrid">
-      <div class="hero">
-        <h1 data-split="lines">Get your business online, secure, and found.</h1>
-        <p class="lead">Websites, security checkups and marketing for small businesses across the U.S. Take the free 3-minute quiz to see your security score, or get a free homepage mockup.</p>
-        <p class="ctas"><a class="btn" href="#quiz">Take the free 3-minute quiz</a> <a class="btn alt" href="/websites/">See Websites</a> </p>
-        <p class="note">Or see the <a href="#offers">$79 Security Scorecard</a>. Based in Troy, NY. Run by Alex, founder, who has a background in cybersecurity. 100% online: no visits, no passwords, no access to your devices.</p>
-      </div>
-      <div class="gauge" aria-hidden="true">
-        <div class="gtop"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52" fill="none" stroke-width="10"/><circle class="ring" cx="60" cy="60" r="52" fill="none" stroke-width="10" transform="rotate(-90 60 60)"/></svg><div><div><span class="gscore">7</span><span class="glabel"> out of 10</span></div><div class="glabel">Example quiz result</div></div></div>
-        <ul><li><span class="ok">&#10003;</span> Backups are running</li><li><span class="ok">&#10003;</span> Screens lock when unattended</li><li><span class="fix">!</span> Turn on two-step login for email</li></ul>
-        <p class="gnote">Example only. Your own score comes from your answers, scored in your browser.</p>
-      </div>
-    </div>
-  </div>
-  <div class="trust"><div class="wrap"><span><b>No passwords</b> and no access to your devices</span><span><b>Plain English</b> reports and fix lists</span><span><b>Built with modern tools, including AI,</b> and personally reviewed by Alex</span></div></div>
+<section class="sec" id="services"><div class="wrap"><h2>Three ways we help</h2><p class="intro">Start with whatever your business needs most. Everything is done online.</p>
+<div class="svc-list">
+<div class="svc"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="9" width="38" height="30" rx="4"/><path d="M5 17h38"/><circle cx="10.5" cy="13" r=".8" fill="currentColor"/><circle cx="15" cy="13" r=".8" fill="currentColor"/><path d="M12 25h14M12 31h22"/></svg><div><h3>Websites</h3><p>A clean, fast website that works on phones and shows up on Google. Starter sites launch in 7 days. You own your site and domain.</p></div><div class="side"><p class="fine">From $499, one time</p><a class="more" href="/websites/">See Websites and samples</a></div></div>
+<div class="svc"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6l15 5v11c0 9.5-6.2 16.2-15 20-8.8-3.8-15-10.5-15-20V11z"/><path d="M17 24l5 5 9-10"/></svg><div><h3>Security</h3><p>Plain-English checkups that show what to fix first. A free 3-minute quiz, a $79 Scorecard report and a $24 Starter Kit. No passwords, no access to your devices.</p></div><div class="side"><p class="fine">Free quiz, then from $24</p><a class="more" href="/security/">See Security</a></div></div>
+<div class="svc"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 20v8l4 1 10 8V12L12 20z"/><path d="M30 18c3 2.5 3 9.5 0 12M35 14c5 4.5 5 15.5 0 20"/></svg><div><h3>Marketing</h3><p>Fresh Google and social posts every month, written in your voice, so customers see you're open and active.</p></div><div class="side"><p class="fine">$99 a month</p><a class="more" href="/marketing/">See Marketing</a></div></div>
+</div></div></section>
 
-  <section id="quiz" class="soft">
-    <div class="wrap">
+<section class="sec paper" id="quiz"><div class="wrap">
       <h2>Free 3-minute security quiz</h2>
       <p class="intro">Ten yes or no questions. You get a score out of 10 and three tips right away. Your answers are scored in your browser and are not sent to us. At the end you can choose to email yourself a copy of your results.</p>
       <form class="quiz" id="quizForm" novalidate>
@@ -314,125 +201,43 @@
         <a class="btn" id="quizCta" href="https://buy.stripe.com/4gMcN74XW4ZObIr4uwd7q00">Get my Security Scorecard — $79</a>
         <p class="trust">Full refund within 7 days. No passwords needed. Your report arrives by email in 2 business days.</p>
       </div>
-    </div>
-  </section>
+    </div></section>
 
-  <section id="offers">
-    <div class="wrap">
-      <h2>What we offer</h2>
-      <p class="intro">Clear prices, delivered by email. No visits, no passwords, no access to your systems.</p>
-      <div class="packages">
-        <div class="pkg">
-          <span class="badge">START HERE</span>
-          <h3>Security Scorecard</h3>
-          <div class="price">$79 <small>one-time</small></div>
-          <p>Know exactly what to fix first. Your written report arrives by email in 2 business days.</p>
-          <ul><li>A grade from A to F with the reasons</li><li>Your top 5 risks in plain English</li><li>A fix list in order, with free tools</li><li>A 30-day plan, plus a public check of your email domain records</li></ul>
-          <p style="margin-top:16px"><a class="btn" href="https://buy.stripe.com/4gMcN74XW4ZObIr4uwd7q00">Get my Scorecard — $79</a></p>
-          <p class="fine">Full refund within 7 days. <a href="#sample">See a sample report</a></p>
-        </div>
-        <div class="pkg">
-          <h3>Done-for-you Online Presence</h3>
-          <div class="price">$99 <small>per month</small></div>
-          <ul><li>4 Google Business posts a month</li><li>8 social posts for the platforms you use</li><li>Reply drafts for your reviews</li><li>Written in your voice from a 5-minute form</li></ul>
-          <p style="margin-top:16px"><a class="btn" href="https://buy.stripe.com/bJebJ38a8gIwbIr8KMd7q02">Start monthly</a></p>
-          <p class="fine">Billed $99 every month until you cancel; it renews automatically. Cancel any time: email collarcitytechhelp@gmail.com or reply "cancel" to any email from us. Full refund within 7 days of your first charge. Delivered within 3 business days of your form. <a href="/terms/#renewal">Renewal terms</a> &middot; <a href="/refunds/">Refunds</a></p>
-        </div>
-        <div class="pkg">
-          <h3>Security + AI Starter Kit</h3>
-          <div class="price">$24 <small>download</small></div>
-          <ul><li>One-page security checklist</li><li>Scam spotting guide and password manager setup</li><li>Backup plan, Wi-Fi basics, payment safety rule</li><li>20 ready-to-use AI prompts for small business</li></ul>
-          <p style="margin-top:16px"><a class="btn" href="https://buy.stripe.com/bJe6oJcqoak87sbd12d7q01">Get the Kit</a></p>
-          <p class="fine">Sent by email after payment, usually the same day.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="sec" id="samples"><div class="wrap"><h2>Sample websites</h2><p class="intro">Three samples for made-up businesses, built to show the quality and style. The buttons on them are just for show.</p><div class="gallery"><div class="swiper" data-swiper='{"slidesPerView":1.15,"spaceBetween":18,"breakpoints":{"760":{"slidesPerView":2.1},"1100":{"slidesPerView":3}},"pagination":{"el":".swiper-pagination","clickable":true}}'><div class="swiper-wrapper"><figure class="swiper-slide"><a href="/samples/hudson-main-kitchen/"><img src="/websites/img/sample-hudson-main-kitchen.jpg" width="900" height="562" loading="lazy" alt="Screenshot of the sample restaurant website for Hudson &amp; Main Kitchen, a made-up business"></a><figcaption><strong>Hudson &amp; Main Kitchen</strong> (Restaurant). Sample site, made-up business. <a href="/samples/hudson-main-kitchen/">View the sample</a></figcaption></figure><figure class="swiper-slide"><a href="/samples/birchwater-hair-studio/"><img src="/websites/img/sample-birchwater-hair-studio.jpg" width="900" height="562" loading="lazy" alt="Screenshot of the sample salon website for Birchwater Hair Studio, a made-up business"></a><figcaption><strong>Birchwater Hair Studio</strong> (Salon). Sample site, made-up business. <a href="/samples/birchwater-hair-studio/">View the sample</a></figcaption></figure><figure class="swiper-slide"><a href="/samples/ridgeline-home-builders/"><img src="/websites/img/sample-ridgeline-home-builders.jpg" width="900" height="562" loading="lazy" alt="Screenshot of the sample contractor website for Ridgeline Home Builders, a made-up business"></a><figcaption><strong>Ridgeline Home Builders</strong> (Contractor). Sample site, made-up business. <a href="/samples/ridgeline-home-builders/">View the sample</a></figcaption></figure></div><div class="swiper-pagination"></div></div></div><p><a class="btn alt" href="/samples/">See all samples</a></p></div></section>
 
-  <section id="websites">
-    <div class="wrap">
-      <h2>Websites <span class="badge">NEW</span></h2>
-      <p class="intro">A clean, fast website that works on phones. Starter $499, Business $999, and you own your site and domain.</p>
-      <p><a class="btn alt" href="/websites/">See Websites and samples</a></p>
-    </div>
-  </section>
+<section class="sec paper" id="how"><div class="wrap"><h2>How a website works</h2>
+<div class="steps"><div class="step"><span class="n">1</span><h3>Ask for a free mockup</h3><p>Send your business name and email. No card, no commitment.</p></div><div class="step"><span class="n">2</span><h3>See your homepage</h3><p>Your mockup arrives by email within 2 business days. Nothing is sent until Alex approves it.</p></div><div class="step"><span class="n">3</span><h3>Approve and pay</h3><p>We confirm the package and price in writing before you pay.</p></div><div class="step"><span class="n">4</span><h3>Launch</h3><p>You send photos and details (never passwords). Every website is personally reviewed before it goes live.</p></div></div></div></section>
 
-  <section id="how" class="soft">
-    <div class="wrap">
-      <h2>How it works</h2>
-      <div class="steps">
-        <div class="step"><div class="n">1</div><h3>Pay securely</h3><p>Choose your offer and pay with our secure Stripe checkout.</p></div>
-        <div class="step"><div class="n">2</div><h3>Fill out a short form</h3><p>Tell us about your business. Never type a password.</p><a href="/scorecard-form/">Scorecard questionnaire (about 10 minutes)</a><a href="/content-form/">Monthly content form (about 5 minutes)</a></div>
-        <div class="step"><div class="n">3</div><h3>Get it by email</h3><p>Scorecard report in 2 business days. Monthly content in 3. Starter Kit usually the same day.</p></div>
-      </div>
-    </div>
-  </section>
+<section class="sec" id="pricing"><div class="wrap"><span id="offers"></span><h2>Pricing</h2><p class="intro">Clear prices. No long contracts. Websites are one-time prices with optional monthly care.</p>
+<h3 style="margin-top:28px">Websites</h3><div class="tiers">
+<div class="tier"><h3>Starter</h3><div class="price">$499 <small>one-time</small></div><ul><li>1-page site</li><li>Mobile-friendly, with a contact form</li><li>Google-ready basics</li><li>Launched in 7 days</li></ul><a class="btn alt" href="/mockup/">Get a free homepage mockup</a></div>
+<div class="tier hl"><h3>Business <span class="newtag">Most popular</span></h3><div class="price">$999 <small>one-time</small></div><p class="note">Everything in Starter, plus:</p><ul><li>Up to 5 pages (Home, About, Services or Menu, Gallery, Contact)</li><li>Basic SEO</li><li>Launched in 14 days</li></ul><a class="btn" href="/mockup/">Get a free homepage mockup</a></div>
+<div class="tier"><h3>Website Care</h3><div class="price">$29 <small>per month</small></div><ul><li>Hosting and SSL</li><li>Backups and security checks</li><li>Up to 30 minutes of edits a month</li><li>Month to month: cancel any time by emailing collarcitytechhelp@gmail.com</li></ul><a class="btn alt" href="/mockup/">Ask about Care</a></div>
+</div>
+<p class="note">Add-ons: business email setup, $99 one-time (you@yourbusiness.com on your own Google Workspace account; you pay Google about $7 to $8.40 per user per month). On-site photos, +$149, 518-area only. You own your site and domain.</p>
+<h3 style="margin-top:44px">Security and marketing</h3><p class="note">Delivered by email. No visits, no passwords, no access to your systems.</p><div class="ledger">
+<div class="row"><div><h3>Security Scorecard</h3><p>A grade from A to F, your top 5 risks in plain English and a fix list in order. By email in 2 business days. Full refund within 7 days.</p></div><div class="amt">$79</div><div class="act"><a class="btn" href="https://buy.stripe.com/4gMcN74XW4ZObIr4uwd7q00">Get my Scorecard: $79</a></div></div>
+<div class="row"><div><h3>Security + AI Starter Kit</h3><p>A one-page checklist, a scam-spotting guide, password manager setup, a backup plan and 20 ready-to-use AI prompts. Sent by email after payment, usually the same day.</p></div><div class="amt">$24</div><div class="act"><a class="btn alt" href="https://buy.stripe.com/bJe6oJcqoak87sbd12d7q01">Get the Kit: $24</a></div></div>
+<div class="row"><div><h3>Done-for-you Online Presence</h3><p>4 Google Business posts and 8 social posts a month, plus reply drafts for your reviews, written in your voice. Billed $99 every month until you cancel; it renews automatically. Cancel any time: email collarcitytechhelp@gmail.com or reply "cancel" to any email from us. Full refund within 7 days of your first charge. <a href="/terms/#renewal">Renewal terms</a> &middot; <a href="/refunds/">Refunds</a></p></div><div class="amt">$99<small>/mo</small></div><div class="act"><a class="btn alt" href="https://buy.stripe.com/bJebJ38a8gIwbIr8KMd7q02">Start monthly</a></div></div>
+</div></div></section>
 
-  <section id="sample">
-    <div class="wrap">
-      <h2>See a sample</h2>
-      <p class="intro">An excerpt from a Scorecard for a made-up business, so you know what you get.</p>
-      <div class="sample">
-        <span class="label">SAMPLE: MADE-UP BUSINESS</span>
-        <h3>Security Scorecard: Maple &amp; Main Bakery (sample)</h3>
-        <p><b style="color:#1e407d;font-size:1.6rem">Grade: C+</b></p>
-        <p>You have the basics in place for money and email, but passwords, backups, and email protection leave gaps. Most important first step: turn on two-step login for your business email. It takes about 15 minutes.</p>
-        <div class="tablewrap"><table><tr><th>Area</th><th>Status</th><th>Why</th></tr>
-        <tr><td>Two-step login</td><td>Needs work</td><td>On for the bank, off for email and social media.</td></tr>
-        <tr><td>Backups</td><td>Needs work</td><td>A weekly backup exists but has never been tested.</td></tr>
-        <tr><td>Payments</td><td>Good</td><td>Two people must approve payment changes.</td></tr></table></div>
-      </div>
-    </div>
-  </section>
+<section class="sec paper" id="about"><div class="wrap about"><div class="byline-card"><p class="name">Alex Baldwin, Founder</p><p class="role">Collar City Tech Help &middot; Troy, NY</p></div>
+<div><h2>Who is behind this</h2><p class="intro">Alex has a background in cybersecurity and started Collar City Tech Help in Troy to give small businesses a clear, affordable way to get online and stay safe.</p><p>It's a new business, so there are no reviews yet. That is why the quiz is free, the mockup is free, and refunds are 7 days. I'm upfront about how this works: I use modern tools, including AI, and I direct and review the work. I never ask for passwords and never log in to your accounts.</p><p><strong>Designed and built by Alex using modern tools, including AI. Every website is personally reviewed before it goes live.</strong></p></div></div></section>
 
-  <section id="about" class="soft">
-    <div class="wrap">
-      <h2>Who is behind this</h2>
-      <p class="intro"><strong>Alex Baldwin, Founder.</strong> Alex has a background in cybersecurity and started Collar City Tech Help in Troy to give small businesses a clear, affordable way to see where they stand on security.</p>
-      <p class="intro">It's a new business, so there are no reviews yet. That is why the quiz is free, refunds are 7 days, and I'm upfront about how this works: I use modern tools, including AI, and I direct and review the work. I never ask for passwords and never log in to your accounts. Questions first? <a href="mailto:collarcitytechhelp@gmail.com?subject=Question%20for%20Collar%20City%20Tech%20Help">Email Alex directly</a>.</p>
-    </div>
-  </section>
+<section class="sec" id="faq"><div class="wrap"><h2>Questions people ask</h2><div class="faq"><details><summary>Do you need my passwords?</summary><div class="ans"><p>No, never. Please never send us a password or account number.</p></div></details><details><summary>Do you access my computers?</summary><div class="ans"><p>No. It is all done from your answers and public records.</p></div></details><details><summary>Do you use AI?</summary><div class="ans"><p>Yes. AI tools help me work faster and keep prices low, like any modern designer. I direct every project and review everything before it's delivered.</p></div></details><details><summary>Can you guarantee I won't be hacked?</summary><div class="ans"><p>No one can. We help you get much safer.</p></div></details><details><summary>Refunds?</summary><div class="ans"><p>Full refund within 7 days if you are not happy.</p></div></details><details><summary>Where are you?</summary><div class="ans"><p>We are based in Troy, NY, and serve small businesses across the U.S. Everything is online.</p></div></details></div></div></section>
 
-  <section id="faq" class="faq">
-    <div class="wrap">
-      <h2>Questions people ask</h2>
-      <h3>Do you need my passwords?</h3>
-      <p>No, never. Please never send us a password or account number.</p>
-      <h3>Do you access my computers?</h3>
-      <p>No. It is all done from your answers and public records.</p>
-      <h3>Do you use AI?</h3>
-      <p>Yes. AI tools help me work faster and keep prices low, like any modern designer. I direct every project and review everything before it's delivered.</p>
-      <h3>Can you guarantee I won't be hacked?</h3>
-      <p>No one can. We help you get much safer.</p>
-      <h3>Refunds?</h3>
-      <p>Full refund within 7 days if you are not happy.</p>
-      <h3>Where are you?</h3>
-      <p>We are based in Troy, NY, and serve small businesses across the U.S. Everything is online.</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="wrap">
-      <h2>Contact</h2>
-      <p class="intro">Questions? Email Alex directly.</p>
-      <a class="btn" href="mailto:collarcitytechhelp@gmail.com?subject=Question%20for%20Collar%20City%20Tech%20Help">Email collarcitytechhelp@gmail.com</a>
-      <p class="note" style="margin-top:18px">By mail: Collar City Tech Help, PO Box 182, Waterford, NY 12188. We are based in Troy, NY and work 100% online.</p>
-    </div>
-  </section>
+<section class="sec dark" id="contact"><div class="wrap contact-band"><h2>Contact</h2><p class="intro">Questions? Email Alex directly.</p><p class="ctas"><a class="btn big" href="mailto:collarcitytechhelp@gmail.com?subject=Question%20for%20Collar%20City%20Tech%20Help">Email collarcitytechhelp@gmail.com</a><a class="btn alt big" href="/mockup/">Get a free homepage mockup</a></p><p class="note">By mail: Collar City Tech Help, PO Box 182, Waterford, NY 12188. We are based in Troy, NY and work 100% online.</p></div></section>
 </main>
-
-<footer>
-  <div class="wrap">
-    <p><strong>Nationwide:</strong> <a href="/usa/">Online checkups for small businesses across the U.S.</a></p>
-    <p><strong>Local pages:</strong> <a href="/areas/troy-ny/">Troy</a> &middot; <a href="/areas/albany-ny/">Albany</a> &middot; <a href="/areas/schenectady-ny/">Schenectady</a> &middot; <a href="/areas/cohoes-ny/">Cohoes</a> &middot; <a href="/areas/watervliet-ny/">Watervliet</a> &middot; <a href="/areas/waterford-ny/">Waterford</a> &middot; <a href="/areas/latham-ny/">Latham</a> &middot; <a href="/areas/clifton-park-ny/">Clifton Park</a> &middot; <a href="/areas/saratoga-springs-ny/">Saratoga Springs</a> &middot; <a href="/areas/east-greenbush-ny/">East Greenbush</a></p>
-    <p><strong>Coming soon:</strong> <a href="/services/">New services and waitlist</a> &middot; <a href="/checklist/">Free security checklist</a></p>
-    <p><strong>Industries:</strong> <a href="/industries/restaurants-cafes/">Restaurants and cafes</a> &middot; <a href="/industries/salons-barbers/">Salons and barbers</a> &middot; <a href="/industries/contractors-trades/">Contractors</a> &middot; <a href="/industries/dental-medical-offices/">Dental and medical offices</a> &middot; <a href="/industries/retail-shops/">Retail shops</a> &middot; <a href="/industries/real-estate-agents/">Real estate agents</a></p>
-    <p>&copy; 2026 Collar City Tech Help &middot; Based in Troy, NY &middot; Mail: PO Box 182, Waterford, NY 12188</p>
-    <p><a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a> &middot; <a href="/refunds/">Refunds</a></p>
-    <p>Designed and built by Alex using modern tools, including AI. Every website is personally reviewed before it goes live. We provide general guidance, not legal advice, and no service can guarantee you'll never be hacked.</p>
-  </div>
-</footer>
-
+<footer class="site-footer"><div class="wrap">
+<div class="fgrid">
+<div class="fbrand"><a class="brand" href="/"><img src="/cct-logo.jpg" width="44" height="44" alt="Collar City Tech Help logo"><span>Collar City Tech Help</span></a><p>Websites, security checkups and marketing for small businesses. Based in Troy, NY. 100% online.</p><p>Mail: PO Box 182, Waterford, NY 12188<br><a href="mailto:collarcitytechhelp@gmail.com">collarcitytechhelp@gmail.com</a></p></div>
+<div class="fcol"><h4>Services</h4><ul><li><a href="/websites/">Websites</a></li><li><a href="/security/">Security Scorecard</a></li><li><a href="/security/#kit">Starter Kit</a></li><li><a href="/marketing/">Online Presence</a></li><li><a href="/mockup/">Free homepage mockup</a></li></ul></div>
+<div class="fcol"><h4>Learn</h4><ul><li><a href="/#quiz">Free security quiz</a></li><li><a href="/checklist/">Free checklist</a></li><li><a href="/blog/">Blog</a></li><li><a href="/industries/">Industries</a></li><li><a href="/samples/">Sample sites</a></li></ul></div>
+<div class="fcol"><h4>Areas</h4><ul><li><a href="/areas/troy-ny/">Troy</a></li><li><a href="/areas/albany-ny/">Albany</a></li><li><a href="/areas/schenectady-ny/">Schenectady</a></li><li><a href="/areas/cohoes-ny/">Cohoes</a></li><li><a href="/areas/watervliet-ny/">Watervliet</a></li><li><a href="/areas/saratoga-springs-ny/">Saratoga Springs</a></li><li><a href="/areas/">All areas</a></li><li><a href="/usa/">Across the U.S.</a></li></ul></div>
+<div class="fcol"><h4>Company</h4><ul><li><a href="/#about">About</a></li><li><a href="/#contact">Contact</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li><li><a href="/refunds/">Refunds</a></li></ul></div>
+</div>
+<div class="legal"><p>&copy; 2026 Collar City Tech Help &middot; Based in Troy, NY &middot; Mail: PO Box 182, Waterford, NY 12188</p><p>Designed and built by Alex using modern tools, including AI. Every website is personally reviewed before it goes live. We provide general guidance, not legal advice, and no service can guarantee you&#x27;ll never be hacked.</p></div>
+</div></footer>
 <script>
 // Payment links. Any link that does not start with https:// shows as a "Coming soon" button.
 var LINKS = { scorecard: "https://buy.stripe.com/4gMcN74XW4ZObIr4uwd7q00", monthly: "https://buy.stripe.com/bJebJ38a8gIwbIr8KMd7q02", kit: "https://buy.stripe.com/bJe6oJcqoak87sbd12d7q01" };
@@ -494,10 +299,11 @@ var m = document.getElementById('optMsg'), em = document.getElementById('optEmai
   });
 })();
 </script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha384-P8VzCVnT9NBUkMrpcIZrJbA7EBjJvh/fJS6PmP+4nLIM284DtsImIv8D0fFjIkeh" crossorigin="anonymous"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js" integrity="sha384-xb96EMJeax+NLXMC88ZBa1xAeAW+kn+horHh/zFlbMLG2UPWhMJJSlv7fi57hS+Q" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" integrity="sha384-eD5ubmuCcvTdCADWuSchJYE7wcj2nzNr0itbrh6w/KJyBiltSZ8w3VFRBSWu5YQ8" crossorigin="anonymous"></script>
-<script defer src="/assets/home.js"></script>
+<script defer src="/assets/kit/vendor/gsap.min.js"></script>
+<script defer src="/assets/kit/vendor/ScrollTrigger.min.js"></script>
+<script defer src="/assets/kit/vendor/SplitText.min.js"></script>
+<script defer src="/assets/kit/vendor/lenis.min.js"></script>
+<script defer src="/assets/kit/vendor/swiper-bundle.min.js"></script>
+<script defer src="/assets/site.js"></script>
 </body>
 </html>
