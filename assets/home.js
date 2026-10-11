@@ -7,9 +7,8 @@
   gsap.registerPlugin(ScrollTrigger, SplitText);
   var lenis = new Lenis(); lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add(function (t) { lenis.raf(t * 1000); }); gsap.ticker.lagSmoothing(0);
-  document.documentElement.classList.add('motion');
   var h1 = document.querySelector('[data-split]');
-  var sp = SplitText.create(h1, { type: 'lines', mask: 'lines' }); gsap.set(h1, { visibility: 'visible' });
+  var sp = SplitText.create(h1, { type: 'lines', mask: 'lines' }); document.documentElement.classList.add('motion'); gsap.set(h1, { visibility: 'visible' });
   var tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
   tl.from(sp.lines, { yPercent: 105, duration: .9, stagger: .12 })
     .from('.herobg .lead, .herobg .ctas, .herobg .note', { y: 18, opacity: 0, duration: .6, stagger: .1 }, '-=.5')
