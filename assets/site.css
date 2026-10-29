@@ -91,9 +91,11 @@ p{margin:0 0 1em}.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
 .fbrand{grid-column:1/-1}.fbrand .brand{color:#fff;margin:0 0 10px}.fbrand p{max-width:36em;margin:0 0 8px}.legal{border-top:1px solid #2a3b5e;margin-top:40px;padding-top:22px;font-size:.88rem;color:#9fb0cf}.legal p{margin:0 0 8px;max-width:60em}
 @media(min-width:900px){.fgrid{grid-template-columns:1.6fr 1fr 1fr 1fr 1fr}.fbrand{grid-column:auto}}
 /* motion states */
+.motion [data-split],.fx-ready [data-split]{visibility:hidden}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 /* fixes from round 2 */
+h1[data-split] div,h2[data-split] div{padding-bottom:.14em;margin-bottom:-.14em}
 .optform label{display:block;font-weight:600;margin:14px 0 6px}.optform label.chk{font-weight:400}.optform button{display:inline-block}
 .sample{border:1px solid var(--line);border-radius:12px;padding:22px;background:#fff;margin-top:22px}.sample .label{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:.8rem;letter-spacing:.04em;padding:4px 10px;border-radius:999px;margin-bottom:10px}.sample table{border-collapse:collapse;width:100%;font-size:.96rem;margin:12px 0}.sample th,.sample td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}.sample th{background:var(--paper);color:var(--navy)}
 
@@ -111,14 +113,4 @@ p{margin:0 0 1em}.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
 .blueprint .step{border-top:2px solid var(--teal-light)}.blueprint .step::before{content:'';position:absolute;left:0;top:-2px;width:8px;height:8px;border-left:2px solid #fff;border-top:2px solid #fff}
 .blueprint .step .n{color:var(--teal-light)}.blueprint .step p{color:#b9c6dd}
 @media(max-width:720px){.sec.blueprint{background-size:32px 32px,32px 32px,8px 8px,8px 8px,auto}}
-/* kinetic headline: DOM text never changes; the off-to-on roll is a visual overlay, plays once, JS adds .kin */
-.kin{display:inline-block;position:relative;overflow:hidden;vertical-align:top;height:1.1em;line-height:1.1em;margin-bottom:-.1em;width:var(--kw1);transition:width .7s .4s cubic-bezier(.2,.7,.2,1)}
-.kin.go{width:var(--kw2)}
-.kin::before{content:'off';position:absolute;left:0;top:0;opacity:0;animation:kinout .7s .4s cubic-bezier(.2,.7,.2,1) backwards}
-.kin .on{display:inline-block;animation:kinin .7s .4s cubic-bezier(.2,.7,.2,1) backwards}
-@keyframes kinin{from{transform:translateY(100%)}to{transform:none}}
-@keyframes kinout{from{transform:none;opacity:1}to{transform:translateY(-110%);opacity:1}}
-/* scroll reveal: visible by default, hidden only after JS arms it */
-.js-reveal .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease-out,transform .5s ease-out;transition-delay:var(--d,0s)}
-.js-reveal .reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.js-reveal .reveal{opacity:1;transform:none}}
+/* headline motion and scroll fades stay with the existing GSAP code (no second layer) */
