@@ -1,7 +1,7 @@
 # Photo credits for the birchwater-hair-studio sample (fictional business)
-All photos from Unsplash (free Unsplash license), resized/compressed. Used on a SAMPLE site only.
+Photos from Unsplash (free Unsplash license) and one from Pexels (Pexels license), resized/compressed. Used on a SAMPLE site only.
 
-- img/p01-lg.jpg / -sm.jpg: "a hair salon with chairs and a mirror" by Brooke Cagle on Unsplash, https://unsplash.com/photos/a-hair-salon-with-chairs-and-a-mirror-9ZygA8BI6_Q
+- img/p01-lg.jpg / -sm.jpg: "Salon chair beside oil heater in front of mirror inside room" by Fotios Photos on Pexels (Pexels license, free to use), https://www.pexels.com/photo/salon-chair-beside-oil-heater-in-front-of-mirror-inside-room-1895701/ (cropped and resized). Replaces an earlier Unsplash+ (paid) photo that carried a watermark.
 - img/p05-lg.jpg / -sm.jpg: "Three maroon salon chairs facing a long white counter with a large mirror" by Guilherme Petri on Unsplash, https://unsplash.com/photos/salon-chairs-at-white-vanity-PtOfbGkU3uI
 - img/p06-lg.jpg / -sm.jpg: "black leather barber chair near glass window" by Giorgio Trovato on Unsplash, https://unsplash.com/photos/black-leather-barber-chair-near-glass-window-XBcURNhKeog
 - img/p07-lg.jpg / -sm.jpg: "woman in white long-sleeved shirt standing in front of pink wall" by Element5 Digital on Unsplash, https://unsplash.com/photos/woman-in-white-long-sleeved-shirt-standing-in-front-of-pink-wall-WCPg9ROZbM0
