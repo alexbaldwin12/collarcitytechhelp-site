@@ -77,3 +77,6 @@ button.sample-btn{border:0;font:inherit;font-weight:700;cursor:pointer;text-alig
 .visit .hours{color:var(--grey);margin-top:1.25rem}
 @media(min-width:900px){.visit{grid-template-columns:minmax(0,6fr) minmax(0,5fr);align-items:end}}
 footer{background:var(--band);color:var(--band-ink);padding:2rem var(--gut);font-size:.9375rem;line-height:1.5}footer p{margin:0 0 .5rem;max-width:72ch}footer a{color:var(--band-ink)}.cct-foot{font-size:.85rem;opacity:.9;margin-top:10px}
+
+/* very small phones: let the visit block shrink and wrap long addresses/emails */
+@media(max-width:899px){.visit{grid-template-columns:minmax(0,1fr)}.visit a,.visit p,.visit li{overflow-wrap:anywhere}}

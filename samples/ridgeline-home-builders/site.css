@@ -79,3 +79,6 @@ footer{background:var(--band);color:var(--band-ink);padding:1.75rem var(--gut);f
 .mark{font-size:1.5rem;max-width:7ch;margin-right:0}.side nav{order:0;flex-direction:column;gap:.5rem;width:auto;margin-top:.75rem}.side nav a{font-size:1.0625rem}
 .side .cta{margin-top:.5rem}.drawn{display:block;margin-top:auto;width:100%;height:auto;color:var(--ink);opacity:.8}
 .hero-pic img{height:clamp(420px,42vw,600px)}.open{margin-left:calc(var(--gut) * 1.2)}.work .wrap{padding-inline:var(--gut)}}
+
+/* very small phones: let the contact block shrink and wrap long addresses/emails */
+@media(max-width:899px){.contact .two{grid-template-columns:minmax(0,1fr)}.contact a,.contact p,.contact li,.contact h2{overflow-wrap:anywhere}}
