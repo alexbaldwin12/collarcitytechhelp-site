@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-themable>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -138,13 +138,14 @@
  ]
 }
 </script>
+<script>(function(){var d=document.documentElement,m=/[?&]theme=(dark|light)/.exec(location.search);if(m)d.setAttribute('data-theme',m[1]);document.addEventListener('DOMContentLoaded',function(){var b=document.querySelector('.theme-btn');if(!b)return;function dk(){var t=d.getAttribute('data-theme');return t?t==='dark':matchMedia('(prefers-color-scheme:dark)').matches}function sy(){b.setAttribute('aria-pressed',dk())}sy();b.addEventListener('click',function(){d.setAttribute('data-theme',dk()?'light':'dark');sy()})})})();</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header"><div class="wrap">
 <a class="brand" href="/"><img src="/cct-logo.jpg" width="44" height="44" alt="Collar City Tech Help logo"><span>Collar City Tech Help</span></a>
 <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-<nav class="nav" id="site-nav" aria-label="Main"><a href="/websites/">Websites</a><a href="/security/">Security</a><a href="/marketing/">Marketing</a><a href="/#pricing">Pricing</a><a href="/samples/">Samples</a><a href="/blog/">Blog</a><a class="btn" href="/mockup/">Get a free homepage mockup</a></nav>
+<nav class="nav" id="site-nav" aria-label="Main"><a href="/websites/">Websites</a><a href="/security/">Security</a><a href="/marketing/">Marketing</a><a href="/#pricing">Pricing</a><a href="/samples/">Samples</a><a href="/blog/">Blog</a><a class="btn" href="/mockup/">Get a free homepage mockup</a></nav><button class="theme-btn" type="button" aria-label="Switch between light and dark theme" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg></button>
 </div></header>
 <main id="main">
 <section class="hero"><div class="wrap herogrid">
