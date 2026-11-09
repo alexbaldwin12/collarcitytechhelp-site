@@ -28,3 +28,37 @@
   }
   d.addEventListener('visibilitychange', function () { if (!started) return; if (d.hidden) v.pause(); else if (hv.getBoundingClientRect().bottom > 0) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } });
 })();
+
+/* Hero bay board: sample data that ticks like a shop status board. Decorative (aria-hidden); the same story lives on shop.html.
+   Only transform and opacity animate. Paused off screen and in hidden tabs. Static under reduced motion. */
+(function () {
+  'use strict';
+  var d = document, bb = d.querySelector('.bb'); if (!bb) return;
+  var RM = d.documentElement.classList.contains('rm');
+  var lis = [].slice.call(bb.querySelectorAll('li')), tick = bb.querySelector('.bb-tick'), clk = d.getElementById('bbClock');
+  var S = [
+    [['Brakes', 'Ready 2:30', 'ready'], ['Brakes', 'Road test', 'busy'], ['Oil service', 'In progress', 'busy'], ['Oil service', 'Ready 3:10', 'ready']],
+    [['Oil service', 'In progress', 'busy'], ['Oil service', 'Ready 2:05', 'ready'], ['Open', 'Open', 'open'], ['Tires', 'In progress', 'busy']],
+    [['Alignment', 'In progress', 'busy'], ['Alignment', 'Ready 2:45', 'ready'], ['Tires', 'Waiting on parts', 'parts'], ['Tires', 'In progress', 'busy']],
+    [['Check-engine', 'Diagnosing', 'busy'], ['Check-engine', 'Estimate sent', 'ready'], ['Battery', 'In progress', 'busy'], ['Battery', 'Ready 3:20', 'ready']]
+  ];
+  var idx = [0, 0, 0, 0], t = 13 * 60 + 52, next = 0, timer = null;
+  function fmt(m) { var h = Math.floor(m / 60) % 24, mm = m % 60; return ((h + 11) % 12 + 1) + ':' + (mm < 10 ? '0' : '') + mm + ' ' + (h >= 12 ? 'pm' : 'am'); }
+  function swap(box, text) {
+    var old = box.firstElementChild; if (old && old.textContent === text) return;
+    var n = d.createElement('span'); n.textContent = text; n.className = 'in'; box.appendChild(n);
+    requestAnimationFrame(function () { requestAnimationFrame(function () { n.classList.remove('in'); if (old) { old.classList.add('out'); setTimeout(function () { if (old.parentNode) old.parentNode.removeChild(old); }, 700); } }); });
+  }
+  function step() {
+    var b = next++ % lis.length; idx[b] = (idx[b] + 1) % S[b].length; var s = S[b][idx[b]], li = lis[b];
+    swap(li.querySelector('.bb-job'), s[0]); swap(li.querySelector('.bb-st .sw'), s[1]); li.setAttribute('data-k', s[2]);
+    t += 1; clk.textContent = fmt(t);
+  }
+  if (RM) return;
+  function run() { if (timer) return; tick.classList.add('run'); timer = setInterval(step, 3400); }
+  function halt() { if (timer) { clearInterval(timer); timer = null; } tick.classList.remove('run'); }
+  var vis = true;
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { vis = es[0].isIntersecting; if (vis && !d.hidden) run(); else halt(); }).observe(bb);
+  d.addEventListener('visibilitychange', function () { if (d.hidden) halt(); else if (vis) run(); });
+  run();
+})();
