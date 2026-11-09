@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bay Nine Auto Repair: brakes, engine, tires and more | Example design - not a real client</title>
+<meta name="description" content="Example website design for a made-up auto repair shop. Scroll into the bay, spin the 3D car, pick a part, book a repair.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0a0b0c">
+<meta name="color-scheme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' blob: data:; form-action 'none'; base-uri 'none'; frame-src 'none'; object-src 'none'">
+<script>var r=document.documentElement;r.classList.add('js');try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)r.classList.add('rm')}catch(e){}</script>
+<link rel="preload" href="fonts/Saira-100-900.woff2" as="font" type="font/woff2" crossorigin>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.min.js","three/addons/":"./vendor/three-addons/"}}</script>
+<link rel="preload" as="image" href="img/poster.webp" fetchpriority="high" media="(min-aspect-ratio: 9/10)">
+<link rel="preload" as="image" href="img/poster-p.webp" fetchpriority="high" media="(max-aspect-ratio: 9/10)">
+<link rel="stylesheet" href="css/site.css">
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "AutoRepair",
+ "@id": "https://example.com/#shop",
+ "name": "Bay Nine Auto Repair (example, not a real business)",
+ "description": "Made-up auto repair shop used as an example website design.",
+ "url": "https://example.com/",
+ "telephone": "+15550100177",
+ "email": "hello@example.com",
+ "priceRange": "$$",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "Your shop address here",
+  "addressLocality": "Example City",
+  "addressRegion": "NY",
+  "postalCode": "00000",
+  "addressCountry": "US"
+ },
+ "openingHoursSpecification": [
+  {
+   "@type": "OpeningHoursSpecification",
+   "dayOfWeek": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday"
+   ],
+   "opens": "07:30",
+   "closes": "17:30"
+  },
+  {
+   "@type": "OpeningHoursSpecification",
+   "dayOfWeek": "Saturday",
+   "opens": "08:00",
+   "closes": "13:00"
+  }
+ ],
+ "areaServed": [
+  "Example City"
+ ],
+ "hasOfferCatalog": {
+  "@type": "OfferCatalog",
+  "name": "Sample services (example prices)",
+  "itemListElement": [
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "price": "189",
+     "priceCurrency": "USD",
+     "minPrice": "189"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Brakes"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "price": "129",
+     "priceCurrency": "USD",
+     "minPrice": "129"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Engine and check-engine light"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "price": "79",
+     "priceCurrency": "USD",
+     "minPrice": "79"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Tires and alignment"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "price": "349",
+     "priceCurrency": "USD",
+     "minPrice": "349"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Suspension and steering"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "price": "64",
+     "priceCurrency": "USD",
+     "minPrice": "64"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Oil and fluids"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "price": "149",
+     "priceCurrency": "USD",
+     "minPrice": "149"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Battery and charging"
+    }
+   }
+  ]
+ }
+}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="hdr">
+<div class="strip"><b>Example design - not a real client.</b><span class="x"> Made-up shop, example phone, sample prices.</span></div>
+<div class="bar">
+<a class="logo" href="index.html" aria-label="Bay Nine Auto, home"><i>9</i>Bay Nine Auto</a>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav class="nav" id="nav" aria-label="Main"><a href="services.html">Services</a><a href="the-bay.html">The bay</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+<div class="bar-r">
+<span class="pill-status hd"><span class="dot"></span><span data-status>Mon to Fri 7:30 am to 5:30 pm</span></span>
+<a class="btn sm ghost call" href="tel:+15550100177">Call (555) 010‑0177</a>
+<a class="btn sm" href="contact.html#book">Book a repair</a>
+</div></div></div>
+<div class="dip" aria-hidden="true"><svg viewBox="0 0 26 200"><circle cx="13" cy="7" r="5" fill="none" stroke="#9aa2aa" stroke-width="1.5"/><rect x="11" y="12" width="4" height="188" fill="#2a2e33"/><rect id="dipLvl" class="lvl" x="11" y="190" width="4" height="10" fill="#f0a83a"/><g stroke="#9aa2aa" stroke-width="1"><path d="M2 20h14"/><path d="M2 38h9"/><path d="M2 56h9"/><path d="M2 74h9"/><path d="M2 92h9"/><path d="M2 110h14"/><path d="M2 128h9"/><path d="M2 146h9"/><path d="M2 164h9"/><path d="M2 182h9"/></g></svg></div>
+<div class="dock"><a class="btn ghost" href="tel:+15550100177">Call</a><a class="btn" href="contact.html#book">Book a repair <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div>
+<main id="main">
+<section class="intro" aria-label="Fly-in to the shop">
+<div class="stage grain">
+<picture><source media="(max-aspect-ratio: 9/10)" srcset="img/poster-p.webp"><img class="poster" src="img/poster.webp" width="1280" height="720" alt="A garage bay at dusk, roller door open and amber light spilling across the floor toward a pale coupe under the ceiling lights" fetchpriority="high"></picture>
+<canvas id="seq" aria-hidden="true"></canvas>
+<div class="vig"></div><div class="sweep"></div>
+<div class="hero-copy"><h1><span class="l" style="--i:0"><span>Tell us what</span></span><span class="l" style="--i:1"><span>it&rsquo;s doing.</span></span></h1>
+<p class="hero-sub">Brakes, a light on the dash, a noise you can&rsquo;t place. Bay Nine Auto Repair. Drop it off or wait. We write up the estimate before we touch anything.</p></div>
+<div class="hero-act"><a class="btn lg" href="contact.html#book">Book a repair <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a><a class="btn lg ghost" href="tel:+15550100177">Call (555) 010‑0177</a></div>
+<div class="hero-meta"><div class="pill-status"><span class="dot"></span><span data-status>Mon to Fri 7:30 am to 5:30 pm, Sat 8 am to 1 pm</span></div><div class="scrollcue">Scroll to go in <i></i></div></div>
+<div class="caps"><div class="cap"><h2>Pull in. The door&rsquo;s open.</h2><p>Bay nine is the one with the lights on. Someone meets you before you&rsquo;ve switched the engine off.</p></div><div class="cap"><h2>Every car gets looked at first.</h2><p>No number over the phone until a tech has seen it on the lift.</p></div><div class="cap"><h2>Brakes: we pull the wheel.</h2><p>Pads and rotors get measured. You see the numbers, not a guess.</p></div><div class="cap"><h2>Warning light? We plug in.</h2><p>We read what the car says, then drive it to see for ourselves.</p></div><div class="cap last"><h2>Tell us what it&rsquo;s doing.</h2><p>Book a time or call. We take it from there.</p><a class="btn lg" href="contact.html#book">Book a repair <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a> <a class="btn lg ghost" style="margin-top:20px" href="tel:+15550100177">Call (555) 010‑0177</a></div></div>
+<div class="prog"><i></i></div>
+</div>
+</section>
+<section class="stills" aria-label="The fly-in, as stills">
+<figure><img src="img/still-door.webp" alt="The open bay door at dusk with the car under the lights" loading="lazy" width="960" height="540"><figcaption class="wrap"><h2>Pull in. The door&rsquo;s open.</h2><p class="lead">Bay nine is the one with the lights on.</p></figcaption></figure>
+<figure><img src="img/still-brake.webp" alt="Close view of the front wheel and brake area" loading="lazy" width="960" height="540"><figcaption class="wrap"><h2>Brakes: we pull the wheel.</h2><p class="lead">Pads and rotors get measured. You see the numbers.</p></figcaption></figure>
+<figure><img src="img/still-cabin.webp" alt="Looking down into the cabin from above" loading="lazy" width="960" height="540"><figcaption class="wrap"><h2>Warning light? We plug in.</h2><p class="lead">We read what the car says, then drive it.</p></figcaption></figure>
+<figure><img src="img/still-nose.webp" alt="The car from the front, low, under the shop lights" loading="lazy" width="960" height="540"><figcaption class="wrap"><h2>Tell us what it&rsquo;s doing.</h2><p class="lead"><a href="contact.html#book">Book a repair</a> or call (555) 010‑0177.</p></figcaption></figure>
+</section>
+
+<section class="car3d sec grain" id="car" aria-labelledby="car-h">
+<div class="wrap">
+<div class="kicker rv">Pick a part</div>
+<h2 class="big" id="car-h" style="max-width:11em"><span class="mask"><span>Turn the car.</span></span><span class="mask" style="--i:1"><span>Tap what hurts.</span></span></h2>
+<p class="lead rv" style="margin:24px 0 clamp(28px,4vw,56px)">Drag to spin it, use the buttons to zoom, tap a glowing dot or pick from the list. Each part shows what we do, how long it takes and a sample starting price. <strong>Look inside</strong> puts you in the driver&rsquo;s seat.</p>
+<div class="car-grid">
+<div class="car-stage" id="stage3d">
+<img class="ph" src="img/still-nose.webp" alt="The car from the front, low, under shop lights" loading="lazy" width="960" height="540">
+<div id="canvasHost" style="position:absolute;inset:0"></div>
+<div class="hots" id="hots"></div>
+<div class="car-load" id="carLoad" hidden></div>
+<div class="stage-ui" id="stageUi" hidden>
+<button class="chip" id="zout" type="button" aria-label="Zoom out">&minus;</button><button class="chip" id="zin" type="button" aria-label="Zoom in">+</button>
+<button class="chip" id="cabin" type="button" aria-pressed="false">Look inside</button><button class="chip" id="xray" type="button" aria-pressed="false">X-ray</button><button class="chip" id="reset" type="button">Reset</button>
+<span class="stage-hint">Drag to turn. Ctrl and scroll to zoom.</span></div>
+</div>
+<div><div class="parts" id="parts" role="list" aria-label="Car parts and services"><div class="part" data-id="brakes"><button type="button"><span>Brakes</span><small>from $189</small></button>
+<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Pads, rotors and calipers inspected and measured; Brake fluid tested, lines checked; Road test before and after</dd><dt>Typical time</dt><dd>2 to 3 hours</dd></dl>
+<div class="price">$189<small>starting at, sample price</small></div><p style="margin-bottom:14px">Per axle, pads and rotors installed.</p>
+<a class="btn dark sm" href="contact.html?service=brakes#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
+<div class="part" data-id="engine"><button type="button"><span>Engine and check-engine light</span><small>from $129</small></button>
+<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Scan and live-data read; Misfires, rough idle, stalling, hard starts; Written estimate before any repair starts</dd><dt>Typical time</dt><dd>1 hour to diagnose</dd></dl>
+<div class="price">$129<small>starting at, sample price</small></div><p style="margin-bottom:14px">Diagnostic fee, credited toward the repair.</p>
+<a class="btn dark sm" href="contact.html?service=engine#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
+<div class="part" data-id="tires"><button type="button"><span>Tires and alignment</span><small>from $79</small></button>
+<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Mount, balance and rotate; Four-wheel alignment check and set; Tire pressure sensors checked</dd><dt>Typical time</dt><dd>1 to 2 hours</dd></dl>
+<div class="price">$79<small>starting at, sample price</small></div><p style="margin-bottom:14px">Rotate and balance, four tires.</p>
+<a class="btn dark sm" href="contact.html?service=tires#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
+<div class="part" data-id="suspension"><button type="button"><span>Suspension and steering</span><small>from $349</small></button>
+<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Shocks, struts and springs; Control arms, bushings, tie rods; Alignment check after the repair</dd><dt>Typical time</dt><dd>3 to 5 hours</dd></dl>
+<div class="price">$349<small>starting at, sample price</small></div><p style="margin-bottom:14px">Per pair of struts, installed.</p>
+<a class="btn dark sm" href="contact.html?service=suspension#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
+<div class="part" data-id="oil"><button type="button"><span>Oil and fluids</span><small>from $64</small></button>
+<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Oil and filter, drain plug torqued; Fluid levels topped and checked; Quick look at belts, hoses and tires</dd><dt>Typical time</dt><dd>45 minutes</dd></dl>
+<div class="price">$64<small>starting at, sample price</small></div><p style="margin-bottom:14px">Synthetic-blend oil change.</p>
+<a class="btn dark sm" href="contact.html?service=oil#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
+<div class="part" data-id="battery"><button type="button"><span>Battery and charging</span><small>from $149</small></button>
+<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Battery, starter and alternator tested; Replacement installed, terminals cleaned; Old battery recycled</dd><dt>Typical time</dt><dd>30 to 60 minutes</dd></dl>
+<div class="price">$149<small>starting at, sample price</small></div><p style="margin-bottom:14px">Battery installed, most cars.</p>
+<a class="btn dark sm" href="contact.html?service=battery#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
+</div>
+<p class="muted" style="font-size:14px;margin-top:18px">Sample prices. The model has no engine inside, so the x-ray shapes show roughly where parts live and are not the real thing.</p></div>
+</div>
+</div>
+</section>
+
+<section class="sympt sec"><div class="wrap sym-grid">
+<div><div class="kicker rv">Not sure what it is?</div><h2 class="big rv" style="--i:1">What is it doing?</h2></div>
+<div><div class="sym-btns rv" style="--i:2"><button type="button" data-k="0">It squeals or pulls when I brake</button><button type="button" data-k="1">The check-engine light is on</button><button type="button" data-k="2">The steering wheel shakes</button><button type="button" data-k="3">The ride feels loose or bouncy</button><button type="button" data-k="4">It has been a while since the last oil change</button><button type="button" data-k="5">It is slow to start</button></div>
+<div class="sym-out" id="sym-out" aria-live="polite"><b>Pick one.</b>We&rsquo;ll point you to the right job and what it usually costs. Anything else, <a href="contact.html#book">tell us on the form</a>.</div></div>
+</div>
+<script type="application/json" id="sym-data">{"0": {"id": "brakes", "name": "Brakes", "text": "Squeal, grind, a soft pedal, pulling to one side. Typical time: 2 to 3 hours. Starting at $189 (sample price)."}, "1": {"id": "engine", "name": "Engine and check-engine light", "text": "A light on the dash, rough idle, stalling, a drop in mileage. Typical time: 1 hour to diagnose. Starting at $129 (sample price)."}, "2": {"id": "tires", "name": "Tires and alignment", "text": "Vibration at highway speed, uneven wear, a new set. Typical time: 1 to 2 hours. Starting at $79 (sample price)."}, "3": {"id": "suspension", "name": "Suspension and steering", "text": "Clunks, bounce, a car that wanders or leans in corners. Typical time: 3 to 5 hours. Starting at $349 (sample price)."}, "4": {"id": "oil", "name": "Oil and fluids", "text": "Oil change, plus brake, coolant and transmission fluid. Typical time: 45 minutes. Starting at $64 (sample price)."}, "5": {"id": "battery", "name": "Battery and charging", "text": "Slow to start, dim lights, a battery light on. Typical time: 30 to 60 minutes. Starting at $149 (sample price)."}}</script></section>
+
+<section class="sec grain" style="padding-block:0">
+<a href="the-bay.html" style="display:block;position:relative;min-height:min(80svh,720px);text-decoration:none;overflow:hidden;background:#0d0e10" aria-label="Look around the bay in 360">
+<img src="pano/bay-flat.jpg" alt="" loading="lazy" width="1024" height="512" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.62) saturate(.85)">
+<div class="wrap" style="position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:min(80svh,720px);padding-bottom:clamp(36px,6vw,80px)">
+<div class="kicker">360 view</div><h2 class="big" style="max-width:9em">Walk the shop before you drive in.</h2>
+<p class="lead" style="margin:20px 0 28px">Look around the real bay, tap the lift, the scan bay and the tire station to see what each one does.</p>
+<span class="btn lg" style="align-self:flex-start">Look around <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div></a>
+</section>
+<section class="cta-band grain"><div class="wrap">
+<h2 class="rv">Tell us what it&rsquo;s <b>doing.</b></h2>
+<p class="lead rv" style="--i:1;color:#141516;margin-top:22px">Book a time, or call and talk to a person.</p>
+<div class="acts rv" style="--i:2"><a class="btn lg" href="contact.html#book">Book a repair <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a><a class="btn lg ghost" href="tel:+15550100177">Call (555) 010‑0177</a><a class="btn lg ghost" href="contact.html?service=engine#book">Get a quote</a></div>
+</div></section>
+
+</main>
+<footer>
+<div class="wrap">
+<div class="ft">
+<div><a class="logo" href="index.html"><i>9</i>Bay Nine Auto</a><p style="margin-top:16px;max-width:22em">A made-up repair shop. This site shows what an advanced Collar City Tech Help build can do for a garage.</p></div>
+<div><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="the-bay.html">The bay</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Book a repair</a></li></ul></div>
+<div><h4>Near you (sample local pages)</h4><ul><li><a href="brake-repair-troy.html">Brake repair in Troy</a></li><li><a href="oil-change-albany.html">Oil change near Albany</a></li></ul></div>
+<div><h4>Visit</h4><ul><li>Your shop address here</li><li>Example City, NY</li><li><a href="tel:+15550100177">(555) 010‑0177</a></li><li>Mon to Fri 7:30 am to 5:30 pm</li><li>Sat 8 am to 1 pm, Sun closed</li></ul></div>
+</div>
+<div class="legal">
+<p><strong>Example design - not a real client.</strong> Bay Nine Auto is a made-up shop. The phone number is an example, the prices are sample prices, the form sends nothing, and there are no reviews because there are no customers. No bookings are taken.</p>
+<p>Credits: 3D car model "Ferrari 458 Italia" by vicent091036 (CC BY 4.0, as credited in the three.js examples; original page not reachable when checked), 360 photo Autoshop 01 by Oliksiy Yakovlyev (CC0, Poly Haven), fly-in frames rendered by us from those assets, fonts Saira and Instrument Sans (Open Font License), IBM Plex Mono (OFL), three.js (MIT), GSAP (GreenSock standard license), Pannellum (MIT). Details in assets/CREDITS.md.</p>
+<p>Designed and built by Alex using modern tools, including AI. Every website is personally reviewed before it goes live. We provide general guidance, not legal advice, and no service can guarantee you'll never be hacked. Sample site by <a href="https://collarcitytechhelp.com/websites/">Collar City Tech Help</a>.</p>
+</div></div></footer>
+<script src="js/site.js"></script>
+<script src="vendor/gsap.min.js"></script><script src="vendor/ScrollTrigger.min.js"></script><script src="js/home.js"></script><script src="js/services.js"></script><script src="js/car-ui.js"></script>
+</body></html>

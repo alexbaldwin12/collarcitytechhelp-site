@@ -1,0 +1,45 @@
+# Bay Nine Auto: advanced example site B (Case 14, $999 Business tier)
+
+Private example for Collar City Tech Help. A made-up auto repair shop. Not a real client, not a real business (the name was invented and not searched for uniqueness). noindex on every page. Branch `advanced-samples` only. Do not merge, push or deploy without Alex. Site A (Kettle Point) was not touched.
+
+Run it: `cd samples/repair-shop-example && python3 -m http.server 8781 --bind 127.0.0.1`, then http://127.0.0.1:8781/ (needs a web server).
+
+## Pages (all carry "Example design - not a real client", noindex, the same nav, the sticky Book/Call bar and AutoRepair JSON-LD)
+- index.html: scroll fly-in, 3D car with part hotspots, symptom picker, 360 teaser, CTA.
+- services.html: sample price board (expandable rows, "Book this"), "how an estimate works" horizontal scroll track, links to the local pages, FAQ.
+- the-bay.html: 360 view of a service hall (Pannellum) with 5 equipment hotspots and a text list.
+- about.html: drawn floor plan of nine bays (tap a bay), warranty terms (sample), certification placeholders, "Your reviews here" slot with a review-link placeholder, team slot.
+- contact.html: repair-order style request form (demo: no network, nothing stored, `form-action 'none'`), tap-to-call, live open/closed status, hours table, drawn SVG map, 7-question FAQ.
+- brake-repair-troy.html, oil-change-albany.html: sample local SEO pages (own H1, prices, FAQ, map, Service + BreadcrumbList JSON-LD).
+Page transitions: CSS cross-document view transitions (`@view-transition`, Chromium); other browsers get a plain page load.
+
+## How the intro works (honest)
+Not video. 96 frames (landscape 1280x720 and portrait 480x1040, WebP) rendered by us from a real three.js 3D scene: a procedural dark bay (floor with reflection, ceiling light strips, lift posts, tool cabinets, a lit roller door at dusk) with the licensed car model inside. A virtual camera flies through the door, along the car, past the front wheel and brakes, over the cabin and settles at the nose. The frames have real parallax and perspective because the camera moves through 3D space. They are drawn on a canvas and scrubbed by GSAP ScrollTrigger (sticky stage, 520 svh of scroll on desktop, 430 on phones). The first paint is a 7-10 KB poster, the headline and the Book button (CSS only, no JS needed); frames start loading 250 ms after the load event, coarse pass first. Reduced motion or no JS: no scrub, four stills instead. Limit: the path is baked, so it cannot react to the visitor; the bay is procedural, not a photo of a real shop.
+
+## How the 3D car works (honest)
+three.js r170 (self-hosted) + Draco decoder, loaded only when the stage is within 500 px of the viewport (poster shown first; Data Saver waits for a click). The model has real separate nodes for wheels, tyres, brakes, glass and interior. Hotspots: brakes (positioned from the brake node), tires, suspension, engine, oil and fluids, battery. Engine, suspension, battery and fluids are NOT inside the model, so their dots sit on the body and the **X-ray** mode makes the body see-through and draws amber outline shapes where those parts live. Those shapes are illustrative, and the page says so. Clicking a dot or a list row flies the camera to a preset view and opens a repair-order slip (what it covers, typical time, "starting at" sample price, **Book this** which links to contact.html?service=<id> and pre-selects the service in the form). **Look inside** puts the camera in the driver's seat with a look-around (drag to turn your head, inverted like a real head turn); this is a real interior from the model. Touch: horizontal swipe turns the car, vertical swipe still scrolls the page, zoom is by the +/- buttons (a pinch is not captured on purpose so the page never gets stuck). Wheel zoom needs Ctrl, so the page never hijacks scrolling. Keyboard: the part list is real buttons, the canvas takes arrow keys, hotspot dots are buttons.
+
+## Weights
+Folder about 7.7 MB (limit 15). Before the load event on the home page: html 21 KB, css 34 KB, Saira 99 KB, Instrument Sans 57 KB, two small mono fonts 20 KB, poster 7-10 KB, GSAP 72 KB, ScrollTrigger 44 KB, page scripts about 17 KB: roughly 0.38 MB uncompressed, 13 requests (limit 1.5 MB). Then, lazy: fly-in frames 1.8 MB landscape or 1.0 MB portrait (starts 250 ms after load), 3D about 3.1 MB (three 0.68 MB, addons 0.19, Draco 0.75, model 1.68, env 0.06) only near the 3D section, 360 photo 0.75 MB only on the-bay.html when near. Measured from file sizes and the resource list, not from a throttled network run.
+
+## Library review log (read Nov 9 2026)
+| File | Version | Licence | sha256 | Review |
+|---|---|---|---|---|
+| vendor/three.module.min.js | three r170 (npm three@0.170.0) | MIT | 08fd7545d13d2c7fb65ab691530a802dafefd638596501854f267d0fb13c39e7 | grep of the minified file: 0 hits for eval, new Function, XMLHttpRequest, localStorage, sessionStorage, document.cookie, sendBeacon, WebSocket, document.write, indexedDB, importScripts. 3 fetch( calls (FileLoader/ImageBitmapLoader, for the files we ask it to load). Only URL string: w3.org xhtml namespace. No dependencies. Grep review of minified code, not line by line. |
+| vendor/three-addons/loaders/GLTFLoader.js | r170 | MIT | 45139faddd5aaf48ed2d62203d976e5cbd703db1a592de40527f9f6cf58abd44 | Readable source, no eval/new Function/storage/beacons; URLs are comments linking Khronos docs. |
+| vendor/three-addons/loaders/DRACOLoader.js | r170 | MIT | 8a90b39b6c0d7faa70410cdd19348029a83a9f2d5f71e11b665a5f48330a4c72 | Creates web workers from a blob of the decoder (needs CSP `worker-src blob:`). No network except fetching the decoder files from vendor/draco. |
+| vendor/three-addons/controls/OrbitControls.js | r170 | MIT | 80efaadea4f8a636a65fb0bd08bfef62f3d93a0bb94e2e7500f23176c5c07f4e | No network, no storage. |
+| vendor/three-addons/utils/BufferGeometryUtils.js | r170 | MIT | c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6 | Pure geometry helpers. |
+| vendor/draco/draco_wasm_wrapper.js, draco_decoder.js, draco_decoder.wasm | as shipped in three@0.170.0 | Apache 2.0 | 8bb2952d2ba7d67e1414f8df819410cb0434a666be53f671fff75f68843d76f6, 8625489da79a805f4f2a7d511c3e52d8b4085608a9d2a4d5f4f9de5db0aea04f, a680d927bed9cb864ddbd63521868891af2bfbe755092761b4837487618df8ac | Emscripten glue: XHR/fetch/importScripts are the standard loader paths for the sibling .wasm file. Needs CSP `'wasm-unsafe-eval'`. No eval or new Function in the JS. WASM binary not decompiled, taken from the three.js release. |
+| vendor/gsap.min.js, ScrollTrigger.min.js | 3.13.0 | GreenSock standard no-charge | 96c01b81f44a3290e2b4532f55e2c9534b2adc43273a19f3756b2cb41f0fd0b6, 308219390e5e3b84cda0c481e70caa9820883ae10bda44e6e9a149a81aac4b3f | Same files already reviewed for Site A. |
+| vendor/pannellum.js, pannellum.css | 2.5.6 | MIT | a28b2f7b339fd0a602c6769df1dca6ad43af73bc8c6a5be67209715289c12a9a, a7f1d7b86f1068f228d92f1b0aef95bd41d1e2e12785516573adbf552ee2793d | Same pinned copy as the advanced kit (reviewed there). |
+| models/coupe.glb | n/a | CC BY 4.0 claimed, UNVERIFIED (see assets/CREDITS.md) | cafe3f48da6797aa9bde75ca768bc5b57db366575fd233e90df186ae988a876e | Data file. |
+| fonts/*.woff2 | Google Fonts | OFL 1.1 | Saira e59235a4..., Instrument Sans 19f8ec32..., Plex Mono c36f509c... / a76f53ca... | Font files. |
+
+Not used on purpose: Lenis (native scroll keeps touch reliable), model-viewer, Lottie.
+The page CSP (meta tag) allows only same-folder files, blob workers for Draco, no form posts, no frames; the demo form also has no action.
+
+## Rules checks
+- check_site.py: `python3 00-hq/tools/check_site.py <worktree root>` run from collar-city (script unchanged): RESULT PASS, 73 pages checked, only "not in sitemap" warnings (unlisted noindex samples). The example phone is written (555) 010-0177 with non-breaking hyphens in the markup (the script reads US-style numbers as errors) and tel:+15550100177.
+- Reduced motion: no scrub, no pin, no auto-rotate, no reveal animation, four stills; checked by CSS/JS path and by removing the js class, not by toggling the OS setting.
+- JavaScript off: all text, price board open, parts list with slips, hours table, flat 360 photo, stills, FAQ, form markup.
