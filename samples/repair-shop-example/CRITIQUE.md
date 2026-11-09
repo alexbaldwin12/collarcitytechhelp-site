@@ -1,3 +1,5 @@
+> NOTE (Nov 9 2026, Round 1): this critique is historical. It describes the earlier build with a rendered 3D car and fly-in frames, all of which were deleted under the no-CG hard rule. See README.md "Removal of all home-made CG" and the Round 1 sections.
+
 # Self-critique, Bay Nine Auto (example site B, $999 Business tier)
 
 Checked with the built-in browser (a desktop pane emulating 1280x760 and 375x812). The pane renders slowly and uses software WebGL, so smoothness at 60 fps was NOT judged; I checked states after settling. NOT tested: Safari and iOS (3D, canvas, view transitions, dialog), a real touch device, a real screen reader, Lighthouse, a throttled network run, the OS reduced-motion switch (checked by removing the `js` class and reading the CSS), Firefox.
