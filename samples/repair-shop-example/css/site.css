@@ -213,7 +213,7 @@ html:not(.js) .est-line,.rm .est-line{display:none}
 .local a:hover{padding-left:14px;color:var(--amber-ink)}
 
 /* ---------- 360 bay page ---------- */
-.pano-wrap{position:relative;height:min(86svh,860px);min-height:480px;background:#0d0e10;overflow:hidden}
+.pano-wrap{position:relative;height:calc(100svh - var(--hdr) - var(--bayhead,92px));min-height:440px;max-height:980px;background:#0d0e10;overflow:hidden}
 #pano{position:absolute;inset:0}
 .pano-flat{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .pnlm-container{background:#0d0e10!important;font-family:var(--text)!important}
@@ -744,3 +744,20 @@ html:not(.js) .ba-r{clip-path:none;opacity:.0}
 .loc-one b{font:500 12.5px var(--mono);color:var(--amber-ink);margin-right:8px}
 #loc-pick{display:grid}
 @media (max-width:900px){.loc{margin-right:0}}
+
+/* ---------- the bay page: short header so the 360 view is on the first screen ---------- */
+.bay-top{padding:calc(var(--hdr) + 12px) 0 14px;background:var(--asphalt)}
+.bt-in{display:flex;align-items:flex-end;justify-content:space-between;gap:8px 40px;flex-wrap:wrap}
+.bay-top h1{font-size:clamp(1.9rem,3.2vw + .3rem,3.1rem);font-weight:250;letter-spacing:-.015em;line-height:1.05}
+.bay-top p{margin:0;max-width:30em;color:var(--steel);font-size:15.5px;line-height:1.45}
+.pano-wrap{margin-top:0}
+@media (max-width:900px){
+  :root{--bayhead:122px}
+  .pano-wrap{height:calc(100svh - var(--hdr) - var(--bayhead) - 64px)}
+  .bay-top{padding-top:calc(var(--hdr) + 8px)}
+  .bay-top p{font-size:14.5px}
+  .pano-ui{flex-wrap:nowrap;overflow-x:auto;left:8px;right:8px;bottom:10px;padding-bottom:2px;scrollbar-width:none}
+  .pano-ui::-webkit-scrollbar{display:none}
+  .pano-ui .chip{flex:none}
+  .pano-note{left:46px;top:8px;max-width:calc(100% - 56px);font-size:12.5px;padding:6px 10px}
+}
