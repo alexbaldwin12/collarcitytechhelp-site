@@ -216,6 +216,48 @@
 </div></div>
 </section>
 
+<section class="car3d sec grain" id="car" aria-labelledby="car-h">
+<div class="wrap">
+<div class="kicker rv">Pick a part</div>
+<h2 class="big" id="car-h" style="max-width:11em"><span class="mask"><span>Walk around the car.</span></span><span class="mask" style="--i:1"><span>Tap what hurts.</span></span></h2>
+<p class="lead rv" style="margin:24px 0 clamp(28px,4vw,56px)">Switch between three views of a real car in a real bay, tap a glowing dot or pick from the list. Each part shows what we do, how long it takes and a sample price range, and one button books it.</p>
+<div class="car-grid">
+<div class="car-stage" id="stage" role="group" aria-roledescription="photo viewer" aria-label="Three photos of one car. Use the angle buttons, the arrow keys or swipe sideways." tabindex="0">
+<div class="layers"><picture class="lay" data-a="side"><source type="image/webp" srcset="img/car/car-side-960.webp 960w, img/car/car-side-1920.webp 1920w" sizes="(min-width:901px) 58vw, 100vw"><img src="img/car/car-side-960.jpg" width="960" height="540" alt="A white wagon raised on a two-post lift in a repair bay, seen from the side" loading="lazy" decoding="async"></picture><picture class="lay" data-a="hood"><source type="image/webp" srcset="img/car/car-hood-960.webp 960w, img/car/car-hood-1920.webp 1920w" sizes="(min-width:901px) 58vw, 100vw"><img src="img/car/car-hood-960.jpg" width="960" height="540" alt="The same wagon on the shop floor with the hood open and a technician at the engine" loading="lazy" decoding="async"></picture><picture class="lay" data-a="lift"><source type="image/webp" srcset="img/car/car-lift-960.webp 960w, img/car/car-lift-1920.webp 1920w" sizes="(min-width:901px) 58vw, 100vw"><img src="img/car/car-lift-960.jpg" width="960" height="540" alt="The same wagon lifted on a two-post lift, seen from the front three-quarter side" loading="lazy" decoding="async"></picture></div>
+<div class="hots" id="hots"></div>
+<div class="stage-ui" id="stageUi" hidden><div class="angles" role="group" aria-label="Car angle"><button class="chip" type="button" data-angle="side" aria-pressed="true">Side</button><button class="chip" type="button" data-angle="hood" aria-pressed="false">Hood open</button><button class="chip" type="button" data-angle="lift" aria-pressed="false">Lifted</button></div><span class="stage-hint">Swipe or drag sideways to change view.</span></div>
+</div>
+<div><div class="parts" id="parts" role="list" aria-label="Car parts and services"><div class="part" data-id="oil"><button type="button"><span>Oil, filters and fluids</span><small>$59 to $109</small></button>
+<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Oil and filter to the maker&rsquo;s specification, drain plug torqued; Brake, coolant, transmission and washer fluids checked and topped; Multipoint inspection of belts, hoses, tires and lights, with photos</dd><dt>Typical time</dt><dd>45 to 60 minutes</dd></dl>
+<div class="price">$59 to $109<small>sample range, compact car or sedan</small></div><p style="margin-bottom:14px">Per service, conventional to full synthetic. SUVs and luxury vehicles are higher; see <a href="services.html#oil">the full range</a>.</p>
+<a class="btn dark sm" href="contact.html?service=oil#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
+<div class="part" data-id="tires"><button type="button"><span>Tires and wheels</span><small>$69 to $129</small></button>
+<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Mount, balance and rotate, torqued to specification; Puncture repair and valve or sensor service; Tire pressure monitoring checked and reset</dd><dt>Typical time</dt><dd>1 to 2 hours</dd></dl>
+<div class="price">$69 to $129<small>sample range, compact car or sedan</small></div><p style="margin-bottom:14px">Mount, balance and rotate four tires, tires not included. SUVs and luxury vehicles are higher; see <a href="services.html#tires">the full range</a>.</p>
+<a class="btn dark sm" href="contact.html?service=tires#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
+<div class="part" data-id="brakes"><button type="button"><span>Brakes</span><small>$249 to $449</small></button>
+<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Pads and rotors measured, results shown to you; Calipers, hoses and hardware inspected, fluid tested; Road test before and after</dd><dt>Typical time</dt><dd>2 to 3 hours</dd></dl>
+<div class="price">$249 to $449<small>sample range, compact car or sedan</small></div><p style="margin-bottom:14px">Per axle, pads and rotors installed. SUVs and luxury vehicles are higher; see <a href="services.html#brakes">the full range</a>.</p>
+<a class="btn dark sm" href="contact.html?service=brakes#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
+<div class="part" data-id="suspension"><button type="button"><span>Suspension and steering</span><small>$449 to $899</small></button>
+<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Struts, shocks and springs; Control arms, ball joints, bushings and tie rods; Alignment check after the repair</dd><dt>Typical time</dt><dd>3 to 5 hours</dd></dl>
+<div class="price">$449 to $899<small>sample range, compact car or sedan</small></div><p style="margin-bottom:14px">Per pair of struts, installed. SUVs and luxury vehicles are higher; see <a href="services.html#suspension">the full range</a>.</p>
+<a class="btn dark sm" href="contact.html?service=suspension#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
+<div class="part" data-id="engine"><button type="button"><span>Engine, transmission and check-engine</span><small>$125 to $4,200</small></button>
+<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Scan, live-data read and a road test; Engine, transmission and cooling repairs, from gaskets to rebuild-scope work; Written estimate before any repair starts</dd><dt>Typical time</dt><dd>1 hour to diagnose, repair scheduled after approval</dd></dl>
+<div class="price">$125 to $4,200<small>sample range, compact car or sedan</small></div><p style="margin-bottom:14px">Diagnostic fee at the low end (credited toward the repair), major repairs at the high end. SUVs and luxury vehicles are higher; see <a href="services.html#engine">the full range</a>.</p>
+<a class="btn dark sm" href="contact.html?service=engine#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
+<div class="part" data-id="battery"><button type="button"><span>Battery, starting and charging</span><small>$189 to $389</small></button>
+<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Battery, starter and alternator load-tested; Replacement installed, terminals cleaned, memory preserved; Parasitic-drain and wiring diagnosis</dd><dt>Typical time</dt><dd>30 to 90 minutes</dd></dl>
+<div class="price">$189 to $389<small>sample range, compact car or sedan</small></div><p style="margin-bottom:14px">Battery installed, more for agm or complex electrical work. SUVs and luxury vehicles are higher; see <a href="services.html#battery">the full range</a>.</p>
+<a class="btn dark sm" href="contact.html?service=battery#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
+</div>
+<p class="muted" style="font-size:14px;margin-top:18px">Photos of one real car, a stand-in for yours. The dots show roughly where each system sits on a car like this. Sample price ranges for a compact car or sedan.</p></div>
+</div>
+<script type="application/json" id="hot-data">[{"id":"brakes","n":"Brakes","p":{"side":[55,63],"lift":[37,62]}},{"id":"tires","n":"Tires and wheels","p":{"side":[16,60],"hood":[27,77],"lift":[66,59]}},{"id":"suspension","n":"Suspension and steering","p":{"side":[47,52],"lift":[52,57]}},{"id":"engine","n":"Engine and check-engine","p":{"hood":[64,52],"lift":[33,44]}},{"id":"oil","n":"Oil and fluids","p":{"hood":[59,55],"lift":[27,43]}},{"id":"battery","n":"Battery and charging","p":{"hood":[68,58],"lift":[31,49]}}]</script>
+</div>
+</section>
+
 <section class="sympt sec"><div class="wrap sym-grid">
 <div><div class="kicker rv">Not sure what it is?</div><h2 class="big rv" style="--i:1">What is it doing?</h2></div>
 <div><div class="sym-btns rv" style="--i:2"><button type="button" data-k="0">It has been a while since the last oil change</button><button type="button" data-k="1">The steering wheel shakes</button><button type="button" data-k="2">The car pulls to one side</button><button type="button" data-k="3">It squeals or pulls when I brake</button><button type="button" data-k="4">The ride feels loose or bouncy</button><button type="button" data-k="5">The check-engine light is on</button><button type="button" data-k="6">It is slow to start</button><button type="button" data-k="7">The A/C blows warm</button><button type="button" data-k="8">I am about to buy a used car</button></div>
@@ -264,5 +306,5 @@
 <p>Designed and built by Alex using modern tools, including AI. Every website is personally reviewed before it goes live. We provide general guidance, not legal advice, and no service can guarantee you'll never be hacked. Sample site by <a href="https://collarcitytechhelp.com/websites/">Collar City Tech Help</a>.</p>
 </div></div></footer>
 <script src="vendor/gsap.min.js"></script><script src="vendor/ScrollTrigger.min.js"></script><script src="vendor/lenis.min.js"></script><script src="assets/smooth.js"></script><script src="js/site.js"></script>
-<script src="js/hero.js"></script><script src="js/services.js"></script>
+<script src="js/hero.js"></script><script src="js/services.js"></script><script src="js/picker.js"></script>
 </body></html>

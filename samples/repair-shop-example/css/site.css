@@ -500,3 +500,43 @@ form .f.f2{margin-top:18px;padding-top:18px;border-top:2px solid var(--ink)}
 html:not(.js) .fs[hidden]{display:block}
 html:not(.js) .fs legend{position:static;width:auto;height:auto;clip:auto;font:300 1.5rem var(--display);margin:22px 0 12px}
 html:not(.js) .seg{display:none}
+
+/* ---------- HOME: photo part picker (real car, three angles, hotspots) ---------- */
+.car3d{background:radial-gradient(90% 70% at 30% 40%,#1b1e22 0,#0a0b0c 70%)}
+.car-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(20px,3vw,56px);align-items:start}
+.car-stage{position:sticky;top:calc(var(--hdr) + 16px);aspect-ratio:16/10;max-height:calc(100svh - var(--hdr) - 32px);width:100%;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#0d0e10;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.car-stage:active{cursor:grabbing}
+.layers{position:absolute;inset:0}
+.layers .lay{position:absolute;inset:0;opacity:0;transform:scale(1.035);transition:opacity .8s ease,transform 1.2s var(--ease);pointer-events:none}
+.layers .lay.on{opacity:1;transform:none}
+.layers .lay img{width:100%;height:100%;object-fit:cover;-webkit-user-drag:none}
+html:not(.js) .layers .lay:first-child,.rm .layers .lay{transition:none}
+html:not(.js) .layers .lay:first-child{opacity:1;transform:none}
+.layers::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,#0a0b0c99 0,#0a0b0c00 30%)}
+.hots{position:absolute;inset:0;pointer-events:none}
+.hot{position:absolute;left:0;top:0;width:44px;height:44px;margin:-22px 0 0 -22px;border:0;background:none;pointer-events:auto;cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s .45s}
+.hot.show{opacity:1;visibility:visible;transition:opacity .5s .35s ease,visibility 0s}
+.hot::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 2px #0a0b0c,0 0 18px 2px #f0a83aaa;transition:transform .3s var(--ease),background .3s}
+.hot::after{content:"";position:absolute;width:14px;height:14px;border-radius:50%;border:1.5px solid var(--amber);animation:ring 2.4s infinite}
+@keyframes ring{to{transform:scale(3.2);opacity:0}}
+.hot:hover::before,.hot[aria-pressed=true]::before{transform:scale(1.5);background:#fff}
+.hot span{position:absolute;left:30px;top:50%;transform:translateY(-50%);white-space:nowrap;background:#0a0b0cd9;border:1px solid var(--line);padding:3px 9px;border-radius:3px;font-size:13px;opacity:0;transition:opacity .25s;pointer-events:none}
+.hot:hover span,.hot:focus-visible span,.hot[aria-pressed=true] span{opacity:1}
+.hot.flip span{left:auto;right:30px}
+.stage-ui{position:absolute;left:12px;right:12px;bottom:12px;display:flex;gap:8px 12px;align-items:center;flex-wrap:wrap;z-index:2}
+.angles{display:flex;gap:6px;flex-wrap:wrap}
+.chip{background:#0a0b0ccc;border:1px solid var(--line);color:var(--chalk);height:40px;min-width:40px;padding:0 14px;border-radius:4px;font:500 14px/1 var(--text);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.chip:hover{border-color:var(--amber)}
+.chip[aria-pressed=true]{background:var(--amber);color:var(--ink);border-color:var(--amber)}
+.stage-hint{margin-left:auto;font-size:13px;color:var(--steel);background:#0a0b0ccc;padding:6px 10px;border-radius:3px}
+@media (max-width:900px){
+  .car-grid{grid-template-columns:1fr}
+  .car-stage{position:relative;top:0;aspect-ratio:4/3.4;max-height:none}
+  .stage-hint{display:none}
+  .chip{padding:0 11px;font-size:13.5px}
+}
+.car3d{padding-top:clamp(56px,7vw,100px)}
+.car3d h2.big{font-size:clamp(2.2rem,4.2vw + .3rem,4rem);font-weight:250;max-width:14em!important}
+.car3d .lead{font-size:clamp(1.05rem,.5vw + .9rem,1.25rem)}
+.hot.off{visibility:hidden!important;pointer-events:none}
+.hot,.hot span{font-family:var(--text)}
