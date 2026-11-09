@@ -697,3 +697,50 @@ html:not(.js) .ba-r{clip-path:none;opacity:.0}
 }
 .story-pin>.wrap{width:100%}
 @media (max-width:900px){.apv{width:min(190px,56%);font-size:12px}.apv .r{font-size:1.2rem}}
+
+/* ---------- fleet account panel + sample dashboard ---------- */
+.fa{background:var(--floor);padding-block:clamp(56px,7vw,100px)}
+.fa h2.big{font-size:clamp(2.2rem,4.2vw + .3rem,4rem);font-weight:250;margin-bottom:clamp(24px,4vw,48px)}
+.fa-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,5vw,80px);align-items:start}
+.fa-list{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.fa-list li{display:grid;grid-template-columns:52px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.fa-list .ic{width:44px;height:44px;color:var(--amber);border:1.5px solid var(--line);border-radius:8px;display:grid;place-items:center}
+.fa-list .ic svg{width:28px;height:28px}
+.fa-list h3{font-size:1.45rem;font-weight:350;margin-bottom:4px}
+.fa-list p{margin:0;color:#c9c4ba;font-size:.98rem}
+.dash{background:#0d0e10;border:1px solid var(--line);border-radius:8px;padding:18px;font-size:14px}
+.dash-h{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.dash-h .t{font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.dash-h .s{font:500 11px var(--mono);color:var(--amber);border:1px solid #f0a83a66;border-radius:3px;padding:1px 6px;margin-left:auto}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.kpi{background:#15181b;border:1px solid #ffffff12;border-radius:6px;padding:12px}
+.kpi small,.dash-c small{display:block;font:500 11.5px var(--mono);color:var(--steel);margin-bottom:6px}
+.kpi b{font:300 1.9rem/1.1 var(--display);font-variant-numeric:tabular-nums;white-space:nowrap}
+.kpi b em{font:400 12px var(--text);font-style:normal;color:var(--steel)}
+.meter{height:4px;background:#ffffff18;border-radius:2px;margin-top:8px;overflow:hidden}
+.meter i{display:block;height:100%;background:#5fd48a;transform:scaleX(var(--v));transform-origin:left}
+.dash-c{margin-top:10px;background:#15181b;border:1px solid #ffffff12;border-radius:6px;padding:12px}
+.bars{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:10px;align-items:end;height:130px}
+.bars li{position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px}
+.bars i{display:block;width:100%;height:var(--h);background:linear-gradient(var(--amber),#b87a1c);border-radius:3px 3px 0 0;transform-origin:bottom}
+.bars span{font:11px var(--mono);color:var(--steel)}
+.bars b{position:absolute;top:0;font:500 12px var(--mono);color:var(--chalk);display:none}
+.vrows{list-style:none;margin:10px 0 0;padding:0}
+.vrows li{display:grid;grid-template-columns:10px minmax(0,1.2fr) minmax(0,1fr) auto;gap:10px;align-items:center;padding:9px 4px;border-top:1px solid #ffffff12;font-size:13.5px}
+.vrows i{width:8px;height:8px;border-radius:50%;background:var(--steel)}
+.vrows li[data-k=due] i{background:var(--amber)}.vrows li[data-k=over] i{background:#e0604a}.vrows li[data-k=ok] i{background:#5fd48a}
+.vrows b{font-weight:500}.vrows span{color:#c9c4ba}.vrows em{font:500 12px var(--mono);font-style:normal;color:var(--steel);white-space:nowrap}
+.dash.arm .bars i{transform:scaleY(0);transition:transform .9s calc(var(--k)*90ms + .2s) var(--ease)}
+.dash.arm.go .bars i{transform:scaleY(1)}
+.dash.arm .meter i{transform:scaleX(0);transition:transform 1.4s .3s var(--ease)}
+.dash.arm.go .meter i{transform:scaleX(var(--v))}
+.dash.arm .vrows li{opacity:0;transform:translateY(8px);transition:opacity .6s calc(.7s + var(--n,0)*.1s) var(--ease),transform .6s calc(.7s + var(--n,0)*.1s) var(--ease)}
+.dash.arm.go .vrows li{opacity:1;transform:none}
+.vrows li:nth-child(2){--n:1}.vrows li:nth-child(3){--n:2}.vrows li:nth-child(4){--n:3}
+@media (max-width:900px){.fa-grid{grid-template-columns:1fr}.vrows li{grid-template-columns:10px minmax(0,1fr) auto}.vrows li span{display:none}.kpi b{font-size:1.55rem}.kpis{gap:8px}}
+@media (max-width:420px){.kpi{padding:10px 8px}.kpi b{font-size:1.3rem}.kpi b em{display:none}}
+.loc{margin:0 96px 20px 0}
+.loc-one{margin:0;padding:10px 12px;border:1.5px dashed var(--ink2);font-size:.95rem;color:var(--ink)}
+.loc-one b{font:500 12.5px var(--mono);color:var(--amber-ink);margin-right:8px}
+#loc-pick{display:grid}
+@media (max-width:900px){.loc{margin-right:0}}

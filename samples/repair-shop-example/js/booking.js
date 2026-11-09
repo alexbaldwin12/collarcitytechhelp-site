@@ -36,6 +36,16 @@
     note.hidden = false;
     note.textContent = 'From your estimate: ' + R.svc[s0.replace(/[^a-z]/g, '')].n + ', ' + R.classes[c0] + ', sample range ' + money(+e0[1]) + ' to ' + money(+e0[2]) + '. Add your vehicle details and send the request.';
   }
+  /* location picker: one location (default) shows a plain line; two or more show a required "Choose a location" select.
+     Edit the list in #loc-data to match the real shop. ?locations=2 previews the two-location layout. */
+  (function () {
+    var ld = d.getElementById('loc-data'), one = d.getElementById('loc-one'), pick = d.getElementById('loc-pick'), sel = d.getElementById('f-loc'); if (!ld || !one) return;
+    var cfg = JSON.parse(ld.textContent), list = (qs.get('locations') === '2') ? cfg.sampleTwo : cfg.locations;
+    if (list.length >= 2) {
+      pick.hidden = false; one.hidden = true; sel.required = true;
+      sel.innerHTML = '<option value="">Choose a location</option>' + list.map(function (l) { return '<option value="' + l.id + '">' + l.name + ' (' + l.addr + ')</option>'; }).join('');
+    } else { one.innerHTML = '<b>Location</b> ' + list[0].name + ', ' + list[0].addr; }
+  })();
   mode(); estimate();
   form.addEventListener('submit', function (e) {
     e.preventDefault();
