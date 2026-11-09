@@ -56,15 +56,54 @@
  ],
  "hasOfferCatalog": {
   "@type": "OfferCatalog",
-  "name": "Sample services (example prices)",
+  "name": "Sample services (example price ranges)",
   "itemListElement": [
    {
     "@type": "Offer",
     "priceSpecification": {
      "@type": "PriceSpecification",
-     "price": "189",
-     "priceCurrency": "USD",
-     "minPrice": "189"
+     "minPrice": 59,
+     "maxPrice": 229,
+     "priceCurrency": "USD"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Oil, filters and fluids"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "minPrice": 69,
+     "maxPrice": 219,
+     "priceCurrency": "USD"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Tires and wheels"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "minPrice": 119,
+     "maxPrice": 289,
+     "priceCurrency": "USD"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Wheel alignment"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "minPrice": 249,
+     "maxPrice": 899,
+     "priceCurrency": "USD"
     },
     "itemOffered": {
      "@type": "Service",
@@ -75,35 +114,9 @@
     "@type": "Offer",
     "priceSpecification": {
      "@type": "PriceSpecification",
-     "price": "129",
-     "priceCurrency": "USD",
-     "minPrice": "129"
-    },
-    "itemOffered": {
-     "@type": "Service",
-     "name": "Engine and check-engine light"
-    }
-   },
-   {
-    "@type": "Offer",
-    "priceSpecification": {
-     "@type": "PriceSpecification",
-     "price": "79",
-     "priceCurrency": "USD",
-     "minPrice": "79"
-    },
-    "itemOffered": {
-     "@type": "Service",
-     "name": "Tires and alignment"
-    }
-   },
-   {
-    "@type": "Offer",
-    "priceSpecification": {
-     "@type": "PriceSpecification",
-     "price": "349",
-     "priceCurrency": "USD",
-     "minPrice": "349"
+     "minPrice": 449,
+     "maxPrice": 1799,
+     "priceCurrency": "USD"
     },
     "itemOffered": {
      "@type": "Service",
@@ -114,26 +127,59 @@
     "@type": "Offer",
     "priceSpecification": {
      "@type": "PriceSpecification",
-     "price": "64",
-     "priceCurrency": "USD",
-     "minPrice": "64"
+     "minPrice": 125,
+     "maxPrice": 7500,
+     "priceCurrency": "USD"
     },
     "itemOffered": {
      "@type": "Service",
-     "name": "Oil and fluids"
+     "name": "Engine, transmission and check-engine"
     }
    },
    {
     "@type": "Offer",
     "priceSpecification": {
      "@type": "PriceSpecification",
-     "price": "149",
-     "priceCurrency": "USD",
-     "minPrice": "149"
+     "minPrice": 189,
+     "maxPrice": 649,
+     "priceCurrency": "USD"
     },
     "itemOffered": {
      "@type": "Service",
-     "name": "Battery and charging"
+     "name": "Battery, starting and charging"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "minPrice": 149,
+     "maxPrice": 1950,
+     "priceCurrency": "USD"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "A/C and heating"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "minPrice": 45,
+     "maxPrice": 299,
+     "priceCurrency": "USD"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Inspections"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Fleet and commercial accounts (quoted per account)"
     }
    }
   ]
@@ -143,18 +189,18 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="hdr">
-<div class="strip"><b>Example design - not a real client.</b><span class="x"> Made-up shop, example phone, sample prices.</span></div>
+<div class="strip"><b>Example design - not a real client.</b><span class="x"> Made-up shop, example phone, sample price ranges.</span></div>
 <div class="bar">
 <a class="logo" href="index.html" aria-label="Bay Nine Auto, home"><i>9</i>Bay Nine Auto</a>
 <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
-<nav class="nav" id="nav" aria-label="Main"><a href="services.html">Services</a><a href="the-bay.html" aria-current="page">The bay</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+<nav class="nav" id="nav" aria-label="Main"><a href="services.html">Services</a><a href="fleet.html">Fleet</a><a href="shop.html">The shop</a><a href="the-bay.html" aria-current="page">The bay</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
 <div class="bar-r">
 <span class="pill-status hd"><span class="dot"></span><span data-status>Mon to Fri 7:30 am to 5:30 pm</span></span>
 <a class="btn sm ghost call" href="tel:+15550100177">Call (555) 010‑0177</a>
 <a class="btn sm" href="contact.html#book">Book a repair</a>
 </div></div></div>
 <div class="dip" aria-hidden="true"><svg viewBox="0 0 26 200"><circle cx="13" cy="7" r="5" fill="none" stroke="#9aa2aa" stroke-width="1.5"/><rect x="11" y="12" width="4" height="188" fill="#2a2e33"/><rect id="dipLvl" class="lvl" x="11" y="190" width="4" height="10" fill="#f0a83a"/><g stroke="#9aa2aa" stroke-width="1"><path d="M2 20h14"/><path d="M2 38h9"/><path d="M2 56h9"/><path d="M2 74h9"/><path d="M2 92h9"/><path d="M2 110h14"/><path d="M2 128h9"/><path d="M2 146h9"/><path d="M2 164h9"/><path d="M2 182h9"/></g></svg></div>
-<div class="dock"><a class="btn ghost" href="tel:+15550100177">Call</a><a class="btn" href="contact.html#book">Book a repair <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div>
+<div class="dock"><a class="btn ghost" href="tel:+15550100177">Call</a><a class="btn" href="contact.html#book">Book or quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div>
 <main id="main">
 <section class="ph grain" style="padding-bottom:36px"><div class="wrap">
 <div class="kicker rv">The bay in 360</div>
@@ -175,20 +221,20 @@
 <section class="cta-band grain"><div class="wrap">
 <h2 class="rv">See it in person.</h2>
 <p class="lead rv" style="--i:1;color:#141516;margin-top:22px">Book a time, or call and we will tell you when the next bay is free.</p>
-<div class="acts rv" style="--i:2"><a class="btn lg" href="contact.html#book">Book a repair <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a><a class="btn lg ghost" href="tel:+15550100177">Call (555) 010‑0177</a><a class="btn lg ghost" href="contact.html?service=engine#book">Get a quote</a></div>
+<div class="acts rv" style="--i:2"><a class="btn lg" href="contact.html#book">Book a repair <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a><a class="btn lg ghost" href="tel:+15550100177">Call (555) 010‑0177</a><a class="btn lg ghost" href="contact.html?type=fleet#book">Open a fleet account</a></div>
 </div></section>
 
 </main>
 <footer>
 <div class="wrap">
 <div class="ft">
-<div><a class="logo" href="index.html"><i>9</i>Bay Nine Auto</a><p style="margin-top:16px;max-width:22em">A made-up repair shop. This site shows what an advanced Collar City Tech Help build can do for a garage.</p></div>
-<div><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="the-bay.html">The bay</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Book a repair</a></li></ul></div>
+<div><a class="logo" href="index.html"><i>9</i>Bay Nine Auto</a><p style="margin-top:16px;max-width:22em">A made-up repair shop. This site shows what an advanced Collar City Tech Help build can do for a garage, whether it runs two bays or twelve.</p></div>
+<div><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services and pricing</a></li><li><a href="fleet.html">Fleet and commercial</a></li><li><a href="shop.html">Bays and technicians</a></li><li><a href="the-bay.html">The bay in 360</a></li><li><a href="about.html">About and warranty</a></li><li><a href="contact.html">Book or get a quote</a></li></ul></div>
 <div><h4>Near you (sample local pages)</h4><ul><li><a href="brake-repair-troy.html">Brake repair in Troy</a></li><li><a href="oil-change-albany.html">Oil change near Albany</a></li></ul></div>
 <div><h4>Visit</h4><ul><li>Your shop address here</li><li>Example City, NY</li><li><a href="tel:+15550100177">(555) 010‑0177</a></li><li>Mon to Fri 7:30 am to 5:30 pm</li><li>Sat 8 am to 1 pm, Sun closed</li></ul></div>
 </div>
 <div class="legal">
-<p><strong>Example design - not a real client.</strong> Bay Nine Auto is a made-up shop. The phone number is an example, the prices are sample prices, the form sends nothing, and there are no reviews because there are no customers. No bookings are taken.</p>
+<p><strong>Example design - not a real client.</strong> Bay Nine Auto is a made-up shop. The phone number is an example, every price is a sample range, the forms send nothing, and there are no reviews because there are no customers. No bookings are taken.</p>
 <p>Credits: 3D car model "Car Concept" by Eric Chadwick, Darmstadt Graphics Group GmbH, Khronos glTF-Sample-Assets (CC BY 4.0, derived from a CC0 model by Unity Fan; resized, recoloured and compressed by us, Khronos logos removed), 360 photo Autoshop 01 by Oliksiy Yakovlyev (CC0, Poly Haven), fly-in frames rendered by us from those assets, fonts Saira and Instrument Sans (Open Font License), IBM Plex Mono (OFL), three.js (MIT), GSAP (GreenSock standard license), Pannellum (MIT). Details in assets/CREDITS.md.</p>
 <p>Designed and built by Alex using modern tools, including AI. Every website is personally reviewed before it goes live. We provide general guidance, not legal advice, and no service can guarantee you'll never be hacked. Sample site by <a href="https://collarcitytechhelp.com/websites/">Collar City Tech Help</a>.</p>
 </div></div></footer>

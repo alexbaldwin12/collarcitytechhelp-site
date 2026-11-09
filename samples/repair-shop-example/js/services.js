@@ -9,6 +9,18 @@
     b.addEventListener('click', function () { var o = r.hasAttribute('data-open'); [].forEach.call(d.querySelectorAll('.row[data-open]'), function (x) { x.removeAttribute('data-open'); x.querySelector(':scope > button').setAttribute('aria-expanded', 'false'); }); if (!o) { r.setAttribute('data-open', ''); b.setAttribute('aria-expanded', 'true'); } });
   });
   if (location.hash) { var t = d.querySelector('.row[data-id="' + location.hash.slice(1) + '"]'); if (t) t.querySelector(':scope > button').click(); }
+  /* vehicle class picker: swaps every range on the board (all three classes are in each row's table without JS) */
+  var cl = d.querySelectorAll('.cls button[data-c]');
+  if (cl.length && d.querySelector('.rv-t[data-a]')) {
+    [].forEach.call(cl, function (b) {
+      b.addEventListener('click', function () {
+        var c = b.getAttribute('data-c');
+        [].forEach.call(cl, function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+        [].forEach.call(d.querySelectorAll('.rv-t[data-' + c + ']'), function (e) { e.textContent = e.getAttribute('data-' + c); });
+        [].forEach.call(d.querySelectorAll('.rprice small'), function (e) { e.textContent = 'sample range'; });
+      });
+    });
+  }
   /* symptom picker */
   var sb = d.querySelectorAll('.sym-btns button'), out = d.getElementById('sym-out');
   if (sb.length && out) {

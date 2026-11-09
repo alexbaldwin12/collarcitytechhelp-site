@@ -420,3 +420,133 @@ footer{padding:clamp(48px,7vw,96px) 0 calc(48px + 64px);background:#000;font-siz
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
 }
+
+/* ---------- v2: price ranges, plans, fleet, bays and technicians, booking flow ---------- */
+.rname{font-size:clamp(1.6rem,3.5vw,3rem)}
+.rprice{font-size:clamp(1.15rem,1.9vw,1.7rem);max-width:11em}
+.board-top{display:flex;justify-content:space-between;align-items:flex-end;gap:20px 40px;flex-wrap:wrap}
+.cls{display:flex;gap:8px;flex-wrap:wrap}
+.paper .chip{background:transparent;color:var(--ink);border:1.5px solid var(--ink);height:44px}
+.paper .chip:hover{border-color:var(--amber-ink)}
+.paper .chip[aria-pressed=true],.cls .chip[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.sec:not(.paper) .cls .chip[aria-pressed=true]{background:var(--amber);color:var(--ink);border-color:var(--amber)}
+.sec:not(.paper) .cls .chip{height:44px}
+html:not(.js) .cls{display:none}
+.mini{border-collapse:collapse;margin-top:16px;width:100%;font-size:.95rem}
+.mini th,.mini td{padding:7px 0;border-top:1px solid var(--lineP);text-align:left;font-weight:400}
+.mini td{text-align:right;font-variant-numeric:tabular-nums;font-weight:500}
+.mini.lt th,.mini.lt td{border-color:#ffffff33}
+.mini.lt{margin:10px 0 18px}
+.tablewrap.tw-x{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.ptable{width:100%;border-collapse:collapse;min-width:640px;font-size:1rem}
+.ptable caption{text-align:left;font:500 13px var(--mono);margin-bottom:10px;color:var(--ink2)}
+.ptable th,.ptable td{padding:16px 14px 16px 0;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.ptable thead th{font:500 12.5px var(--mono);letter-spacing:.02em;border-bottom:2px solid currentColor;color:var(--steel)}
+.paper .ptable th,.paper .ptable td{border-color:var(--lineP)}
+.paper .ptable thead th{color:var(--ink2)}
+.ptable tbody th{font-weight:400;min-width:9em}
+.ptable tbody th b{display:block;font:300 1.5rem var(--display)}
+.ptable tbody th small{display:block;color:var(--steel);font-size:.85rem}
+.ptable td.wh{max-width:26em;color:#d7d2c8}
+.ptable td.rv-t{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--amber)}
+.paper .ptable td{color:var(--ink)}
+.sec.local:not(.paper) a{border-color:var(--line)}
+.sec.local:not(.paper) a:hover{color:var(--amber)}
+/* service tiles on the home page */
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.stile{position:relative;display:flex;flex-direction:column;gap:10px;padding:clamp(22px,2.6vw,36px);border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-decoration:none;transition:background .35s}
+.stile:nth-child(3n){border-right:0}
+.stile:hover{background:var(--floor2)}
+.stile h3{font-size:clamp(1.5rem,2.2vw,2rem);font-weight:350}
+.stile p{color:#c9c4ba;margin:0;font-size:.98rem}
+.stile .rg{margin-top:auto;padding-top:14px;font:500 1.15rem var(--display);color:var(--amber);font-variant-numeric:tabular-nums}
+.stile .go{position:absolute;right:20px;top:24px;width:22px;opacity:.5;transition:transform .35s var(--ease),opacity .3s}
+.stile:hover .go{transform:translateX(5px);opacity:1;color:var(--amber)}
+.two-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,28px)}
+.tw-card{display:flex;flex-direction:column;gap:14px;padding:clamp(26px,3.4vw,52px);background:var(--paper);color:var(--ink);text-decoration:none;min-height:340px;position:relative}
+.tw-card.alt{background:var(--floor2);color:var(--chalk);outline:1px solid var(--line);outline-offset:-1px}
+.tw-card h2{font-size:clamp(2rem,3.4vw,3.2rem);font-weight:250}
+.tw-card p{max-width:28em;margin:0}
+.tw-card .btn{align-self:flex-start;margin-top:auto}
+.tw-card:not(.alt) .kicker{color:var(--amber-ink)}
+/* fleet */
+.fgrid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.fcard{padding:clamp(22px,2.6vw,38px);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fcard:nth-child(3n){border-right:0}
+.fcard h3{font-size:clamp(1.4rem,2vw,1.8rem);font-weight:350;margin-bottom:10px}
+.fcard p{margin:0;color:#c9c4ba}
+.rate-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(22px,4vw,64px);align-items:start}
+.fsteps{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.fstep{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:22px 0;border-top:1px solid var(--line)}
+.fstep .n{font:200 3rem/1 var(--display);color:var(--amber)}
+.fstep h3{font-size:1.5rem;font-weight:350;margin-bottom:6px}
+.fstep p{margin:0;color:#c9c4ba}
+.wterms{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,48px);margin-top:clamp(36px,5vw,64px)}
+.wterms h3{font-size:1.5rem;margin-bottom:10px;border-top:2px solid var(--ink);padding-top:14px}
+.wterms ul{margin:0;padding-left:1.1em}
+.wterms li{margin-bottom:.4em}
+/* bay board and technicians */
+.shop-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 48px;flex-wrap:wrap}
+.bboard{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.bboard[data-n="2"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bcard{background:var(--floor);border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(18px,2vw,26px);display:flex;flex-direction:column;gap:8px;min-height:230px}
+.bcard h3{font-size:1.45rem;font-weight:350;line-height:1.1}
+.bcard p{margin:0;color:#c9c4ba;font-size:.97rem}
+.bcard .lift{font:500 12.5px var(--mono);color:var(--steel)}
+.bcard .eqp{margin-top:auto;padding-top:10px;border-top:1px dashed var(--line);font-size:.88rem;color:var(--steel)}
+.bh{display:flex;justify-content:space-between;align-items:center}
+.bn{font:200 2.4rem/1 var(--display);color:var(--amber)}
+.bs{display:inline-flex;align-items:center;gap:8px;font:500 12px var(--mono);color:var(--steel)}
+.bs i{width:9px;height:9px;border-radius:50%;background:var(--steel)}
+.bcard[data-state=open] .bs i{background:#5fd48a}
+.bcard[data-state=busy] .bs i{background:var(--amber)}
+.bcard[data-state=parts] .bs i{background:#e0604a}
+.bloc{grid-column:1/-1;background:var(--asphalt);padding:18px clamp(18px,2vw,26px) 10px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bloc h3{font:500 13px var(--mono);letter-spacing:.04em;color:var(--amber);text-transform:none}
+.tgrid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:clamp(14px,1.8vw,24px)}
+.tgrid[data-n="2"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+.tcard{border:1px solid var(--line);padding:22px;background:var(--floor2)}
+.tcard .av{width:48px;height:48px;color:var(--steel);border:1.5px dashed var(--line);border-radius:50%;display:grid;place-items:center;margin-bottom:14px}
+.tcard .av svg{width:30px}
+.tcard h3{font-size:1.4rem;font-weight:350;margin-bottom:4px}
+.tcard p{color:#c9c4ba;margin:0 0 12px}
+.tcard dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:.9rem}
+.tcard dt{font:500 12px var(--mono);color:var(--steel)}
+.tcard dd{margin:0}
+.ph-t{border-bottom:1.5px dashed var(--steel);color:var(--steel);justify-self:start}
+/* booking flow */
+.seg{display:flex;gap:0;margin:0 96px 20px 0}
+.seg label{margin:0;flex:1;font:500 14px var(--text);color:var(--ink)}
+.seg input{position:absolute;opacity:0;width:1px;height:1px}
+.seg span{display:block;text-align:center;padding:12px 10px;border:1.5px solid var(--ink);cursor:pointer;transition:all .25s}
+.seg label:last-child span{border-left:0}
+.seg input:checked+span{background:var(--ink);color:var(--paper)}
+.seg input:focus-visible+span{outline:2px solid var(--ink);outline-offset:3px}
+.fs{border:0;padding:0;margin:0;min-width:0}
+.fs legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.fs[hidden]{display:none}
+.lbl{display:block;font:500 13px var(--mono);color:var(--ink2);margin-bottom:8px}
+.chks{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.chk{display:flex;align-items:center;gap:10px;margin:0;font:500 14.5px var(--text);color:var(--ink);padding:10px 12px;border:1.5px solid var(--ink);cursor:pointer;transition:background .2s,color .2s}
+.chk input{width:18px;height:18px;min-height:0;accent-color:var(--ink);margin:0;flex:none}
+.chk:has(input:checked){background:var(--ink);color:var(--paper)}
+.chk:has(input:focus-visible){outline:2px solid var(--ink);outline-offset:3px}
+.est-box{border:1.5px dashed var(--ink2);padding:14px 16px;font-size:.98rem;background:#0000000a}
+.est-box b{display:block;font:500 12.5px var(--mono);color:var(--amber-ink);margin-bottom:4px}
+form .f.f2{margin-top:18px;padding-top:18px;border-top:2px solid var(--ink)}
+.fs .f{margin-top:0}
+@media (max-width:900px){
+  .sgrid,.fgrid,.wterms,.two-grid,.rate-grid{grid-template-columns:1fr}
+  .stile,.fcard{border-right:0}
+  .seg{margin-right:0}
+  .tw-card{min-height:0}
+  .board-top{align-items:flex-start}
+}
+@media (max-width:640px){
+  .chks{grid-template-columns:1fr}
+  .bboard[data-n="2"],.tgrid[data-n="2"]{grid-template-columns:1fr}
+  .rprice{max-width:8.5em}
+}
+html:not(.js) .fs[hidden]{display:block}
+html:not(.js) .fs legend{position:static;width:auto;height:auto;clip:auto;font:300 1.5rem var(--display);margin:22px 0 12px}
+html:not(.js) .seg{display:none}

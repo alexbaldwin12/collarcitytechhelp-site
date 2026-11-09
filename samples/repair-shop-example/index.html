@@ -58,15 +58,54 @@
  ],
  "hasOfferCatalog": {
   "@type": "OfferCatalog",
-  "name": "Sample services (example prices)",
+  "name": "Sample services (example price ranges)",
   "itemListElement": [
    {
     "@type": "Offer",
     "priceSpecification": {
      "@type": "PriceSpecification",
-     "price": "189",
-     "priceCurrency": "USD",
-     "minPrice": "189"
+     "minPrice": 59,
+     "maxPrice": 229,
+     "priceCurrency": "USD"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Oil, filters and fluids"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "minPrice": 69,
+     "maxPrice": 219,
+     "priceCurrency": "USD"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Tires and wheels"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "minPrice": 119,
+     "maxPrice": 289,
+     "priceCurrency": "USD"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Wheel alignment"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "minPrice": 249,
+     "maxPrice": 899,
+     "priceCurrency": "USD"
     },
     "itemOffered": {
      "@type": "Service",
@@ -77,35 +116,9 @@
     "@type": "Offer",
     "priceSpecification": {
      "@type": "PriceSpecification",
-     "price": "129",
-     "priceCurrency": "USD",
-     "minPrice": "129"
-    },
-    "itemOffered": {
-     "@type": "Service",
-     "name": "Engine and check-engine light"
-    }
-   },
-   {
-    "@type": "Offer",
-    "priceSpecification": {
-     "@type": "PriceSpecification",
-     "price": "79",
-     "priceCurrency": "USD",
-     "minPrice": "79"
-    },
-    "itemOffered": {
-     "@type": "Service",
-     "name": "Tires and alignment"
-    }
-   },
-   {
-    "@type": "Offer",
-    "priceSpecification": {
-     "@type": "PriceSpecification",
-     "price": "349",
-     "priceCurrency": "USD",
-     "minPrice": "349"
+     "minPrice": 449,
+     "maxPrice": 1799,
+     "priceCurrency": "USD"
     },
     "itemOffered": {
      "@type": "Service",
@@ -116,26 +129,59 @@
     "@type": "Offer",
     "priceSpecification": {
      "@type": "PriceSpecification",
-     "price": "64",
-     "priceCurrency": "USD",
-     "minPrice": "64"
+     "minPrice": 125,
+     "maxPrice": 7500,
+     "priceCurrency": "USD"
     },
     "itemOffered": {
      "@type": "Service",
-     "name": "Oil and fluids"
+     "name": "Engine, transmission and check-engine"
     }
    },
    {
     "@type": "Offer",
     "priceSpecification": {
      "@type": "PriceSpecification",
-     "price": "149",
-     "priceCurrency": "USD",
-     "minPrice": "149"
+     "minPrice": 189,
+     "maxPrice": 649,
+     "priceCurrency": "USD"
     },
     "itemOffered": {
      "@type": "Service",
-     "name": "Battery and charging"
+     "name": "Battery, starting and charging"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "minPrice": 149,
+     "maxPrice": 1950,
+     "priceCurrency": "USD"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "A/C and heating"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "minPrice": 45,
+     "maxPrice": 299,
+     "priceCurrency": "USD"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Inspections"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Fleet and commercial accounts (quoted per account)"
     }
    }
   ]
@@ -145,18 +191,18 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="hdr">
-<div class="strip"><b>Example design - not a real client.</b><span class="x"> Made-up shop, example phone, sample prices.</span></div>
+<div class="strip"><b>Example design - not a real client.</b><span class="x"> Made-up shop, example phone, sample price ranges.</span></div>
 <div class="bar">
 <a class="logo" href="index.html" aria-label="Bay Nine Auto, home"><i>9</i>Bay Nine Auto</a>
 <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
-<nav class="nav" id="nav" aria-label="Main"><a href="services.html">Services</a><a href="the-bay.html">The bay</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+<nav class="nav" id="nav" aria-label="Main"><a href="services.html">Services</a><a href="fleet.html">Fleet</a><a href="shop.html">The shop</a><a href="the-bay.html">The bay</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
 <div class="bar-r">
 <span class="pill-status hd"><span class="dot"></span><span data-status>Mon to Fri 7:30 am to 5:30 pm</span></span>
 <a class="btn sm ghost call" href="tel:+15550100177">Call (555) 010‑0177</a>
 <a class="btn sm" href="contact.html#book">Book a repair</a>
 </div></div></div>
 <div class="dip" aria-hidden="true"><svg viewBox="0 0 26 200"><circle cx="13" cy="7" r="5" fill="none" stroke="#9aa2aa" stroke-width="1.5"/><rect x="11" y="12" width="4" height="188" fill="#2a2e33"/><rect id="dipLvl" class="lvl" x="11" y="190" width="4" height="10" fill="#f0a83a"/><g stroke="#9aa2aa" stroke-width="1"><path d="M2 20h14"/><path d="M2 38h9"/><path d="M2 56h9"/><path d="M2 74h9"/><path d="M2 92h9"/><path d="M2 110h14"/><path d="M2 128h9"/><path d="M2 146h9"/><path d="M2 164h9"/><path d="M2 182h9"/></g></svg></div>
-<div class="dock"><a class="btn ghost" href="tel:+15550100177">Call</a><a class="btn" href="contact.html#book">Book a repair <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div>
+<div class="dock"><a class="btn ghost" href="tel:+15550100177">Call</a><a class="btn" href="contact.html#book">Book or quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div>
 <main id="main">
 <section class="intro" aria-label="Fly-in to the shop">
 <div class="stage grain">
@@ -164,8 +210,8 @@
 <canvas id="seq" aria-hidden="true"></canvas>
 <div class="vig"></div><div class="sweep"></div>
 <div class="hero-copy"><h1><span class="l" style="--i:0"><span>Tell us what</span></span><span class="l" style="--i:1"><span>it&rsquo;s doing.</span></span></h1>
-<p class="hero-sub">Brakes, a light on the dash, a noise you can&rsquo;t place. Bay Nine Auto Repair. Drop it off or wait. We write up the estimate before we touch anything.</p></div>
-<div class="hero-act"><a class="btn lg" href="contact.html#book">Book a repair <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a><a class="btn lg ghost" href="tel:+15550100177">Call (555) 010‑0177</a></div>
+<p class="hero-sub">Maintenance to major repair, for everyday cars and for fleets. Bay Nine Auto Repair. Drop it off or wait, and expect a written estimate before anything is touched.</p></div>
+<div class="hero-act"><a class="btn lg" href="contact.html#book">Book a repair <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a><a class="btn lg ghost" href="fleet.html">Fleet accounts</a></div>
 <div class="hero-meta"><div class="pill-status"><span class="dot"></span><span data-status>Mon to Fri 7:30 am to 5:30 pm, Sat 8 am to 1 pm</span></div><div class="scrollcue">Scroll to go in <i></i></div></div>
 <div class="caps"><div class="cap"><h2>Pull in. The door&rsquo;s open.</h2><p>Bay nine is the one with the lights on. Someone meets you before you&rsquo;ve switched the engine off.</p></div><div class="cap"><h2>Every car gets looked at first.</h2><p>No number over the phone until a tech has seen it on the lift.</p></div><div class="cap"><h2>Brakes: we pull the wheel.</h2><p>Pads and rotors get measured. You see the numbers, not a guess.</p></div><div class="cap"><h2>Warning light? We plug in.</h2><p>We read what the car says, then drive it to see for ourselves.</p></div><div class="cap last"><h2>Tell us what it&rsquo;s doing.</h2><p>Book a time or call. We take it from there.</p><a class="btn lg" href="contact.html#book">Book a repair <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a> <a class="btn lg ghost" style="margin-top:20px" href="tel:+15550100177">Call (555) 010‑0177</a></div></div>
 <div class="prog"><i></i></div>
@@ -182,7 +228,7 @@
 <div class="wrap">
 <div class="kicker rv">Pick a part</div>
 <h2 class="big" id="car-h" style="max-width:11em"><span class="mask"><span>Turn the car.</span></span><span class="mask" style="--i:1"><span>Tap what hurts.</span></span></h2>
-<p class="lead rv" style="margin:24px 0 clamp(28px,4vw,56px)">Drag to spin it, use the buttons to zoom, tap a glowing dot or pick from the list. Each part shows what we do, how long it takes and a sample starting price. <strong>Look inside</strong> puts you in the cabin, a real interior from the model.</p>
+<p class="lead rv" style="margin:24px 0 clamp(28px,4vw,56px)">Drag to spin it, use the buttons to zoom, tap a glowing dot or pick from the list. Each part shows what we do, how long it takes and a sample price range. <strong>Look inside</strong> puts you in the cabin, a real interior from the model.</p>
 <div class="car-grid">
 <div class="car-stage" id="stage3d">
 <img class="ph" src="img/still-nose.webp" alt="The car from the front, low, under shop lights" loading="lazy" width="960" height="540">
@@ -194,43 +240,55 @@
 <button class="chip" id="cabin" type="button" aria-pressed="false">Look inside</button><button class="chip" id="xray" type="button" aria-pressed="false">X-ray</button><button class="chip" id="reset" type="button">Reset</button>
 <span class="stage-hint">Drag to turn. Ctrl and scroll to zoom.</span></div>
 </div>
-<div><div class="parts" id="parts" role="list" aria-label="Car parts and services"><div class="part" data-id="brakes"><button type="button"><span>Brakes</span><small>from $189</small></button>
-<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Pads, rotors and calipers inspected and measured; Brake fluid tested, lines checked; Road test before and after</dd><dt>Typical time</dt><dd>2 to 3 hours</dd></dl>
-<div class="price">$189<small>starting at, sample price</small></div><p style="margin-bottom:14px">Per axle, pads and rotors installed.</p>
-<a class="btn dark sm" href="contact.html?service=brakes#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
-<div class="part" data-id="engine"><button type="button"><span>Engine and check-engine light</span><small>from $129</small></button>
-<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Scan and live-data read; Misfires, rough idle, stalling, hard starts; Written estimate before any repair starts</dd><dt>Typical time</dt><dd>1 hour to diagnose</dd></dl>
-<div class="price">$129<small>starting at, sample price</small></div><p style="margin-bottom:14px">Diagnostic fee, credited toward the repair.</p>
-<a class="btn dark sm" href="contact.html?service=engine#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
-<div class="part" data-id="tires"><button type="button"><span>Tires and alignment</span><small>from $79</small></button>
-<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Mount, balance and rotate; Four-wheel alignment check and set; Tire pressure sensors checked</dd><dt>Typical time</dt><dd>1 to 2 hours</dd></dl>
-<div class="price">$79<small>starting at, sample price</small></div><p style="margin-bottom:14px">Rotate and balance, four tires.</p>
-<a class="btn dark sm" href="contact.html?service=tires#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
-<div class="part" data-id="suspension"><button type="button"><span>Suspension and steering</span><small>from $349</small></button>
-<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Shocks, struts and springs; Control arms, bushings, tie rods; Alignment check after the repair</dd><dt>Typical time</dt><dd>3 to 5 hours</dd></dl>
-<div class="price">$349<small>starting at, sample price</small></div><p style="margin-bottom:14px">Per pair of struts, installed.</p>
-<a class="btn dark sm" href="contact.html?service=suspension#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
-<div class="part" data-id="oil"><button type="button"><span>Oil and fluids</span><small>from $64</small></button>
-<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Oil and filter, drain plug torqued; Fluid levels topped and checked; Quick look at belts, hoses and tires</dd><dt>Typical time</dt><dd>45 minutes</dd></dl>
-<div class="price">$64<small>starting at, sample price</small></div><p style="margin-bottom:14px">Synthetic-blend oil change.</p>
+<div><div class="parts" id="parts" role="list" aria-label="Car parts and services"><div class="part" data-id="oil"><button type="button"><span>Oil, filters and fluids</span><small>$59 to $109</small></button>
+<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Oil and filter to the maker&rsquo;s specification, drain plug torqued; Brake, coolant, transmission and washer fluids checked and topped; Multipoint inspection of belts, hoses, tires and lights, with photos</dd><dt>Typical time</dt><dd>45 to 60 minutes</dd></dl>
+<div class="price">$59 to $109<small>sample range, compact car or sedan</small></div><p style="margin-bottom:14px">Per service, conventional to full synthetic. SUVs and luxury vehicles are higher; see <a href="services.html#oil">the full range</a>.</p>
 <a class="btn dark sm" href="contact.html?service=oil#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
-<div class="part" data-id="battery"><button type="button"><span>Battery and charging</span><small>from $149</small></button>
-<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Battery, starter and alternator tested; Replacement installed, terminals cleaned; Old battery recycled</dd><dt>Typical time</dt><dd>30 to 60 minutes</dd></dl>
-<div class="price">$149<small>starting at, sample price</small></div><p style="margin-bottom:14px">Battery installed, most cars.</p>
+<div class="part" data-id="tires"><button type="button"><span>Tires and wheels</span><small>$69 to $129</small></button>
+<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Mount, balance and rotate, torqued to specification; Puncture repair and valve or sensor service; Tire pressure monitoring checked and reset</dd><dt>Typical time</dt><dd>1 to 2 hours</dd></dl>
+<div class="price">$69 to $129<small>sample range, compact car or sedan</small></div><p style="margin-bottom:14px">Mount, balance and rotate four tires, tires not included. SUVs and luxury vehicles are higher; see <a href="services.html#tires">the full range</a>.</p>
+<a class="btn dark sm" href="contact.html?service=tires#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
+<div class="part" data-id="brakes"><button type="button"><span>Brakes</span><small>$249 to $449</small></button>
+<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Pads and rotors measured, results shown to you; Calipers, hoses and hardware inspected, fluid tested; Road test before and after</dd><dt>Typical time</dt><dd>2 to 3 hours</dd></dl>
+<div class="price">$249 to $449<small>sample range, compact car or sedan</small></div><p style="margin-bottom:14px">Per axle, pads and rotors installed. SUVs and luxury vehicles are higher; see <a href="services.html#brakes">the full range</a>.</p>
+<a class="btn dark sm" href="contact.html?service=brakes#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
+<div class="part" data-id="suspension"><button type="button"><span>Suspension and steering</span><small>$449 to $899</small></button>
+<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Struts, shocks and springs; Control arms, ball joints, bushings and tie rods; Alignment check after the repair</dd><dt>Typical time</dt><dd>3 to 5 hours</dd></dl>
+<div class="price">$449 to $899<small>sample range, compact car or sedan</small></div><p style="margin-bottom:14px">Per pair of struts, installed. SUVs and luxury vehicles are higher; see <a href="services.html#suspension">the full range</a>.</p>
+<a class="btn dark sm" href="contact.html?service=suspension#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
+<div class="part" data-id="engine"><button type="button"><span>Engine, transmission and check-engine</span><small>$125 to $4,200</small></button>
+<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Scan, live-data read and a road test; Engine, transmission and cooling repairs, from gaskets to rebuild-scope work; Written estimate before any repair starts</dd><dt>Typical time</dt><dd>1 hour to diagnose, repair scheduled after approval</dd></dl>
+<div class="price">$125 to $4,200<small>sample range, compact car or sedan</small></div><p style="margin-bottom:14px">Diagnostic fee at the low end (credited toward the repair), major repairs at the high end. SUVs and luxury vehicles are higher; see <a href="services.html#engine">the full range</a>.</p>
+<a class="btn dark sm" href="contact.html?service=engine#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
+<div class="part" data-id="battery"><button type="button"><span>Battery, starting and charging</span><small>$189 to $389</small></button>
+<div class="part-body"><div class="ro-slip"><dl><dt>Covers</dt><dd>Battery, starter and alternator load-tested; Replacement installed, terminals cleaned, memory preserved; Parasitic-drain and wiring diagnosis</dd><dt>Typical time</dt><dd>30 to 90 minutes</dd></dl>
+<div class="price">$189 to $389<small>sample range, compact car or sedan</small></div><p style="margin-bottom:14px">Battery installed, more for agm or complex electrical work. SUVs and luxury vehicles are higher; see <a href="services.html#battery">the full range</a>.</p>
 <a class="btn dark sm" href="contact.html?service=battery#book">Book this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></div>
 </div>
-<p class="muted" style="font-size:14px;margin-top:18px">Sample prices. The model is a concept car with a simplified engine and no suspension, battery or fluids, so the x-ray shapes show roughly where parts live and are not the real thing.</p></div>
+<p class="muted" style="font-size:14px;margin-top:18px">Sample ranges. The model is a concept car with a simplified engine and no suspension, battery or fluids, so the x-ray shapes show roughly where parts live and are not the real thing.</p></div>
 </div>
 </div>
 </section>
 
 <section class="sympt sec"><div class="wrap sym-grid">
 <div><div class="kicker rv">Not sure what it is?</div><h2 class="big rv" style="--i:1">What is it doing?</h2></div>
-<div><div class="sym-btns rv" style="--i:2"><button type="button" data-k="0">It squeals or pulls when I brake</button><button type="button" data-k="1">The check-engine light is on</button><button type="button" data-k="2">The steering wheel shakes</button><button type="button" data-k="3">The ride feels loose or bouncy</button><button type="button" data-k="4">It has been a while since the last oil change</button><button type="button" data-k="5">It is slow to start</button></div>
+<div><div class="sym-btns rv" style="--i:2"><button type="button" data-k="0">It has been a while since the last oil change</button><button type="button" data-k="1">The steering wheel shakes</button><button type="button" data-k="2">The car pulls to one side</button><button type="button" data-k="3">It squeals or pulls when I brake</button><button type="button" data-k="4">The ride feels loose or bouncy</button><button type="button" data-k="5">The check-engine light is on</button><button type="button" data-k="6">It is slow to start</button><button type="button" data-k="7">The A/C blows warm</button><button type="button" data-k="8">I am about to buy a used car</button></div>
 <div class="sym-out" id="sym-out" aria-live="polite"><b>Pick one.</b>We&rsquo;ll point you to the right job and what it usually costs. Anything else, <a href="contact.html#book">tell us on the form</a>.</div></div>
 </div>
-<script type="application/json" id="sym-data">{"0": {"id": "brakes", "name": "Brakes", "text": "Squeal, grind, a soft pedal, pulling to one side. Typical time: 2 to 3 hours. Starting at $189 (sample price)."}, "1": {"id": "engine", "name": "Engine and check-engine light", "text": "A light on the dash, rough idle, stalling, a drop in mileage. Typical time: 1 hour to diagnose. Starting at $129 (sample price)."}, "2": {"id": "tires", "name": "Tires and alignment", "text": "Vibration at highway speed, uneven wear, a new set. Typical time: 1 to 2 hours. Starting at $79 (sample price)."}, "3": {"id": "suspension", "name": "Suspension and steering", "text": "Clunks, bounce, a car that wanders or leans in corners. Typical time: 3 to 5 hours. Starting at $349 (sample price)."}, "4": {"id": "oil", "name": "Oil and fluids", "text": "Oil change, plus brake, coolant and transmission fluid. Typical time: 45 minutes. Starting at $64 (sample price)."}, "5": {"id": "battery", "name": "Battery and charging", "text": "Slow to start, dim lights, a battery light on. Typical time: 30 to 60 minutes. Starting at $149 (sample price)."}}</script></section>
+<script type="application/json" id="sym-data">{"0": {"id": "oil", "name": "Oil, filters and fluids", "text": "Oil and filter service with a multipoint inspection and fluid check. Typical time: 45 to 60 minutes. Sample range $59 to $109 for a compact car or sedan."}, "1": {"id": "tires", "name": "Tires and wheels", "text": "Mounting, balancing, rotation, repair and tire sensors. Typical time: 1 to 2 hours. Sample range $69 to $129 for a compact car or sedan."}, "2": {"id": "alignment", "name": "Wheel alignment", "text": "Four-wheel measurement and adjustment on a drive-on rack. Typical time: 1 hour. Sample range $119 to $169 for a compact car or sedan."}, "3": {"id": "brakes", "name": "Brakes", "text": "Pads, rotors, calipers, fluid and brake lines. Typical time: 2 to 3 hours. Sample range $249 to $449 for a compact car or sedan."}, "4": {"id": "suspension", "name": "Suspension and steering", "text": "Struts, shocks, springs, control arms, tie rods and bushings. Typical time: 3 to 5 hours. Sample range $449 to $899 for a compact car or sedan."}, "5": {"id": "engine", "name": "Engine, transmission and check-engine", "text": "Diagnosis first, then repair: engine, transmission, cooling and drivability. Typical time: 1 hour to diagnose, repair scheduled after approval. Sample range $125 to $4,200 for a compact car or sedan."}, "6": {"id": "battery", "name": "Battery, starting and charging", "text": "Battery, starter, alternator and electrical faults. Typical time: 30 to 90 minutes. Sample range $189 to $389 for a compact car or sedan."}, "7": {"id": "ac", "name": "A/C and heating", "text": "Evaluation, recharge, leak repair, compressors and blower faults. Typical time: 1 to 4 hours. Sample range $149 to $1,150 for a compact car or sedan."}, "8": {"id": "inspection", "name": "Inspections", "text": "State inspection, pre-purchase and seasonal checks. Typical time: 45 minutes to 2 hours. Sample range $45 to $189 for a compact car or sedan."}}</script></section>
 
+<section class="sec svc" id="range"><div class="wrap">
+<div class="kicker rv">Full service range</div>
+<h2 class="big rv" style="--i:1;max-width:12em;margin-bottom:.4em">Oil change to engine rebuild.</h2>
+<p class="lead rv" style="--i:2;max-width:46em;margin-bottom:clamp(28px,4vw,56px)">Nine service lines, each with a published range. Compact car to luxury and diesel, priced the way a careful shop prices it: a range first, an exact figure after inspection.</p>
+<div class="sgrid"><a class="stile rv" style="--i:0" href="services.html#oil"><h3>Oil, filters and fluids</h3><p>Oil and filter service with a multipoint inspection and fluid check.</p><span class="rg">$59 to $109</span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a><a class="stile rv" style="--i:1" href="services.html#tires"><h3>Tires and wheels</h3><p>Mounting, balancing, rotation, repair and tire sensors.</p><span class="rg">$69 to $129</span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a><a class="stile rv" style="--i:2" href="services.html#alignment"><h3>Wheel alignment</h3><p>Four-wheel measurement and adjustment on a drive-on rack.</p><span class="rg">$119 to $169</span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a><a class="stile rv" style="--i:0" href="services.html#brakes"><h3>Brakes</h3><p>Pads, rotors, calipers, fluid and brake lines.</p><span class="rg">$249 to $449</span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a><a class="stile rv" style="--i:1" href="services.html#suspension"><h3>Suspension and steering</h3><p>Struts, shocks, springs, control arms, tie rods and bushings.</p><span class="rg">$449 to $899</span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a><a class="stile rv" style="--i:2" href="services.html#engine"><h3>Engine, transmission and check-engine</h3><p>Diagnosis first, then repair: engine, transmission, cooling and drivability.</p><span class="rg">$125 to $4,200</span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a><a class="stile rv" style="--i:0" href="services.html#battery"><h3>Battery, starting and charging</h3><p>Battery, starter, alternator and electrical faults.</p><span class="rg">$189 to $389</span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a><a class="stile rv" style="--i:1" href="services.html#ac"><h3>A/C and heating</h3><p>Evaluation, recharge, leak repair, compressors and blower faults.</p><span class="rg">$149 to $1,150</span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a><a class="stile rv" style="--i:2" href="services.html#inspection"><h3>Inspections</h3><p>State inspection, pre-purchase and seasonal checks.</p><span class="rg">$45 to $189</span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a></div>
+<p class="muted" style="font-size:14px;margin-top:18px">Sample ranges for a compact car or sedan. SUVs, light trucks, luxury and diesel vehicles are on the <a href="services.html#board">full price board</a>.</p>
+</div></section>
+<section class="sec two" style="padding-top:0"><div class="wrap two-grid">
+<a class="tw-card rv" href="contact.html#book"><div class="kicker">Drivers</div><h2>Book a repair or a quote.</h2><p>Pick the work, see a sample range, choose drop-off or wait. A person confirms after inspection.</p><span class="btn">Book or get a quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a>
+<a class="tw-card alt rv" style="--i:1" href="fleet.html"><div class="kicker">Fleets and commercial</div><h2>One advisor. One statement.</h2><p>Priority scheduling, preventive-maintenance programs and net terms for approved accounts.</p><span class="btn ghost">See fleet accounts <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a>
+</div></section>
+<section class="sec shopt" style="padding-top:0"><div class="wrap plan-grid" style="align-items:start"><div><div class="kicker rv">The shop</div><h2 class="big rv" style="--i:1;font-size:clamp(2.2rem,4.6vw,4.4rem)">Named bays. Certified hands.</h2></div><div class="rv" style="--i:2"><p class="lead">Every bay has a lift and a job, every technician a specialty. The roster adapts from a two-bay independent to a twelve-bay, two-location operation.</p><a class="btn ghost" href="shop.html">Bays and technicians <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></section>
 <section class="sec grain" style="padding-block:0">
 <a href="the-bay.html" style="display:block;position:relative;min-height:min(80svh,720px);text-decoration:none;overflow:hidden;background:#0d0e10" aria-label="Look around the bay in 360">
 <img src="pano/bay-flat.jpg" alt="" loading="lazy" width="1024" height="512" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.62) saturate(.85)">
@@ -241,21 +299,21 @@
 </section>
 <section class="cta-band grain"><div class="wrap">
 <h2 class="rv">Tell us what it&rsquo;s <b>doing.</b></h2>
-<p class="lead rv" style="--i:1;color:#141516;margin-top:22px">Book a time, or call and talk to a person.</p>
-<div class="acts rv" style="--i:2"><a class="btn lg" href="contact.html#book">Book a repair <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a><a class="btn lg ghost" href="tel:+15550100177">Call (555) 010‑0177</a><a class="btn lg ghost" href="contact.html?service=engine#book">Get a quote</a></div>
+<p class="lead rv" style="--i:1;color:#141516;margin-top:22px">Book a time, get a quote, or call and talk to a person.</p>
+<div class="acts rv" style="--i:2"><a class="btn lg" href="contact.html#book">Book a repair <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a><a class="btn lg ghost" href="tel:+15550100177">Call (555) 010‑0177</a><a class="btn lg ghost" href="contact.html?type=fleet#book">Open a fleet account</a></div>
 </div></section>
 
 </main>
 <footer>
 <div class="wrap">
 <div class="ft">
-<div><a class="logo" href="index.html"><i>9</i>Bay Nine Auto</a><p style="margin-top:16px;max-width:22em">A made-up repair shop. This site shows what an advanced Collar City Tech Help build can do for a garage.</p></div>
-<div><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="the-bay.html">The bay</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Book a repair</a></li></ul></div>
+<div><a class="logo" href="index.html"><i>9</i>Bay Nine Auto</a><p style="margin-top:16px;max-width:22em">A made-up repair shop. This site shows what an advanced Collar City Tech Help build can do for a garage, whether it runs two bays or twelve.</p></div>
+<div><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services and pricing</a></li><li><a href="fleet.html">Fleet and commercial</a></li><li><a href="shop.html">Bays and technicians</a></li><li><a href="the-bay.html">The bay in 360</a></li><li><a href="about.html">About and warranty</a></li><li><a href="contact.html">Book or get a quote</a></li></ul></div>
 <div><h4>Near you (sample local pages)</h4><ul><li><a href="brake-repair-troy.html">Brake repair in Troy</a></li><li><a href="oil-change-albany.html">Oil change near Albany</a></li></ul></div>
 <div><h4>Visit</h4><ul><li>Your shop address here</li><li>Example City, NY</li><li><a href="tel:+15550100177">(555) 010‑0177</a></li><li>Mon to Fri 7:30 am to 5:30 pm</li><li>Sat 8 am to 1 pm, Sun closed</li></ul></div>
 </div>
 <div class="legal">
-<p><strong>Example design - not a real client.</strong> Bay Nine Auto is a made-up shop. The phone number is an example, the prices are sample prices, the form sends nothing, and there are no reviews because there are no customers. No bookings are taken.</p>
+<p><strong>Example design - not a real client.</strong> Bay Nine Auto is a made-up shop. The phone number is an example, every price is a sample range, the forms send nothing, and there are no reviews because there are no customers. No bookings are taken.</p>
 <p>Credits: 3D car model "Car Concept" by Eric Chadwick, Darmstadt Graphics Group GmbH, Khronos glTF-Sample-Assets (CC BY 4.0, derived from a CC0 model by Unity Fan; resized, recoloured and compressed by us, Khronos logos removed), 360 photo Autoshop 01 by Oliksiy Yakovlyev (CC0, Poly Haven), fly-in frames rendered by us from those assets, fonts Saira and Instrument Sans (Open Font License), IBM Plex Mono (OFL), three.js (MIT), GSAP (GreenSock standard license), Pannellum (MIT). Details in assets/CREDITS.md.</p>
 <p>Designed and built by Alex using modern tools, including AI. Every website is personally reviewed before it goes live. We provide general guidance, not legal advice, and no service can guarantee you'll never be hacked. Sample site by <a href="https://collarcitytechhelp.com/websites/">Collar City Tech Help</a>.</p>
 </div></div></footer>

@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fleet and commercial accounts | Example design - not a real client</title>
+<meta name="description" content="Fleet and commercial service at an example auto repair shop: priority scheduling, preventive-maintenance programs, one monthly statement and a rate card with sample ranges.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0a0b0c">
+<meta name="color-scheme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' blob: data:; form-action 'none'; base-uri 'none'; frame-src 'none'; object-src 'none'">
+<script>var r=document.documentElement;r.classList.add('js');try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)r.classList.add('rm')}catch(e){}</script>
+<link rel="preload" href="fonts/Saira-100-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "AutoRepair",
+ "@id": "https://example.com/#shop",
+ "name": "Bay Nine Auto Repair (example, not a real business)",
+ "description": "Made-up auto repair shop used as an example website design.",
+ "url": "https://example.com/",
+ "telephone": "+15550100177",
+ "email": "hello@example.com",
+ "priceRange": "$$",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "Your shop address here",
+  "addressLocality": "Example City",
+  "addressRegion": "NY",
+  "postalCode": "00000",
+  "addressCountry": "US"
+ },
+ "openingHoursSpecification": [
+  {
+   "@type": "OpeningHoursSpecification",
+   "dayOfWeek": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday"
+   ],
+   "opens": "07:30",
+   "closes": "17:30"
+  },
+  {
+   "@type": "OpeningHoursSpecification",
+   "dayOfWeek": "Saturday",
+   "opens": "08:00",
+   "closes": "13:00"
+  }
+ ],
+ "areaServed": [
+  "Example City"
+ ],
+ "hasOfferCatalog": {
+  "@type": "OfferCatalog",
+  "name": "Sample services (example price ranges)",
+  "itemListElement": [
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "minPrice": 59,
+     "maxPrice": 229,
+     "priceCurrency": "USD"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Oil, filters and fluids"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "minPrice": 69,
+     "maxPrice": 219,
+     "priceCurrency": "USD"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Tires and wheels"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "minPrice": 119,
+     "maxPrice": 289,
+     "priceCurrency": "USD"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Wheel alignment"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "minPrice": 249,
+     "maxPrice": 899,
+     "priceCurrency": "USD"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Brakes"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "minPrice": 449,
+     "maxPrice": 1799,
+     "priceCurrency": "USD"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Suspension and steering"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "minPrice": 125,
+     "maxPrice": 7500,
+     "priceCurrency": "USD"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Engine, transmission and check-engine"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "minPrice": 189,
+     "maxPrice": 649,
+     "priceCurrency": "USD"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Battery, starting and charging"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "minPrice": 149,
+     "maxPrice": 1950,
+     "priceCurrency": "USD"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "A/C and heating"
+    }
+   },
+   {
+    "@type": "Offer",
+    "priceSpecification": {
+     "@type": "PriceSpecification",
+     "minPrice": 45,
+     "maxPrice": 299,
+     "priceCurrency": "USD"
+    },
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Inspections"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Fleet and commercial accounts (quoted per account)"
+    }
+   }
+  ]
+ }
+}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="hdr">
+<div class="strip"><b>Example design - not a real client.</b><span class="x"> Made-up shop, example phone, sample price ranges.</span></div>
+<div class="bar">
+<a class="logo" href="index.html" aria-label="Bay Nine Auto, home"><i>9</i>Bay Nine Auto</a>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav class="nav" id="nav" aria-label="Main"><a href="services.html">Services</a><a href="fleet.html" aria-current="page">Fleet</a><a href="shop.html">The shop</a><a href="the-bay.html">The bay</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+<div class="bar-r">
+<span class="pill-status hd"><span class="dot"></span><span data-status>Mon to Fri 7:30 am to 5:30 pm</span></span>
+<a class="btn sm ghost call" href="tel:+15550100177">Call (555) 010‑0177</a>
+<a class="btn sm" href="contact.html#book">Book a repair</a>
+</div></div></div>
+<div class="dip" aria-hidden="true"><svg viewBox="0 0 26 200"><circle cx="13" cy="7" r="5" fill="none" stroke="#9aa2aa" stroke-width="1.5"/><rect x="11" y="12" width="4" height="188" fill="#2a2e33"/><rect id="dipLvl" class="lvl" x="11" y="190" width="4" height="10" fill="#f0a83a"/><g stroke="#9aa2aa" stroke-width="1"><path d="M2 20h14"/><path d="M2 38h9"/><path d="M2 56h9"/><path d="M2 74h9"/><path d="M2 92h9"/><path d="M2 110h14"/><path d="M2 128h9"/><path d="M2 146h9"/><path d="M2 164h9"/><path d="M2 182h9"/></g></svg></div>
+<div class="dock"><a class="btn ghost" href="tel:+15550100177">Call</a><a class="btn" href="contact.html#book">Book or quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div>
+<main id="main">
+<section class="ph grain"><div class="wrap">
+<div class="kicker rv">Fleet and commercial</div>
+<h1><span class="mask"><span>Uptime is</span></span><span class="mask" style="--i:1"><span>the product.</span></span></h1>
+<p class="lead rv" style="--i:2">For contractors, delivery operations, municipalities and rental fleets. A named advisor, scheduled windows, a maintenance program per unit and one statement a month. Everything here is a sample range or a placeholder for your real terms.</p>
+<div class="rv" style="--i:3;margin-top:28px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn lg" href="contact.html?type=fleet#book">Open a fleet account <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a><a class="btn lg ghost" href="tel:+15550100177">Call (555) 010‑0177</a></div>
+</div></section>
+<div class="lane" aria-hidden="true"></div>
+<section class="sec"><div class="wrap"><div class="kicker rv">What an account includes</div><h2 class="big rv" style="--i:1;max-width:12em;margin-bottom:.8em">Six things that keep vehicles earning.</h2>
+<ul class="fgrid"><li class="fcard rv" style="--i:0"><h3>Priority scheduling</h3><p>A named service advisor and a standing weekly window. Vehicles on your account move ahead of walk-ins when a unit is down.</p></li><li class="fcard rv" style="--i:1"><h3>Preventive-maintenance schedules</h3><p>Mileage- or hours-based intervals per unit, with reminders by text or email before a unit is due.</p></li><li class="fcard rv" style="--i:2"><h3>Service history by unit</h3><p>Every inspection, photo and invoice kept against the vehicle and unit number, exportable on request.</p></li><li class="fcard rv" style="--i:0"><h3>Consolidated billing</h3><p>One monthly statement. Net terms are available to approved accounts (terms here are placeholders).</p></li><li class="fcard rv" style="--i:1"><h3>Pickup, delivery and after-hours drop</h3><p>Key drop box, shuttle within a set radius, or pickup and return from your yard (radius and fees are placeholders).</p></li><li class="fcard rv" style="--i:2"><h3>Inspection and compliance support</h3><p>Pre-trip and annual inspection records, state inspection where it applies. We do not give legal advice on regulations.</p></li></ul></div></section>
+<section class="paper sec"><div class="wrap">
+<div class="kicker rv">Rate card</div><h2 class="big rv" style="--i:1;max-width:11em;margin-bottom:.6em">Sample rates and volume tiers.</h2>
+<div class="rate-grid">
+<div class="tablewrap tw-x"><table class="ptable"><caption>Labor rate ranges (sample)</caption><thead><tr><th scope="col">Vehicle group</th><th scope="col">Labor range</th></tr></thead><tbody><tr><th scope="row">Light-duty cars and SUVs</th><td>$135 to $165 per hour</td></tr><tr><th scope="row">Vans and light trucks</th><td>$145 to $185 per hour</td></tr><tr><th scope="row">Medium-duty, by quote</th><td>$165 to $215 per hour</td></tr></tbody></table></div>
+<div class="tablewrap tw-x"><table class="ptable"><caption>Volume tiers (sample)</caption><thead><tr><th scope="col">Fleet size</th><th scope="col">Includes</th><th scope="col">Labor discount</th></tr></thead><tbody><tr><th scope="row">5 to 14 vehicles</th><td>Account setup, priority window, one statement a month</td><td>5% to 8% on labor</td></tr><tr><th scope="row">15 to 49 vehicles</th><td>Everything above plus scheduled preventive maintenance</td><td>8% to 12% on labor</td></tr><tr><th scope="row">50 vehicles and up</th><td>Dedicated bay time, on-site pickup, quarterly review</td><td>Quoted per account</td></tr></tbody></table></div>
+</div>
+<p class="note-sample" style="margin-top:24px">SAMPLE RATES. Made up for this example. A real rate card is set by the shop owner.</p></div></section>
+<section class="sec"><div class="wrap plan-grid" style="align-items:start"><div><div class="kicker rv">How a fleet account runs</div><h2 class="big rv" style="--i:1;font-size:clamp(2.2rem,4.6vw,4.4rem)">From first call to quarterly review.</h2></div>
+<ol class="fsteps"><li class="fstep"><span class="n">1</span><div><h3>Account setup</h3><p>One conversation about your vehicles, mileage, routes and uptime goals. We build the unit list and the maintenance schedule from it.</p></div></li><li class="fstep"><span class="n">2</span><div><h3>Scheduled windows</h3><p>Recurring slots and a named advisor. Units arrive on schedule and leave the same day wherever the work allows.</p></div></li><li class="fstep"><span class="n">3</span><div><h3>Inspect, report, approve</h3><p>Every visit produces a photo inspection report. Repairs over your approval limit wait for your sign-off; routine items run on pre-approval.</p></div></li><li class="fstep"><span class="n">4</span><div><h3>Statement and review</h3><p>One monthly statement by unit. A quarterly review covers cost per vehicle, repeat issues and what is coming due.</p></div></li></ol></div></section>
+<section class="paper sec"><div class="wrap plan-grid" style="align-items:start"><div><div class="kicker">Capacity</div><h2 class="big" style="font-size:clamp(2.2rem,4.6vw,4.4rem);margin-bottom:.4em">Bay time, reserved.</h2><p class="lead">Accounts at the top tier get dedicated bay hours. See the <a href="shop.html" style="text-decoration-thickness:2px">bays and technicians</a> that make that possible, from a two-bay independent to a twelve-bay, two-location operation.</p></div>
+<div class="slot"><b>Your fleet customers here</b>No customer logos or testimonials are shown because this shop does not exist. On a real site this holds your own fleet accounts, with their permission.</div></div></section>
+<section class="sec" style="background:var(--floor)"><div class="wrap faq"><div class="faq-h"><div class="kicker">Fleet questions</div><h2 class="big" style="font-size:clamp(2.2rem,4.6vw,4.4rem)">Operations, answered.</h2></div><div><details><summary>What counts as a fleet?</summary><div><p>Sample answer: five or more vehicles under one account, from a contractor with a few vans to a municipal or rental fleet. Smaller businesses can still open a commercial account for priority scheduling and one statement.</p></div></details><details><summary>Do you service medium-duty trucks?</summary><div><p>Sample answer: light and medium duty up to the capacity of our lifts, by quote. Heavy-duty work is referred out and we say so before you drive in.</p></div></details><details><summary>Can you work on our schedule?</summary><div><p>Yes. Early drop-off, after-hours key box and recurring windows are standard for accounts. Your real hours and capacity go here.</p></div></details><details><summary>Do you provide DOT or inspection paperwork?</summary><div><p>We keep inspection records and perform inspections where they apply. We do not give legal advice on regulations; your compliance officer owns the rules.</p></div></details></div></div></section>
+<section class="cta-band grain"><div class="wrap">
+<h2 class="rv">Open an account <b>this week.</b></h2>
+<p class="lead rv" style="--i:1;color:#141516;margin-top:22px">Send the fleet inquiry, or call and speak to a service advisor.</p>
+<div class="acts rv" style="--i:2"><a class="btn lg" href="contact.html#book">Book a repair <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a><a class="btn lg ghost" href="tel:+15550100177">Call (555) 010‑0177</a><a class="btn lg ghost" href="contact.html?type=fleet#book">Open a fleet account</a></div>
+</div></section>
+
+</main>
+<footer>
+<div class="wrap">
+<div class="ft">
+<div><a class="logo" href="index.html"><i>9</i>Bay Nine Auto</a><p style="margin-top:16px;max-width:22em">A made-up repair shop. This site shows what an advanced Collar City Tech Help build can do for a garage, whether it runs two bays or twelve.</p></div>
+<div><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services and pricing</a></li><li><a href="fleet.html">Fleet and commercial</a></li><li><a href="shop.html">Bays and technicians</a></li><li><a href="the-bay.html">The bay in 360</a></li><li><a href="about.html">About and warranty</a></li><li><a href="contact.html">Book or get a quote</a></li></ul></div>
+<div><h4>Near you (sample local pages)</h4><ul><li><a href="brake-repair-troy.html">Brake repair in Troy</a></li><li><a href="oil-change-albany.html">Oil change near Albany</a></li></ul></div>
+<div><h4>Visit</h4><ul><li>Your shop address here</li><li>Example City, NY</li><li><a href="tel:+15550100177">(555) 010‑0177</a></li><li>Mon to Fri 7:30 am to 5:30 pm</li><li>Sat 8 am to 1 pm, Sun closed</li></ul></div>
+</div>
+<div class="legal">
+<p><strong>Example design - not a real client.</strong> Bay Nine Auto is a made-up shop. The phone number is an example, every price is a sample range, the forms send nothing, and there are no reviews because there are no customers. No bookings are taken.</p>
+<p>Credits: 3D car model "Car Concept" by Eric Chadwick, Darmstadt Graphics Group GmbH, Khronos glTF-Sample-Assets (CC BY 4.0, derived from a CC0 model by Unity Fan; resized, recoloured and compressed by us, Khronos logos removed), 360 photo Autoshop 01 by Oliksiy Yakovlyev (CC0, Poly Haven), fly-in frames rendered by us from those assets, fonts Saira and Instrument Sans (Open Font License), IBM Plex Mono (OFL), three.js (MIT), GSAP (GreenSock standard license), Pannellum (MIT). Details in assets/CREDITS.md.</p>
+<p>Designed and built by Alex using modern tools, including AI. Every website is personally reviewed before it goes live. We provide general guidance, not legal advice, and no service can guarantee you'll never be hacked. Sample site by <a href="https://collarcitytechhelp.com/websites/">Collar City Tech Help</a>.</p>
+</div></div></footer>
+<script src="js/site.js"></script>
+
+</body></html>

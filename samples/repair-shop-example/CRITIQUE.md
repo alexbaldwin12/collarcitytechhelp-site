@@ -47,7 +47,7 @@ Opened the Birchwater and Hudson one-page samples next to the Bay Nine home page
 Owner believe $2-3K: yes for the first screen, the 3D car, the 360, the price board and the repair-order form; the lower parts of About and the local pages are well built but quieter and closer to a good template than to custom art direction. Looks like an existing sample: no (see comparison). It shares mechanics with Kettle Point (pinned scrub, a 360, a fixed Book bar) because the brief asks for them, not look or layout. Result: first answer yes, second no, so no redesign was triggered.
 
 ### Still weak, in order of importance
-1. The 3D model licence is unverified (CC BY 4.0 claimed in the three.js project, original page unreachable) and it is a real brand's car. Alex must confirm or swap before anything public. The ToyCar CC0 fallback is a toy.
+1. (Resolved Nov 9 2026, see round 3) The 3D model was replaced by a verified CC BY 4.0 model without a brand. It is still a concept car, not an everyday sedan.
 2. The shop in the fly-in is a CG stage, not a real bay; the 360 is a different real hall. A real client would give us their own bay photos or video.
 3. Engine, suspension, battery and fluids are illustrative amber shapes, not parts in the model. Honest labels exist, but a careful visitor will notice.
 4. The 3D section takes about 3.1 MB and took 10-15 s to appear in this pane (software WebGL). On a real phone with a GPU it should be faster, but it is unmeasured. It only loads near the section, and the part list works without it.
@@ -55,3 +55,33 @@ Owner believe $2-3K: yes for the first screen, the 3D car, the 360, the price bo
 6. Only one panorama and one equipment set; "Look inside" is a real interior but has no clickable hotspots.
 7. Copy is placeholder-grade in the sample (e.g. the Troy and Albany local pages mention real towns with invented drive details). Real local pages need real streets and the shop's real address.
 8. Not tested: see the first paragraph.
+
+## Round 3 (model swap and rebuild to full capability, Nov 9 2026)
+Checked with the built-in browser (software WebGL, 1280 and 375 wide). Not tested: Safari/iOS, a real touch device, a screen reader, Lighthouse, throttled network, the OS reduced-motion switch, JavaScript genuinely switched off.
+### What changed
+Model: "Car Concept" (Khronos, CC BY 4.0, verified from LICENSE.md and metadata.json in the repo), logos removed (they sat on the licence plate, steering emblem, a shared emissive map and, found on inspection, the tyre sidewalls), 11.8 MB cut to 1.2 MB. All 192 fly-in frames, the posters and the stills were re-rendered. Look inside now shows a real concept-car cockpit; the engine is a simplified block, the rest of the x-ray shapes are illustrative and labelled so.
+Site: nine services with sample ranges per vehicle class, maintenance-by-mileage table, a fleet page, a bay board with lift names and a technician roster with certification placeholders, a booking and quote flow with a live sample range and a fleet variant, a stronger warranty and trust section, AutoRepair JSON-LD extended to price ranges.
+### Bugs found and fixed while doing it
+1. First optimised model rendered tyres and rims fully white: removing the logo emissive texture left an emissive factor of 1; set to 0.
+2. Tyre sidewalls still carried the Khronos and 3D Commerce logos in the base-colour map; replaced by a flat swatch and every frame re-rendered.
+3. Pearl paint shimmered rainbow in the viewer (iridescence); switched off at build time.
+4. Header and dock button "Book or get a quote" wrapped to three lines at 375 px; shortened.
+5. The bay board showed grey filler cells for empty slots; board now has hairline cells on the floor colour.
+### Honest limits
+It is a concept car with a yoke-style cockpit, not an everyday sedan or SUV: Alex asked for an everyday car and no verifiable CC0 or CC-BY sedan with separable wheels and a premium finish was found (Kenney's page could not be read here, and a low-poly kit would clash with the realistic render). Technician names, photos and certifications are placeholders. Statuses on the bay board are a static sample.
+
+## Round 4 (does it serve a 12-bay multi-location shop AND a 2-bay independent?)
+### The 12-bay, two-location shop
+Needs: locations, many bays, many technicians, fleet accounts, a clear price structure, one booking path. Result: yes. The 12-bay preset groups bays under location headings, the technician roster grows to twelve, the fleet page carries rate tiers and volume discounts, the price board and maintenance table give a defensible range per vehicle class, and the booking form has a fleet variant. Gap: the contact page lists one address and one map; a real multi-location build needs a location picker in the booking form and a map or address block per location. That is a config extension, not a redesign, and it is not built here.
+### The 2-bay independent
+Needs: no filler, no pretence of scale, the owner visible, honest prices. Result: yes with a caveat. The 2-bay preset renders two large bay cards and two technician cards, and the services list can be cut to the jobs the shop actually does, so the page does not look empty. Caveat: the home page still says "Full service range" with nine tiles, and the fleet page exists; a small shop would delete the fleet page and trim the tiles, which the README explains. The weak point is the nav: six links is a lot for a two-bay shop; dropping Fleet and The bay gives four.
+### Wording check
+Copy was rewritten in a plain owner voice: ranges are stated as ranges and explained (the figure depends on the vehicle, so we inspect first), warranty terms are specific, and every placeholder says what goes there. Banned or AI-default phrases found on a read-through of the new pages: none. Remaining risk: some sentences are still sample copy, marked as such.
+### Compared with the other samples
+Still a dark, scroll-driven, 3D-led page, unlike Kettle Point's lake photo and the light v4 samples: different fonts, palette, buttons and subject. It shares mechanics with Kettle Point (pinned scrub, a 360, a fixed Book bar) because the brief asks for them.
+### Still weak, in order
+1. The 3D car is a concept car, not an everyday car.
+2. No location picker for multi-location booking.
+3. The shop in the fly-in is a CG stage, not a real bay.
+4. Not tested: Safari/iOS, real devices, Lighthouse, a throttled network, JavaScript off in a real browser.
+5. Home page is now long; a real build would trim the sections to the shop's priorities.
