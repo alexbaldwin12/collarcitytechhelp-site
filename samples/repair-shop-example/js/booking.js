@@ -29,6 +29,13 @@
     var cb = form.querySelector('input[name=svc][value="' + s0.replace(/[^a-z]/g, '') + '"]');
     if (cb) { cb.checked = true; note.hidden = false; note.textContent = 'Service chosen: ' + cb.nextElementSibling.textContent + '. Add more or change it below.'; }
   }
+  // from the estimate builder on the home page: ?service=brakes&class=b&est=299-549 (a service id, a vehicle class and a sample range: no personal data)
+  var c0 = (qs.get('class') || '').replace(/[^abc]/g, ''), e0 = /^(\d{1,5})-(\d{1,5})$/.exec(qs.get('est') || '');
+  if (c0 && cls.querySelector('option[value="' + c0 + '"]')) cls.value = c0;
+  if (e0 && s0 && R.svc[s0.replace(/[^a-z]/g, '')] && c0) {
+    note.hidden = false;
+    note.textContent = 'From your estimate: ' + R.svc[s0.replace(/[^a-z]/g, '')].n + ', ' + R.classes[c0] + ', sample range ' + money(+e0[1]) + ' to ' + money(+e0[2]) + '. Add your vehicle details and send the request.';
+  }
   mode(); estimate();
   form.addEventListener('submit', function (e) {
     e.preventDefault();
