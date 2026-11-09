@@ -12,8 +12,7 @@
 <script>var r=document.documentElement;r.classList.remove('nojs');r.classList.add('js');try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)r.classList.add('rm')}catch(e){}</script>
 <link rel="icon" href="data:,">
 <link rel="preload" href="fonts/Epilogue-latin-200-900.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="frames/f000.webp" fetchpriority="high" media="(min-aspect-ratio: 9/10)">
-<link rel="preload" as="image" href="frames/p/f000.webp" fetchpriority="high" media="(max-aspect-ratio: 9/10)">
+<link rel="preload" as="image" href="media/hero-1-poster.avif" type="image/avif" fetchpriority="high">
 <link rel="stylesheet" href="css/site.css">
 <script type="application/ld+json">
 {
@@ -107,54 +106,42 @@
 <div class="dock" aria-label="Quick actions"><a class="btn ghost" href="tel:+15550100142">Call</a><a class="btn" href="contact.html#book">Check availability</a></div>
 <main id="main">
 
-<svg width="0" height="0" aria-hidden="true" style="position:absolute"><filter id="ripple" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.0015 0.05" numOctaves="2" seed="4" result="n"><animate id="ripple-anim" attributeName="baseFrequency" dur="11s" values="0.0015 0.05;0.003 0.07;0.0015 0.05" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="30" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
-<section class="intro" aria-label="Arriving at Kettle Point">
-<div class="stage">
-<picture><source media="(max-aspect-ratio: 9/10)" srcset="frames/p/f000.webp"><img class="poster" src="frames/f000.webp" width="1024" height="576" alt="Dusk on Little Kettle Lake, a lit wooden house and its dock across still water" fetchpriority="high"></picture>
-<canvas id="seq" aria-hidden="true"></canvas>
-<div class="glow" aria-hidden="true"></div><div class="vig" aria-hidden="true"></div>
-<h1 class="ttl"><b><span>Kettle</span> <span>Point</span></b></h1>
-<div class="ttl-ref" aria-hidden="true"><b><span>Kettle</span> <span>Point</span></b></div>
-<div class="hero-act"><a class="btn" href="contact.html#book">Check availability</a><a class="btn ghost" href="tel:+15550100142">Call (555)&#8209;010&#8209;0142</a><p>Sample price: from <b>$240</b> a night</p></div>
-<div class="hero-sub">A lake house for five on Little Kettle Lake.<small>Next open weekend: <span id="nextwk">pick your dates</span></small></div>
-<div class="cap"><h2>Start on the water.</h2><p>Little Kettle Lake at dusk, the lantern already lit on the dock.</p></div>
-<div class="cap"><h2>Walk the dock.</h2><p>Forty planks and a canoe on the rack. The best seat for the last light.</p></div>
-<div class="cap"><h2>Up the path.</h2><p>Gravel under your boots, and you will turn around twice to look back.</p></div>
-<div class="cap"><h2>Through the door.</h2><p>Boots off. The stove is laid and waiting.</p></div>
-<div class="cap"><h2>Five beds. One lake.</h2><p>Open weekends are listed below.</p><p style="margin-top:14px"><a class="btn" href="contact.html#book">Check availability</a></p></div>
-<div class="prog" aria-hidden="true"><i></i><b></b></div>
+<section class="intro" id="intro" aria-label="Arriving at Kettle Point">
+<div class="stage" data-tod="dusk">
+<div class="shots" role="img" aria-label="Photographs of a lake at dusk, a cottage and dock, a boathouse, and a wood-lined living room with lake windows">
+<div class="shot s0 hv"><picture><source type="image/avif" srcset="media/hero-1-poster.avif"><source type="image/webp" srcset="media/hero-1-poster.webp"><img class="m" src="media/hero-1-poster.jpg" width="1920" height="1080" alt="" fetchpriority="high" decoding="async"></picture><video class="m" data-src="media/hero-1" muted loop playsinline preload="none" tabindex="-1"></video></div>
+<div class="shot s1"><img class="m" data-src="media/hero-2-poster.webp" width="1920" height="1080" alt="" decoding="async"></div>
+<div class="shot s2"><img class="m" data-src="media/hero-3-poster.webp" width="1920" height="1080" alt="" decoding="async"></div>
+<i class="g dw1" aria-hidden="true"></i><i class="g dw2" aria-hidden="true"></i><i class="g dy1" aria-hidden="true"></i><i class="g dy2" aria-hidden="true"></i><i class="g dy3" aria-hidden="true"></i><i class="g nt1" aria-hidden="true"></i><i class="g nt2" aria-hidden="true"></i>
+<div class="shot s3"><img class="m" data-src="img/real/in-living-dusk-2400.webp" width="2400" height="1800" alt="" decoding="async"></div>
+</div>
+<div class="vig" aria-hidden="true"></div>
+<div class="hero-wrap"><div class="hero-col">
+<p class="kicker">Little Kettle Lake &middot; sleeps five</p>
+<h1>Kettle Point</h1>
+<p class="hero-sub">A lake house for five, thirty steps from the water and a stove that is already laid.</p>
+<div class="hero-act"><a class="btn" href="contact.html#book">Check availability</a><a class="btn ghost" href="tel:+15550100142">Call (555)&#8209;010&#8209;0142</a></div>
+<p class="hero-note">Sample price: from <b>$240</b> a night. Next open weekend: <span id="nextwk">pick your dates</span></p>
+</div></div>
+<div class="tod" role="group" aria-label="Time of day on the lake"><span class="tod-l">Light</span><div class="tod-b"><button type="button" data-tod="dawn" aria-pressed="false">Dawn</button><button type="button" data-tod="day" aria-pressed="false">Day</button><button type="button" data-tod="dusk" aria-pressed="true">Dusk</button><button type="button" data-tod="night" aria-pressed="false">Night</button></div><p class="tod-say" id="todsay" aria-live="polite">Fire in the woodstove. Dinner for five at the long table.</p></div>
+<div class="cap"><h2>Start on the water.</h2><p>Little Kettle Lake at dusk, the last light on the far shore.</p></div>
+<div class="cap"><h2>Walk the dock.</h2><p>Two chairs at the end of the dock, the best seats for the last light.</p></div>
+<div class="cap"><h2>Past the boathouse.</h2><p>Gravel under your boots, and you will turn around twice to look back.</p></div>
+<div class="cap"><h2>Through the door.</h2><p>Boots off, the stove laid and waiting. Five beds, one lake.</p><p style="margin-top:16px"><a class="btn" href="contact.html#book">Check availability</a></p></div>
+<div class="prog" aria-hidden="true"><i></i></div>
 <p class="cue" aria-hidden="true">Scroll to walk in<i></i></p>
-<div class="loadbar" aria-hidden="true"></div>
 </div>
 </section>
-<div class="stills"><figure><img src="frames/f000.webp" width="1024" height="576" alt="The lake and the house from the water" loading="lazy"><figcaption>Start on the water.</figcaption></figure><figure><img src="frames/f046.webp" width="1024" height="576" alt="The front of the house with the porch lanterns lit" loading="lazy"><figcaption>Up to the porch.</figcaption></figure><figure><img src="frames/f070.webp" width="1024" height="576" alt="Inside, the stone fireplace glowing" loading="lazy"><figcaption>Inside.</figcaption></figure></div>
+<div class="stills"><figure><img src="media/hero-2-poster.webp" width="1920" height="1080" alt="A small white cottage and its dock at the edge of a still lake" loading="lazy"><figcaption>Walk the dock.</figcaption></figure><figure><img src="media/hero-3-poster.webp" width="1920" height="1080" alt="A lake house and boathouse reflected in calm water" loading="lazy"><figcaption>Past the boathouse.</figcaption></figure><figure><img src="img/real/in-living-dusk-1200.webp" width="1200" height="900" alt="A wood-lined living room with tall windows to the lake and a lit lamp" loading="lazy"><figcaption>Through the door.</figcaption></figure></div>
 
 <section class="sec"><div class="wrap statement-row">
-<p class="statement">A lake house for <img class="ph" src="img/deck-sm.webp" alt="" loading="lazy" width="720" height="480"> five, with <b>thirty steps</b> <img class="ph" src="img/dock-sm.webp" alt="" loading="lazy" width="720" height="480"> from the door to the water, and a stove <img class="ph" src="img/fire-sm.webp" alt="" loading="lazy" width="720" height="405"> laid and waiting.</p>
+<p class="statement">A lake house for <img class="ph" src="img/real/ext-dusk-cabin-560.webp" alt="" loading="lazy" width="560" height="373"> five, with <b>thirty steps</b> <img class="ph" src="img/real/ext-dawn-dock-560.webp" alt="" loading="lazy" width="560" height="420"> from the door to the water, and a stove <img class="ph" src="img/real/in-fireplace-560.webp" alt="" loading="lazy" width="560" height="373"> laid and waiting.</p>
 <aside><dl><div><dt>Sleeps</dt><dd>5 guests</dd></div><div><dt>Check-in</dt><dd>4 pm</dd></div><div><dt>Check-out</dt><dd>10 am</dd></div><div><dt>Dogs</dt><dd>Welcome, up to two</dd></div><div><dt>Minimum stay</dt><dd>2 nights (sample)</dd></div></dl></aside>
 </div></section>
 
 <section class="sec slate" style="padding-bottom:clamp(40px,6vw,80px)"><div class="wrap tix-head"><h2><h2 class=""><span class="mask"><span>Open weekends, this season</span></span></h2></h2><p class="lede" style="margin:0">Friday to Sunday, two nights. Tap an open ticket and the dates are filled in for you. <span class="k">Sample calendar, made up.</span></p></div>
 <ul class="tix" id="tix" aria-label="Open weekends"><li class="open"><a href="contact.html#book"><div class="d">This weekend</div><div class="m">Pick your own dates</div><div class="s"><span>Ask us</span><b>from $240</b></div></a></li></ul>
 <div class="wrap"><p class="k">Longer stays, midweek and holidays: <a href="stay.html#calendar" style="color:var(--lantern)">use the calendar</a>.</p></div></section>
-
-<section class="day" aria-label="One day at the lake">
-<div class="st">
-<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-<g id="stars" opacity="0" fill="#e9edf3"><circle cx="220" cy="130" r="1.6"/><circle cx="480" cy="80" r="1.2"/><circle cx="760" cy="170" r="1.8"/><circle cx="1010" cy="90" r="1.3"/><circle cx="1290" cy="150" r="1.6"/><circle cx="1480" cy="60" r="1.2"/><circle cx="640" cy="60" r="1"/><circle cx="1150" cy="210" r="1"/></g>
-<path id="arc" d="M120 640C420 20 1180 20 1480 640" fill="none" stroke="rgba(233,237,243,.18)" stroke-dasharray="3 9"/>
-<g id="moon" opacity="0"><circle cx="1210" cy="190" r="34" fill="#f2efe4"/><circle cx="1228" cy="180" r="30" fill="#0a1020" opacity=".55"/></g>
-<g id="sun"><circle r="80" fill="#ffe2a6" opacity=".16"/><circle r="46" fill="#ffe2a6" opacity=".3"/><circle r="26" fill="#fff4d6"/></g>
-<path d="M0 620L150 560L300 610L470 520L640 600L840 540L1040 610L1260 530L1440 600L1600 560V680H0Z" fill="#0d1522"/>
-<g fill="#070b12"><path d="M60 650l40-120l40 120zM110 650l36-90l36 90zM1380 650l36-100l36 100zM1440 650l40-130l40 130zM1500 650l30-80l30 80z"/></g>
-<rect y="650" width="1600" height="250" fill="#0a1019"/>
-<g id="hse"><path d="M1080 650v-72h240v72z" fill="#070b12"/><path d="M1060 580h280l-140-62z" fill="#05080e"/><rect x="1280" y="520" width="26" height="54" fill="#05080e"/><rect id="winglow" x="1110" y="604" width="46" height="32" fill="#ffd9a0" opacity=".3"/><rect x="1244" y="604" width="46" height="32" fill="#ffd9a0" opacity=".3"/><rect x="1178" y="606" width="30" height="44" fill="#ffd9a0" opacity=".2"/></g>
-<rect x="1060" y="650" width="280" height="40" fill="#070b12" opacity=".5"/>
-<g stroke="rgba(233,237,243,.12)" stroke-width="2"><path d="M80 720h260M420 755h330M880 730h260M1210 765h300M200 810h360M700 840h420"/></g>
-</svg>
-<div class="lines"><span class="t" aria-hidden="true">6:40 am</span><h2 style="font-size:clamp(1.8rem,4vw,3.4rem)">One day at the lake.</h2><p id="say">Coffee on the dock. Mist lifting off the water, one loon, no one else.</p></div>
-</div>
-</section>
 
 <section class="sec"><div class="wrap rooms">
 <div class="tix-head"><h2><h2 class=""><span class="mask"><span>Rooms, up close</span></span></h2></h2><p class="lede" style="margin:0">Walk through every room in 360, with the dock and the point included. <a href="tour.html" style="color:var(--lantern)">Start the tour</a>.</p></div>
@@ -189,6 +176,8 @@
 </footer>
 <script src="vendor/gsap.min.js" defer></script>
 <script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="vendor/lenis.min.js" defer></script>
+<script src="assets/smooth.js" defer></script>
 <script src="js/site.js" defer></script>
 <script src="js/home.js" defer></script>
 </body>

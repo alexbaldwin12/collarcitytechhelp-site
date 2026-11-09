@@ -1,95 +1,87 @@
-/* Home: (1) the fly-in. 96 frames rendered offline from a real three.js 3D scene (water, dock, path, house, door, rooms)
-   with a moving camera, drawn on a canvas and scrubbed by GSAP ScrollTrigger. Frames load lazily after the page has painted.
-   (2) "One day at the lake": a sun arc and sky scrubbed by scroll. */
+/* Home. (1) Hero: real footage of the lake at dusk, poster first, then the loop (WebM then MP4, 960 wide on phones and slow links;
+   poster only under reduced motion or Save-Data). (2) Time of day: dawn / day / dusk / night grade, tinted layers that cross-fade.
+   (3) The walk in: one scrubbed GSAP timeline cross-fades and pushes in through four real photographs (lake, cottage and dock,
+   boathouse, living room). Only transform and opacity move. Images are fetched after the page has loaded and decoded before they show.
+   Real footage and photographs only (Pexels, see assets/CREDITS.md). */
 (function () {
   'use strict';
-  var d = document, root = d.documentElement;
-  if (!root.classList.contains('js') || root.classList.contains('rm') || !window.gsap || !window.ScrollTrigger) {
-    var rp = d.getElementById('ripple-anim'); if (rp) rp.parentNode.removeChild(rp);
-    return;
+  var d = document, root = d.documentElement, RM = root.classList.contains('rm');
+  var $ = function (s, r) { return (r || d).querySelector(s); }, $$ = function (s, r) { return [].slice.call((r || d).querySelectorAll(s)); };
+  var stage = $('.stage'); if (!stage) return;
+
+  /* ---------- hero loop ---------- */
+  var hv = $('.s0', stage), v = $('video', hv), poster = $('img.m', hv);
+  var con = navigator.connection || {}, SD = !!con.saveData, started = false;
+  function play() { var p = v.play(); if (p && p.catch) p.catch(function () { /* autoplay refused: the poster stays */ }); }
+  if (v && !RM && !SD && window.HTMLVideoElement) {
+    var small = innerWidth <= 900 || /(^|-)(2g|3g)$/.test(con.effectiveType || ''), base = v.getAttribute('data-src');
+    var attach = function () {
+      if (started) return; started = true;
+      var w = small ? '960' : '1920';
+      [['webm', 'video/webm; codecs="vp9"'], ['mp4', 'video/mp4']].forEach(function (t) { var s = d.createElement('source'); s.src = base + '-' + w + '.' + t[0]; s.type = t[1]; v.appendChild(s); });
+      v.load(); v.addEventListener('playing', function () { v.classList.add('on'); }, { once: true }); play();
+    };
+    var go = function () { setTimeout(attach, 150); };
+    (poster && poster.decode ? poster.decode().catch(function () {}) : Promise.resolve()).then(function () { if (d.readyState === 'complete') go(); else addEventListener('load', go, { once: true }); });
+    d.addEventListener('visibilitychange', function () { if (!started) return; if (d.hidden) v.pause(); else if (!stage.hasAttribute('data-away')) play(); });
   }
+
+  /* ---------- time of day ---------- */
+  var SAY = {
+    dawn: 'Coffee on the dock. Mist lifting off the water, one loon, no one else.',
+    day: 'Swim off the end of the dock, then sit in the sun with wet hair.',
+    dusk: 'Fire in the woodstove. Dinner for five at the long table.',
+    night: 'Lantern on the dock. Quiet enough to hear the water.'
+  };
+  var say = $('#todsay'), tbs = $$('.tod-b button');
+  tbs.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var k = b.getAttribute('data-tod'); stage.setAttribute('data-tod', k);
+      tbs.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      if (say) say.textContent = SAY[k];
+    });
+  });
+
+  /* ---------- the walk in ---------- */
+  if (RM || !window.gsap || !window.ScrollTrigger || !root.classList.contains('js')) return;
   gsap.registerPlugin(ScrollTrigger);
-  var $ = function (s) { return d.querySelector(s); };
-  function sm(a, b, x) { x = Math.min(1, Math.max(0, (x - a) / (b - a))); return x * x * (3 - 2 * x); }
-
-  /* ---------- fly-in ---------- */
-  var intro = $('.intro'), stage = $('.stage'), cv = d.getElementById('seq');
-  if (intro && cv) {
-    var ctx = cv.getContext('2d', { alpha: false });
-    var prog = $('.prog'), act = $('.hero-act'), sub = $('.hero-sub'), ttl = $('.ttl'), ref = $('.ttl-ref'), cue = $('.cue'), glow = $('.glow'), bar = $('.loadbar');
-    var caps = [].slice.call(d.querySelectorAll('.cap'));
-    var N = 96, START = 1, portrait = innerWidth / innerHeight < .9 || (navigator.connection && navigator.connection.saveData);
-    var dir = portrait ? 'frames/p/' : 'frames/', imgs = new Array(N), cur = START, shown = -1, loaded = 0, W = 0, Hh = 0;
-    function size() {
-      var dpr = Math.min(devicePixelRatio || 1, 1.5);
-      W = Math.min(Math.round(stage.clientWidth * dpr), 1600); Hh = Math.round(W * stage.clientHeight / stage.clientWidth);
-      cv.width = W; cv.height = Hh; shown = -1; draw(cur);
-    }
-    function ready(im) { return im && im.complete && im.naturalWidth; }
-    function nearest(i) { if (ready(imgs[i])) return imgs[i]; for (var k = 1; k < N; k++) { if (ready(imgs[i - k])) return imgs[i - k]; if (ready(imgs[i + k])) return imgs[i + k]; } return null; }
-    function draw(i) {
-      var im = nearest(i); if (!im) return;
-      if (shown === i && im === imgs[i]) return; shown = i;
-      var r = Math.max(W / im.naturalWidth, Hh / im.naturalHeight), w = im.naturalWidth * r, h = im.naturalHeight * r;
-      ctx.drawImage(im, (W - w) / 2, (Hh - h) / 2, w, h);
-      if (!cv.classList.contains('on')) cv.classList.add('on');
-    }
-    function load(i) { return new Promise(function (res) { var im = new Image(); im.decoding = 'async'; im.onload = function () { imgs[i] = im; loaded++; if (bar) bar.style.width = (loaded / N * 100) + '%'; res(); }; im.onerror = function () { res(); }; im.src = dir + 'f' + ('00' + i).slice(-3) + '.webp'; }); }
-    function queue() {
-      var order = [], seen = {};
-      [8, 4, 2, 1].forEach(function (s) { for (var i = START; i < N; i += s) if (!seen[i]) { seen[i] = 1; order.push(i); } });
-      var n = 0, run = 0;
-      (function pump() { while (run < 5 && n < order.length) { run++; load(order[n++]).then(function () { run--; if (loaded >= N - 1 && bar) bar.style.opacity = 0; pump(); draw(cur); }); } })();
-    }
-    // caption windows: [fade in start, fully in, fade out start, gone]
-    var WN = [[.10, .15, .22, .27], [.28, .33, .41, .46], [.47, .52, .60, .65], [.66, .71, .79, .84], [.88, .93, 2, 3]];
-    function render(p) {
-      cur = Math.round(START + p * (N - 1 - START)); draw(cur);
-      prog.style.setProperty('--p', p.toFixed(4));
-      var f = sm(.02, .09, p);
-      ttl.style.opacity = 1 - f; ttl.style.transform = 'translateY(calc(-100% - ' + (f * 60) + 'px))';
-      ref.style.opacity = (1 - f) * .38; ref.style.transform = 'scaleY(-1) translateY(' + (-f * 60) + 'px)';
-      var fa = 1 - sm(.08, .14, p); sub.style.opacity = fa; cue.style.opacity = fa;
-      act.style.opacity = 1 - sm(.10, .15, p); act.style.pointerEvents = p > .13 ? 'none' : '';
-      glow.style.opacity = (sm(.62, .85, p) * .55).toFixed(3);
-      caps.forEach(function (c, i) {
-        var w = WN[i], o = sm(w[0], w[1], p) * (1 - sm(w[2], w[3], p));
-        c.style.opacity = o; c.style.transform = 'translateY(' + ((1 - o) * 26) + 'px)'; c.style.visibility = o < .01 ? 'hidden' : 'visible'; c.style.pointerEvents = o > .5 ? 'auto' : 'none';
-      });
-    }
-    var st = { p: 0 };
-    size(); render(0);
-    gsap.to(st, { p: 1, ease: 'none', onUpdate: function () { render(st.p); }, scrollTrigger: { trigger: intro, start: 'top top', end: 'bottom bottom', scrub: .45 } });
-    var rt; addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { size(); ScrollTrigger.refresh(); render(st.p); }, 150); });
-    // ripple filter only runs while the title is on screen
-    ScrollTrigger.create({ trigger: intro, start: 'top top', end: '+=' + Math.round(innerHeight * .4), onToggle: function (s) { ref.style.filter = s.isActive ? 'url(#ripple)' : 'none'; } });
-    var go = function () { setTimeout(queue, 250); };
-    if (d.readyState === 'complete') go(); else addEventListener('load', go);
+  var intro = $('#intro'), shots = $$('.shot', stage), caps = $$('.cap', stage), wrap = $('.hero-wrap'), tod = $('.tod'), cue = $('.cue'), prog = $('.prog');
+  var pending = $$('img[data-src]', stage);
+  function fetchShots() {
+    pending.forEach(function (im) {
+      var src = im.getAttribute('data-src'), pre = new Image(); pre.decoding = 'async';
+      pre.onload = function () { (pre.decode ? pre.decode() : Promise.resolve()).catch(function () {}).then(function () { im.src = src; }); };
+      pre.src = src;
+    });
   }
+  var later = function () { setTimeout(fetchShots, 900); };
+  if (d.readyState === 'complete') later(); else addEventListener('load', later, { once: true });
 
-  /* ---------- one day at the lake ---------- */
-  var day = $('.day');
-  if (day) {
-    var sky = day.querySelector('.st'), sun = day.querySelector('#sun'), moon = day.querySelector('#moon'), arc = day.querySelector('#arc'), win = day.querySelector('#winglow'), star = day.querySelector('#stars');
-    var clock = day.querySelector('.t'), say = day.querySelector('#say'), stg = day.querySelector('#stg');
-    var K = [ // p, top, bottom
-      [0, [38, 48, 86], [226, 150, 118]], [.28, [86, 130, 196], [196, 222, 240]], [.62, [52, 50, 98], [232, 134, 106]], [.82, [14, 20, 44], [40, 46, 82]], [1, [5, 8, 16], [14, 22, 40]]];
-    var TXT = [[0, 'Coffee on the dock. Mist lifting off the water, one loon, no one else.'], [.3, 'Swim off the end of the dock, then sit in the sun with wet hair.'], [.58, 'Fire in the woodstove. Dinner for five at the long table.'], [.84, 'Lantern on the dock. Quiet enough to hear the water.']];
-    function mix(a, b, t) { return [0, 1, 2].map(function (i) { return Math.round(a[i] + (b[i] - a[i]) * t); }); }
-    function rgb(c) { return 'rgb(' + c.join(',') + ')'; }
-    var plen = arc.getTotalLength();
-    function frame(p) {
-      var i = 0; while (i < K.length - 2 && p > K[i + 1][0]) i++;
-      var t = (p - K[i][0]) / (K[i + 1][0] - K[i][0]); t = Math.min(1, Math.max(0, t));
-      sky.style.setProperty('--sky1', rgb(mix(K[i][1], K[i + 1][1], t))); sky.style.setProperty('--sky2', rgb(mix(K[i][2], K[i + 1][2], t)));
-      var q = Math.min(1, p / .78), pt = arc.getPointAtLength(plen * q); sun.setAttribute('transform', 'translate(' + pt.x + ' ' + pt.y + ')');
-      sun.style.opacity = 1 - sm(.74, .82, p);
-      moon.style.opacity = sm(.8, .95, p); star.style.opacity = sm(.78, 1, p);
-      win.style.opacity = (.25 + .75 * sm(.55, .8, p)).toFixed(2);
-      var mins = 400 + Math.round(p * (21 * 60 + 45 - 400)); var h = Math.floor(mins / 60), m = mins % 60; clock.textContent = ((h + 11) % 12 + 1) + ':' + ('0' + m).slice(-2) + (h >= 12 ? ' pm' : ' am');
-      var s = TXT[0][1]; TXT.forEach(function (x) { if (p >= x[0]) s = x[1]; }); if (say.textContent !== s) say.textContent = s;
-    }
-    var ds = { p: 0 }; frame(0);
-    gsap.to(ds, { p: 1, ease: 'none', onUpdate: function () { frame(ds.p); }, scrollTrigger: { trigger: day, start: 'top top', end: 'bottom bottom', scrub: .4 } });
-  }
+  var s = shots, ease = 'power2.inOut', ST;
+  gsap.set(caps, { autoAlpha: 0, y: 24 });
+  var tl = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
+    trigger: intro, start: 'top top', end: 'bottom bottom', scrub: 0.8,
+    onUpdate: function (self) {
+      prog.style.setProperty('--p', self.progress.toFixed(4));
+      var away = self.progress > 0.34;
+      if (away !== stage.hasAttribute('data-away')) { if (away) { stage.setAttribute('data-away', ''); if (v && started) v.pause(); } else { stage.removeAttribute('data-away'); if (v && started && !d.hidden) play(); } }
+    } } });
+  tl.fromTo(wrap, { opacity: 1, y: 0 }, { opacity: 0, y: -36, duration: 0.9 }, 0)
+    .to([tod, cue], { opacity: 0, duration: 0.7 }, 0)
+    .to(s[0], { scale: 1.2, duration: 3.6 }, 0)
+    .to(s[0], { opacity: 0, duration: 1.2, ease: ease }, 2.6)
+    .fromTo(s[1], { opacity: 0, scale: 1.14 }, { opacity: 1, scale: 1.02, duration: 1.2, ease: ease }, 2.6)
+    .to(s[1], { scale: 1.16, duration: 3.2 }, 3.8)
+    .to(s[1], { opacity: 0, duration: 1.2, ease: ease }, 5.4)
+    .fromTo(s[2], { opacity: 0, scale: 1.14 }, { opacity: 1, scale: 1.02, duration: 1.2, ease: ease }, 5.4)
+    .to(s[2], { scale: 1.16, duration: 3.1 }, 6.6)
+    .to(s[2], { opacity: 0, duration: 1.2, ease: ease }, 7.9)
+    .fromTo(s[3], { opacity: 0, scale: 1.14 }, { opacity: 1, scale: 1.0, duration: 1.2, ease: ease }, 7.9)
+    .to(s[3], { scale: 1.07, duration: 1.1 }, 9.1)
+    .to(caps[0], { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power2.out' }, 0.9).to(caps[0], { autoAlpha: 0, y: -16, duration: 0.5, ease: 'power2.in' }, 2.3)
+    .to(caps[1], { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power2.out' }, 3.9).to(caps[1], { autoAlpha: 0, y: -16, duration: 0.5, ease: 'power2.in' }, 5.1)
+    .to(caps[2], { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power2.out' }, 6.6).to(caps[2], { autoAlpha: 0, y: -16, duration: 0.5, ease: 'power2.in' }, 7.7)
+    .to(caps[3], { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power2.out' }, 9.0)
+    .set({}, {}, 10);
+  var rt; addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { ScrollTrigger.refresh(); }, 150); });
 })();

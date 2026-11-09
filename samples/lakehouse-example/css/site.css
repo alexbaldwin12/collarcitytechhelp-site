@@ -62,64 +62,80 @@ p{margin:0 0 1em}
   .dock .btn{min-height:50px;padding:.5em .6em}
   body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
   :root{--strip:44px}
-  .hero-act .btn,.cue{display:none}
-  .hero-act{bottom:92px}
-  .hero-sub{left:var(--gut);right:var(--gut);text-align:left;max-width:none;bottom:128px}
-  .cap{bottom:100px}
 }
 
-/* ---------- home: the fly-in ---------- */
-.intro{position:relative;height:520svh;background:var(--ink)}
-.stage{position:sticky;top:0;height:100svh;min-height:540px;overflow:hidden;background:var(--ink)}
-.stage picture,.stage .poster,.stage canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.stage canvas{opacity:0;transition:opacity .5s}
-.stage canvas.on{opacity:1}
-.stage .vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,rgba(10,14,22,0) 40%,rgba(10,14,22,.6) 100%),linear-gradient(180deg,rgba(10,14,22,.55),rgba(10,14,22,0) 26%),linear-gradient(0deg,rgba(10,14,22,.8),rgba(10,14,22,0) 36%);pointer-events:none}
-.stage .glow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 70%,rgba(255,200,120,.7),rgba(255,200,120,0) 60%);mix-blend-mode:soft-light;opacity:0;pointer-events:none}
-/* the title stands in the sky and is mirrored in the water; the mirror ripples */
-.ttl{position:absolute;left:0;right:0;top:calc(var(--hz) - 14svh);transform:translateY(-100%);margin:0;padding-inline:var(--gut);z-index:3;pointer-events:none}
-.ttl b,.ttl-ref b{display:block;font:800 clamp(4rem,15.5vw,15rem)/.82 var(--display);letter-spacing:-.075em;color:var(--mist);margin-left:-.05em;font-weight:800}
-.ttl b{text-shadow:0 2px 40px rgba(10,14,22,.35)}
-.ttl-ref{position:absolute;left:0;right:0;bottom:calc(100% - var(--hz) - 14svh);padding-inline:var(--gut);z-index:2;pointer-events:none;transform:scaleY(-1);transform-origin:bottom;opacity:.38;-webkit-mask-image:linear-gradient(0deg,#000 0,transparent 80%);mask-image:linear-gradient(0deg,#000 0,transparent 80%);filter:url(#ripple);overflow:hidden}
-@media(max-aspect-ratio:9/10){
-  :root{--hz:54%}
-  .ttl{top:calc(var(--hz) - 11svh)}
-  .ttl b span,.ttl-ref b span{display:block}
-  .ttl b,.ttl-ref b{font-size:clamp(4.2rem,27vw,11rem);line-height:.8}
-  .ttl-ref{bottom:calc(100% - var(--hz) - 11svh)}
-}
-.hero-act{position:absolute;left:var(--gut);bottom:clamp(86px,12svh,120px);z-index:4;display:flex;flex-wrap:wrap;gap:12px;align-items:center;max-width:calc(100% - var(--gut)*2)}
-.hero-act p{margin:0 0 0 6px;font-size:1rem;color:var(--mist);text-shadow:0 1px 14px rgba(10,14,22,.8)}
-.hero-act p b{font-weight:700}
-.hero-sub{position:absolute;right:var(--gut);bottom:clamp(86px,12svh,120px);z-index:4;max-width:23ch;text-align:right;font-size:1.05rem;color:var(--mist);text-shadow:0 1px 14px rgba(10,14,22,.85)}
-.hero-sub small{display:block;font-size:.85rem;color:var(--fog);margin-top:.5em}
-.cap{position:absolute;z-index:4;left:var(--gut);bottom:clamp(86px,14svh,140px);max-width:24ch;opacity:0;visibility:hidden}
-.cap h2{font-size:clamp(1.8rem,3.8vw,3.4rem);margin-bottom:.35em}
-.cap p{font-size:1.05rem;color:var(--mist);margin:0;text-shadow:0 1px 16px rgba(10,14,22,.8)}
-.prog{position:absolute;right:var(--gut);top:calc(var(--hdr) + 24px);z-index:4;width:2px;height:min(34svh,260px);background:rgba(233,237,243,.25);--p:0}
-.prog i{position:absolute;left:0;top:0;width:100%;height:calc(var(--p)*100%);background:var(--lantern)}
-.prog b{position:absolute;left:-5px;top:calc(var(--p)*100% - 6px);width:12px;height:12px;border-radius:50%;background:var(--lantern);box-shadow:0 0 18px 4px rgba(255,226,166,.6)}
-.cue{position:absolute;left:50%;bottom:clamp(28px,5svh,48px);transform:translateX(-50%);z-index:4;font-size:.85rem;color:var(--fog);text-align:center}
-.cue i{display:block;margin:6px auto 0;width:1px;height:28px;background:var(--fog);transform-origin:top;animation:cue 2.2s ease-in-out infinite}
-@keyframes cue{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{opacity:0}}
-.loadbar{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--lantern);z-index:5;transition:opacity .4s}
+/* ---------- home: real-media hero and the walk in ---------- */
+.intro{position:relative;height:calc(100svh + 400svh);background:var(--ink)}
+.stage{position:sticky;top:0;height:100svh;min-height:560px;overflow:hidden;background:var(--ink);isolation:isolate}
+.shots{position:absolute;inset:0}
+.shot{position:absolute;inset:0;overflow:hidden;background:var(--ink)}
+.shot .m,.shot picture{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 50%);display:block}
+.shot picture .m{position:static}
+.shot video.m{opacity:0;transition:opacity 1.1s ease}
+.shot video.m.on{opacity:1}
+.js:not(.rm) .shot:not(.s0){opacity:0;transform:scale(1.12)}
+.s0{--pos:62% 50%}.s1{--pos:50% 55%}.s2{--pos:55% 55%}.s3{--pos:50% 55%}
+/* time of day: tinted layers above the exterior shots, below the interior. Each layer fades on its own opacity (blend modes need that). */
+.g{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 1.3s ease}
+.g.dw1{background:linear-gradient(180deg,#e592b4,#f3b6b0 55%,#c9a8c4);mix-blend-mode:color}
+.g.dw2{background:linear-gradient(180deg,#ffd0d8,#ffe6d2);mix-blend-mode:screen}
+.g.dy1{background:#5e9fe0;mix-blend-mode:color}
+.g.dy2{background:#cfe6ff;mix-blend-mode:soft-light}
+.g.dy3{background:#a8cdf2;mix-blend-mode:screen}
+.g.nt1{background:#16275c;mix-blend-mode:color}
+.g.nt2{background:#071026;mix-blend-mode:multiply}
+.stage[data-tod=dawn] .dw1{opacity:.6}.stage[data-tod=dawn] .dw2{opacity:.3}
+.stage[data-tod=day] .dy1{opacity:.75}.stage[data-tod=day] .dy2{opacity:1}.stage[data-tod=day] .dy3{opacity:.34}
+.stage[data-tod=night] .nt1{opacity:.85}.stage[data-tod=night] .nt2{opacity:.78}
+.stage .vig{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(10,14,22,.82) 0,rgba(10,14,22,.55) 30%,rgba(10,14,22,0) 62%),linear-gradient(180deg,rgba(10,14,22,.5),rgba(10,14,22,0) 24%),linear-gradient(0deg,rgba(10,14,22,.78),rgba(10,14,22,0) 34%)}
+.hero-wrap{position:absolute;inset:var(--hdr) 0 0 0;display:flex;flex-direction:column;justify-content:center;padding:0 var(--gut) clamp(96px,16svh,150px);z-index:4;pointer-events:none}
+.hero-col{max-width:min(30em,100%);pointer-events:auto}
+.kicker{margin:0 0 14px;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;color:var(--lantern)}
+.stage h1{font:300 clamp(2.5rem,3.6vw + 1rem,4.4rem)/1 var(--display);letter-spacing:-.035em;margin:0}
+.hero-sub{margin:clamp(14px,2.4svh,22px) 0 0;max-width:24em;font-size:clamp(1.05rem,.5vw + .95rem,1.25rem);line-height:1.5;color:var(--mist);text-shadow:0 1px 16px rgba(10,14,22,.7)}
+.hero-act{margin-top:clamp(20px,3.4svh,32px);display:flex;gap:12px;flex-wrap:wrap}
+.hero-note{margin:16px 0 0;font-size:.95rem;color:var(--mist);text-shadow:0 1px 14px rgba(10,14,22,.85)}
+.hero-note b{color:var(--mist);font-weight:700}
+.tod{position:absolute;left:var(--gut);bottom:clamp(26px,5svh,44px);z-index:5;display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap;max-width:calc(100% - var(--gut)*2)}
+.tod-l{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--fog)}
+.tod-b{display:flex;border:1px solid rgba(233,237,243,.35);border-radius:999px;padding:3px;background:rgba(10,14,22,.5);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.tod-b button{min-height:40px;min-width:62px;padding:0 14px;border:0;border-radius:999px;background:transparent;color:var(--mist);font:600 .92rem var(--text);cursor:pointer;transition:background .3s,color .3s}
+.tod-b button:hover{background:rgba(233,237,243,.12)}
+.tod-b button[aria-pressed=true]{background:var(--lantern);color:var(--ink)}
+.tod-say{flex-basis:100%;margin:0;max-width:44ch;font-size:.95rem;color:var(--mist);text-shadow:0 1px 14px rgba(10,14,22,.8);min-height:1.5em}
+.cap{position:absolute;z-index:4;left:var(--gut);bottom:clamp(60px,12svh,120px);max-width:26ch;opacity:0;visibility:hidden}
+.cap h2{font:300 clamp(1.9rem,3vw + .6rem,3.2rem)/1.02 var(--display);letter-spacing:-.035em;margin-bottom:.4em}
+.cap p{font-size:1.08rem;color:var(--mist);margin:0;text-shadow:0 1px 16px rgba(10,14,22,.8)}
+.prog{position:absolute;right:var(--gut);top:calc(var(--hdr) + 28px);z-index:4;width:1px;height:min(26svh,200px);background:rgba(233,237,243,.22);--p:0}
+.prog i{position:absolute;left:0;top:0;width:100%;height:calc(var(--p)*100%);background:var(--lantern);opacity:.8}
+.cue{position:absolute;right:var(--gut);bottom:clamp(30px,5.4svh,48px);z-index:4;margin:0;display:flex;align-items:center;gap:12px;font-size:.88rem;letter-spacing:.06em;color:var(--mist)}
+.cue i{display:block;width:1px;height:34px;background:var(--mist);transform-origin:top;animation:cue 2.4s ease-in-out infinite}
+@keyframes cue{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 .stills{display:none;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;background:var(--ink)}
 .stills figure{margin:0}.stills img{width:100%;aspect-ratio:16/9;object-fit:cover}.stills figcaption{padding:10px var(--gut) 18px;color:var(--fog);font-size:.95rem}
+/* reduced motion and no-JS: one calm hero, the story as stills below */
 .rm .intro,.nojs .intro{height:auto}
-.rm .stage,.nojs .stage{position:relative}
+.rm .stage,.nojs .stage{position:relative;height:min(100svh,880px)}
+.rm .shot:not(.s0),.nojs .shot:not(.s0){display:none}
 .rm .stills,.nojs .stills{display:grid}
 .rm .cap,.nojs .cap,.rm .prog,.nojs .prog,.rm .cue,.nojs .cue{display:none}
-/* first-second moment: the poster settles, the title rises out of the waterline, the mirror fades in */
+.rm .g,.rm .tod-b button{transition:none}
 @media(prefers-reduced-motion:no-preference){
-  .stage picture{animation:settle 3s var(--ease) backwards}
-  .ttl b{animation:rise 1.3s var(--ease) .12s backwards}
-  .ttl-ref{animation:mirror 1.8s ease .5s backwards}
-  .hero-sub,.hero-act p{animation:rise2 1s ease .8s backwards}
+  .stage h1{animation:rise 1.2s var(--ease) .1s backwards}
+  .kicker,.hero-sub,.hero-act,.hero-note{animation:rise2 1s ease .5s backwards}
 }
-@keyframes rise{from{clip-path:inset(0 0 100% 0);transform:translateY(.18em)}to{clip-path:inset(-.2em -.2em -.25em -.2em);transform:none}}
-@keyframes rise2{from{opacity:0}to{opacity:1}}
-@keyframes mirror{from{opacity:0}to{opacity:.38}}
-@keyframes settle{from{transform:scale(1.08)}to{transform:none}}
+@keyframes rise{from{clip-path:inset(0 0 100% 0);transform:translateY(.2em)}to{clip-path:inset(-.2em -.2em -.25em -.2em);transform:none}}
+@keyframes rise2{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media(max-width:860px){
+  .shot{--pos:50% 50%}.s0{--pos:68% 50%}.s3{--pos:42% 50%}
+  .stage .vig{background:linear-gradient(180deg,rgba(10,14,22,.6),rgba(10,14,22,.2) 30%,rgba(10,14,22,.15) 55%,rgba(10,14,22,.82) 100%)}
+  .hero-wrap{justify-content:flex-start;padding:calc(var(--hdr) * 0 + 26px) var(--gut) 0}
+  .hero-act,.cue{display:none}
+  .tod{bottom:86px}
+  .tod-b button{min-width:0;padding:0 12px}
+  .cap{bottom:100px}
+  .prog{display:none}
+}
 
 /* ---------- shared sections ---------- */
 .sec{padding:clamp(70px,10vw,150px) 0}
@@ -163,18 +179,6 @@ p{margin:0 0 1em}
 .tix .open .s b{color:var(--lantern)}
 .tix .booked{opacity:.5}.tix .booked a{pointer-events:none}
 .tix .booked .s b{color:var(--fog);text-decoration:line-through}
-
-/* one day at the lake: sun arc scrubbed by scroll */
-.day{position:relative;height:360svh}
-.day .st{position:sticky;top:0;height:100svh;min-height:520px;overflow:hidden;background:linear-gradient(180deg,var(--sky1,#1a2a4a),var(--sky2,#3f5f86));transition:none}
-.day svg{position:absolute;inset:0;width:100%;height:100%}
-.day .ground{position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(180deg,#0b1119,#06090e)}
-.day .lines{position:absolute;left:var(--gut);bottom:12%;z-index:3;max-width:30ch}
-.day .lines h2{font-size:clamp(2.2rem,5vw,4.6rem);margin-bottom:.3em}
-.day .t{display:block;font:800 clamp(2.4rem,6vw,5rem)/1 var(--display);letter-spacing:-.05em;color:var(--lantern)}
-.day .lines p{font-size:1.1rem;margin:.3em 0 0;min-height:3.4em;color:var(--mist)}
-.rm .day,.nojs .day{height:auto}.rm .day .st,.nojs .day .st{position:relative;height:auto;padding:90px 0 150px}
-.rm .day .ground,.nojs .day .ground{display:none}
 
 /* rooms collage */
 .rooms{position:relative}

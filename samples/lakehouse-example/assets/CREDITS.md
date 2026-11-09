@@ -12,16 +12,15 @@ Views were cut from the panoramas by us (rectilinear crops), color-graded and re
 | Loft | pine_attic, https://polyhaven.com/a/pine_attic | Sergej Majboroda |
 | Covered deck | sundowner_deck, https://polyhaven.com/a/sundowner_deck | Dario Barresi |
 | The dock | shudu_lake, https://polyhaven.com/a/shudu_lake | Alex Radosnov |
-| The point, and the sky in the 3D scene | lakeside_dawn, https://polyhaven.com/a/lakeside_dawn | Greg Zaal (photography), Jarod Guest (processing) |
+| The point | lakeside_dawn, https://polyhaven.com/a/lakeside_dawn | Greg Zaal (photography), Jarod Guest (processing) |
 
-The sky panorama used inside the 3D scene had one dead tree retouched out (a gradient fill over a small area).
-
-## The fly-in, the dusk house and the dock pictures (our own 3D scene)
-Built with three.js r170 and rendered offline to 96 landscape frames and 96 portrait frames. The scene (water, shoreline, pines, house, porch, dock, canoe, interior) is procedural, made by us from basic shapes and canvas-drawn textures; nothing in it is a downloaded model. The water uses the three.js Water add-on and its water normal map (MIT, from the three.js repository, render time only). The sky behind the scene is the lakeside_dawn panorama above. Only the rendered images are on the site; three.js itself is not shipped.
+## Removed in round 1 (item 17)
+The earlier three.js-rendered fly-in (96 landscape and 96 portrait frames), the render scene and its water normal map, and every picture rendered from it were home-made CG. They were deleted from the site. Nothing rendered by us ships any more.
 
 ## Software shipped with the page (self-hosted in vendor/, no CDN)
 - Pannellum 2.5.6, MIT (vendor/PANNELLUM-LICENSE-MIT.txt)
 - GSAP 3.13.0 and ScrollTrigger 3.13.0, GreenSock standard no-charge license (vendor/LICENSE-gsap.txt)
+- Lenis 1.3.27, MIT (vendor/LICENSE-lenis-MIT.txt)
 
 ## Fonts (self-hosted, latin subset woff2, downloaded from Google Fonts, SIL Open Font License 1.1)
 - Epilogue (variable, 200-900), https://fonts.google.com/specimen/Epilogue
@@ -29,7 +28,7 @@ Built with three.js r170 and rendered offline to 96 landscape frames and 96 port
 See fonts/FONTS-LICENSE.txt.
 
 ## Not used
-No video or audio. No stock people. No reviews, ratings or testimonials. No map embeds (the map is hand-drawn SVG).
+No audio. Video is the four real Pexels loops listed below. No stock people. No reviews, ratings or testimonials. No map embeds (the map is hand-drawn SVG).
 
 ## Round 1 real media (Nov 9 2026): Kettle Point, hard rule "zero home-made CG" (item 6)
 All Pexels, Pexels License (https://www.pexels.com/license/, free for commercial use, no attribution needed; credited anyway). Videos fetched from the Pexels CDN with file URLs taken from each video page; photos from images.pexels.com by id; photographer names from the Pexels download filenames or page. HONEST LIMIT: these are stock images from DIFFERENT lakes and houses (Pexels has no single-property lake-house shoot). The interior set below is one cabin from one photographer where possible; exterior clips and photos are other places. The page must not claim they are one property, and the sample stays labelled "Example design - not a real client". For a real client, swap in the client's own photos.
