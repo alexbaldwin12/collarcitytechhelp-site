@@ -4,23 +4,21 @@
   var d = document, root = d.documentElement, reduce = root.classList.contains('rm');
   var $ = function (s, r) { return (r || d).querySelector(s); }, $$ = function (s, r) { return [].slice.call((r || d).querySelectorAll(s)); };
 
-  /* Six real Poly Haven 360 interiors (CC0), six different buildings. Hotspot yaw/pitch were placed by looking at each panorama:
-     each ring sits on a doorway or opening. The order below is the walk: lounge -> sitting room -> bedroom, lounge -> loft -> suite, lounge -> glasshouse. */
+  /* Five real Poly Haven 360 interiors (CC0), five different buildings. Hotspot yaw/pitch were placed by looking at each panorama:
+     each ring sits on a doorway or opening. The order below is the walk: lounge -> sitting room -> bedroom, lounge -> loft -> suite. */
   var R = {
     living:   { name: 'Wood-panelled lounge', hint: 'Pale wood, a long sectional and arches through to other rooms. A real room, a different building.', yaw: -20, img: 'real-living',
-                hot: [['sitting', 168, 2], ['loft', 142, 3], ['openplan', -18, 3]] },
+                hot: [['sitting', 168, 2], ['loft', 142, 3]] },
     sitting:  { name: 'Sitting room',         hint: 'Stone wall, a stove and glass doors to the lawn. A real room, a different building.',               yaw: 70,  img: 'real-sitting',
                 hot: [['living', 165, 2], ['bedroom', -37, -3]] },
     bedroom:  { name: 'Bedroom with a fireplace', hint: 'Twin beds, a hearth and a window onto the garden. A real room, a different building.',          yaw: 20,  img: 'real-bedroom',
                 hot: [['sitting', -114, -2]] },
     loft:     { name: 'Pine attic loft',      hint: 'Pine roof, two skylights and a wooden hoop. A real room, a different building.',                    yaw: 0,   img: 'real-loft',
-                hot: [['living', -55, -2], ['suite', 134, 0]] },
+                hot: [['living', -55, -7], ['suite', 134, -6]] },
     suite:    { name: 'Suite with a balcony', hint: 'A bed, a desk and sliding doors to a balcony. A real hotel suite, a different building.',          yaw: 95,  img: 'real-suite',
-                hot: [['loft', 178, -2]] },
-    openplan: { name: 'Glasshouse room',      hint: 'Glass on every side, a stove and a table for four. A real room, a different building and a different landscape.', yaw: -30, img: 'real-openplan',
-                hot: [['living', 45, -3]] }
+                hot: [['loft', 178, -4]] }
   };
-  var order = ['living', 'sitting', 'bedroom', 'loft', 'suite', 'openplan'];
+  var order = ['living', 'sitting', 'bedroom', 'loft', 'suite'];
   var small = innerWidth <= 900 || !!(navigator.connection && navigator.connection.saveData);
   var file = function (id) { return 'pano/' + R[id].img + (small ? '-2048' : '') + '.jpg'; };
   var vr = $('#vr'), v = null, booted = false;

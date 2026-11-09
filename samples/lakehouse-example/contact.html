@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="nojs">
+<html lang="en" class="nojs" data-fx="lakeside">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -13,6 +13,8 @@
 <link rel="icon" href="data:,">
 <link rel="preload" href="fonts/Epilogue-latin-200-900.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="assets/fx.css">
+<script>(function(){try{var r=document.documentElement;if(sessionStorage.getItem('fxi')||matchMedia('(prefers-reduced-motion: reduce)').matches)return;sessionStorage.setItem('fxi','1');r.classList.add('fx-i');setTimeout(function(){r.classList.add('fx-i-out')},620);setTimeout(function(){r.classList.remove('fx-i','fx-i-out')},1100)}catch(e){}})()</script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -176,6 +178,7 @@
 </script>
 </head>
 <body>
+<div class="fx-intro" aria-hidden="true"><svg viewBox="0 0 22 30" aria-hidden="true" style="width:54px;height:72px"><path pathLength="1" d="M8 5a3 3 0 0 1 6 0"/><path pathLength="1" d="M6 8h10l1.5 14h-13z"/><path pathLength="1" d="M5 22h12v3H5z"/><path pathLength="1" d="M11 13.3v3.4"/></svg></div>
 <a class="skip" href="#main">Skip to the page</a>
 <div class="hdr">
 <div class="strip"><span><b>Example design - not a real client.</b> Made-up house on a made-up lake. Sample site by <a href="https://collarcitytechhelp.com/websites/">Collar City Tech Help</a>.</span></div>
@@ -192,7 +195,7 @@
 <main id="main">
 <section class="ph1"><div class="wrap"><p class="crumbs"><a href="index.html">Kettle Point</a> / Contact</p><h1>Check availability</h1><p class="lede">Send your dates and we will reply within the hour while the phone desk is open. Or just call.</p></div></section>
 <section class="sec paper" style="padding-top:clamp(40px,6vw,80px)" id="book"><div class="wrap split">
-<div><p class="tag">Demo form: nothing is sent</p><h2 class="h"><h2 class=""><span class="mask"><span>Request your dates</span></span></h2></h2>
+<div><p class="tag">Demo form: nothing is sent</p><h2 class="h"><span class="mask"><span>Request your dates</span></span></h2>
 <p class="lede">No payment now. We confirm the dates and send a deposit link by email. A live site connects this form to the owner's inbox or calendar.</p>
 <ul class="list"><li><span>Phone desk</span><span><span data-open-text>Open now</span>, 8 am to 8 pm Eastern</span></li><li><span>Phone</span><span><a href="tel:+15550100142">(555)&#8209;010&#8209;0142</a> (example)</span></li><li><span>Email</span><span><a href="mailto:example@example.com">example@example.com</a> (example)</span></li><li><span>Check-in, check-out</span><span>4 pm, 10 am</span></li></ul>
 <p class="k" style="margin-top:18px">We never ask for a card or a password through this page.</p></div>
@@ -206,7 +209,7 @@
 <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" required autocomplete="off"></div>
 <div class="full"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Arriving late? Celebrating something? Ask anything."></textarea></div>
 <div class="full"><button class="btn" type="submit">Send request (demo)</button><output id="form-msg" role="status" aria-live="polite" tabindex="-1"></output></div></form></div></section>
-<section class="sec"><div class="wrap split"><div><h2 class="h"><h2 class=""><span class="mask"><span>Where to find us</span></span></h2></h2><ul class="drive" aria-label="Sample distances"><li><span>Birch Landing market and gas</span><span>12 min drive</span></li><li><span>Trailhead</span><span>4 min drive</span></li><li><span>Public boat launch</span><span>7 min drive</span></li><li><span>Dock</span><span>30 steps</span></li></ul><p class="k">Example Road, Kettle Point, NY 00000. Not a real address. A live site sends the exact address after booking.</p></div><div><svg class="map" viewBox="0 0 800 540" role="img" aria-labelledby="mapt mapd">
+<section class="sec"><div class="wrap split"><div><h2 class="h"><span class="mask"><span>Where to find us</span></span></h2><ul class="drive" aria-label="Sample distances"><li><span>Birch Landing market and gas</span><span>12 min drive</span></li><li><span>Trailhead</span><span>4 min drive</span></li><li><span>Public boat launch</span><span>7 min drive</span></li><li><span>Dock</span><span>30 steps</span></li></ul><p class="k">Example Road, Kettle Point, NY 00000. Not a real address. A live site sends the exact address after booking.</p></div><div><svg class="map" viewBox="0 0 800 540" role="img" aria-labelledby="mapt mapd">
 <title id="mapt">Hand-drawn map of Little Kettle Lake</title>
 <desc id="mapd">The lake with depth contours, the house on the north-east shore with a dock, County Road 12 running to the village of Birch Landing in the south-west, and a trailhead and boat launch along the road.</desc>
 <defs><path id="lake" d="M250 150C300 90 400 80 470 110C540 140 600 120 650 170C700 220 690 300 640 350C590 400 520 380 470 420C410 465 330 450 280 400C230 350 250 320 210 280C170 240 200 200 250 150Z"/><clipPath id="lakeclip"><use href="#lake"/></clipPath></defs>
@@ -230,7 +233,7 @@
 <g transform="translate(740 60)" fill="none" stroke="#a9b4c7" stroke-width="1.6"><path d="M0 24V-18M-7 -8L0 -20L7 -8"/><text x="0" y="42" fill="#a9b4c7" stroke="none" font-size="13" text-anchor="middle">N</text></g>
 <g transform="translate(40 40)" stroke="#a9b4c7" stroke-width="2"><path d="M0 0h100M0 -5v10M50 -4v8M100 -5v10"/><text x="0" y="22" fill="#a9b4c7" stroke="none" font-size="12">0 to half a mile (not to scale)</text></g>
 </svg></div></div></section>
-<section class="sec slate"><div class="wrap" style="max-width:1100px"><h2 class="h"><h2 class=""><span class="mask"><span>Questions people ask</span></span></h2></h2><details><summary>Can we bring the dog?</summary><p>Yes, up to two dogs. There is a $40 fee per stay (sample). Keep them off the beds. For any other animal, call first.</p></details><details><summary>Where do we park?</summary><p>Two cars fit on the gravel by the steps. A third can pull onto the shoulder of the drive. Leave the turnaround clear so the plow and the propane truck can get in.</p></details><details><summary>How does check-in work?</summary><p>Check-in is from 4 pm. We text you a lockbox code the day before. Check-out is 10 am. If nobody arrives after you, a later check-out is often possible. Ask when you book.</p></details><details><summary>Is there wifi?</summary><p>Yes, at the long table and in the loft. It handles email and a video call. We do not promise speeds, and cell signal is patchy on the point.</p></details><details><summary>What is the cancellation policy?</summary><p>Sample policy: full refund up to 14 days before arrival, half up to 7 days before, nothing after that. A live site shows the owner's own terms here.</p></details><details><summary>Is it safe to swim?</summary><p>The dock is wood and the water drops off fast past the end. Children need an adult at the water. Life jackets hang by the front door and the lake emergency number is on the fridge.</p></details><details><summary>Can we have a fire?</summary><p>In the fire ring only, with wood from the shed. When the county posts a burn ban we put a note on the door and the ring is off limits.</p></details><details><summary>Do you allow parties or events?</summary><p>No. Five guests overnight at most, and quiet hours are 10 pm to 7 am.</p></details></div></section>
+<section class="sec slate"><div class="wrap" style="max-width:1100px"><h2 class="h"><span class="mask"><span>Questions people ask</span></span></h2><details><summary>Can we bring the dog?</summary><p>Yes, up to two dogs. There is a $40 fee per stay (sample). Keep them off the beds. For any other animal, call first.</p></details><details><summary>Where do we park?</summary><p>Two cars fit on the gravel by the steps. A third can pull onto the shoulder of the drive. Leave the turnaround clear so the plow and the propane truck can get in.</p></details><details><summary>How does check-in work?</summary><p>Check-in is from 4 pm. We text you a lockbox code the day before. Check-out is 10 am. If nobody arrives after you, a later check-out is often possible. Ask when you book.</p></details><details><summary>Is there wifi?</summary><p>Yes, at the long table and in the loft. It handles email and a video call. We do not promise speeds, and cell signal is patchy on the point.</p></details><details><summary>What is the cancellation policy?</summary><p>Sample policy: full refund up to 14 days before arrival, half up to 7 days before, nothing after that. A live site shows the owner's own terms here.</p></details><details><summary>Is it safe to swim?</summary><p>The dock is wood and the water drops off fast past the end. Children need an adult at the water. Life jackets hang by the front door and the lake emergency number is on the fridge.</p></details><details><summary>Can we have a fire?</summary><p>In the fire ring only, with wood from the shed. When the county posts a burn ban we put a note on the door and the ring is off limits.</p></details><details><summary>Do you allow parties or events?</summary><p>No. Five guests overnight at most, and quiet hours are 10 pm to 7 am.</p></details></div></section>
 
 </main>
 <footer>
@@ -250,5 +253,6 @@
 <script src="assets/smooth.js" defer></script>
 <script src="js/site.js" defer></script>
 
+<script src="assets/fx.js" defer></script>
 </body>
 </html>

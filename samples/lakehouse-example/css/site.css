@@ -71,6 +71,7 @@ p{margin:0 0 1em}
 .shot{position:absolute;inset:0;overflow:hidden;background:var(--ink)}
 .shot .m,.shot picture{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 50%);display:block}
 .shot picture .m{position:static}
+.s0 picture,.s0 video.m{transform:scaleX(-1)}
 .shot video.m{opacity:0;transition:opacity 1.1s ease}
 .shot video.m.on{opacity:1}
 .js:not(.rm) .shot:not(.s0){opacity:0;transform:scale(1.12)}
@@ -79,13 +80,13 @@ p{margin:0 0 1em}
 .g{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 1.3s ease}
 .g.dw1{background:linear-gradient(180deg,#e592b4,#f3b6b0 55%,#c9a8c4);mix-blend-mode:color}
 .g.dw2{background:linear-gradient(180deg,#ffd0d8,#ffe6d2);mix-blend-mode:screen}
-.g.dy1{background:#5e9fe0;mix-blend-mode:color}
-.g.dy2{background:#cfe6ff;mix-blend-mode:soft-light}
-.g.dy3{background:#a8cdf2;mix-blend-mode:screen}
+.g.dy1{background:#fff1cf;mix-blend-mode:soft-light}
+.g.dy2{background:#fff;mix-blend-mode:overlay}
+.g.dy3{background:#bdd8ee;mix-blend-mode:screen}
 .g.nt1{background:#16275c;mix-blend-mode:color}
 .g.nt2{background:#071026;mix-blend-mode:multiply}
 .stage[data-tod=dawn] .dw1{opacity:.6}.stage[data-tod=dawn] .dw2{opacity:.3}
-.stage[data-tod=day] .dy1{opacity:.75}.stage[data-tod=day] .dy2{opacity:1}.stage[data-tod=day] .dy3{opacity:.34}
+.stage[data-tod=day] .dy1{opacity:1}.stage[data-tod=day] .dy2{opacity:.55}.stage[data-tod=day] .dy3{opacity:.2}
 .stage[data-tod=night] .nt1{opacity:.85}.stage[data-tod=night] .nt2{opacity:.78}
 .stage .vig{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(10,14,22,.82) 0,rgba(10,14,22,.55) 30%,rgba(10,14,22,0) 62%),linear-gradient(180deg,rgba(10,14,22,.5),rgba(10,14,22,0) 24%),linear-gradient(0deg,rgba(10,14,22,.78),rgba(10,14,22,0) 34%)}
 .hero-wrap{position:absolute;inset:var(--hdr) 0 0 0;display:flex;flex-direction:column;justify-content:center;padding:0 var(--gut) clamp(96px,16svh,150px);z-index:4;pointer-events:none}
@@ -124,10 +125,10 @@ p{margin:0 0 1em}
   .stage h1{animation:rise 1.2s var(--ease) .1s backwards}
   .kicker,.hero-sub,.hero-act,.hero-note{animation:rise2 1s ease .5s backwards}
 }
-@keyframes rise{from{clip-path:inset(0 0 100% 0);transform:translateY(.2em)}to{clip-path:inset(-.2em -.2em -.25em -.2em);transform:none}}
+@keyframes rise{from{clip-path:inset(0 0 100% 0);transform:translateY(.2em);filter:blur(7px)}to{clip-path:inset(-.2em -.2em -.25em -.2em);transform:none;filter:blur(0)}}
 @keyframes rise2{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @media(max-width:860px){
-  .shot{--pos:50% 50%}.s0{--pos:68% 50%}.s3{--pos:42% 50%}
+  .shot{--pos:50% 50%}.s0{--pos:22% 50%}.s3{--pos:42% 50%}
   .stage .vig{background:linear-gradient(180deg,rgba(10,14,22,.6),rgba(10,14,22,.2) 30%,rgba(10,14,22,.15) 55%,rgba(10,14,22,.82) 100%)}
   .hero-wrap{justify-content:flex-start;padding:calc(var(--hdr) * 0 + 26px) var(--gut) 0}
   .hero-act,.cue{display:none}

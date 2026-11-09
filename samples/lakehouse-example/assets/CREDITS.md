@@ -66,3 +66,6 @@ Sizes: 3584 files 403-859 KB, 2048 files 150-280 KB, thumbs 16-25 KB. Hotspot ya
 - Home walk-in stills: hero-2 poster (cottage and dock, IslandHopper X), hero-3 poster (boathouse, IslandHopper X), in-living-dusk (April Choitz). Season switcher: ext-summer-aerial, ext-autumn-dock, ext-winter-lake. Room-by-room story: in-living-dusk, in-kitchen-wood, in-dining, in-hearth-bedroom, in-bedroom-wood. Gallery: ten of the photographs above.
 - Time-of-day grade and the map are CSS and SVG drawn by us (the map is a stylised diagram of a made-up lake, not a photograph).
 - Honest limit repeated: every photo, loop and 360 is real but from different places; the pages and the credits page say so.
+
+## Motion layer (item 22)
+assets/fx.js and assets/fx.css are original code written for this project (line reveals, count-ups, clip reveals, parallax, magnetic buttons, cursor glow, card tilt, drawn icons, hairlines, grain, first-visit intro, page image morph). Techniques are common ones that Codrops (tympanus.net/codrops) also teaches, but no Codrops or other third-party code, image or font is included, so no extra licence applies. GSAP, ScrollTrigger and Lenis (pinned in vendor/, see README) are unchanged.

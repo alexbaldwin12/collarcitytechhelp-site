@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="nojs">
+<html lang="en" class="nojs" data-fx="lakeside">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -13,6 +13,8 @@
 <link rel="icon" href="data:,">
 <link rel="preload" href="fonts/Epilogue-latin-200-900.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="assets/fx.css">
+<script>(function(){try{var r=document.documentElement;if(sessionStorage.getItem('fxi')||matchMedia('(prefers-reduced-motion: reduce)').matches)return;sessionStorage.setItem('fxi','1');r.classList.add('fx-i');setTimeout(function(){r.classList.add('fx-i-out')},620);setTimeout(function(){r.classList.remove('fx-i','fx-i-out')},1100)}catch(e){}})()</script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -144,6 +146,7 @@
 </script>
 </head>
 <body>
+<div class="fx-intro" aria-hidden="true"><svg viewBox="0 0 22 30" aria-hidden="true" style="width:54px;height:72px"><path pathLength="1" d="M8 5a3 3 0 0 1 6 0"/><path pathLength="1" d="M6 8h10l1.5 14h-13z"/><path pathLength="1" d="M5 22h12v3H5z"/><path pathLength="1" d="M11 13.3v3.4"/></svg></div>
 <a class="skip" href="#main">Skip to the page</a>
 <div class="hdr">
 <div class="strip"><span><b>Example design - not a real client.</b> Made-up house on a made-up lake. Sample site by <a href="https://collarcitytechhelp.com/websites/">Collar City Tech Help</a>.</span></div>
@@ -185,7 +188,7 @@
 <g transform="translate(740 60)" fill="none" stroke="#a9b4c7" stroke-width="1.6"><path d="M0 24V-18M-7 -8L0 -20L7 -8"/><text x="0" y="42" fill="#a9b4c7" stroke="none" font-size="13" text-anchor="middle">N</text></g>
 <g transform="translate(40 40)" stroke="#a9b4c7" stroke-width="2"><path d="M0 0h100M0 -5v10M50 -4v8M100 -5v10"/><text x="0" y="22" fill="#a9b4c7" stroke="none" font-size="12">0 to half a mile (not to scale)</text></g>
 </svg></div></div></div></section>
-<section class="sec slate"><div class="wrap" style="max-width:1100px"><h2 class="h"><h2 class=""><span class="mask"><span>Questions</span></span></h2></h2><details><summary>Where do we park?</summary><p>Two cars fit on the gravel by the steps. A third can pull onto the shoulder of the drive. Leave the turnaround clear so the plow and the propane truck can get in.</p></details><details><summary>Can we have a fire?</summary><p>In the fire ring only, with wood from the shed. When the county posts a burn ban we put a note on the door and the ring is off limits.</p></details><details><summary>Is there wifi?</summary><p>Yes, at the long table and in the loft. It handles email and a video call. We do not promise speeds, and cell signal is patchy on the point.</p></details><details><summary>Can we bring the dog?</summary><p>Yes, up to two dogs. There is a $40 fee per stay (sample). Keep them off the beds. For any other animal, call first.</p></details></div></section>
+<section class="sec slate"><div class="wrap" style="max-width:1100px"><h2 class="h"><span class="mask"><span>Questions</span></span></h2><details><summary>Where do we park?</summary><p>Two cars fit on the gravel by the steps. A third can pull onto the shoulder of the drive. Leave the turnaround clear so the plow and the propane truck can get in.</p></details><details><summary>Can we have a fire?</summary><p>In the fire ring only, with wood from the shed. When the county posts a burn ban we put a note on the door and the ring is off limits.</p></details><details><summary>Is there wifi?</summary><p>Yes, at the long table and in the loft. It handles email and a video call. We do not promise speeds, and cell signal is patchy on the point.</p></details><details><summary>Can we bring the dog?</summary><p>Yes, up to two dogs. There is a $40 fee per stay (sample). Keep them off the beds. For any other animal, call first.</p></details></div></section>
 <section class="sec"><div class="wrap"><p class="k">Also see <a href="stay.html" style="color:var(--lantern)">the house and rates</a>, <a href="tour.html" style="color:var(--lantern)">the 360 tour</a> and <a href="area.html" style="color:var(--lantern)">the area</a>.</p></div></section>
 <section class="sec paper"><div class="wrap cta-band"><div><h2>Come for the weekend.</h2><p class="lede" style="margin-top:.8em">Dates are open on most weeks. Pick yours, or call and ask us anything.</p></div>
 <div><p class="k" style="margin:0">Call the house phone desk</p><a class="tel" href="tel:+15550100142">(555)&#8209;010&#8209;0142</a><p class="k" style="margin:.4em 0 1.4em"><span data-open-text>Open now</span>, 8 am to 8 pm Eastern. Example number.</p><p style="display:flex;gap:12px;flex-wrap:wrap;margin:0"><a class="btn" href="stay.html#calendar">Pick your dates</a><a class="btn ghost" href="contact.html#book">Send a request</a></p></div></div></section>
@@ -207,5 +210,6 @@
 <script src="assets/smooth.js" defer></script>
 <script src="js/site.js" defer></script>
 
+<script src="assets/fx.js" defer></script>
 </body>
 </html>

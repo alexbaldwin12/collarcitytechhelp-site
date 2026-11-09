@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="nojs">
+<html lang="en" class="nojs" data-fx="lakeside">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -13,6 +13,8 @@
 <link rel="icon" href="data:,">
 <link rel="preload" href="fonts/Epilogue-latin-200-900.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="assets/fx.css">
+<script>(function(){try{var r=document.documentElement;if(sessionStorage.getItem('fxi')||matchMedia('(prefers-reduced-motion: reduce)').matches)return;sessionStorage.setItem('fxi','1');r.classList.add('fx-i');setTimeout(function(){r.classList.add('fx-i-out')},620);setTimeout(function(){r.classList.remove('fx-i','fx-i-out')},1100)}catch(e){}})()</script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -107,6 +109,7 @@
 </script>
 </head>
 <body>
+<div class="fx-intro" aria-hidden="true"><svg viewBox="0 0 22 30" aria-hidden="true" style="width:54px;height:72px"><path pathLength="1" d="M8 5a3 3 0 0 1 6 0"/><path pathLength="1" d="M6 8h10l1.5 14h-13z"/><path pathLength="1" d="M5 22h12v3H5z"/><path pathLength="1" d="M11 13.3v3.4"/></svg></div>
 <a class="skip" href="#main">Skip to the page</a>
 <div class="hdr">
 <div class="strip"><span><b>Example design - not a real client.</b> Made-up house on a made-up lake. Sample site by <a href="https://collarcitytechhelp.com/websites/">Collar City Tech Help</a>.</span></div>
@@ -124,7 +127,7 @@
 <section class="ph1"><div class="wrap"><p class="crumbs"><a href="index.html">Kettle Point</a> / Credits</p><h1>Credits</h1><p class="lede">Everything on this page is free-licensed and credited. The house and the lake are made up.</p></div></section>
 <section class="sec credits" style="padding-top:0"><div class="wrap"><p style="max-width:70ch">Kettle Point is a design example. Every photograph, video loop and 360 panorama on it is real and free to use commercially, but they come from different lakes, houses and buildings. They are not one house, and the pages say so. A real site uses the owner's own photos and, if they have it, their own video. Nothing here is computer-generated.</p>
 <ul><li><strong>Video loops and photographs, Pexels License (free for commercial use):</strong> lake at dusk by Mytho Digital; cottage and dock and boathouse clips by IslandHopper X; winter cabin from the air by Ahmet Y&uuml;ksek. Photographs by Sujan Shan, Calvin Wright, Courtney Ra, Cara Denison, Eberhard Grossgasteiger, Mete Bilmez, Landsmann, April Choitz, Matt Barnard, Bertelli Fotografia and Michael Gault. Page links and licences are in the credits file in the site folder.</li>
-<li><strong>360 rooms, Poly Haven, CC0 (public domain), polyhaven.com/a/&lt;name&gt;:</strong> Wooden Lounge, Pine Attic, Lythwood Room, Lythwood Lounge, Glasshouse Interior (Dario Barresi) and Relax Inn Seaview Suite. Six different real buildings, shown as six rooms.</li>
+<li><strong>360 rooms, Poly Haven, CC0 (public domain), polyhaven.com/a/&lt;name&gt;:</strong> Wooden Lounge, Pine Attic, Lythwood Room, Lythwood Lounge and Relax Inn Seaview Suite. Five different real buildings, shown as five rooms.</li>
 <li><strong>Software, self-hosted:</strong> Pannellum 2.5.6 (MIT), GSAP 3.13 and ScrollTrigger (GreenSock standard no-charge license), Lenis 1.3.27 (MIT).</li>
 <li><strong>Fonts, self-hosted (SIL Open Font License 1.1):</strong> Epilogue and Albert Sans from Google Fonts.</li>
 </ul></div></section>
@@ -147,5 +150,6 @@
 <script src="assets/smooth.js" defer></script>
 <script src="js/site.js" defer></script>
 
+<script src="assets/fx.js" defer></script>
 </body>
 </html>

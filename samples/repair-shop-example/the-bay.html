@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-fx="workshop">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -14,6 +14,8 @@
 <link rel="preload" href="fonts/Saira-100-900.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="vendor/pannellum.css">
 <link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="assets/fx.css">
+<script>(function(){try{var r=document.documentElement;if(sessionStorage.getItem('fxi')||matchMedia('(prefers-reduced-motion: reduce)').matches)return;sessionStorage.setItem('fxi','1');r.classList.add('fx-i');setTimeout(function(){r.classList.add('fx-i-out')},620);setTimeout(function(){r.classList.remove('fx-i','fx-i-out')},1100)}catch(e){}})()</script>
 <script type="application/ld+json">{
  "@context": "https://schema.org",
  "@type": "AutoRepair",
@@ -188,6 +190,7 @@
 }</script>
 </head>
 <body>
+<div class="fx-intro" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true"><rect pathLength="1" x="6" y="6" width="52" height="52" rx="9"/><path pathLength="1" d="M40 27a9 9 0 1 0-9 9"/><path pathLength="1" d="M40 27c0 9-3 16-11 19"/></svg></div>
 <a class="skip" href="#main">Skip to content</a>
 <div class="hdr">
 <div class="strip"><b>Example design - not a real client.</b><span class="x"> Made-up shop, example phone, sample price ranges.</span></div>
@@ -206,7 +209,7 @@
 <section class="bay-top"><div class="wrap bt-in"><h1><span class="mask"><span>Come in. Look around.</span></span></h1>
 <p class="rv">Drag the view. Tap a glowing dot to see what that machine does and which repair it belongs to.</p></div></section>
 <section class="pano-wrap" id="pano-wrap" aria-label="360 degree view of the shop">
-<img class="pano-flat" src="pano/bay-flat.jpg" alt="A wide service hall with a red two-post lift on the left, a diagnostic bay on the right and cars parked along the back wall" width="1024" height="512">
+<img class="pano-flat fx-morph-t" data-fx-target src="pano/bay-flat.jpg" alt="A wide service hall with a red two-post lift on the left, a diagnostic bay on the right and cars parked along the back wall" width="1024" height="512">
 <div id="pano"></div>
 <div class="pano-note" id="pano-note" role="status">The 360 view loads as you scroll here.</div>
 <div id="eqpanel" class="ro-slip" hidden role="dialog" aria-label="Equipment details"><button class="x" type="button" aria-label="Close">&times;</button><div class="pb"></div></div>
@@ -238,4 +241,5 @@
 </div></div></footer>
 <script src="vendor/gsap.min.js"></script><script src="vendor/ScrollTrigger.min.js"></script><script src="vendor/lenis.min.js"></script><script src="assets/smooth.js"></script><script src="js/site.js"></script>
 <script src="js/bay.js"></script>
+<script src="assets/fx.js" defer></script>
 </body></html>

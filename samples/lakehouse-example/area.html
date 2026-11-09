@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="nojs">
+<html lang="en" class="nojs" data-fx="lakeside">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -13,6 +13,8 @@
 <link rel="icon" href="data:,">
 <link rel="preload" href="fonts/Epilogue-latin-200-900.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="assets/fx.css">
+<script>(function(){try{var r=document.documentElement;if(sessionStorage.getItem('fxi')||matchMedia('(prefers-reduced-motion: reduce)').matches)return;sessionStorage.setItem('fxi','1');r.classList.add('fx-i');setTimeout(function(){r.classList.add('fx-i-out')},620);setTimeout(function(){r.classList.remove('fx-i','fx-i-out')},1100)}catch(e){}})()</script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -107,6 +109,7 @@
 </script>
 </head>
 <body>
+<div class="fx-intro" aria-hidden="true"><svg viewBox="0 0 22 30" aria-hidden="true" style="width:54px;height:72px"><path pathLength="1" d="M8 5a3 3 0 0 1 6 0"/><path pathLength="1" d="M6 8h10l1.5 14h-13z"/><path pathLength="1" d="M5 22h12v3H5z"/><path pathLength="1" d="M11 13.3v3.4"/></svg></div>
 <a class="skip" href="#main">Skip to the page</a>
 <div class="hdr">
 <div class="strip"><span><b>Example design - not a real client.</b> Made-up house on a made-up lake. Sample site by <a href="https://collarcitytechhelp.com/websites/">Collar City Tech Help</a>.</span></div>
@@ -150,9 +153,9 @@
 <g transform="translate(740 60)" fill="none" stroke="#a9b4c7" stroke-width="1.6"><path d="M0 24V-18M-7 -8L0 -20L7 -8"/><text x="0" y="46" fill="#a9b4c7" stroke="none" font-size="15" text-anchor="middle">N</text></g>
 <g transform="translate(40 40)" stroke="#a9b4c7" stroke-width="2"><path d="M0 0h100M0 -5v10M50 -4v8M100 -5v10"/><text class="sm" x="0" y="24" fill="#a9b4c7" stroke="none" font-size="14">0 to half a mile (not to scale)</text></g>
 </svg>
-<div class="map-cap" id="mapcap" aria-live="polite"><h3>Tap a place</h3><p>The road to town, the trail to the falls and the walk to the beach are all drawn on the map. Choose a place or a line in the list.</p></div></div><div><h2 class="h"><h2 class=""><span class="mask"><span>Within fifteen minutes</span></span></h2></h2><ul class="drive" aria-label="Sample distances"><li><button type="button" data-poi="town"><span>Birch Landing market and gas</span><span>12 min drive</span></button></li><li><button type="button" data-poi="trail"><span>Trailhead</span><span>4 min drive</span></button></li><li><button type="button" data-poi="launch"><span>Public boat launch</span><span>7 min drive</span></button></li><li><button type="button" data-poi="beach"><span>Sandy beach, on the shore path</span><span>9 min walk</span></button></li><li><button type="button" data-poi="house"><span>Dock</span><span>30 steps</span></button></li></ul><p class="k">Sample distances for a made-up place.</p>
+<div class="map-cap" id="mapcap" aria-live="polite"><h3>Tap a place</h3><p>The road to town, the trail to the falls and the walk to the beach are all drawn on the map. Choose a place or a line in the list.</p></div></div><div><h2 class="h"><span class="mask"><span>Within fifteen minutes</span></span></h2><ul class="drive" aria-label="Sample distances"><li><button type="button" data-poi="town"><span>Birch Landing market and gas</span><span>12 min drive</span></button></li><li><button type="button" data-poi="trail"><span>Trailhead</span><span>4 min drive</span></button></li><li><button type="button" data-poi="launch"><span>Public boat launch</span><span>7 min drive</span></button></li><li><button type="button" data-poi="beach"><span>Sandy beach, on the shore path</span><span>9 min walk</span></button></li><li><button type="button" data-poi="house"><span>Dock</span><span>30 steps</span></button></li></ul><p class="k">Sample distances for a made-up place.</p>
 <p><a class="btn" href="contact.html#book">Check availability</a></p></div></div></section>
-<section class="sec slate"><div class="wrap"><h2 class="h"><h2 class=""><span class="mask"><span>What to do, by season</span></span></h2></h2>
+<section class="sec slate"><div class="wrap"><h2 class="h"><span class="mask"><span>What to do, by season</span></span></h2>
 <dl class="inv"><div><dt>Spring</dt><dd>Walk the trail to the falls while the ice goes out. Quiet roads, empty launch.</dd></div><div><dt>Summer</dt><dd>Swim off the dock, paddle the shoreline at dawn, eat outside until the mosquitoes win.</dd></div><div><dt>Fall</dt><dd>Maples turn the far shore red. Drive the ridge road and be back before the stove needs wood.</dd></div><div><dt>Winter</dt><dd>Ice fishing off the point once it is thick enough, and a long afternoon with a book by the stove.</dd></div><div><dt>Groceries</dt><dd>The Birch Landing market has what you forgot, and a counter that sells coffee early.</dd></div><div><dt>Rainy day</dt><dd>Puzzles and board games in the loft, and a map of the trails on the fridge.</dd></div></dl>
 <p style="margin-top:30px">Looking for a specific weekend? <a href="fall-foliage-weekend-cabin.html" style="color:var(--lantern)">Fall foliage</a>, <a href="winter-woodstove-getaway.html" style="color:var(--lantern)">winter woodstove</a>, or the <a href="birch-landing-lake-house-rental.html" style="color:var(--lantern)">Birch Landing guide</a>.</p></div></section>
 <section class="sec paper"><div class="wrap cta-band"><div><h2>Come for the weekend.</h2><p class="lede" style="margin-top:.8em">Dates are open on most weeks. Pick yours, or call and ask us anything.</p></div>
@@ -177,5 +180,6 @@
 <script src="js/site.js" defer></script>
 <script src="js/area.js" defer></script>
 
+<script src="assets/fx.js" defer></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="nojs home">
+<html lang="en" class="nojs home" data-fx="lakeside">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -12,8 +12,10 @@
 <script>var r=document.documentElement;r.classList.remove('nojs');r.classList.add('js');try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)r.classList.add('rm')}catch(e){}</script>
 <link rel="icon" href="data:,">
 <link rel="preload" href="fonts/Epilogue-latin-200-900.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="media/hero-1-poster.avif" type="image/avif" fetchpriority="high">
+<link rel="preload" as="image" href="media/hero-2-poster.webp" type="image/webp" fetchpriority="high">
 <link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="assets/fx.css">
+<script>(function(){try{var r=document.documentElement;if(sessionStorage.getItem('fxi')||matchMedia('(prefers-reduced-motion: reduce)').matches)return;sessionStorage.setItem('fxi','1');r.classList.add('fx-i');setTimeout(function(){r.classList.add('fx-i-out')},620);setTimeout(function(){r.classList.remove('fx-i','fx-i-out')},1100)}catch(e){}})()</script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -91,6 +93,7 @@
 </script>
 </head>
 <body>
+<div class="fx-intro" aria-hidden="true"><svg viewBox="0 0 22 30" aria-hidden="true" style="width:54px;height:72px"><path pathLength="1" d="M8 5a3 3 0 0 1 6 0"/><path pathLength="1" d="M6 8h10l1.5 14h-13z"/><path pathLength="1" d="M5 22h12v3H5z"/><path pathLength="1" d="M11 13.3v3.4"/></svg></div>
 <a class="skip" href="#main">Skip to the page</a>
 <div class="hdr">
 <div class="strip"><span><b>Example design - not a real client.</b> Made-up house on a made-up lake. Sample site by <a href="https://collarcitytechhelp.com/websites/">Collar City Tech Help</a>.</span></div>
@@ -108,9 +111,9 @@
 
 <section class="intro" id="intro" aria-label="Arriving at Kettle Point">
 <div class="stage" data-tod="dusk">
-<div class="shots" role="img" aria-label="Photographs of a lake at dusk, a cottage and dock, a boathouse, and a wood-lined living room with lake windows">
-<div class="shot s0 hv"><picture><source type="image/avif" srcset="media/hero-1-poster.avif"><source type="image/webp" srcset="media/hero-1-poster.webp"><img class="m" src="media/hero-1-poster.jpg" width="1920" height="1080" alt="" fetchpriority="high" decoding="async"></picture><video class="m" data-src="media/hero-1" muted loop playsinline preload="none" tabindex="-1"></video></div>
-<div class="shot s1"><img class="m" data-src="media/hero-2-poster.webp" width="1920" height="1080" alt="" decoding="async"></div>
+<div class="shots" role="img" aria-label="Photographs of a cottage and dock on a lake, a lit cabin at twilight, a boathouse, and a wood-lined living room with lake windows">
+<div class="shot s0 hv"><picture><source type="image/webp" srcset="media/hero-2-poster.webp"><img class="m" src="media/hero-2-poster.jpg" width="1920" height="1080" alt="" fetchpriority="high" decoding="async"></picture><video class="m" data-src="media/hero-2" muted loop playsinline preload="none" tabindex="-1"></video></div>
+<div class="shot s1"><img class="m" data-src="img/real/ext-dusk-cabin-2400.webp" width="1920" height="1080" alt="" decoding="async"></div>
 <div class="shot s2"><img class="m" data-src="media/hero-3-poster.webp" width="1920" height="1080" alt="" decoding="async"></div>
 <i class="g dw1" aria-hidden="true"></i><i class="g dw2" aria-hidden="true"></i><i class="g dy1" aria-hidden="true"></i><i class="g dy2" aria-hidden="true"></i><i class="g dy3" aria-hidden="true"></i><i class="g nt1" aria-hidden="true"></i><i class="g nt2" aria-hidden="true"></i>
 <div class="shot s3"><img class="m" data-src="img/real/in-living-dusk-2400.webp" width="2400" height="1800" alt="" decoding="async"></div>
@@ -139,7 +142,7 @@
 <aside><dl><div><dt>Sleeps</dt><dd>5 guests</dd></div><div><dt>Check-in</dt><dd>4 pm</dd></div><div><dt>Check-out</dt><dd>10 am</dd></div><div><dt>Dogs</dt><dd>Welcome, up to two</dd></div><div><dt>Minimum stay</dt><dd>2 nights (sample)</dd></div></dl></aside>
 </div></section>
 
-<section class="sec slate" style="padding-bottom:clamp(40px,6vw,80px)"><div class="wrap tix-head"><h2><h2 class=""><span class="mask"><span>Open weekends, this season</span></span></h2></h2><p class="lede" style="margin:0">Friday to Sunday, two nights. Tap an open ticket and the dates are filled in for you. <span class="k">Sample calendar, made up.</span></p></div>
+<section class="sec slate" style="padding-bottom:clamp(40px,6vw,80px)"><div class="wrap tix-head"><h2><span class="mask"><span>Open weekends, this season</span></span></h2><p class="lede" style="margin:0">Friday to Sunday, two nights. Tap an open ticket and the dates are filled in for you. <span class="k">Sample calendar, made up.</span></p></div>
 <ul class="tix" id="tix" aria-label="Open weekends"><li class="open"><a href="contact.html#book"><div class="d">This weekend</div><div class="m">Pick your own dates</div><div class="s"><span>Ask us</span><b>from $240</b></div></a></li></ul>
 <div class="wrap"><p class="k">Longer stays, midweek and holidays: <a href="stay.html#calendar" style="color:var(--lantern)">use the calendar</a>.</p></div></section>
 
@@ -152,7 +155,7 @@
 <article class="rs-room"><figure class="rs-fig"><img src="img/real/in-hearth-bedroom-1200.webp" srcset="img/real/in-hearth-bedroom-1200.webp 1200w, img/real/in-hearth-bedroom-2400.webp 2400w" sizes="(max-width:860px) 100vw, 60vw" width="1200" height="800" alt="A wood-lined bedroom with a bed beside a brick fireplace" loading="lazy" decoding="async"></figure><div class="rs-txt"><p class="n" aria-hidden="true">04</p><h3>Bedroom with a hearth</h3><p>Pine walls and a brick fireplace for the cold mornings.</p><p class="k">Sample photograph of a real cabin.</p></div></article>
 <article class="rs-room"><figure class="rs-fig"><img src="img/real/in-bedroom-wood-1200.webp" srcset="img/real/in-bedroom-wood-1200.webp 1200w, img/real/in-bedroom-wood-2400.webp 2400w" sizes="(max-width:860px) 100vw, 60vw" width="1200" height="800" alt="A wooden bedroom with a double bed and a window onto trees" loading="lazy" decoding="async"></figure><div class="rs-txt"><p class="n" aria-hidden="true">05</p><h3>The second bedroom</h3><p>A window onto the trees, and a quilt for the nights that turn cold.</p><p class="k">Sample photograph of a real cabin.</p></div></article>
 </div>
-<div class="rs-foot"><p class="k">Different rooms, same kind of wood and light. Walk them in 360 on the tour.</p><a class="btn ghost" href="tour.html">Start the 360 tour</a></div>
+<div class="rs-foot"><p class="k">Different rooms, same kind of wood and light. Walk them in 360 on the tour.</p><a class="btn ghost" href="tour.html" data-morph=".rs-fig img">Start the 360 tour</a></div>
 </div></div></section>
 
 <section class="sec slate" id="seasons"><div class="wrap"><div class="tix-head"><h2><span class="mask"><span>Every season has a reason</span></span></h2><p class="lede" style="margin:0">Same lake, three different weekends. Pick a season. Sample rates change with it.</p></div>
@@ -194,5 +197,6 @@
 <script src="assets/smooth.js" defer></script>
 <script src="js/site.js" defer></script>
 <script src="js/home.js" defer></script>
+<script src="assets/fx.js" defer></script>
 </body>
 </html>

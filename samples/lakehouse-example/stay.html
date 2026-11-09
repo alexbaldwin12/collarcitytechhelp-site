@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="nojs">
+<html lang="en" class="nojs" data-fx="lakeside">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -13,6 +13,8 @@
 <link rel="icon" href="data:,">
 <link rel="preload" href="fonts/Epilogue-latin-200-900.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="assets/fx.css">
+<script>(function(){try{var r=document.documentElement;if(sessionStorage.getItem('fxi')||matchMedia('(prefers-reduced-motion: reduce)').matches)return;sessionStorage.setItem('fxi','1');r.classList.add('fx-i');setTimeout(function(){r.classList.add('fx-i-out')},620);setTimeout(function(){r.classList.remove('fx-i','fx-i-out')},1100)}catch(e){}})()</script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -107,6 +109,7 @@
 </script>
 </head>
 <body>
+<div class="fx-intro" aria-hidden="true"><svg viewBox="0 0 22 30" aria-hidden="true" style="width:54px;height:72px"><path pathLength="1" d="M8 5a3 3 0 0 1 6 0"/><path pathLength="1" d="M6 8h10l1.5 14h-13z"/><path pathLength="1" d="M5 22h12v3H5z"/><path pathLength="1" d="M11 13.3v3.4"/></svg></div>
 <a class="skip" href="#main">Skip to the page</a>
 <div class="hdr">
 <div class="strip"><span><b>Example design - not a real client.</b> Made-up house on a made-up lake. Sample site by <a href="https://collarcitytechhelp.com/websites/">Collar City Tech Help</a>.</span></div>
@@ -123,18 +126,18 @@
 <main id="main">
 <section class="ph1"><div class="wrap"><p class="crumbs"><a href="index.html">Kettle Point</a> / Stay</p><h1>The house</h1><p class="lede">Five beds, one big room with a stove, a loft under the roof and a dock thirty steps from the door.</p></div></section>
 <section class="sec" style="padding-top:0"><div class="wrap split">
-<div><h2 class="h"><h2 class=""><span class="mask"><span>Where everyone sleeps</span></span></h2></h2>
+<div><h2 class="h"><span class="mask"><span>Where everyone sleeps</span></span></h2>
 <ul class="list"><li><span>Bedroom, queen bed</span><span>2 guests</span></li><li><span>Loft, two floor mattresses</span><span>2 guests</span></li><li><span>Living room daybed</span><span>1 guest</span></li><li><span>Bathrooms</span><span>1 full, 1 outdoor shower</span></li></ul>
 <p class="k" style="margin-top:14px">Linens and towels are on the beds when you arrive.</p></div>
 <div><img src="img/real/in-bedroom-wood-1200.webp" srcset="img/real/in-bedroom-wood-1200.webp 1200w, img/real/in-bedroom-wood-2400.webp 2400w" sizes="(max-width:860px) 100vw, 46vw" width="1200" height="800" alt="A wood-lined bedroom with a double bed and a window onto trees (sample photograph of a real cabin)" loading="lazy" style="border-radius:3px;width:100%;height:auto"></div></div></section>
 
 <section class="sec slate" id="calendar"><div class="wrap split">
-<div><h2 class="h"><h2 class=""><span class="mask"><span>Check your dates</span></span></h2></h2><p class="lede">Pick the day you arrive and the day you leave. We show the nights that are taken and a sample total.</p><p class="k">Sample calendar and sample prices, made up for this demo. A live site reads the owner's real calendar.</p>
+<div><h2 class="h"><span class="mask"><span>Check your dates</span></span></h2><p class="lede">Pick the day you arrive and the day you leave. We show the nights that are taken and a sample total.</p><p class="k">Sample calendar and sample prices, made up for this demo. A live site reads the owner's real calendar.</p>
 <p><label for="cal-guests" class="k">Guests</label><br><select id="cal-guests" style="min-height:44px;background:var(--slate2);color:var(--mist);border:1px solid var(--line);border-radius:3px;padding:0 12px;font:inherit"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option></select></p></div>
 <div class="cal" id="cal"><div class="cal-quick" id="cal-quick" aria-label="Open weekends, Friday to Sunday"></div><div class="cal-top"><button type="button" class="prev" aria-label="Previous month">&lsaquo;</button><h3 aria-live="polite">Month</h3><button type="button" class="next" aria-label="Next month">&rsaquo;</button></div><div class="cal-grid" role="group" aria-label="Calendar"></div><div class="cal-sum" aria-live="polite"><p class="k">The calendar needs JavaScript. Without it, call (555)&#8209;010&#8209;0142 or send a request on the contact page.</p></div></div></div></section>
 
 <section class="sec paper" id="rates"><div class="wrap split">
-<div><p class="tag">Sample prices, made up for this demo</p><h2 class="h"><h2 class=""><span class="mask"><span>Rates and times</span></span></h2></h2>
+<div><p class="tag">Sample prices, made up for this demo</p><h2 class="h"><span class="mask"><span>Rates and times</span></span></h2>
 <div class="tablewrap" style="overflow-x:auto"><table class="rate-table"><tbody>
 <tr><th scope="row">Sun to Thu night<small>Spring and winter</small></th><td>from $240</td></tr>
 <tr><th scope="row">Fri and Sat night<small>Spring and winter</small></th><td>from $320</td></tr>
@@ -146,7 +149,7 @@
 <div><h2 class="h" style="font-size:clamp(1.6rem,3vw,2.4rem)">Times and terms</h2><ul class="list"><li><span>Check-in</span><span>4 pm</span></li><li><span>Check-out</span><span>10 am</span></li><li><span>Minimum stay</span><span>2 nights</span></li><li><span>Cancellation</span><span>Free up to 14 days (sample)</span></li><li><span>Deposit</span><span>Half at booking (sample)</span></li></ul>
 <p style="margin-top:24px"><a class="btn" href="contact.html#book">Check availability</a></p></div></div></section>
 
-<section class="sec"><div class="wrap"><h2 class="h"><h2 class=""><span class="mask"><span>What is in the house</span></span></h2></h2>
+<section class="sec"><div class="wrap"><h2 class="h"><span class="mask"><span>What is in the house</span></span></h2>
 <dl class="inv"><div><dt>Water</dt><dd>A wooden dock for swimming and tying up a boat. A canoe and two paddles on the rack. Life jackets by the door in every size.</dd></div>
 <div><dt>Warmth</dt><dd>A woodstove with split wood in the shed. Baseboard heat in every room. Extra blankets in the loft.</dd></div>
 <div><dt>Kitchen</dt><dd>Gas range, full fridge, kettle and drip coffee. Pots, pans and plates for five, and a long table to eat at.</dd></div>
@@ -174,5 +177,6 @@
 <script src="assets/smooth.js" defer></script>
 <script src="js/site.js" defer></script>
 <script src="js/stay.js" defer></script>
+<script src="assets/fx.js" defer></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="nojs">
+<html lang="en" class="nojs" data-fx="lakeside">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -13,6 +13,8 @@
 <link rel="icon" href="data:,">
 <link rel="preload" href="fonts/Epilogue-latin-200-900.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="assets/fx.css">
+<script>(function(){try{var r=document.documentElement;if(sessionStorage.getItem('fxi')||matchMedia('(prefers-reduced-motion: reduce)').matches)return;sessionStorage.setItem('fxi','1');r.classList.add('fx-i');setTimeout(function(){r.classList.add('fx-i-out')},620);setTimeout(function(){r.classList.remove('fx-i','fx-i-out')},1100)}catch(e){}})()</script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -107,6 +109,7 @@
 </script>
 </head>
 <body>
+<div class="fx-intro" aria-hidden="true"><svg viewBox="0 0 22 30" aria-hidden="true" style="width:54px;height:72px"><path pathLength="1" d="M8 5a3 3 0 0 1 6 0"/><path pathLength="1" d="M6 8h10l1.5 14h-13z"/><path pathLength="1" d="M5 22h12v3H5z"/><path pathLength="1" d="M11 13.3v3.4"/></svg></div>
 <a class="skip" href="#main">Skip to the page</a>
 <div class="hdr">
 <div class="strip"><span><b>Example design - not a real client.</b> Made-up house on a made-up lake. Sample site by <a href="https://collarcitytechhelp.com/websites/">Collar City Tech Help</a>.</span></div>
@@ -123,10 +126,10 @@
 <main id="main">
 <section class="ph1"><div class="wrap"><p class="crumbs"><a href="index.html">Kettle Point</a> / Host</p><h1>Your host</h1><p class="lede">We live twelve minutes away in Birch Landing. If something is off, we are the people who come and fix it.</p></div></section>
 <section class="sec" style="padding-top:0"><div class="wrap split">
-<div><h2 class="h"><h2 class=""><span class="mask"><span>Why this house</span></span></h2></h2><p class="lede">Our family has been on this lake for thirty years. The house was a fishing shack when we bought it. We kept the stone chimney, opened the front to the water and put in the long table.</p><p>The woodstove is older than the kids. The dock is rebuilt every other spring. We answer the phone ourselves between 8 am and 8 pm, and a text gets an answer the same day.</p><p class="k">(Example text. A live site tells the owner's real story here.)</p></div>
+<div><h2 class="h"><span class="mask"><span>Why this house</span></span></h2><p class="lede">Our family has been on this lake for thirty years. The house was a fishing shack when we bought it. We kept the stone chimney, opened the front to the water and put in the long table.</p><p>The woodstove is older than the kids. The dock is rebuilt every other spring. We answer the phone ourselves between 8 am and 8 pm, and a text gets an answer the same day.</p><p class="k">(Example text. A live site tells the owner's real story here.)</p></div>
 <div><div class="slot"><div class="av" aria-hidden="true"></div><p style="margin:0">Host photo and first names go here (example).</p><ul class="list" style="margin-top:14px"><li><span>Replies</span><span>Within the hour, 8 am to 8 pm (example)</span></li><li><span>Lives</span><span>Birch Landing, 12 minutes away (example)</span></li><li><span>Hosting since</span><span>Year goes here (example)</span></li></ul></div></div></div></section>
 
-<section class="sec slate"><div class="wrap"><h2 class="h"><h2 class=""><span class="mask"><span>House rules, cleaning and safety</span></span></h2></h2>
+<section class="sec slate"><div class="wrap"><h2 class="h"><span class="mask"><span>House rules, cleaning and safety</span></span></h2>
 <div class="trust"><div><h3>House rules</h3><ul><li>Five guests overnight at most</li><li>No parties or events</li><li>Quiet hours 10 pm to 7 am</li><li>No smoking inside</li><li>Dogs from the list only, off the beds</li></ul></div>
 <div><h3>Cleaning and safety</h3><ul><li>Linens washed and the kitchen wiped down between stays</li><li>Smoke and carbon monoxide alarms tested before each stay</li><li>Fire extinguisher by the stove, first aid kit in the kitchen</li><li>Life jackets by the door in every size</li><li>Example list: a real owner writes their own</li></ul></div>
 <div><h3>Guest reviews</h3><div class="slot"><p style="margin:0 0 .6em;font-weight:600">Your reviews here</p><p style="color:var(--fog)">Real guest reviews go in this space after real stays. We never write them for you, and this demo shows none.</p><div class="revlinks"><span>Google review link goes here</span><span>Listing review link goes here</span></div></div></div></div></div></section>
@@ -151,5 +154,6 @@
 <script src="assets/smooth.js" defer></script>
 <script src="js/site.js" defer></script>
 
+<script src="assets/fx.js" defer></script>
 </body>
 </html>

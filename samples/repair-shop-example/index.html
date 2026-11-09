@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-fx="workshop">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -15,6 +15,8 @@
 <link rel="preload" as="image" href="media/hero-1-poster.webp" fetchpriority="high" media="(min-width:901px)">
 <link rel="preload" as="image" href="media/hero-1-poster-960.webp" fetchpriority="high" media="(max-width:900px)">
 <link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="assets/fx.css">
+<script>(function(){try{var r=document.documentElement;if(sessionStorage.getItem('fxi')||matchMedia('(prefers-reduced-motion: reduce)').matches)return;sessionStorage.setItem('fxi','1');r.classList.add('fx-i');setTimeout(function(){r.classList.add('fx-i-out')},620);setTimeout(function(){r.classList.remove('fx-i','fx-i-out')},1100)}catch(e){}})()</script>
 <script type="application/ld+json">{
  "@context": "https://schema.org",
  "@type": "AutoRepair",
@@ -189,6 +191,7 @@
 }</script>
 </head>
 <body>
+<div class="fx-intro" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true"><rect pathLength="1" x="6" y="6" width="52" height="52" rx="9"/><path pathLength="1" d="M40 27a9 9 0 1 0-9 9"/><path pathLength="1" d="M40 27c0 9-3 16-11 19"/></svg></div>
 <a class="skip" href="#main">Skip to content</a>
 <div class="hdr">
 <div class="strip"><b>Example design - not a real client.</b><span class="x"> Made-up shop, example phone, sample price ranges.</span></div>
@@ -331,7 +334,7 @@
 </div></section>
 <section class="sec shopt" style="padding-top:0"><div class="wrap plan-grid" style="align-items:start"><div><div class="kicker rv">The shop</div><h2 class="big rv" style="--i:1;font-size:clamp(2.2rem,4.6vw,4.4rem)">Named bays. Certified hands.</h2></div><div class="rv" style="--i:2"><p class="lead">Every bay has a lift and a job, every technician a specialty. The roster adapts from a two-bay independent to a twelve-bay, two-location operation.</p><a class="btn ghost" href="shop.html">Bays and technicians <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></div></section>
 <section class="sec grain" style="padding-block:0">
-<a href="the-bay.html" style="display:block;position:relative;min-height:min(80svh,720px);text-decoration:none;overflow:hidden;background:#0d0e10" aria-label="Look around the bay in 360">
+<a href="the-bay.html" data-morph="a[href='the-bay.html'][aria-label] img" style="display:block;position:relative;min-height:min(80svh,720px);text-decoration:none;overflow:hidden;background:#0d0e10" aria-label="Look around the bay in 360">
 <img src="pano/bay-flat.jpg" alt="" loading="lazy" width="1024" height="512" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.62) saturate(.85)">
 <div class="wrap" style="position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:min(80svh,720px);padding-bottom:clamp(36px,6vw,80px)">
 <div class="kicker">360 view</div><h2 class="big" style="max-width:9em">Walk the shop before you drive in.</h2>
@@ -360,4 +363,5 @@
 </div></div></footer>
 <script src="vendor/gsap.min.js"></script><script src="vendor/ScrollTrigger.min.js"></script><script src="vendor/lenis.min.js"></script><script src="assets/smooth.js"></script><script src="js/site.js"></script>
 <script src="js/hero.js"></script><script src="js/story.js"></script><script src="js/services.js"></script><script src="js/picker.js"></script><script src="js/estimate.js"></script><script src="js/compare.js"></script>
+<script src="assets/fx.js" defer></script>
 </body></html>
