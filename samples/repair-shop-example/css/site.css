@@ -612,3 +612,25 @@ html:not(.js) .layers .lay:first-child{opacity:1;transform:none}
 @keyframes linein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media (max-width:900px){.estb-grid{grid-template-columns:1fr}.slipwrap{margin:0 8px}}
 .estb{padding-block:clamp(56px,7vw,100px)}
+
+/* ---------- before / after sliders ---------- */
+.bas{padding-block:clamp(56px,7vw,100px)}
+.bas h2.big{font-size:clamp(2.2rem,4.2vw + .3rem,4rem);font-weight:250}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,36px)}
+.ba{margin:0}
+.ba-frame{position:relative;aspect-ratio:3/2;overflow:hidden;border:1px solid var(--line);border-radius:6px;background:#0d0e10;touch-action:pan-y;--p:50}
+.ba-frame picture{position:absolute;inset:0}
+.ba-frame img{width:100%;height:100%;object-fit:cover;-webkit-user-drag:none}
+.ba-r{clip-path:inset(0 0 0 calc(var(--p) * 1%))}
+.ba-tag{position:absolute;top:12px;z-index:2;background:#0a0b0ccc;border:1px solid var(--line);border-radius:3px;padding:4px 10px;font:500 12.5px var(--mono);letter-spacing:.04em;text-transform:uppercase;pointer-events:none}
+.ba-tag.a{left:12px}.ba-tag.b{right:12px;color:var(--amber)}
+.ba-bar{position:absolute;left:0;top:0;bottom:0;width:0;z-index:2;pointer-events:none;will-change:transform}
+.ba-bar::before{content:"";position:absolute;left:-1px;top:0;bottom:0;width:2px;background:var(--chalk);box-shadow:0 0 12px #000a}
+.ba-bar b{position:absolute;left:-22px;top:50%;margin-top:-22px;width:44px;height:44px;border-radius:50%;background:var(--amber);color:var(--ink);display:grid;place-items:center;box-shadow:0 4px 18px #000a}
+.ba-bar svg{width:22px;height:22px}
+.ba input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;z-index:3;min-height:0;-webkit-appearance:none;appearance:none;background:none;border:0;padding:0}
+.ba-frame:has(input:focus-visible){outline:2px solid var(--amber);outline-offset:3px}
+.ba figcaption{margin-top:12px;font-size:14.5px;color:var(--steel)}
+.ba figcaption b{color:var(--chalk);font-weight:600;margin-right:6px}
+@media (max-width:900px){.ba-grid{grid-template-columns:1fr}}
+html:not(.js) .ba-r{clip-path:none;opacity:.0}
