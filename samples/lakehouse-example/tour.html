@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="nojs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kettle Point 360 tour and photos | Example design - not a real client</title>
+<meta name="description" content="Walk through six rooms of a made-up lake house in 360, with a photo gallery and a lightbox.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0a0e16">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' 'unsafe-inline'; connect-src 'self' blob: data:; form-action 'none'; base-uri 'none'; frame-src 'none'; object-src 'none'">
+<script>var r=document.documentElement;r.classList.remove('nojs');r.classList.add('js');try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)r.classList.add('rm')}catch(e){}</script>
+<link rel="icon" href="data:,">
+<link rel="preload" href="fonts/Epilogue-latin-200-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="vendor/pannellum.css">
+<link rel="stylesheet" href="css/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "VacationRental",
+   "@id": "https://example.com/#house",
+   "name": "Kettle Point Lake House (example, not a real property)",
+   "description": "Example listing for a made-up wood-and-glass lake house on a made-up lake. Sleeps five.",
+   "url": "https://example.com/kettle-point/",
+   "telephone": "+15550100142",
+   "email": "example@example.com",
+   "priceRange": "Sample prices from $240 per night",
+   "checkinTime": "16:00",
+   "checkoutTime": "10:00",
+   "petsAllowed": true,
+   "numberOfRooms": 3,
+   "occupancy": {
+    "@type": "QuantitativeValue",
+    "maxValue": 5
+   },
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Example Road (not a real address)",
+    "addressLocality": "Kettle Point",
+    "addressRegion": "NY",
+    "postalCode": "00000",
+    "addressCountry": "US"
+   },
+   "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 0,
+    "longitude": 0
+   },
+   "amenityFeature": [
+    {
+     "@type": "LocationFeatureSpecification",
+     "name": "Lake access",
+     "value": true
+    },
+    {
+     "@type": "LocationFeatureSpecification",
+     "name": "Woodstove",
+     "value": true
+    },
+    {
+     "@type": "LocationFeatureSpecification",
+     "name": "Wifi",
+     "value": true
+    },
+    {
+     "@type": "LocationFeatureSpecification",
+     "name": "Free parking",
+     "value": true
+    },
+    {
+     "@type": "LocationFeatureSpecification",
+     "name": "Pets allowed",
+     "value": true
+    },
+    {
+     "@type": "LocationFeatureSpecification",
+     "name": "Kitchen",
+     "value": true
+    },
+    {
+     "@type": "LocationFeatureSpecification",
+     "name": "Dock",
+     "value": true
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Kettle Point",
+     "item": "https://example.com/kettle-point/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Tour",
+     "item": "https://example.com/kettle-point/tour.html"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the page</a>
+<div class="hdr">
+<div class="strip"><span><b>Example design - not a real client.</b> Made-up house on a made-up lake. Sample site by <a href="https://collarcitytechhelp.com/websites/">Collar City Tech Help</a>.</span></div>
+<div class="bar">
+<a class="logo" href="index.html" aria-label="Kettle Point, home"><svg viewBox="0 0 22 30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5a3 3 0 0 1 6 0"/><path d="M6 8h10l1.5 14h-13z"/><path d="M5 22h12v3H5z"/><circle cx="11" cy="15" r="1.7" fill="currentColor" stroke="none"/></svg>Kettle Point</a>
+<nav class="nav" id="nav" aria-label="Main"><a href="stay.html">Stay</a><a href="tour.html" aria-current="page">Tour</a><a href="area.html">The area</a><a href="about.html">Host</a><a href="contact.html">Contact</a></nav>
+<span class="pill-status" role="status"><i></i><span data-status>Phone desk, 8 am to 8 pm</span></span>
+<a class="call btn ghost" href="tel:+15550100142">Call (555)&#8209;010&#8209;0142</a>
+<a class="btn" href="contact.html#book">Check availability</a>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+</div>
+</div>
+<div class="dock" aria-label="Quick actions"><a class="btn ghost" href="tel:+15550100142">Call</a><a class="btn" href="contact.html#book">Check availability</a></div>
+<main id="main">
+<section class="ph1"><div class="wrap"><p class="crumbs"><a href="index.html">Kettle Point</a> / Tour</p><h1>Walk it room by room</h1><p class="lede">Drag to look around. Tap a ring to step into the next room. Arrow keys work, and so does Tab then Enter on a ring.</p></div></section>
+<div class="vr" id="vr"><nav class="vr-rail" aria-label="Rooms"><h3>Rooms</h3><ul id="rooms"></ul></nav>
+<div class="vr-stage"><img class="vr-poster" src="pano/living-thumb.jpg" width="512" height="256" alt="" aria-hidden="true"><div class="vr-load"><p>Loading the living room.</p></div>
+<div id="pano" role="application" aria-label="360 degree room viewer. Drag or use the arrow keys to look around."></div>
+<div class="vr-tip">Drag to look. Rings move you.</div>
+<div class="vr-book"><a class="btn" href="contact.html#book">Check availability</a></div>
+<div class="here" aria-live="polite"><svg class="compass" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="24" fill="none" stroke="#2b3750"/><path id="wedge" d="M28 28L16 6A24 24 0 0 1 40 6Z" fill="#ffe2a6" opacity=".9"/><circle cx="28" cy="28" r="2.5" fill="#e9edf3"/></svg><div><p class="t" id="roomName">Living room</p><p class="h" id="roomHint"></p></div></div></div></div>
+<div class="vr-flat" id="flat"><p style="color:var(--mist);margin-bottom:20px">The 360 viewer needs JavaScript and WebGL. Here are the rooms as flat pictures instead.</p><ul>
+<li><img src="pano/living.jpg" width="3584" height="1792" alt="The living room as a flat wide picture" loading="lazy"><p>Living room</p></li><li><img src="pano/kitchen.jpg" width="3584" height="1792" alt="The kitchen as a flat wide picture" loading="lazy"><p>Kitchen</p></li><li><img src="pano/loft.jpg" width="3584" height="1792" alt="The loft as a flat wide picture" loading="lazy"><p>The loft</p></li><li><img src="pano/deck.jpg" width="3584" height="1792" alt="The covered deck as a flat wide picture" loading="lazy"><p>Covered deck</p></li><li><img src="pano/dock.jpg" width="3584" height="1792" alt="The dock as a flat wide picture" loading="lazy"><p>The dock</p></li><li><img src="pano/shore.jpg" width="3584" height="1792" alt="The point as a flat wide picture" loading="lazy"><p>The point</p></li></ul></div>
+<section class="sec" style="padding-bottom:30px"><div class="wrap"><p class="k" style="max-width:70ch">Honest note: this is a made-up house. The rooms in the tour are free sample panoramas of different wood-and-lake places, picked to match each other, and the exterior views are a 3D scene we built. A real site uses the owner's own 360 photos. Credits are on the <a href="credits.html" style="color:var(--lantern)">credits page</a>.</p><p><a class="btn" href="contact.html#book">Check availability</a></p></div></section>
+<section class="sec" id="gallery" style="padding-top:20px"><div class="wrap"><h2 class="h"><h2 class=""><span class="mask"><span>Look closer</span></span></h2></h2><p class="lede" style="margin-bottom:2em">Tap any photo to open it large. Arrow keys move between photos.</p><div class="mosaic" id="mosaic"><button class="m1" type="button" data-lg="img/house-lg.webp" data-cap="The house at dusk, from the lawn"><img src="img/house-sm.webp" width="720" height="480" loading="lazy" decoding="async" alt="A wooden house with a covered porch and two lit lanterns at dusk, seen from the lawn"></button><button class="m2" type="button" data-lg="img/living-lg.webp" data-cap="The living room"><img src="img/living-sm.webp" width="720" height="480" loading="lazy" decoding="async" alt="A living room with a long sofa and wood floors"></button><button class="m3" type="button" data-lg="img/fire-lg.webp" data-cap="Inside, by the stone fireplace"><img src="img/fire-sm.webp" width="720" height="480" loading="lazy" decoding="async" alt="A stone fireplace glowing in a wood-lined room"></button><button class="m4" type="button" data-lg="img/kitchen-lg.webp" data-cap="The kitchen and the table for five"><img src="img/kitchen-sm.webp" width="720" height="480" loading="lazy" decoding="async" alt="A rustic kitchen with a long counter and a wooden table under a window"></button><button class="m5" type="button" data-lg="img/loft-lg.webp" data-cap="The loft under the pine roof"><img src="img/loft-sm.webp" width="720" height="480" loading="lazy" decoding="async" alt="A pine loft with two skylights and a wooden hoop"></button><button class="m6" type="button" data-lg="img/deck-lg.webp" data-cap="The covered deck"><img src="img/deck-sm.webp" width="720" height="480" loading="lazy" decoding="async" alt="A covered wooden deck with tables and chairs and the lake beyond"></button><button class="m7" type="button" data-lg="img/jetty3d-lg.webp" data-cap="The dock, last light"><img src="img/jetty3d-sm.webp" width="720" height="480" loading="lazy" decoding="async" alt="A wooden dock with a lantern post and a canoe at dusk"></button><button class="m8" type="button" data-lg="img/dock-lg.webp" data-cap="Off the end of the dock"><img src="img/dock-sm.webp" width="720" height="480" loading="lazy" decoding="async" alt="A wide wooden platform on a calm lake with low hills behind"></button><button class="m9" type="button" data-lg="img/living2-lg.webp" data-cap="The long room, the other way"><img src="img/living2-sm.webp" width="720" height="480" loading="lazy" decoding="async" alt="The living room seen from the opposite side with a wood ceiling"></button><button class="m10" type="button" data-lg="img/shore-lg.webp" data-cap="The point, early evening"><img src="img/shore-sm.webp" width="720" height="480" loading="lazy" decoding="async" alt="A rocky point with reeds and open water under a blue-grey sky"></button></div></div></section>
+<dialog class="lb" id="lb" aria-label="Photo viewer"><div class="lb-in"><button class="x" type="button" aria-label="Close photo">&times;</button><button class="pv" type="button" aria-label="Previous photo">&lsaquo;</button><button class="nx" type="button" aria-label="Next photo">&rsaquo;</button><figure><img id="lbimg" alt="" width="1600" height="1067"><figcaption id="lbcap"></figcaption></figure></div></dialog>
+<section class="sec paper"><div class="wrap cta-band"><div><h2>Seen enough to book?</h2><p class="lede" style="margin-top:.8em">Pick your dates, or call and ask about anything you spotted in the photos.</p></div>
+<div><p class="k" style="margin:0">Call the house phone desk</p><a class="tel" href="tel:+15550100142">(555)&#8209;010&#8209;0142</a><p class="k" style="margin:.4em 0 1.4em"><span data-open-text>Open now</span>, 8 am to 8 pm Eastern. Example number.</p><p style="display:flex;gap:12px;flex-wrap:wrap;margin:0"><a class="btn" href="stay.html#calendar">Pick your dates</a><a class="btn ghost" href="contact.html#book">Send a request</a></p></div></div></section>
+
+</main>
+<footer>
+<div class="wrap">
+<div class="cols">
+<div><h4>Kettle Point</h4><p>A made-up lake house used to show what a Collar City Tech Help website can do. No bookings, no reviews, no real prices.</p><p>Example Road, Kettle Point, NY 00000 (not a real address)<br><a href="tel:+15550100142">(555)&#8209;010&#8209;0142</a> (example number)<br><a href="mailto:example@example.com">example@example.com</a> (example address)</p></div>
+<div><h4>The house</h4><ul><li><a href="stay.html">Stay and rates</a></li><li><a href="tour.html">360 tour and photos</a></li><li><a href="about.html">Your host</a></li><li><a href="contact.html">Contact and booking</a></li></ul></div>
+<div><h4>The area</h4><ul><li><a href="area.html">Around the lake</a></li><li><a href="birch-landing-lake-house-rental.html">Birch Landing lake house rental</a></li><li><a href="fall-foliage-weekend-cabin.html">Fall foliage weekend</a></li><li><a href="winter-woodstove-getaway.html">Winter woodstove getaway</a></li><li><a href="credits.html">Credits and licenses</a></li></ul></div>
+</div>
+<p><strong>Example design - not a real client.</strong> Sample by <a href="https://collarcitytechhelp.com/websites/">Collar City Tech Help</a>, based in Troy, NY. <a href="https://collarcitytechhelp.com/privacy/">Privacy</a>, <a href="https://collarcitytechhelp.com/terms/">Terms</a>, <a href="https://collarcitytechhelp.com/refunds/">Refunds</a>.</p>
+<p>Designed and built by Alex using modern tools, including AI. Every website is personally reviewed before it goes live. We provide general guidance, not legal advice, and no service can guarantee you'll never be hacked.</p>
+</div>
+</footer>
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="js/site.js" defer></script>
+<script src="js/tour.js" defer></script>
+</body>
+</html>
