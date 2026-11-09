@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" class="nojs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kettle Point Lake House | Example design - not a real client</title>
+<meta name="description" content="A sample lake house rental site built by Collar City Tech Help for a made-up property: scroll-driven walk in, 360 room tours, sample rates and an example booking form.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#14131c">
+<!-- No network posts from this page: forms go nowhere, only same-folder files load. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; form-action 'none'; base-uri 'none'; frame-src 'none'; object-src 'none'">
+<link rel="icon" href="data:,">
+<link rel="preload" href="fonts/Jost-latin-300-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="frames/f000.webp" as="image" fetchpriority="high">
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="vendor/pannellum.css">
+<script>document.documentElement.className="js"</script>
+<!-- Google-ready business info. Example values only; the page stays noindex. No ratings or reviews on purpose. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VacationRental",
+  "name": "Kettle Point Lake House (example, not a real property)",
+  "description": "Example listing for a made-up wood-and-glass lake house on a made-up lake. Sleeps five.",
+  "url": "https://example.com/kettle-point/",
+  "telephone": "+15550100142",
+  "email": "example@example.com",
+  "priceRange": "Sample prices from $240 per night",
+  "checkinTime": "16:00",
+  "checkoutTime": "10:00",
+  "petsAllowed": true,
+  "numberOfRooms": 3,
+  "occupancy": {"@type": "QuantitativeValue", "maxValue": 5},
+  "address": {"@type": "PostalAddress", "streetAddress": "Example Road (not a real address)", "addressLocality": "Kettle Point", "addressRegion": "NY", "postalCode": "00000", "addressCountry": "US"},
+  "geo": {"@type": "GeoCoordinates", "latitude": 0, "longitude": 0},
+  "amenityFeature": [
+    {"@type": "LocationFeatureSpecification", "name": "Lake access", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Woodstove", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Wifi", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Free parking", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Pets allowed", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Kitchen", "value": true}
+  ]
+}
+</script>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to the page</a>
+<div class="hdr">
+<div class="cct-bar"><strong>Example design - not a real client.</strong> Made-up property, made-up lake. Sample site by <a href="https://collarcitytechhelp.com/websites/">Collar City Tech Help</a>.</div>
+
+<header class="top">
+  <a class="brand" href="#top" aria-label="Kettle Point, back to top">
+    <svg viewBox="0 0 22 30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5a3 3 0 0 1 6 0"/><path d="M6 8h10l1.5 14h-13z"/><path d="M5 22h12v3H5z"/><path d="M9 12v6M13 12v6" opacity=".6"/><circle cx="11" cy="15" r="1.6" fill="currentColor" stroke="none"/></svg>
+    <span>Kettle Point</span>
+  </a>
+  <nav aria-label="Page sections"><a href="#tour">Tour</a><a href="#gallery">Photos</a><a href="#rates">Rates</a><a href="#where">Location</a><a href="#faq">Questions</a></nav>
+  <a class="call btn ghost" href="tel:+15550100142">Call (555)&#8209;010&#8209;0142</a>
+  <a class="btn" href="#book">Check availability</a>
+</header>
+</div>
+<div class="dock" aria-label="Quick actions">
+  <a class="btn ghost" href="tel:+15550100142">Call</a>
+  <a class="btn" href="#book">Check availability</a>
+</div>
+
+<main id="main">
+
+<!-- 1. the walk in: pinned and scrubbed on scroll -->
+<section class="fly" id="fly" aria-label="Arriving at Kettle Point">
+  <div class="fly-stage">
+    <img class="poster" src="frames/f000.webp" width="1024" height="576" alt="Little Kettle Lake at midday from the water, with the shoreline and trees to the left" fetchpriority="high">
+    <canvas id="seq" aria-hidden="true"></canvas>
+    <div class="glow" id="glow" aria-hidden="true"></div>
+    <div class="shade" aria-hidden="true"></div>
+  </div>
+  <div class="fly-copy">
+    <h1 id="hero-title"><span>Kettle</span><span>Point</span></h1>
+    <p class="strap" id="strap">A wood-and-glass house on Little Kettle Lake. Sleeps five. The jetty is thirty steps from the door.</p>
+    <div class="cta-row">
+      <a class="btn" href="#book">Check availability</a>
+      <a class="btn ghost" href="tel:+15550100142">Call (555)&#8209;010&#8209;0142</a>
+      <span class="rate">Sample price: from <b>$240</b> a night</span>
+    </div>
+  </div>
+  <div class="route" id="route" aria-hidden="true">
+    <svg viewBox="0 0 300 54"><path class="track" d="M2 40C60 40 86 8 150 22S244 46 298 12" fill="none" stroke-width="2" stroke-linecap="round"/><path class="done" id="routeDone" d="M2 40C60 40 86 8 150 22S244 46 298 12" fill="none" stroke-width="3" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/><g id="lamp" transform="translate(2 40)"><circle r="11" fill="#f2d79b" opacity=".25"/><circle r="5" fill="#f2d79b"/></g></svg>
+    <ol><li aria-current="step">Water</li><li>Porch</li><li>Inside</li></ol>
+    <p class="say" id="say">From the water, looking at the shore.</p>
+  </div>
+  <p class="scrollcue" id="cue"><i></i>Scroll to walk up to the house</p>
+  <div class="loadbar" id="loadbar"></div>
+</section>
+<noscript><div class="stills" aria-label="The walk in, as three stills">
+  <figure><img src="frames/f000.webp" width="1024" height="576" alt="Little Kettle Lake from the water" loading="lazy"><figcaption>From the water.</figcaption></figure>
+  <figure><img src="frames/f036.webp" width="1024" height="576" alt="The wooden house from below, with the stair and the porch" loading="lazy"><figcaption>Up to the porch.</figcaption></figure>
+  <figure><img src="frames/f071.webp" width="1024" height="576" alt="Inside the glass room, with a daybed and the view out" loading="lazy"><figcaption>Inside.</figcaption></figure>
+</div></noscript>
+<div class="stills" id="stills" hidden></div>
+
+<!-- 2. facts -->
+<section class="sec" id="house" aria-labelledby="house-h">
+  <div class="facts">
+    <div>
+      <h2 id="house-h">Sleeps five. Thirty steps to the water.</h2>
+      <p class="lede">Kettle Point is a wood-and-glass house on Little Kettle Lake. The woodstove is in the glass room, the coffee is in the kitchen corner, and the day starts on the jetty. We live in town and we answer the phone.</p>
+      <p><a class="btn" href="#book">Check availability</a></p>
+    </div>
+    <ul class="key" aria-label="The house at a glance">
+      <li><b>Sleeps</b><span>Five: one bed in the bedroom, two daybeds in the glass room, two mattresses in the loft</span></li>
+      <li><b>Check-in</b><span>4:00 pm, self check-in with a code we text the day before</span></li>
+      <li><b>Check-out</b><span>10:00 am</span></li>
+      <li><b>Minimum stay</b><span>Two nights (sample)</span></li>
+      <li><b>Pets</b><span>Dogs welcome, up to two</span></li>
+      <li><b>Parking</b><span>Two cars on the gravel by the steps</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 3. 360 tour -->
+<section class="tour" id="tour" aria-labelledby="tour-h">
+  <div class="head">
+    <h2 id="tour-h">Walk it room by room</h2>
+    <p>Drag to look around. Tap a ring to step into the next room. Arrow keys work, and so does Tab then Enter on a ring.</p>
+  </div>
+  <div class="vr" id="vr">
+    <nav class="vr-rail" aria-label="Rooms">
+      <h3>Rooms</h3>
+      <ul id="rooms"></ul>
+    </nav>
+    <div class="vr-stage">
+      <img class="vr-poster" src="pano/living-thumb.jpg" width="512" height="256" alt="" aria-hidden="true">
+      <div class="vr-load" id="vrload"><div><p>Loading the glass room.</p></div></div>
+      <div id="pano" role="application" aria-label="360 degree room viewer. Drag or use the arrow keys to look around."></div>
+      <div class="vr-tip">Drag to look. Rings move you.</div>
+      <div class="vr-book"><a class="btn" href="#book">Check availability</a></div>
+      <div class="here" aria-live="polite">
+        <svg class="compass" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="24" fill="none" stroke="#35314a"/><path id="wedge" d="M28 28L16 6A24 24 0 0 1 40 6Z" fill="#b9a4e0" opacity=".9"/><circle cx="28" cy="28" r="2.5" fill="#ebe8f3"/></svg>
+        <div><p class="t" id="roomName">Glass room</p><p class="h" id="roomHint"></p></div>
+      </div>
+    </div>
+  </div>
+  <div class="vr-flat" id="flat">
+    <p class="note" id="flatnote">The 360 viewer needs JavaScript and WebGL. Here are the rooms as flat pictures instead.</p>
+    <ul>
+      <li><img src="pano/living.jpg" width="3584" height="1792" alt="The glass room, as a flat wide picture" loading="lazy"><p>Glass room: daybeds, woodstove, the view out. The kitchen corner is on the right side of the same room.</p></li>
+      <li><img src="pano/loft.jpg" width="3584" height="1792" alt="The pine loft, as a flat wide picture" loading="lazy"><p>Loft: two mattresses under the roof.</p></li>
+      <li><img src="pano/bedroom.jpg" width="3584" height="1792" alt="The bedroom, as a flat wide picture" loading="lazy"><p>Bedroom: a bed, a desk, a door to the balcony.</p></li>
+      <li><img src="pano/dock.jpg" width="3584" height="1792" alt="The stone jetty and the lake, as a flat wide picture" loading="lazy"><p>Stone jetty.</p></li>
+      <li><img src="pano/shore.jpg" width="3584" height="1792" alt="The point and the lake, as a flat wide picture" loading="lazy"><p>The point.</p></li>
+    </ul>
+  </div>
+  <div class="after"><a class="btn" href="#book">Check availability</a><span>Not a real house: these rooms are free sample panoramas from different places (see Credits).</span></div>
+</section>
+
+<!-- 4. gallery -->
+<section class="gal" id="gallery" aria-labelledby="gal-h">
+  <h2 id="gal-h">Look closer</h2>
+  <p class="sub">Tap any photo to open it large. Arrow keys move between photos.</p>
+  <div class="mosaic" id="mosaic">
+    <button class="a" type="button" data-lg="img/cabin-lg.webp" data-cap="The house from the path"><img src="img/cabin-sm.webp" width="720" height="480" loading="lazy" decoding="async" alt="The wooden house with a balcony and a stair, seen from the path"></button>
+    <button class="b" type="button" data-lg="img/glass-lg.webp" data-cap="The glass room, daybeds by the windows"><img src="img/glass-sm.webp" width="720" height="480" loading="lazy" decoding="async" alt="A daybed with cushions and a telescope in front of tall glass windows"></button>
+    <button class="c" type="button" data-lg="img/table-lg.webp" data-cap="Dinner table, stove and the stone wall"><img src="img/table-sm.webp" width="720" height="480" loading="lazy" decoding="async" alt="A wooden table with white chairs next to a woodstove and a stone wall"></button>
+    <button class="d" type="button" data-lg="img/loft-lg.webp" data-cap="The loft under the pine roof"><img src="img/loft-sm.webp" width="720" height="480" loading="lazy" decoding="async" alt="A pine-lined loft with skylights, bean bags and a wooden hoop"></button>
+    <button class="e" type="button" data-lg="img/beams-lg.webp" data-cap="Beams and the iron chandelier"><img src="img/beams-sm.webp" width="720" height="480" loading="lazy" decoding="async" alt="Curved pine ceiling with dark beams and an iron chandelier"></button>
+    <button class="f" type="button" data-lg="img/bedroom-lg.webp" data-cap="The bedroom"><img src="img/bedroom-sm.webp" width="720" height="480" loading="lazy" decoding="async" alt="A double bed with red cushions, a lantern light and a sliding door to the balcony"></button>
+    <button class="g" type="button" data-lg="img/balcony-lg.webp" data-cap="The balcony door"><img src="img/balcony-sm.webp" width="720" height="480" loading="lazy" decoding="async" alt="A sliding glass door open to a balcony and trees beyond"></button>
+    <button class="h" type="button" data-lg="img/jetty-lg.webp" data-cap="The stone jetty"><img src="img/jetty-sm.webp" width="720" height="480" loading="lazy" decoding="async" alt="A stone jetty reaching into calm water with low hills across the lake"></button>
+    <button class="i" type="button" data-lg="img/point-lg.webp" data-cap="The point, late morning"><img src="img/point-sm.webp" width="720" height="480" loading="lazy" decoding="async" alt="A rocky point with trees and open lake water"></button>
+  </div>
+</section>
+<dialog class="lb" id="lb" aria-label="Photo viewer">
+  <div class="lb-in">
+    <button class="x" type="button" aria-label="Close photo">&times;</button>
+    <button class="pv" type="button" aria-label="Previous photo">&lsaquo;</button>
+    <button class="nx" type="button" aria-label="Next photo">&rsaquo;</button>
+    <figure><img id="lbimg" alt="" width="1600" height="1067"><figcaption id="lbcap"></figcaption></figure>
+  </div>
+</dialog>
+
+<!-- 5. amenities -->
+<section class="amen" id="amenities" aria-labelledby="am-h">
+  <div class="wrap">
+    <div class="amen-l"><h2 id="am-h">What is in the house</h2>
+      <figure class="amen-pic"><img src="img/beams-sm.webp" width="720" height="480" loading="lazy" decoding="async" alt="The pine loft ceiling with dark beams and an iron chandelier"></figure></div>
+    <dl>
+      <div><dt>Water</dt><dd>Stone jetty for swimming and tying up a boat. A canoe and two paddles on the rack. Life jackets by the door in every size.</dd></div>
+      <div><dt>Warmth</dt><dd>A woodstove with split wood in the shed. Baseboard heat in every room. Extra blankets in the loft.</dd></div>
+      <div><dt>Kitchen</dt><dd>Gas stove, full fridge, kettle and drip coffee. Pots, pans and plates for five.</dd></div>
+      <div><dt>Sleep</dt><dd>One bed, two daybeds and two loft mattresses. Linens and towels are here when you arrive.</dd></div>
+      <div><dt>Outside</dt><dd>A balcony off the bedroom, a fire ring, and parking for two cars.</dd></div>
+      <div><dt>Connected</dt><dd>Wifi at the table and in the loft. Cell signal is patchy on the point. One TV, in the bedroom.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- 6. location -->
+<section class="where" id="where" aria-labelledby="wh-h">
+  <div class="wrap">
+    <figure style="margin:0">
+      <svg class="map" viewBox="0 0 800 540" role="img" aria-labelledby="mapt mapd">
+        <title id="mapt">Hand-drawn map of Little Kettle Lake</title>
+        <desc id="mapd">The lake with depth contours, the house on the north-east shore with a jetty, County Road 12 running to the village of Birch Landing in the south-west, and a trailhead and boat launch along the road.</desc>
+        <defs>
+          <path id="lake" d="M250 150C300 90 400 80 470 110C540 140 600 120 650 170C700 220 690 300 640 350C590 400 520 380 470 420C410 465 330 450 280 400C230 350 250 320 210 280C170 240 200 200 250 150Z"/>
+          <clipPath id="lakeclip"><use href="#lake"/></clipPath>
+        </defs>
+        <rect width="800" height="540" fill="#0f0e16"/>
+        <g fill="none" stroke="#26233a" stroke-width="1">
+          <path d="M0 80C120 60 200 90 300 50S520 20 800 60"/><path d="M0 110C130 95 210 120 310 82S530 52 800 92"/>
+          <path d="M0 470C150 500 260 480 380 515S640 500 800 520"/><path d="M0 440C160 470 270 450 390 485S650 470 800 490"/>
+          <path d="M700 0C690 90 740 180 800 200"/><path d="M730 0C725 80 770 150 800 165"/>
+        </g>
+        <use href="#lake" fill="#262a4d" stroke="#8d94cf" stroke-width="2"/>
+        <g clip-path="url(#lakeclip)" fill="none" stroke="#8d94cf" stroke-opacity=".5" stroke-width="1.2">
+          <use href="#lake" transform="translate(470 270) scale(.8) translate(-470 -270)"/>
+          <use href="#lake" transform="translate(470 270) scale(.6) translate(-470 -270)"/>
+          <use href="#lake" transform="translate(470 270) scale(.4) translate(-470 -270)"/>
+          <use href="#lake" transform="translate(470 270) scale(.2) translate(-470 -270)"/>
+        </g>
+        <text x="440" y="250" fill="#b4afc6" font-size="15" text-anchor="middle" font-style="italic">Little Kettle Lake</text>
+        <text x="440" y="270" fill="#8f8aa6" font-size="12" text-anchor="middle">deepest about 40 ft (sample)</text>
+        <!-- road -->
+        <path d="M60 500C120 440 170 430 215 400C250 375 255 330 290 305" fill="none" stroke="#b4afc6" stroke-width="2.4" stroke-dasharray="9 6"/>
+        <path d="M215 400C250 430 340 480 430 470C520 460 600 470 660 440C700 420 700 395 690 375" fill="none" stroke="#b4afc6" stroke-width="2.4" stroke-dasharray="9 6"/>
+        <text x="72" y="452" fill="#b4afc6" font-size="12" transform="rotate(-38 72 452)">County Road 12</text>
+        <!-- village -->
+        <g transform="translate(60 505)"><rect x="-8" y="-8" width="16" height="16" fill="#14131c" stroke="#ebe8f3" stroke-width="2"/><text x="18" y="5" fill="#ebe8f3" font-size="14">Birch Landing (made up)</text></g>
+        <!-- trailhead + boat launch -->
+        <g transform="translate(215 400)"><circle r="6" fill="#14131c" stroke="#ebe8f3" stroke-width="2"/><text x="-12" y="-14" fill="#ebe8f3" font-size="13" text-anchor="end">Trailhead</text></g>
+        <g transform="translate(520 462)"><circle r="6" fill="#14131c" stroke="#ebe8f3" stroke-width="2"/><text x="0" y="28" fill="#ebe8f3" font-size="13" text-anchor="middle">Public boat launch</text></g>
+        <!-- house + jetty + path -->
+        <path d="M690 375C672 345 660 330 640 316" fill="none" stroke="#f2d79b" stroke-width="2" stroke-dasharray="3 4"/>
+        <path d="M640 316L612 300" stroke="#ebe8f3" stroke-width="5" stroke-linecap="round"/>
+        <g transform="translate(690 368)">
+          <circle r="22" fill="#f2d79b" opacity=".18"/><circle r="12" fill="#f2d79b" opacity=".3"/>
+          <path d="M-6 -2h12l2 12h-16z M-4 -8a4 4 0 0 1 8 0" fill="none" stroke="#f2d79b" stroke-width="2" stroke-linejoin="round"/>
+          <text x="-14" y="30" fill="#f2d79b" font-size="16" font-weight="600" text-anchor="middle">Kettle Point</text>
+        </g>
+        <text x="602" y="322" fill="#ebe8f3" font-size="13" text-anchor="end">Stone jetty</text>
+        <!-- north + scale -->
+        <g transform="translate(740 60)" fill="none" stroke="#b4afc6" stroke-width="1.6"><path d="M0 24V-18M-7 -8L0 -20L7 -8"/><text x="0" y="42" fill="#b4afc6" stroke="none" font-size="13" text-anchor="middle">N</text></g>
+        <g transform="translate(40 40)" stroke="#b4afc6" stroke-width="2"><path d="M0 0h100M0 -5v10M50 -4v8M100 -5v10"/><text x="0" y="22" fill="#b4afc6" stroke="none" font-size="12">0 to half a mile (not to scale)</text></g>
+      </svg>
+    </figure>
+    <div>
+      <h2 id="wh-h">Where it is</h2>
+      <p>On the north-east shore, at the end of a gravel drive off County Road 12. The village is a short drive and the trail starts down the road.</p>
+      <ul class="drive" aria-label="Sample distances">
+        <li><span>Birch Landing market and gas</span><span>12 min drive</span></li>
+        <li><span>Trailhead</span><span>4 min drive</span></li>
+        <li><span>Public boat launch</span><span>7 min drive</span></li>
+        <li><span>Jetty</span><span>30 steps</span></li>
+      </ul>
+      <p class="addr">Example Road, Kettle Point, NY 00000. Not a real address. A real listing sends the exact address after booking.</p>
+      <p><a class="btn" href="#book">Check availability</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- 6b. one more crafted moment: the light on the water changes as you scroll past -->
+<section class="band" id="light" aria-label="The jetty from morning to evening">
+  <img src="img/jetty-lg.webp" width="1600" height="1067" loading="lazy" decoding="async" alt="The stone jetty reaching into calm water, low hills across the lake">
+  <div class="tint" aria-hidden="true"></div>
+  <div class="warm" aria-hidden="true"></div>
+  <div class="band-copy">
+    <h2>Thirty steps down at seven. Thirty steps back up when the lamp is lit.</h2>
+    <p><a class="btn" href="#book">Check availability</a></p>
+  </div>
+</section>
+
+<!-- 7. rates + booking -->
+<section class="book" id="rates" aria-labelledby="book-h">
+  <div class="wrap">
+    <div>
+      <p class="tag">Sample prices, made up for this demo</p>
+      <h2 id="book-h">Rates and times</h2>
+      <ul class="rates" aria-label="Sample rates">
+        <li><span>Weeknight, Sun to Thu</span><b>from $240</b></li>
+        <li><span>Weekend night, Fri and Sat</span><b>from $320</b></li>
+        <li><span>Full week, 7 nights</span><b>from $1,500</b></li>
+        <li><span>Cleaning fee, once per stay</span><b>$120</b></li>
+        <li><span>Dog fee, once per stay</span><b>$40</b></li>
+      </ul>
+      <dl class="times">
+        <div><dt>Check-in</dt><dd>4:00 pm</dd></div>
+        <div><dt>Check-out</dt><dd>10:00 am</dd></div>
+      </dl>
+      <p class="callbox"><a href="tel:+15550100142">(555)&#8209;010&#8209;0142</a></p>
+      <p class="sm">Example number. A real site puts the owner's own line here, and tapping it on a phone calls it. Or write to <a href="mailto:example@example.com">example@example.com</a> (example address).</p>
+    </div>
+    <form class="inq" id="book" aria-labelledby="form-h" autocomplete="off" novalidate>
+      <h3 id="form-h" class="full" style="font-size:1.7rem">Check availability</h3>
+      <p class="demo full"><strong>Demo form.</strong> Nothing is sent, saved or stored. A live site connects this to the owner's calendar or inbox.</p>
+      <div><label for="in">Arrive</label><input id="in" name="arrive" type="date" required></div>
+      <div><label for="out">Leave</label><input id="out" name="leave" type="date" required></div>
+      <div><label for="gu">Guests</label><select id="gu" name="guests"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option></select></div>
+      <div><label for="nm">Your name</label><input id="nm" name="name" type="text" required autocomplete="off"></div>
+      <div class="full"><label for="em">Email</label><input id="em" name="email" type="email" required autocomplete="off"></div>
+      <div class="full"><label for="ms">Message</label><textarea id="ms" name="message" placeholder="Dogs? Arriving late? Ask anything."></textarea></div>
+      <div class="full"><button class="btn" type="button" id="send">Send inquiry (demo)</button><output id="out-msg" role="status" aria-live="polite"></output></div>
+    </form>
+  </div>
+</section>
+
+<!-- 8. FAQ -->
+<section class="faq" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <h2 id="faq-h">Questions people ask</h2>
+    <details><summary>Can we bring the dog?</summary><p>Yes, up to two dogs. There is a $40 fee per stay (sample). Keep them off the beds and the daybeds. For any other animal, call first.</p></details>
+    <details><summary>Where do we park?</summary><p>Two cars fit on the gravel by the steps. A third can pull onto the shoulder of the drive. Please leave the turnaround clear so the plow and the propane truck can get in.</p></details>
+    <details><summary>How does check-in work?</summary><p>Check-in is from 4:00 pm. We text you a lockbox code the day before. Check-out is 10:00 am. If nobody arrives after you, we can often give a later check-out. Ask when you book.</p></details>
+    <details><summary>Is there wifi?</summary><p>Yes, at the dining table and in the loft. It is fine for email and a video call. We do not promise speeds, and cell signal is patchy on the point.</p></details>
+    <details><summary>What is the cancellation policy?</summary><p>Sample policy: full refund up to 14 days before arrival, half up to 7 days before, nothing after that. A real listing states the owner's own rules here.</p></details>
+    <details><summary>Is it safe to swim?</summary><p>The jetty is stone and the water gets deep fast past the end. Children need an adult at the water. Life jackets hang by the front door, and the lake emergency number is on the fridge.</p></details>
+    <details><summary>Can we have a fire?</summary><p>In the fire ring only, with the wood from the shed. When the county posts a burn ban we put a note on the door and the ring is off limits.</p></details>
+    <details><summary>Do you allow parties or events?</summary><p>No. Five guests overnight at most, and quiet hours are 10 pm to 7 am.</p></details>
+  </div>
+</section>
+
+<!-- 9. trust, with no invented reviews -->
+<section class="trust" id="trust" aria-labelledby="tr-h">
+  <div class="wrap">
+    <h2 id="tr-h">House rules, cleaning and safety</h2>
+    <div>
+      <h3>House rules</h3>
+      <ul>
+        <li>Five guests overnight at most</li>
+        <li>No parties or events</li>
+        <li>Quiet hours 10 pm to 7 am</li>
+        <li>No smoking inside</li>
+        <li>Dogs from the list only, off the beds</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Cleaning and safety</h3>
+      <ul>
+        <li>Linens washed and the kitchen wiped down between stays</li>
+        <li>Smoke and carbon monoxide alarms tested before each stay</li>
+        <li>Fire extinguisher by the woodstove, first aid kit in the kitchen</li>
+        <li>Life jackets by the door in every size</li>
+        <li>Example list: a real owner writes their own</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Your host</h3>
+      <div class="slot">
+        <div class="host"><i aria-hidden="true"></i><p style="margin:0">Host photo and first name go here (example).<br>Replies within a day (example).</p></div>
+        <h3 style="margin-top:1em">Your reviews here</h3>
+        <p style="margin:0">Real guest reviews go in this space after real stays. We never write them for you, and this demo shows none.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. credits -->
+<section class="credits" id="credits" aria-labelledby="cr-h">
+  <div class="wrap">
+    <h2 id="cr-h">Credits</h2>
+    <p>This is a design example. Kettle Point and Little Kettle Lake are made up. The pictures are free sample panoramas from different places, put together to show how the tools work. A real site uses the owner's own photos.</p>
+    <ul>
+      <li>Walk-in frames and all photos are views cut from CC0 (public domain) panoramas by Poly Haven, color-adjusted and cropped.</li>
+      <li>Lakeside (lake and point) and Small Harbour Morning (jetty): Greg Zaal; Small Harbour Morning processing: Jarod Guest. polyhaven.com/a/lakeside, polyhaven.com/a/small_harbour_morning</li>
+      <li>Wooden Motel (the house from outside) and Pine Attic (loft): Sergej Majboroda. polyhaven.com/a/wooden_motel, polyhaven.com/a/pine_attic</li>
+      <li>Glasshouse Interior (glass room, kitchen corner): Dario Barresi. polyhaven.com/a/glasshouse_interior</li>
+      <li>Relax Inn Seaview Suite (bedroom): photography Dario Barresi, processing Jenelle van Heerden. polyhaven.com/a/relax_inn_seaview_suite</li>
+      <li>Software, self-hosted: Pannellum 2.5.6 (MIT), GSAP 3.13.0 and ScrollTrigger (GreenSock standard no-charge license). Fonts: Jost and Hanken Grotesk (SIL Open Font License, from Google Fonts, self-hosted).</li>
+    </ul>
+    <p>Full list with licenses and file hashes: assets/CREDITS.md in the sample folder.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p><strong>Example design - not a real client.</strong> Kettle Point Lake House is a made-up property used to show what a Collar City Tech Help website can do. No bookings, no reviews, no real prices.</p>
+  <p>Sample by <a href="https://collarcitytechhelp.com/websites/">Collar City Tech Help</a>, based in Troy, NY. <a href="https://collarcitytechhelp.com/privacy/">Privacy</a>, <a href="https://collarcitytechhelp.com/terms/">Terms</a>, <a href="https://collarcitytechhelp.com/refunds/">Refunds</a>.</p>
+  <p>Designed and built by Alex using modern tools, including AI. Every website is personally reviewed before it goes live. We provide general guidance, not legal advice, and no service can guarantee you'll never be hacked.</p>
+</footer>
+
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="js/site.js" defer></script>
+</body>
+</html>
