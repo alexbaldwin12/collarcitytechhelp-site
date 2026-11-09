@@ -14,3 +14,7 @@ CLAUDE.md
 !samples/lakehouse-example/media/*.webm
 !samples/repair-shop-example/media/*.mp4
 !samples/repair-shop-example/media/*.webm
+
+# Alex overrule (Nov 9 2026): the two example-section preview clips (small copies, under 700 KB each)
+!assets/showcase/*.mp4
+!assets/showcase/*.webm
