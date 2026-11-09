@@ -42,6 +42,28 @@
     });
   });
 
+  /* ---------- season switcher: real photographs cross-fade, text swaps. Instant under reduced motion. ---------- */
+  var seas = $('#seas');
+  if (seas) {
+    var SE = {
+      summer: ['Summer on the dock', 'Swim before breakfast, paddle at dawn, eat outside until the mosquitoes win. July fills first, so book early.', '$290', 'stay.html#calendar', 'Pick dates'],
+      fall: ['Fall color', 'Maples turn the far shore red and the stove is lit by 5 pm. The quiet weekends go quickly in October.', '$270', 'fall-foliage-weekend-cabin.html', 'Read more'],
+      winter: ['Winter woodstove', 'Snow on the dock, a house that stays warm, and a long afternoon with a book by the stove.', '$240', 'winter-woodstove-getaway.html', 'Read more']
+    };
+    var figs = $$('figure', seas), sb = $$('.seas-tabs button', seas), txt = $('.seas-txt', seas), busy = null;
+    var setS = function (k) {
+      var fg = figs.filter(function (f) { return f.getAttribute('data-s') === k; })[0]; if (!fg || fg.classList.contains('on')) return;
+      sb.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-s') === k ? 'true' : 'false'); });
+      var im = $('img', fg), ready = im && im.decode ? im.decode().catch(function () {}) : Promise.resolve();
+      ready.then(function () {
+        figs.forEach(function (f) { f.classList.toggle('on', f === fg); });
+        var put = function () { var x = SE[k]; $('#seas-h').textContent = x[0]; $('#seas-p').textContent = x[1]; $('#seas-r b').textContent = x[2]; var a = $('#seas-a'); a.href = x[3]; a.textContent = x[4]; txt.classList.remove('swap'); };
+        if (RM) put(); else { txt.classList.add('swap'); clearTimeout(busy); busy = setTimeout(put, 330); }
+      });
+    };
+    sb.forEach(function (b) { b.addEventListener('click', function () { setS(b.getAttribute('data-s')); }); });
+  }
+
   /* ---------- the walk in ---------- */
   if (RM || !window.gsap || !window.ScrollTrigger || !root.classList.contains('js')) return;
   gsap.registerPlugin(ScrollTrigger);
