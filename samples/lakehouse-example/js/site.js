@@ -90,7 +90,7 @@
   var form = $('#book-form');
   if (form) {
     var q = new URLSearchParams(location.search), ar = q.get('arrive'), lv = q.get('leave'), gu = q.get('guests');
-    if (parse(ar) && parse(lv)) { $('#f-in').value = ar; $('#f-out').value = lv; var n = $('#prefill'); if (n) { n.hidden = false; n.textContent = 'Dates filled in from the calendar: ' + ar + ' to ' + lv + '.'; } }
+    if (parse(ar) && parse(lv)) { $('#f-in').value = ar; $('#f-out').value = lv; var n = $('#prefill'); if (n) { n.hidden = false; var tt = q.get('total'); n.textContent = 'Dates filled in from the calendar: ' + ar + ' to ' + lv + '.' + (tt && /^\d{2,5}$/.test(tt) ? ' Sample total $' + tt + ' (made up).' : ''); } }
     if (gu && /^[1-5]$/.test(gu)) $('#f-guests').value = gu;
     form.addEventListener('submit', function (e) {
       e.preventDefault();

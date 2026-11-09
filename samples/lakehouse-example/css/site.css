@@ -260,14 +260,27 @@ h2.h{font-size:clamp(2rem,4.6vw,4rem);margin-bottom:.6em;max-width:14ch}
 .cal-grid button{aspect-ratio:1;min-height:40px;background:transparent;color:var(--mist);border:1px solid transparent;border-radius:3px;font:600 .98rem var(--text);cursor:pointer;position:relative}
 .cal-grid button:hover:not(:disabled){border-color:var(--lantern)}
 .cal-grid button:disabled{color:#5d6679;text-decoration:line-through;cursor:not-allowed}
-.cal-grid button.in{background:rgba(255,226,166,.18);border-radius:0}
-.cal-grid button.end{background:var(--lantern);color:var(--ink);border-radius:3px}
+.cal-grid button{isolation:isolate}
+.cal-grid button.in{border-radius:0}
+.cal-grid button.in::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(255,226,166,.3);transform-origin:left;animation:sweep .4s var(--ease) both;animation-delay:calc(var(--k,0)*55ms)}
+.cal-grid button.end{background:var(--lantern);color:var(--ink);border-radius:3px;animation:pop .35s var(--ease) both}
+.cal-grid.flip button{animation:dayflip .55s var(--ease) both;animation-delay:calc(var(--i,0)*16ms);transform-origin:50% 0}
+.cal-grid.flip button.end{animation:dayflip .55s var(--ease) both,pop .35s var(--ease) .6s both}
+@keyframes dayflip{from{opacity:0;transform:perspective(380px) rotateX(-88deg)}to{opacity:1;transform:none}}
+@keyframes pop{from{transform:scale(.72)}to{transform:none}}
+@keyframes sweep{from{transform:scaleX(0)}to{transform:none}}
 .cal-grid button.fri::after{content:"";position:absolute;left:50%;bottom:4px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--fog)}
 .cal-grid .pad{visibility:hidden}
 .cal-sum{margin-top:18px;border-top:1px solid var(--line);padding-top:16px;min-height:96px}
 .cal-sum dl{margin:0;display:grid;grid-template-columns:1fr auto;gap:6px 14px}
 .cal-sum dt{color:var(--fog)}.cal-sum dd{margin:0;text-align:right;font-weight:600}
-.cal-sum .tot{font:800 1.6rem var(--display);letter-spacing:-.03em;color:var(--lantern)}
+.cal-quick{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:16px}
+.cal-quick .k{margin-right:4px}
+.cal-quick button{min-height:40px;padding:0 14px;border:1.5px solid rgba(233,237,243,.35);border-radius:999px;background:transparent;color:var(--mist);font:600 .92rem var(--text);cursor:pointer;transition:border-color .25s,color .25s}
+.cal-quick button:hover{border-color:var(--lantern);color:var(--lantern)}
+.cal-sum.pop dl{animation:rise2 .45s ease both}
+.rm .cal-grid button,.rm .cal-grid button::before,.rm .cal-sum dl{animation:none!important}
+.cal-sum .tot{font-variant-numeric:tabular-nums;font:800 1.6rem var(--display);letter-spacing:-.03em;color:var(--lantern)}
 .cal-key{display:flex;gap:16px;flex-wrap:wrap;font-size:.85rem;color:var(--fog);margin-top:12px}
 
 /* tour page */
