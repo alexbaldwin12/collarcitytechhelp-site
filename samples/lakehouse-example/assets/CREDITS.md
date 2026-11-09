@@ -60,3 +60,15 @@ Sizes: 1920 mp4 1.4-1.7 MB, 960 mp4 0.36-0.44 MB; WebM 1.8-2.9 MB at 1920 (hero-
 | in-dining | 7163611 interior-of-kitchen-in-rustic-style-house | Bertelli Fotografia | dining table by a stone wall |
 | in-bedroom-wood | 5439495 bedroom-of-a-wooden-house | Michael Gault | wood bedroom with window |
 The four Bertelli Fotografia interiors (hearth bedroom, stone bedroom, kitchens, dining) are one cabin, one shoot. Season variants: summer (hero-2/3, ext-summer-aerial), fall (ext-autumn-dock), winter (winter-*, ext-winter-*), dawn (ext-dawn-dock), dusk (hero-1, ext-dusk-cabin), night (ext-night-lodge). Rejected: clips of tiny houses behind modern lakes with identifiable boats/brands, fish-farm and city lake clips, portrait-only winter clips, photos with brand signs.
+
+## Round 1: real 360 interiors (item 7, Nov 9 2026)
+Real equirectangular photographs from Poly Haven, CC0 (public domain, https://polyhaven.com/license). Source: api.polyhaven.com/files/<id> "tonemapped" JPG (8192x4096), resized to 3584x1792 (q72, progressive), 2048x1024 for phones (-2048), 512x256 thumbs (-thumb). Files pano/real-<name>(.jpg | -2048.jpg | -thumb.jpg). Only edit: lythwood_lounge got a small white-balance correction (less yellow). HONEST LIMIT: six different real buildings (a South African country house, a lodge, a wooden hall, a glasshouse, a hotel suite), chosen for wood, warm light and residential feel; they are not one house, so the tour page must keep its sample label and never say they are Kettle Point.
+| File | Poly Haven asset (page) | Author | Look |
+|---|---|---|---|
+| real-living | wooden_lounge https://polyhaven.com/a/wooden_lounge | per asset page (Poly Haven contributors) | wood-panelled lounge, sectional sofa |
+| real-loft | pine_attic https://polyhaven.com/a/pine_attic | per asset page | pine-lined attic room, skylights |
+| real-bedroom | lythwood_room https://polyhaven.com/a/lythwood_room | per asset page | bedroom with fireplace and window |
+| real-sitting | lythwood_lounge https://polyhaven.com/a/lythwood_lounge | per asset page | warm sitting room |
+| real-openplan | glasshouse_interior https://polyhaven.com/a/glasshouse_interior | Dario Barresi | open plan with bed, dining table, stove, big windows |
+| real-suite | relax_inn_seaview_suite https://polyhaven.com/a/relax_inn_seaview_suite | per asset page | bedroom with balcony |
+Sizes: 3584 files 403-859 KB, 2048 files 150-280 KB, thumbs 16-25 KB. Hotspot yaw/pitch for the new rooms is NOT placed yet (item 21 builds the tour with these); the old CG-made pano/ files stay until the item 17/21 swap.
