@@ -1,7 +1,7 @@
 /* Interactive 3D car (three.js r170, self-hosted). Loaded only when the stage nears the viewport.
-   Model: "Ferrari 458 Italia" by vicent091036 (see assets/CREDITS.md). It has separate nodes for wheels, tyres, brakes, glass, interior.
-   Engine / suspension / battery / fluids are NOT modelled inside the car, so those hotspots are placed on the body and
-   a clearly illustrative "x-ray" overlay (amber outlines) shows roughly where the parts live. */
+   Model: "Car Concept" (Khronos glTF-Sample-Assets, CC BY 4.0, see assets/CREDITS.md), optimised and logo-free. It has separate nodes for wheels, tyres,
+   brake discs and pads, glass, interior, and a simplified engine. Suspension / battery / fluids are NOT modelled, so those hotspots sit on the body and
+   a clearly illustrative "x-ray" overlay (amber outlines) shows roughly where they live. */
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
@@ -34,58 +34,53 @@ export async function start(stageEl, canvasHost, hotsEl, onPick, onReady) {
   // model
   const dr = new DRACOLoader(); dr.setDecoderPath('vendor/draco/');
   const gl = new GLTFLoader(); gl.setDRACOLoader(dr);
-  const gltf = await gl.loadAsync('models/coupe.glb');
-  const car = gltf.scene; car.rotation.y = Math.PI; // nose toward +Z
-  const mats = {
-    body: new THREE.MeshPhysicalMaterial({ color: 0xc9ccd0, metalness: 1, roughness: .42, clearcoat: 1, clearcoatRoughness: .03 }),
-    detail: new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 1, roughness: .5 }),
-    glass: new THREE.MeshPhysicalMaterial({ color: 0xffffff, metalness: .25, roughness: 0, transmission: 1 })
-  };
-  const swap = { Body_Color: mats.body, metal_gray: mats.detail, metal_chrome: mats.detail, Glass_Gray: mats.glass };
-  const shell = []; // materials that go ghostly in x-ray
-  car.traverse(o => { if (o.isMesh) { if (swap[o.material.name]) o.material = swap[o.material.name]; } });
+  const gltf = await gl.loadAsync('models/car.glb');
+  const car = gltf.scene;                       // nose toward +Z already
+  const shell = [];                              // paint and glass: go ghostly in x-ray
+  car.traverse(o => {
+    if (!o.isMesh) return;
+    const n = o.material.name || '';
+    if (/^Paint /.test(n)) { o.material = o.material.clone(); o.material.userData.o = o.material.opacity; shell.push(o.material); }
+    if (n === 'Glass') { o.material.userData.o = 1; shell.push(o.material); }
+  });
+  const uniq = [...new Set(shell)];
   scene.add(car); car.updateMatrixWorld(true);
-  const bb = new THREE.Box3().setFromObject(car), c0 = bb.getCenter(new THREE.Vector3());
+  const bb = new THREE.Box3().setFromObject(car);
   const sc = 4.5 / Math.max(bb.getSize(new THREE.Vector3()).x, bb.getSize(new THREE.Vector3()).z);
   car.scale.setScalar(sc); car.updateMatrixWorld(true);
   const b2 = new THREE.Box3().setFromObject(car), c2 = b2.getCenter(new THREE.Vector3());
   car.position.x -= c2.x; car.position.z -= c2.z; car.position.y -= b2.min.y; car.updateMatrixWorld(true);
   const mirror = car.clone(true); mirror.scale.y *= -1; mirror.position.y = -.004; scene.add(mirror);
-  mirror.traverse(o => { if (o.isMesh && !(o.material.name in swap)) { /* shares materials */ } });
-  [mats.body, mats.glass].forEach(m => { m.userData.o = m.opacity; });
-  const nodeBox = (pred) => { const b = new THREE.Box3(); let any = false; car.traverse(o => { if (pred(o)) { b.expandByObject(o); any = true; } }); return any ? b : null; };
-  const wheels = {}; car.traverse(o => { if (/^wheel_(fl|fr|rl|rr)$/.test(o.name)) { wheels[o.name] = new THREE.Box3().setFromObject(o).getCenter(new THREE.Vector3()); } });
-  // a wheel on the +x side, front and rear (nose is +z)
-  const pickSide = (front) => Object.values(wheels).filter(w => w.x > 0 && (front ? w.z > 0 : w.z < 0))[0] || new THREE.Vector3(.82, .36, front ? 1.15 : -1.48);
-  const wf = pickSide(true), wr = pickSide(false);
+  // model-space coordinates (metres, nose +Z, +X is the car's left) mapped into the scaled, centred scene
+  const L = (x, y, z) => car.localToWorld(new THREE.Vector3(x, y, z));
+  const nodeCtr = (name) => { const o = car.getObjectByName(name); return o ? new THREE.Box3().setFromObject(o).getCenter(new THREE.Vector3()) : null; };
+  const wf = nodeCtr('WheelFrontL') || L(.97, .38, 1.49), wr = nodeCtr('WheelRearL') || L(.97, .38, -1.31);
+  const disc = nodeCtr('WheelFrontLBrakeDisc') || wf;
 
-  // ghost overlay (illustrative, amber outlines)
+  // ghost overlay (illustrative, amber outlines): the model has a simplified engine, nothing else under the skin
   const ghost = new THREE.Group(); ghost.visible = false; scene.add(ghost);
   const lineM = new THREE.LineBasicMaterial({ color: 0xf0a83a, transparent: true, opacity: .95, depthTest: false });
   const fillM = new THREE.MeshBasicMaterial({ color: 0xf0a83a, transparent: true, opacity: .12, depthTest: false });
   const gparts = {};
-  function ghostBox(id, w, h, dp, x, y, z, shape) {
+  function ghostBox(id, w, h, dp, p, shape) {
     const g = shape === 'cyl' ? new THREE.CylinderGeometry(w, w, h, 20) : new THREE.BoxGeometry(w, h, dp);
     const m = new THREE.Mesh(g, fillM); const l = new THREE.LineSegments(new THREE.EdgesGeometry(g), lineM);
-    const grp = new THREE.Group(); grp.add(m, l); grp.position.set(x, y, z); grp.renderOrder = 10; m.renderOrder = l.renderOrder = 10; ghost.add(grp); (gparts[id] = gparts[id] || []).push(grp); return grp;
+    const grp = new THREE.Group(); grp.add(m, l); grp.position.copy(p); grp.renderOrder = 10; m.renderOrder = l.renderOrder = 10; ghost.add(grp); (gparts[id] = gparts[id] || []).push(grp); return grp;
   }
-  ghostBox('engine', .78, .5, .62, 0, .62, -1.2);          // engine block behind the seats
-  ghostBox('engine', .2, .34, 0, -.2, .98, -1.2, 'cyl'); ghostBox('engine', .2, .34, 0, .2, .98, -1.2, 'cyl');
-  ghostBox('battery', .3, .2, .2, .35, .5, 1.62);        // battery in the nose
-  ghostBox('oil', .1, .26, 0, .45, .55, -1.5, 'cyl'); ghostBox('oil', .16, .12, .3, -.4, .4, -1.45);
-  [wf, wr, new THREE.Vector3(-wf.x, wf.y, wf.z), new THREE.Vector3(-wr.x, wr.y, wr.z)].forEach(w => { const g = ghostBox('suspension', .06, .5, 0, w.x * .9, w.y + .42, w.z, 'cyl'); });
+  ghostBox('engine', .78, .5, .72, L(0, .46, 1.95));                       // engine bay block
+  ghostBox('battery', .34, .24, .22, L(-.62, .56, 2.12));                   // battery, front corner
+  ghostBox('oil', .1, .26, 0, L(.5, .5, 2.08), 'cyl'); ghostBox('oil', .18, .12, .3, L(.42, .26, 1.7)); // filter and oil pan
+  [wf, wr, new THREE.Vector3(-wf.x, wf.y, wf.z), new THREE.Vector3(-wr.x, wr.y, wr.z)].forEach(w => ghostBox('suspension', .06, .5, 0, new THREE.Vector3(w.x * .9, w.y + .42, w.z), 'cyl'));
   const gm = ghost.children;
 
-  // hotspots (positions from node boxes + estimates; normals are used to hide hotspots on the far side)
-  const brakeBox = nodeBox(o => o.name === 'brake' && new THREE.Box3().setFromObject(o).getCenter(new THREE.Vector3()).distanceTo(wf) < .3);
-  const tyreTop = new THREE.Vector3(wr.x + .08, wr.y + .3, wr.z);
+  // hotspots (positions from node boxes + estimates; normals hide hotspots on the far side)
   const HS = {
-    brakes: { p: (brakeBox ? brakeBox.getCenter(new THREE.Vector3()) : wf.clone()).add(new THREE.Vector3(.1, 0, 0)), n: [1, 0, 0], x: false, cam: [3.4, .75, 3.4], tg: [.8, .4, 1.1] },
-    tires: { p: tyreTop, n: [1, .3, 0], x: false, cam: [3.6, .8, -3.1], tg: [.8, .35, -1.4] },
-    suspension: { p: new THREE.Vector3(wf.x * .92, wf.y + .42, wf.z), n: [1, .6, 0], x: true, cam: [3.2, 1.0, 3.0], tg: [.7, .5, 1.1] },
-    engine: { p: new THREE.Vector3(0, .98, -1.18), n: [0, 1, -.3], x: true, cam: [-2.0, 2.4, -4.2], tg: [0, .6, -1.2] },
-    oil: { p: new THREE.Vector3(.5, .62, -1.55), n: [1, .3, -.6], x: true, cam: [3.0, 1.2, -3.8], tg: [.2, .5, -1.4] },
-    battery: { p: new THREE.Vector3(.3, .68, 1.68), n: [0, 1, .5], x: true, cam: [-1.8, 1.9, 4.4], tg: [.2, .5, 1.5] }
+    brakes: { p: disc.clone().add(new THREE.Vector3(.12, 0, 0)), n: [1, 0, 0], x: false, cam: [3.4, .8, 3.9], tg: [wf.x, .4, wf.z] },
+    tires: { p: new THREE.Vector3(wr.x + .1, wr.y + .3, wr.z), n: [1, .3, 0], x: false, cam: [3.7, .9, -3.2], tg: [wr.x, .38, wr.z] },
+    suspension: { p: new THREE.Vector3(wf.x * .92, wf.y + .46, wf.z), n: [1, .6, 0], x: true, cam: [3.4, 1.1, 3.4], tg: [wf.x * .8, .5, wf.z] },
+    engine: { p: L(0, .9, 1.75), n: [0, 1, .3], x: true, cam: [-2.2, 2.4, 5.0], tg: [0, .5, L(0, 0, 1.9).z] },
+    oil: { p: L(.55, .86, 2.12), n: [1, .6, .3], x: true, cam: [3.2, 1.5, 4.8], tg: [.3, .4, L(0, 0, 1.9).z] },
+    battery: { p: L(-.6, .86, 2.2), n: [-1, .6, .3], x: true, cam: [-3.3, 1.6, 4.6], tg: [-.4, .45, L(0, 0, 2).z] }
   };
   const LBL = { brakes: 'Brakes', tires: 'Tires', suspension: 'Suspension', engine: 'Engine', oil: 'Oil and fluids', battery: 'Battery' };
   const hotEls = {};
@@ -102,6 +97,7 @@ export async function start(stageEl, canvasHost, hotsEl, onPick, onReady) {
   ctl.touches = { ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_ROTATE };
   const HOME = { p: new THREE.Vector3(3.9, 1.35, 4.4), t: new THREE.Vector3(0, .5, 0) };
   cam.position.copy(HOME.p); ctl.target.copy(HOME.t); ctl.update();
+  const EYE = L(0, .95, .35);
   let tween = null, cabin = false, xray = false, active = false, visible = false, sel = null;
   const reduced = document.documentElement.classList.contains('rm');
   if (reduced) ctl.autoRotate = false;
@@ -117,12 +113,11 @@ export async function start(stageEl, canvasHost, hotsEl, onPick, onReady) {
   const ease = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
   function setXray(on) {
     xray = on; ghost.visible = on;
-    [mats.body, mats.glass].forEach(m => { m.transparent = on; m.opacity = on ? .2 : 1; m.depthWrite = !on; m.needsUpdate = true; });
-    mats.glass.transmission = on ? 0 : 1; need();
+    uniq.forEach(m => { m.transparent = on; m.opacity = on ? .2 : 1; m.depthWrite = !on; if ('transmission' in m && m.name === 'Glass') m.transmission = on ? 0 : 1; m.needsUpdate = true; }); need();
   }
   function enterCabin() {
     cabin = true; setXray(false); ctl.autoRotate = false; ctl.enableZoom = false;
-    const eye = new THREE.Vector3(.34, 1.04, -.02);  // driver's seat, looking toward the nose
+    const eye = EYE.clone();  // seat position, looking toward the nose
     ctl.minDistance = ctl.maxDistance = .02; cam.near = .02; cam.fov = 70; cam.updateProjectionMatrix();
     ctl.rotateSpeed = -.45; ctl.maxPolarAngle = Math.PI * .85; ctl.minPolarAngle = .35;
     ctl.target.copy(eye.clone().add(new THREE.Vector3(0, -.012, .02))); cam.position.copy(eye);
