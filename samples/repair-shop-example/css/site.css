@@ -696,3 +696,4 @@ html:not(.js) .ba-r{clip-path:none;opacity:.0}
   .phone{width:min(210px,62%)}
 }
 .story-pin>.wrap{width:100%}
+@media (max-width:900px){.apv{width:min(190px,56%);font-size:12px}.apv .r{font-size:1.2rem}}
