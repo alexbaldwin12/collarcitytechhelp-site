@@ -30,3 +30,33 @@ See fonts/FONTS-LICENSE.txt.
 
 ## Not used
 No video or audio. No stock people. No reviews, ratings or testimonials. No map embeds (the map is hand-drawn SVG).
+
+## Round 1 real media (Nov 9 2026): Kettle Point, hard rule "zero home-made CG" (item 6)
+All Pexels, Pexels License (https://www.pexels.com/license/, free for commercial use, no attribution needed; credited anyway). Videos fetched from the Pexels CDN with file URLs taken from each video page; photos from images.pexels.com by id; photographer names from the Pexels download filenames or page. HONEST LIMIT: these are stock images from DIFFERENT lakes and houses (Pexels has no single-property lake-house shoot). The interior set below is one cabin from one photographer where possible; exterior clips and photos are other places. The page must not claim they are one property, and the sample stays labelled "Example design - not a real client". For a real client, swap in the client's own photos.
+### Hero loops (media/, MP4 + WebM, 1920 and 960 wide, no audio, GOP 24, posters JPG/WebP/AVIF)
+| Files | Source clip | Creator | Page | Edits |
+|---|---|---|---|---|
+| hero-1-* (dusk lake) | "Serene lake at sunset with floating structures" id 38663537 (shows a floating fish-farm raft, left of frame) | Mytho Digital | https://www.pexels.com/video/serene-lake-at-sunset-with-floating-structures-38663537/ | 6.9 s loop (1 s crossfade tail into head), light grade, vignette, no audio |
+| hero-2-* (cottage and dock) | "A small house sits on the edge of a lake" id 26615619 | IslandHopper X | https://www.pexels.com/video/a-small-house-sits-on-the-edge-of-a-lake-26615619/ | 8.4 s loop, graded toward a darker, warmer late-day look (not a real dusk), denoise, no audio |
+| hero-3-* (boathouse) | "A house sits on the edge of a lake" id 26569076 | IslandHopper X | https://www.pexels.com/video/a-house-sits-on-the-edge-of-a-lake-26569076/ | same grade and loop as hero-2 |
+| winter-* | "Scenic winter lakeside cabin aerial view" id 35002101 | Ahmet Yüksek | https://www.pexels.com/video/scenic-winter-lakeside-cabin-aerial-view-35002101/ | 7.8 s loop, light grade |
+Sizes: 1920 mp4 1.4-1.7 MB, 960 mp4 0.36-0.44 MB; WebM 1.8-2.9 MB at 1920 (hero-2 WebM is 2.9 MB, over the 2.5 MB target: serve the MP4 first or use the 960 file), 0.5-0.7 MB at 960. Posters 24-478 KB.
+### Photos (img/real/, WebP + JPG, 2400 and 1200 wide, <= 350 KB at 2400 (a 0.45 px blur was applied to seven grainy ones to meet that), resize only otherwise)
+| File prefix | Pexels id / page slug | Photographer | Use / alt text |
+|---|---|---|---|
+| ext-summer-aerial | 15533042 house-at-the-lake | Sujan Shan | summer; "Lake house with a wooden dock seen from above" |
+| ext-autumn-dock | 29155405 scenic-lake-view-with-autumn-foliage-and-boats | Calvin Wright | fall; "Wooden dock on a lake with autumn trees" |
+| ext-dawn-dock | 35194583 tranquil-lake-at-sunset-with-wooden-dock | Courtney Ra | dawn/dusk; "Calm lake at sunrise with a wooden dock and boathouse" |
+| ext-dusk-cabin | 35978646 peaceful-lakeside-cabin-at-twilight | Cara Denison | dusk; "Lit cabin by a lake at twilight" |
+| ext-night-lodge | 28271971 a-house-on-a-lake-at-night-with-snow | Eberhard Grossgasteiger | night; "Lit lodge reflected in a lake at night" |
+| ext-winter-lake | 36599763 serene-winter-lake-scene-with-snowy-cabin | Mete Bilmez | winter; "Snow-covered house across a lake" |
+| ext-winter-hut | 19171739 wooden-cabin-in-the-snow-by-a-lake | Landsmann | winter; "Wooden cabin in snow beside a lake" |
+| in-living-dusk | 34701790 cozy-interior-of-cabin-overlooking-lake-at-dusk | April Choitz | living room with lake windows, lamp lit |
+| in-fireplace | 36383159 cozy-living-room-with-christmas-decor-and-fireplace (Christmas bunting is in frame) | Matt Barnard | brick fireplace and lake view |
+| in-hearth-bedroom | 12513476 rustic-wooden-bedroom | Bertelli Fotografia | wood-lined bedroom with brick fireplace |
+| in-bedroom-stone | 7163597 soft-bed-in-rural-house | Bertelli Fotografia | bedroom with stone wall |
+| in-kitchen-wood | 9056668 inside-a-wooden-cabin | Bertelli Fotografia | wood kitchen and bar |
+| in-kitchen-stairs | 12513481 wooden-interior-of-a-home (portrait) | Bertelli Fotografia | kitchen and stairs |
+| in-dining | 7163611 interior-of-kitchen-in-rustic-style-house | Bertelli Fotografia | dining table by a stone wall |
+| in-bedroom-wood | 5439495 bedroom-of-a-wooden-house | Michael Gault | wood bedroom with window |
+The four Bertelli Fotografia interiors (hearth bedroom, stone bedroom, kitchens, dining) are one cabin, one shoot. Season variants: summer (hero-2/3, ext-summer-aerial), fall (ext-autumn-dock), winter (winter-*, ext-winter-*), dawn (ext-dawn-dock), dusk (hero-1, ext-dusk-cabin), night (ext-night-lodge). Rejected: clips of tiny houses behind modern lakes with identifiable boats/brands, fish-farm and city lake clips, portrait-only winter clips, photos with brand signs.
