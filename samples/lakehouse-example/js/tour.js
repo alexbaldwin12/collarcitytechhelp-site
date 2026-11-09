@@ -4,24 +4,34 @@
   var d = document, root = d.documentElement, reduce = root.classList.contains('rm');
   var $ = function (s, r) { return (r || d).querySelector(s); }, $$ = function (s, r) { return [].slice.call((r || d).querySelectorAll(s)); };
 
+  /* Six real Poly Haven 360 interiors (CC0), six different buildings. Hotspot yaw/pitch were placed by looking at each panorama:
+     each ring sits on a doorway or opening. The order below is the walk: lounge -> sitting room -> bedroom, lounge -> loft -> suite, lounge -> glasshouse. */
   var R = {
-    living:  { name: 'Living room',    hint: 'Deep sofas, wide boards and a door to the deck',   yaw: 20,  img: 'living',  hot: [['kitchen', 115, -14], ['deck', 35, -12], ['loft', -150, -14]] },
-    kitchen: { name: 'Kitchen',        hint: 'Long counter, the table for five, a door out back', yaw: 10, img: 'kitchen', hot: [['deck', 144, -12], ['living', -140, -12]] },
-    loft:    { name: 'The loft',       hint: 'Pine roof, two mattresses and two skylights',        yaw: 15, img: 'loft',    hot: [['living', -53, -8], ['deck', 92, -8]] },
-    deck:    { name: 'Covered deck',   hint: 'Dinner outside, with the lake in front',            yaw: 15, img: 'deck',    hot: [['dock', 17, -12], ['living', -150, -12]] },
-    dock:    { name: 'The dock',       hint: 'Where the day starts',                              yaw: -20, img: 'dock',   hot: [['shore', -70, -14], ['deck', 150, -14]] },
-    shore:   { name: 'The point',      hint: 'Rock, reeds and open water',                        yaw: 20, img: 'shore',   hot: [['dock', -90, -25]] }
+    living:   { name: 'Wood-panelled lounge', hint: 'Pale wood, a long sectional and arches through to other rooms. A real room, a different building.', yaw: -20, img: 'real-living',
+                hot: [['sitting', 168, 2], ['loft', 142, 3], ['openplan', -18, 3]] },
+    sitting:  { name: 'Sitting room',         hint: 'Stone wall, a stove and glass doors to the lawn. A real room, a different building.',               yaw: 70,  img: 'real-sitting',
+                hot: [['living', 165, 2], ['bedroom', -37, -3]] },
+    bedroom:  { name: 'Bedroom with a fireplace', hint: 'Twin beds, a hearth and a window onto the garden. A real room, a different building.',          yaw: 20,  img: 'real-bedroom',
+                hot: [['sitting', -114, -2]] },
+    loft:     { name: 'Pine attic loft',      hint: 'Pine roof, two skylights and a wooden hoop. A real room, a different building.',                    yaw: 0,   img: 'real-loft',
+                hot: [['living', -55, -2], ['suite', 134, 0]] },
+    suite:    { name: 'Suite with a balcony', hint: 'A bed, a desk and sliding doors to a balcony. A real hotel suite, a different building.',          yaw: 95,  img: 'real-suite',
+                hot: [['loft', 178, -2]] },
+    openplan: { name: 'Glasshouse room',      hint: 'Glass on every side, a stove and a table for four. A real room, a different building and a different landscape.', yaw: -30, img: 'real-openplan',
+                hot: [['living', 45, -3]] }
   };
-  var order = ['living', 'kitchen', 'loft', 'deck', 'dock', 'shore'];
+  var order = ['living', 'sitting', 'bedroom', 'loft', 'suite', 'openplan'];
+  var small = innerWidth <= 900 || !!(navigator.connection && navigator.connection.saveData);
+  var file = function (id) { return 'pano/' + R[id].img + (small ? '-2048' : '') + '.jpg'; };
   var vr = $('#vr'), v = null, booted = false;
   if (vr) {
     var ul = $('#rooms');
     order.forEach(function (id) {
       var li = d.createElement('li'), b = d.createElement('button');
       b.className = 'room'; b.type = 'button'; b.dataset.id = id;
-      b.innerHTML = '<img alt="" width="84" height="46" loading="lazy" src="pano/' + (id === 'kitchen' ? 'kitchen' : R[id].img) + '-thumb.jpg"><span><b></b><small></small></span>';
+      b.innerHTML = '<img alt="" width="84" height="46" loading="lazy" src="pano/' + R[id].img + '-thumb.jpg"><span><b></b><small></small></span>';
       $('b', b).textContent = R[id].name; $('small', b).textContent = R[id].hint;
-      b.addEventListener('click', function () { if (v) v.loadScene(id); });
+      b.addEventListener('click', function () { if (v) v.loadScene(id); $('#pano').focus(); });
       li.appendChild(b); ul.appendChild(li);
     });
     var mark = function (id) {
@@ -33,11 +43,11 @@
       if (booted) return; booted = true;
       var s = d.createElement('script'); s.src = 'vendor/pannellum.js';
       s.onload = function () {
-        var cfg = { default: { firstScene: 'living', sceneFadeDuration: reduce ? 0 : 800 }, scenes: {} };
+        var cfg = { default: { firstScene: 'living', sceneFadeDuration: reduce ? 0 : 900 }, scenes: {} };
         order.forEach(function (id) {
           var r = R[id];
           cfg.scenes[id] = {
-            title: r.name, type: 'equirectangular', panorama: 'pano/' + r.img + '.jpg', yaw: r.yaw, pitch: 0, hfov: 100, minHfov: 50, maxHfov: 120, autoLoad: id === 'living', showControls: true,
+            title: r.name, type: 'equirectangular', panorama: file(id), yaw: r.yaw, pitch: 0, hfov: 100, minHfov: 50, maxHfov: 120, autoLoad: id === 'living', showControls: true,
             hotSpots: r.hot.map(function (h) {
               return { type: 'scene', sceneId: h[0], yaw: h[1], pitch: h[2], cssClass: 'go', createTooltipArgs: h[0],
                 createTooltipFunc: function (div, key) {
@@ -49,7 +59,7 @@
           };
         });
         try { v = pannellum.viewer('pano', cfg); } catch (e) { flat(); return; }
-        v.on('error', flat); v.on('scenechange', mark); v.on('load', function () { vr.classList.add('on'); mark(v.getScene()); }); mark('living');
+        v.on('error', flat); v.on('scenechange', function (id) { mark(id); R[id].hot.forEach(function (h) { var im = new Image(); im.decoding = 'async'; im.src = file(h[0]); }); }); v.on('load', function () { vr.classList.add('on'); mark(v.getScene()); }); mark('living');
         if (!reduce) {
           v.on('load', function once() { v.off('load', once); v.startAutoRotate(-2.5); setTimeout(function () { v.stopAutoRotate(); }, 8000); });
           ['mousedown', 'touchstart', 'keydown', 'wheel'].forEach(function (ev) { $('#pano').addEventListener(ev, function () { v.stopAutoRotate(); }, { passive: true, once: true }); });

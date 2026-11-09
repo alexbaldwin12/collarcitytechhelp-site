@@ -64,6 +64,30 @@
     sb.forEach(function (b) { b.addEventListener('click', function () { setS(b.getAttribute('data-s')); }); });
   }
 
+
+  /* ---------- rooms: pinned room-by-room story. Photos cross-fade and drift, captions slide in beside them. ---------- */
+  var rs = $('#rooms');
+  if (rs && !RM && window.gsap && window.ScrollTrigger && root.classList.contains('js')) {
+    gsap.registerPlugin(ScrollTrigger);
+    var rooms = $$('.rs-room', rs), rn = $('#rs-n'), N = rooms.length, last = 0;
+    rs.classList.add('rs-on');
+    // the rooms are stacked, so lazy loading would wait; fetch and decode them all once the section is near
+    var warm = function () { $$('img', rs).forEach(function (im) { im.loading = 'eager'; if (im.decode) im.decode().catch(function () {}); }); };
+    if ('IntersectionObserver' in window) { var wio = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { wio.disconnect(); warm(); } }, { rootMargin: '1600px 0px' }); wio.observe(rs); } else warm();
+    var figs2 = rooms.map(function (r) { return $('.rs-fig', r); }), txts = rooms.map(function (r) { return $('.rs-txt', r); });
+    gsap.set(figs2.slice(1), { opacity: 0, x: 40, scale: 1.04 });
+    gsap.set(txts.slice(1), { opacity: 0, x: 70 });
+    var rt = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: rs, start: 'top top', end: 'bottom bottom', scrub: 0.7,
+      onUpdate: function (self) { var i = Math.min(N - 1, Math.floor(self.progress * N + 0.001)); if (i !== last) { last = i; rn.textContent = '0' + (i + 1); } } } });
+    rt.set({}, {}, N);
+    for (var i = 1; i < N; i++) {
+      rt.to(txts[i - 1], { opacity: 0, x: -50, duration: 0.25, ease: 'power2.in' }, i - 0.35)
+        .to(figs2[i - 1], { opacity: 0, x: -40, duration: 0.3, ease: 'power2.inOut' }, i - 0.2)
+        .to(figs2[i], { opacity: 1, x: 0, scale: 1, duration: 0.35, ease: 'power2.out' }, i - 0.05)
+        .to(txts[i], { opacity: 1, x: 0, duration: 0.3, ease: 'power2.out' }, i + 0.12);
+    }
+  }
+
   /* ---------- the walk in ---------- */
   if (RM || !window.gsap || !window.ScrollTrigger || !root.classList.contains('js')) return;
   gsap.registerPlugin(ScrollTrigger);

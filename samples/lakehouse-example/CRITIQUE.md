@@ -1,3 +1,5 @@
+> Round 1 note (Nov 9 2026): this critique describes version 2 with the home-made 3D fly-in, which Alex ruled out ("zero home-made CG"). The fly-in, rendered images and made 360s were deleted and replaced with real footage, photographs and Poly Haven 360s; read README.md for the current build.
+
 # Self-critique, Kettle Point version 2 ($999 Business tier)
 
 How this was checked: the built-in browser pane at 1280x800 and 375x812, scrolling the pinned fly-in and reading ScrollTrigger and canvas state, clicking the tour rooms and the calendar, the lightbox and the form, plus the resource list (zero external requests). The pane renders about one frame per second, so I judged states after they settled, not smoothness. NOT tested: Safari and iOS, a real phone, 60 fps smoothness, a screen reader, Lighthouse, a throttled network run, Firefox, the OS reduced-motion switch (read from the CSS and JS paths), JavaScript turned off (read from the markup), the look of the cross-document view transition (declared and navigation works, the animation itself was not captured).

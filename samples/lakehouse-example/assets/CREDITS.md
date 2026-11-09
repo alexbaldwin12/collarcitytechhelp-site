@@ -2,20 +2,8 @@
 
 Kettle Point, Little Kettle Lake, Birch Landing and every price, number, address, host detail and policy are made up. Example design for Collar City Tech Help. Not a real client.
 
-## Photos (free panoramas, Poly Haven, license CC0 / public domain, https://polyhaven.com/license)
-Views were cut from the panoramas by us (rectilinear crops), color-graded and resized. They are different real places picked because they share wood, water and dusk. They are not one house, and the page says so.
-
-| Use | Poly Haven asset | Author |
-|---|---|---|
-| Living room (tour, gallery, home) | wooden_lounge, https://polyhaven.com/a/wooden_lounge | Greg Zaal |
-| Kitchen | studio_country_hall, https://polyhaven.com/a/studio_country_hall | Sergej Majboroda |
-| Loft | pine_attic, https://polyhaven.com/a/pine_attic | Sergej Majboroda |
-| Covered deck | sundowner_deck, https://polyhaven.com/a/sundowner_deck | Dario Barresi |
-| The dock | shudu_lake, https://polyhaven.com/a/shudu_lake | Alex Radosnov |
-| The point | lakeside_dawn, https://polyhaven.com/a/lakeside_dawn | Greg Zaal (photography), Jarod Guest (processing) |
-
-## Removed in round 1 (item 17)
-The earlier three.js-rendered fly-in (96 landscape and 96 portrait frames), the render scene and its water normal map, and every picture rendered from it were home-made CG. They were deleted from the site. Nothing rendered by us ships any more.
+## Removed in round 1 (items 17 and 21)
+The earlier 360 panoramas and rectilinear views cut from other Poly Haven scenes (wooden_lounge, studio_country_hall, pine_attic, sundowner_deck, shudu_lake, lakeside_dawn, used as the old tour, gallery and statement pictures) were replaced by the real photographs and the six real 360s below; the files were deleted. The earlier three.js-rendered fly-in (96 landscape and 96 portrait frames), the render scene and its water normal map, and every picture rendered from it were home-made CG. They were deleted from the site. Nothing rendered by us ships any more.
 
 ## Software shipped with the page (self-hosted in vendor/, no CDN)
 - Pannellum 2.5.6, MIT (vendor/PANNELLUM-LICENSE-MIT.txt)
@@ -40,6 +28,7 @@ All Pexels, Pexels License (https://www.pexels.com/license/, free for commercial
 | hero-3-* (boathouse) | "A house sits on the edge of a lake" id 26569076 | IslandHopper X | https://www.pexels.com/video/a-house-sits-on-the-edge-of-a-lake-26569076/ | same grade and loop as hero-2 |
 | winter-* | "Scenic winter lakeside cabin aerial view" id 35002101 | Ahmet Yüksek | https://www.pexels.com/video/scenic-winter-lakeside-cabin-aerial-view-35002101/ | 7.8 s loop, light grade |
 Sizes: 1920 mp4 1.4-1.7 MB, 960 mp4 0.36-0.44 MB; WebM 1.8-2.9 MB at 1920 (hero-2 WebM is 2.9 MB, over the 2.5 MB target: serve the MP4 first or use the 960 file), 0.5-0.7 MB at 960. Posters 24-478 KB.
+SHIPPED after the item 17-21 clean-up: hero-1 (loop, posters) and the hero-2 and hero-3 poster WebP files, used as walk-in stills (cottage and dock, boathouse). The hero-2/hero-3/winter video files and the other poster formats were deleted as unused (see git history); the table rows stay as the sourcing record.
 ### Photos (img/real/, WebP + JPG, 2400 and 1200 wide, <= 350 KB at 2400 (a 0.45 px blur was applied to seven grainy ones to meet that), resize only otherwise)
 | File prefix | Pexels id / page slug | Photographer | Use / alt text |
 |---|---|---|---|
@@ -70,4 +59,10 @@ Real equirectangular photographs from Poly Haven, CC0 (public domain, https://po
 | real-sitting | lythwood_lounge https://polyhaven.com/a/lythwood_lounge | per asset page | warm sitting room |
 | real-openplan | glasshouse_interior https://polyhaven.com/a/glasshouse_interior | Dario Barresi | open plan with bed, dining table, stove, big windows |
 | real-suite | relax_inn_seaview_suite https://polyhaven.com/a/relax_inn_seaview_suite | per asset page | bedroom with balcony |
-Sizes: 3584 files 403-859 KB, 2048 files 150-280 KB, thumbs 16-25 KB. Hotspot yaw/pitch for the new rooms is NOT placed yet (item 21 builds the tour with these); the old CG-made pano/ files stay until the item 17/21 swap.
+Sizes: 3584 files 403-859 KB, 2048 files 150-280 KB, thumbs 16-25 KB. Hotspot yaw/pitch were placed in item 21 by looking at each panorama (rings sit on doorways and openings); the tour is wired to all six and the old pano/ files were deleted.
+
+## Round 1: item 17-21 additions (Nov 9 2026)
+- Derived images only (no new sources): img/real/*-560.webp (statement pictures) and *-g.webp (gallery thumbnails) are downscaled copies of the Pexels photos above; the kept 1200/2400 WebP files are the photographs themselves, resized. All other img/real JPG and unused WebP files were deleted.
+- Home walk-in stills: hero-2 poster (cottage and dock, IslandHopper X), hero-3 poster (boathouse, IslandHopper X), in-living-dusk (April Choitz). Season switcher: ext-summer-aerial, ext-autumn-dock, ext-winter-lake. Room-by-room story: in-living-dusk, in-kitchen-wood, in-dining, in-hearth-bedroom, in-bedroom-wood. Gallery: ten of the photographs above.
+- Time-of-day grade and the map are CSS and SVG drawn by us (the map is a stylised diagram of a made-up lake, not a photograph).
+- Honest limit repeated: every photo, loop and 360 is real but from different places; the pages and the credits page say so.

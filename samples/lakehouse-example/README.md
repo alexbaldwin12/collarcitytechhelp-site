@@ -6,11 +6,11 @@ Run it: `cd samples/lakehouse-example && python3 -m http.server 8780 --bind 127.
 
 ## Pages (each has the "Example design - not a real client" strip, noindex, the same nav, the sticky Check availability / Call bar, and JSON-LD)
 - index.html: real-footage hero, time-of-day grade, scrubbed walk in (lake, cottage, boathouse, living room), weekend tickets from a live-feeling sample calendar, rooms, seasons, host CTA.
-- stay.html: sleeping plan, an interactive availability calendar with sample total (links to the form with the dates filled in), sample rates, times and terms, inventory.
-- tour.html: 360 tour of six rooms (Pannellum), flat-picture fallback, gallery with a keyboard lightbox.
+- stay.html: sleeping plan, an animated availability calendar (days flip in, weekend quick picks, total counts up, dates and total carry to the form), sample rates, times and terms, inventory.
+- tour.html: the 360 viewer fills the first screen (short heading, rail of six rooms, ring hotspots on doorways, flat-picture fallback), then a gallery with a keyboard lightbox.
 - about.html: host story (example text), house rules, cleaning and safety, "Your reviews here" slot with review-link placeholders.
 - contact.html: demo request form (nothing sent or stored, dates prefilled from the link), tap-to-call, live phone-desk status, hand-drawn map, 8-question FAQ.
-- area.html: map, sample distances, what to do by season.
+- area.html: interactive stylised map (road, trail and shore path draw in; places are buttons), sample distances, what to do by season.
 - birch-landing-lake-house-rental.html, fall-foliage-weekend-cabin.html, winter-woodstove-getaway.html: sample local and seasonal SEO pages (own H1, price box, FAQ, map, FAQPage and BreadcrumbList JSON-LD).
 - credits.html: licenses and the honest note about the sources.
 Page transitions: CSS cross-document view transitions (`@view-transition`, Chromium and recent Safari). Other browsers do a plain page load. The header has its own `view-transition-name` so it does not animate.
@@ -53,3 +53,11 @@ Build tool (not shipped): ffmpeg 9.0 static binary from the pip package imageio-
 
 ## Round 1 fixes: real media (items 6-7, Nov 9 2026)
 Real hero loops in media/ (hero-1..3, winter; 1920 and 960; MP4 + WebM; posters JPG/WebP/AVIF), real photos in img/real/ (exterior and interior), real Poly Haven 360s in pano/real-*.jpg (item 7). All credited in assets/CREDITS.md. Old CG frames, house-*.webp and the old pano/ files stay until the item 17/21 swap. OVERRULE: the 05-website rule "never commit video or audio to the repo" is overruled by Alex (Nov 9 2026) for samples/repair-shop-example/media/ and samples/lakehouse-example/media/ ONLY (logged in shared/court-system/library/CASE-LAW.md, Case 14 overrule addendum). No audio tracks anywhere.
+
+## Round 1 fixes: items 19-21 (Nov 9 2026)
+- Calendar (stay.html, js/stay.js): flip-in days, range sweep, three open-weekend quick picks, count-up total (750 ms), carries arrive/leave/guests/total to contact.html. Reduced motion: no animation.
+- Map (area.html, js/area.js): pathLength=1 + stroke-dashoffset draw-in when 35% in view; focusable place buttons; caption card; list buttons linked. Reduced motion or no JS: static.
+- Rooms story (home #rooms, js/home.js): five real interior photos, sticky 100 svh stage over 520 svh, photos cross-fade and drift, captions slide in from the right, counter; the section only pins once GSAP is ready (class rs-on), otherwise it is a stacked card grid (reduced motion, no JS).
+- Tour (tour.html, js/tour.js): the viewer sits under a one-line heading and fills the first screen (100 svh minus header and heading; rail turns into a thumbnail strip on phones). Six real Poly Haven 360s (3584 px desktop, 2048 px phones and Save-Data), hotspot rings placed by viewing each panorama, rooms labelled as real rooms from different buildings. Keyboard: Tab to the rail and rings, Enter, arrow keys pan, + and - zoom (Pannellum).
+- Assets cleaned: old rendered images, old 360s, unused JPGs and unused video clips deleted.
+- Video files: the repo .gitignore ignores *.mp4 and *.webm; Alex's Nov 9 overrule is now written into .gitignore as exceptions for samples/lakehouse-example/media and samples/repair-shop-example/media (only hero-1 is used on this site).
