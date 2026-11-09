@@ -51,3 +51,15 @@ Hero loops live in media/ (hero-1..3, 1920 and 960, MP4 + WebM, poster JPG/WebP/
 ## Removal of all home-made CG (item 8, Nov 9 2026)
 Hard rule from Alex: zero computer-generated imagery. Deleted from the branch: the Khronos "Car Concept" model (models/car.glb), three.js r170 and its addons, the Draco decoder, the 96/192 rendered fly-in frames (frames/, frames/p/), the posters and stills made from them (img/poster*.webp, img/still-*.webp), the CG-derived reflection map (assets/env.jpg), js/car.js, js/car-ui.js, js/home.js, and the old "Car Concept" credit in every footer. The home hero is now real footage (media/hero-1, Pexels). Remaining imagery: Pexels photos and clips, the Poly Haven Autoshop 01 photograph, drawn SVG diagrams (floor plan, map, bay board and dashboard mocks, which are UI graphics and are labelled as samples).
 Note for item 23: the main-site examples cards still point at repair-shop-example/frames/f056.webp (now deleted); they are replaced in item 23.
+
+## Round 1 fixes (items 8-16, Nov 9 2026)
+- Hero (js/hero.js): poster shows first (preloaded, 960 wide on phones), then, after the poster decodes and the page has loaded, WebM then MP4 sources are attached (960 on screens up to 900 px or 2G/3G, 1920 otherwise) and the clip fades in once it is playing. Reduced motion and Save-Data keep the poster only. The clip pauses when the hero leaves the screen or the tab is hidden.
+- Bay board (hero): sample data, aria-hidden, a sr-only sentence and a "See every bay" link (shop.html) carry the meaning. Ticks every 3.4 s with transform/opacity; static under reduced motion.
+- Part picker (js/picker.js, #car): three stills of one car, percent-based hotspots mapped through object-fit: cover (hot-data JSON in index.html), price slips from the old part list, keyboard (arrow keys on the stage, angle buttons, part list) and swipe.
+- Estimate builder (js/estimate.js, #estimate): data in #estb-data (same ranges as the price board; line items are fractions that sum to the range). Book this opens contact.html?service=<id>&class=<a|b|c>&est=<lo>-<hi>#book; js/booking.js sets the class, ticks the service and shows the range.
+- Before/after (js/compare.js, #compare): native range inputs over clip-path reveals.
+- Story (js/story.js, #how): sticky stage with one scrubbed GSAP timeline; CSS stacks the five steps with photos for reduced motion and no-JS.
+- Booking location picker: edit #loc-data in contact.html. One entry shows a plain Location line, two or more show a required "Choose a location" select; ?locations=2 previews two locations.
+- Fleet (js/fleet.js): Fleet account panel and an HTML dashboard mock (count-ups, bars, meter); all sample data.
+- The bay: short header, viewer height = 100svh minus header and heading block.
+- All pages load gsap, ScrollTrigger, Lenis and assets/smooth.js (off for reduced motion, touch-first devices, ?nosmooth).

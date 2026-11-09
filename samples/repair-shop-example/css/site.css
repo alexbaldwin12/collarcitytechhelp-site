@@ -761,3 +761,4 @@ html:not(.js) .ba-r{clip-path:none;opacity:.0}
   .pano-ui .chip{flex:none}
   .pano-note{left:46px;top:8px;max-width:calc(100% - 56px);font-size:12.5px;padding:6px 10px}
 }
+.rm .story-photos figure,html:not(.js) .story-photos figure{max-width:880px}
