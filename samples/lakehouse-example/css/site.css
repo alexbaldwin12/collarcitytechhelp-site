@@ -151,7 +151,7 @@ p{margin:0 0 1em}
 .tix-head h2{font-size:clamp(2rem,4.6vw,4rem);max-width:14ch}
 .tix{display:flex;gap:16px;overflow-x:auto;padding:6px var(--gut) 26px;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:var(--fog) transparent}
 .tix li{list-style:none;flex:0 0 min(78vw,260px);scroll-snap-align:start}
-.tix{margin:0;padding-left:var(--gut)}
+.tix{margin:0;padding-left:var(--gut);scroll-padding-left:var(--gut)}
 .tix a{display:block;text-decoration:none;position:relative;background:var(--slate2);border:1px solid var(--line);border-radius:6px;padding:20px 20px 18px;min-height:190px;transition:transform .35s var(--ease),border-color .25s}
 .tix a::before,.tix a::after{content:"";position:absolute;left:-9px;width:18px;height:18px;border-radius:50%;background:var(--ink);border:1px solid var(--line)}
 .tix a::before{top:58%}.tix a::after{left:auto;right:-9px;top:58%}
