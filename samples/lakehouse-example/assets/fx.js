@@ -35,18 +35,19 @@
     if (RM || !io) return;
     var els = $$('.rg,.price,[data-count-range]');
     els.forEach(function (el) {
-      var orig = el.textContent; if (!/\$\d/.test(orig)) return;
+      var tn = el.firstChild; if (!tn || tn.nodeType !== 3) { tn = null; for (var k = 0; k < el.childNodes.length; k++) { if (el.childNodes[k].nodeType === 3 && /\$\d/.test(el.childNodes[k].nodeValue)) { tn = el.childNodes[k]; break; } } } if (!tn) return;
+      var orig = tn.nodeValue; if (!/\$\d/.test(orig)) return; var full = el.textContent;
       var nums = (orig.match(/\d[\d,]*/g) || []).map(function (n) { return +n.replace(/,/g, ''); });
-      el.setAttribute('aria-label', orig);
+      el.setAttribute('aria-label', full);
       var o = new IntersectionObserver(function (es) {
         if (!es[0].isIntersecting) return; o.disconnect();
         var w = el.getBoundingClientRect().width; el.style.display = el.style.display || 'inline-block'; el.style.minWidth = w + 'px'; el.style.fontVariantNumeric = 'tabular-nums';
         var t0 = performance.now(), dur = 1100;
         (function f(t) { var p = clamp((t - t0) / dur, 0, 1), e = 1 - Math.pow(1 - p, 4), i = 0;
-          el.textContent = p >= 1 ? orig : orig.replace(/\d[\d,]*/g, function () { var v = Math.round(nums[i++] * e); return v.toLocaleString('en-US'); });
+          tn.nodeValue = p >= 1 ? orig : orig.replace(/\d[\d,]*/g, function () { var v = Math.round(nums[i++] * e); return v.toLocaleString('en-US'); });
           if (p < 1) requestAnimationFrame(f); else { el.style.minWidth = ''; } })(t0);
       }, { threshold: 0.7 });
-      el.textContent = orig.replace(/\d[\d,]*/g, '0'); o.observe(el);
+      tn.nodeValue = orig.replace(/\d[\d,]*/g, '0'); o.observe(el);
     });
     var hb = d.querySelector('.hero-note b'); /* hero price on the lake site */
     if (hb && /\$\d/.test(hb.textContent)) { var og = hb.textContent, n = +og.replace(/\D/g, ''), t0 = performance.now() + 900; hb.style.fontVariantNumeric = 'tabular-nums'; (function f(t) { var p = clamp((t - t0) / 900, 0, 1); hb.textContent = '$' + Math.round(n * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(f); else hb.textContent = og; })(t0 - 900); }

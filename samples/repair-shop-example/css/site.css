@@ -150,8 +150,8 @@ html:not(.js) .hv video{display:none}
 .ro-slip dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:0 0 14px;font-family:var(--mono);font-size:13px}
 .ro-slip dt{color:var(--ink2)}
 .ro-slip dd{margin:0}
-.ro-slip .price{font:500 2.1rem/1 var(--display);margin:2px 0 2px}
-.ro-slip .price small{font:400 12.5px var(--mono);color:var(--ink2);margin-left:6px}
+.ro-slip .price,.part-body .price{font:500 2.1rem/1 var(--display);margin:2px 0 2px}
+.ro-slip .price small,.part-body .price small{display:block;font:400 12.5px/1.4 var(--mono);color:var(--ink2);margin:8px 0 0}
 .ro-slip p{margin:0 0 12px;color:#26282a}
 
 /* ---------- symptoms ---------- */
