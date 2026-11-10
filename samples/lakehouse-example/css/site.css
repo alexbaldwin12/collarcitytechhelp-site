@@ -31,7 +31,7 @@ p{margin:0 0 1em}
 .strip{height:var(--strip);display:flex;align-items:center;justify-content:center;background:#000;color:#d4dae6;font-size:12.5px;padding-inline:12px;text-align:center;line-height:1.2;overflow:hidden}
 .strip b{color:#fff}
 .strip a{color:#d4dae6}
-.bar{height:var(--bar);display:flex;align-items:center;gap:clamp(10px,2vw,26px);padding-inline:var(--gut);background:linear-gradient(rgba(10,14,22,.82),rgba(10,14,22,.5));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{height:var(--bar);display:flex;align-items:center;gap:clamp(10px,2vw,26px);padding-inline:var(--gut);background:linear-gradient(rgba(10,14,22,.9),rgba(10,14,22,.74));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 1.2rem/1 var(--display);letter-spacing:-.04em;white-space:nowrap}
 .logo svg{width:20px;height:28px;color:var(--lantern);flex:none}
 .nav{display:flex;gap:clamp(12px,1.8vw,28px);margin-left:auto}

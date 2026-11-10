@@ -32,7 +32,7 @@ p{margin:0 0 1em}
 .strip{height:var(--strip);display:flex;align-items:center;justify-content:center;gap:.6em;background:#000;color:var(--steel);font-size:12.5px;letter-spacing:.01em;padding-inline:12px;white-space:nowrap;overflow:hidden}
 .strip b{color:var(--chalk);font-weight:600}
 .strip a{color:var(--steel)}
-.bar{height:var(--bar);display:flex;align-items:center;gap:clamp(10px,2vw,28px);padding-inline:var(--gut);background:linear-gradient(#0a0b0cf2,#0a0b0cc0);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{height:var(--bar);display:flex;align-items:center;gap:clamp(10px,2vw,28px);padding-inline:var(--gut);background:linear-gradient(#0a0b0cf5,#0a0b0ce6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .logo{white-space:nowrap;display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:500;font-size:20px;letter-spacing:.01em;font-stretch:112%}
 .logo i{display:grid;place-items:center;width:30px;height:30px;border:1.5px solid var(--amber);border-radius:6px;color:var(--amber);font:600 17px/1 var(--display);font-style:normal;font-stretch:100%}
 .nav{display:flex;gap:clamp(12px,1.6vw,26px);margin-left:auto;margin-right:auto}
@@ -73,7 +73,7 @@ p{margin:0 0 1em}
 /* ---------- oil dipstick progress (signature detail) ---------- */
 .dip{position:fixed;right:5px;top:50%;height:min(34vh,280px);width:16px;opacity:.38;transform:translateY(-50%);z-index:40;pointer-events:none;mix-blend-mode:normal}
 .dip svg{height:100%;width:100%;overflow:visible}
-.dip .lvl{transition:y .2s linear,height .2s linear}
+.dip .lvl{transition:transform .2s linear;transform-box:fill-box;transform-origin:50% 100%}
 @media (max-width:900px){.dip{display:none}}
 
 /* ---------- reveals ---------- */
@@ -746,6 +746,7 @@ html:not(.js) .ba-r{clip-path:none;opacity:.0}
 .loc-one{margin:0;padding:10px 12px;border:1.5px dashed var(--ink2);font-size:.95rem;color:var(--ink)}
 .loc-one b{font:500 12.5px var(--mono);color:var(--amber-ink);margin-right:8px}
 #loc-pick{display:grid}
+#loc-pick[hidden]{display:none}
 @media (max-width:900px){.loc{margin-right:0}}
 
 /* ---------- the bay page: short header so the 360 view is on the first screen ---------- */

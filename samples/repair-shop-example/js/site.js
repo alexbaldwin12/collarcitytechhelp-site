@@ -67,8 +67,9 @@
   /* ---- oil dipstick: page progress as an oil level ---- */
   var lvl = d.getElementById('dipLvl');
   if (lvl) {
+    lvl.setAttribute('y', 12); lvl.setAttribute('height', 188);
     var tick = false;
-    function dip() { tick = false; var h = d.documentElement.scrollHeight - innerHeight, p = h > 0 ? Math.min(1, Math.max(0, scrollY / h)) : 0, H0 = 200, v = 8 + p * (H0 - 16); lvl.setAttribute('y', H0 - v); lvl.setAttribute('height', v); }
+    function dip() { tick = false; var h = d.documentElement.scrollHeight - innerHeight, p = h > 0 ? Math.min(1, Math.max(0, scrollY / h)) : 0, H0 = 200, v = 8 + p * (H0 - 16); lvl.style.transform = 'scaleY(' + (v / (H0 - 12)).toFixed(4) + ')'; }
     addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(dip); } }, { passive: true }); dip();
   }
 
