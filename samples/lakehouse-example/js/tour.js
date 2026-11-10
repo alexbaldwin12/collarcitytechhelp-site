@@ -20,7 +20,8 @@
   };
   var order = ['living', 'sitting', 'bedroom', 'loft', 'suite'];
   var small = innerWidth <= 900 || !!(navigator.connection && navigator.connection.saveData);
-  var file = function (id) { return 'pano/' + R[id].img + (small ? '-2048' : '') + '.jpg'; };
+  var WP = false; try { WP = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0; } catch (e) {}
+  var file = function (id) { return 'pano/' + R[id].img + (small ? '-2048' : '') + (WP ? '.webp' : '.jpg'); };
   var vr = $('#vr'), v = null, booted = false;
   if (vr) {
     var ul = $('#rooms');

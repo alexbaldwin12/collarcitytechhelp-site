@@ -16,7 +16,7 @@
     s.onload = function () {
       try {
         viewer = pannellum.viewer('pano', {
-          type: 'equirectangular', panorama: 'pano/bay.jpg', autoLoad: true, yaw: -120, pitch: -4, hfov: 100, minHfov: 45, maxHfov: 120, showControls: true, showFullscreenCtrl: true, compass: false,
+          type: 'equirectangular', panorama: 'pano/bay.' + (function () { try { return document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0 ? 'webp' : 'jpg'; } catch (e) { return 'jpg'; } })(), autoLoad: true, yaw: -120, pitch: -4, hfov: 100, minHfov: 45, maxHfov: 120, showControls: true, showFullscreenCtrl: true, compass: false,
           hotSpotDebug: false, mouseZoom: false, keyboardZoom: true,
           hotSpots: EQ.map(function (e) { return { id: e.id, pitch: e.pitch, yaw: e.yaw, type: 'info', text: e.name, cssClass: 'eqh', clickHandlerFunc: function () { show(e.id); }, createTooltipFunc: function (div, txt) { div.classList.add('eqh'); div.tabIndex = 0; div.setAttribute('role', 'button'); div.setAttribute('aria-label', txt + ': what it does'); var sp = d.createElement('span'); sp.textContent = txt; div.appendChild(sp); div.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); show(e.id); } }); } }; })
         });
