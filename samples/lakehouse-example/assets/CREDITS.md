@@ -49,7 +49,6 @@ The four Bertelli Fotografia interiors (hearth bedroom, stone bedroom, kitchens,
 Real equirectangular photographs from Poly Haven, CC0 (public domain, https://polyhaven.com/license). Source: api.polyhaven.com/files/<id> "tonemapped" JPG (8192x4096), resized to 3584x1792 (q72, progressive), 2048x1024 for phones (-2048), 512x256 thumbs (-thumb). Files pano/real-<name>(.jpg | -2048.jpg | -thumb.jpg). Only edit: lythwood_lounge got a small white-balance correction (less yellow). HONEST LIMIT: five different real buildings (a South African country house, a lodge, a wooden hall, a glasshouse, a hotel suite), chosen for wood, warm light and residential feel; they are not one house, so the tour page must keep its sample label and never say they are Kettle Point.
 | File | Poly Haven asset (page) | Author | Look |
 |---|---|---|---|
-| real-living | wooden_lounge https://polyhaven.com/a/wooden_lounge | per asset page (Poly Haven contributors) | wood-panelled lounge, sectional sofa |
 | real-loft | pine_attic https://polyhaven.com/a/pine_attic | per asset page | pine-lined attic room, skylights |
 | real-bedroom | lythwood_room https://polyhaven.com/a/lythwood_room | per asset page | bedroom with fireplace and window |
 | real-sitting | lythwood_lounge https://polyhaven.com/a/lythwood_lounge | per asset page | warm sitting room |
