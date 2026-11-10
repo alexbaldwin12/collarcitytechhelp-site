@@ -1,0 +1,2 @@
+Epilogue and Albert Sans are licensed under the SIL Open Font License, Version 1.1 (https://openfontlicense.org).
+Files are the unmodified latin-subset woff2 files served by Google Fonts (fonts.gstatic.com), downloaded and self-hosted.

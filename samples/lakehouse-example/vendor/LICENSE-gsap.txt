@@ -1,0 +1,4 @@
+GSAP 3.13.0 (core, ScrollTrigger, SplitText)
+Copyright 2025 GreenSock, Inc. Free for commercial use under the GSAP "Standard no-charge license".
+The terms are published at https://gsap.com/standard-license (read them; the main restriction is that you may not use GSAP inside a tool that competes with Webflow or similar visual no-code site builders).
+The license notice is also in the header comment of each .min.js file in this folder.

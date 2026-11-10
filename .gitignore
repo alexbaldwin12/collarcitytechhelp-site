@@ -9,3 +9,12 @@
 *.aiff
 *.m4a
 CLAUDE.md
+# Alex overrule (Nov 9 2026, CASE-LAW Case 14 addendum): looping hero clips are allowed in these two sample folders only
+!samples/lakehouse-example/media/*.mp4
+!samples/lakehouse-example/media/*.webm
+!samples/repair-shop-example/media/*.mp4
+!samples/repair-shop-example/media/*.webm
+
+# Alex overrule (Nov 9 2026): the two example-section preview clips (small copies, under 700 KB each)
+!assets/showcase/*.mp4
+!assets/showcase/*.webm
