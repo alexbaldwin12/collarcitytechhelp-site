@@ -1,0 +1,69 @@
+/* Starter band of the tiered examples (Starter $499). A light, calm paper band that is the opposite of the dark Business band (showcase.css).
+   Three samples shown three different ways: a phone with its own scrolling page, a hover-play browser card, a tilt card.
+   Fixed light colours on purpose: the band stays "day" in dark theme too, so the two tiers always read as night and day.
+   Revert: remove the tiers-starter section from /, /websites/, /samples/, then delete this file, assets/tiers/ and the showcase.js starter block. */
+.tiers-starter{--st-bg:#f4f0e7;--st-ink:#1d2433;--st-mut:#586074;--st-rule:#d8d0bf;--st-acc:#0b6f65;--st-navy:#1e407d;
+  background:var(--st-bg);color:var(--st-ink);padding:104px 0 112px;overflow:hidden;position:relative}
+.tiers-starter::before{content:'';position:absolute;inset:0;background:var(--grain-k);opacity:.5;pointer-events:none}
+.tiers-starter>.wrap{position:relative}
+.tiers-starter h2{color:var(--st-ink);max-width:16ch}
+.tiers-starter .intro{color:var(--st-mut);max-width:36em;margin-bottom:.6em}
+.tiers-starter a{color:var(--st-navy)}.tiers-starter a:hover{color:var(--st-acc)}
+.tiers-starter :focus-visible{outline:3px solid var(--st-acc);outline-offset:3px}
+.tier-eyebrow{display:flex;align-items:center;gap:14px;margin:0 0 18px;font:600 .95rem/1 'Instrument Sans',system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--st-acc)}
+.tier-eyebrow::after{content:'';height:1px;width:64px;background:currentColor;opacity:.5}
+.tier-line{margin:0;max-width:36em;font-size:1.15rem;font-weight:600;color:var(--st-ink)}
+.tiers-starter .btn{background:var(--st-navy);border-color:var(--st-navy);color:#fff}
+.tiers-starter .btn:hover,.tiers-starter .btn:focus-visible{background:var(--st-acc);border-color:var(--st-acc);color:#fff}
+.tiers-starter .btn.alt{background:transparent;color:var(--st-navy);border-color:var(--st-navy)}
+.tiers-starter .btn.alt:hover,.tiers-starter .btn.alt:focus-visible{background:var(--st-navy);border-color:var(--st-navy);color:#fff}
+.tiers-starter .btn.sm{padding:9px 20px;font-size:.95rem}
+.st-board{display:grid;gap:64px;margin-top:56px}
+.st-item{margin:0;min-width:0}
+.st-tag{display:inline-block;white-space:nowrap;font-size:.82rem;line-height:1.3;font-weight:600;color:var(--st-ink);background:rgba(255,255,255,.7);border:1px solid var(--st-rule);border-radius:999px;padding:5px 12px;margin:0 0 12px}
+.st-cap h3{font:400 clamp(1.8rem,3vw,2.3rem)/1.1 'Instrument Serif',Georgia,serif;color:var(--st-ink);margin:0 0 2px}
+.st-kind{margin:0 0 8px;font-size:.95rem;color:var(--st-mut)}
+.st-text{margin:0 0 16px;max-width:30em;color:var(--st-ink)}
+.st-links{display:flex;flex-wrap:wrap;gap:10px;margin:0}
+/* A: phone with its own scrollable page */
+.st-a{display:flex;flex-direction:column;align-items:flex-start;gap:26px}
+.st-phone{position:relative;width:min(100%,312px);padding:11px;border-radius:44px;background:#1b1d22;box-shadow:0 0 0 2px #2b2e35,0 36px 60px -34px rgba(29,36,51,.65),0 8px 18px -10px rgba(29,36,51,.35)}
+.st-screen{position:relative;overflow:hidden;border-radius:34px;background:#e9e3d8;aspect-ratio:390/844}
+.st-screen picture,.st-screen img{display:block;width:100%;height:100%}.st-screen img{object-fit:cover}
+.st-frame{position:absolute;left:0;top:0;width:390px;height:844px;border:0;background:#fff;transform-origin:0 0;transform:scale(var(--fs,.75));z-index:1}
+.st-live{display:block;margin:14px auto 0}
+.st-phone .st-live{position:static}
+.tiers-starter .btn.st-live[aria-pressed=true]{background:var(--st-navy);border-color:var(--st-navy);color:#fff}
+/* B: browser card, hover to play a short real clip */
+.st-chrome{position:relative;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px var(--st-rule),0 28px 50px -34px rgba(29,36,51,.55)}
+.st-bar{display:flex;align-items:center;gap:7px;height:32px;padding:0 12px;background:#ece6d9;border-bottom:1px solid var(--st-rule)}
+.st-bar i{width:9px;height:9px;border-radius:50%;background:#c9c0ac}
+.st-bar span{flex:1;margin-left:10px;max-width:260px;height:18px;border-radius:9px;background:#f7f3ea;font:500 .72rem/18px 'Instrument Sans',system-ui,sans-serif;color:var(--st-mut);padding:0 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.st-stage{position:relative;display:block;overflow:hidden;aspect-ratio:16/10;background:#d9d6cc;color:inherit;text-decoration:none}
+.st-stage img,.st-stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.st-stage video{opacity:0;transition:opacity .6s ease}.st-stage.live video{opacity:1}
+.st-hint{position:absolute;z-index:2;right:12px;bottom:12px;font-size:.8rem;font-weight:600;color:#fff;background:rgba(29,36,51,.72);border-radius:999px;padding:5px 12px;pointer-events:none;transition:opacity .3s}
+.st-stage.live .st-hint{opacity:0}
+.st-b .st-cap{display:flex;flex-wrap:wrap;gap:6px 28px;justify-content:space-between;align-items:flex-end;margin-top:22px}
+.st-b .st-cap>div{flex:1 1 280px}
+/* C: tilt card with a soft light that follows the pointer */
+.st-c{display:grid;gap:26px;align-items:center}
+.st-tilt{perspective:1000px;min-width:0}
+.st-tiltin{position:relative;border-radius:12px;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .35s cubic-bezier(.2,.7,.2,1);will-change:transform}
+.st-tiltin .st-chrome{box-shadow:0 0 0 1px var(--st-rule),0 34px 50px -30px rgba(29,36,51,.6)}
+.st-tiltin .st-stage{aspect-ratio:16/10}
+.st-tiltin .st-stage::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(360px circle at var(--sx,50%) var(--sy,-40%),rgba(255,255,255,.28),transparent 60%);opacity:var(--so,0);transition:opacity .3s}
+@media(min-width:900px){
+  .st-board{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:36px;row-gap:72px;margin-top:72px;align-items:start}
+  .st-a{grid-column:1/6;grid-row:1/3}
+  .st-b{grid-column:6/13;grid-row:1}
+  .st-c{grid-column:6/13;grid-row:2;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:36px}
+  .st-c .st-tilt{order:2}
+}
+@media(max-width:720px){
+  .tiers-starter{padding:64px 0 72px}.st-board{gap:52px;margin-top:36px}
+  .st-phone{align-self:center}.st-a{align-items:stretch}.st-a .st-cap{align-self:flex-start}
+  .st-links .btn{width:auto}
+}
+@media(prefers-reduced-motion:reduce){.st-stage video{display:none}.st-tiltin{transform:none!important;transition:none}.st-tiltin .st-stage::after{display:none}}
+@media(hover:none){.st-hint{display:none}}

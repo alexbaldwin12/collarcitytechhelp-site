@@ -20,4 +20,12 @@
 @media(min-width:641px){.sc-stage{aspect-ratio:16/10}}
 @media(min-width:900px){.sc-grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:40px;align-items:start;margin-top:72px}}
 @media(max-width:720px){.showcase{padding:64px 0 72px}.sc-grid{gap:48px;margin-top:36px}.sc-note{margin-top:36px}}
-@media(prefers-reduced-motion:reduce){.sc-stage video{display:none}}
+/* Tier labels (Business band): the premium side of the two tiers. One calm touch: a slow light travels the edge of each stage (border beam). */
+.showcase .tier-eyebrow{color:#5fd0c3}
+.bz-line{margin:0;max-width:38em;font-size:1.15rem;font-weight:600;color:#fff}
+.bz-extras{margin:14px 0 0;max-width:38em;font-size:1rem;color:#b7c4dc;padding-left:14px;border-left:2px solid #5fd0c3}
+@property --sc-ang{syntax:'<angle>';inherits:false;initial-value:0deg}
+.sc-stage::before{content:'';position:absolute;inset:0;z-index:3;border-radius:inherit;padding:1px;pointer-events:none;background:conic-gradient(from var(--sc-ang),transparent 0 78%,rgba(95,208,195,.8) 90%,transparent 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:sc-spin 10s linear infinite}
+@keyframes sc-spin{to{--sc-ang:360deg}}
+.tiers-more{padding-top:40px;padding-bottom:40px}
+@media(prefers-reduced-motion:reduce){.sc-stage video{display:none}.sc-stage::before{display:none}}
