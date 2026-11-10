@@ -60,7 +60,7 @@
 
   /* ---------- 4. hairlines that draw in ---------- */
   function hairs() {
-    $$('main .sec').forEach(function (s, i) { if (i === 0 && s.previousElementSibling === null) return; s.classList.add('fx-host'); var h = d.createElement('i'); h.className = 'fx-hair'; h.setAttribute('aria-hidden', 'true'); s.insertBefore(h, s.firstChild); watch(h); });
+    $$('main .sec').forEach(function (s, i) { if (i === 0 && s.previousElementSibling === null) return; if (parseFloat(getComputedStyle(s).paddingTop) < 28) return; s.classList.add('fx-host'); var h = d.createElement('i'); h.className = 'fx-hair'; h.setAttribute('aria-hidden', 'true'); s.insertBefore(h, s.firstChild); watch(h); });
   }
 
   /* ---------- 5. layered parallax (Bay Nine hero: footage, text column, bay board at three speeds) ---------- */

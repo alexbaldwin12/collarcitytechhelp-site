@@ -61,4 +61,10 @@
   if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { vis = es[0].isIntersecting; if (vis && !d.hidden) run(); else halt(); }).observe(bb);
   d.addEventListener('visibilitychange', function () { if (d.hidden) halt(); else if (vis) run(); });
   run();
+  /* phones: the board sits under the hero so the car stays clear in the first screen */
+  var wrap = d.querySelector('.bbw'), hero = d.querySelector('.hero'), mq = window.matchMedia ? matchMedia('(max-width: 900px)') : null;
+  if (wrap && hero && mq) {
+    var place = function () { if (mq.matches) { if (wrap.parentNode === hero) { wrap.classList.add('below'); hero.parentNode.insertBefore(wrap, hero.nextSibling); } } else if (wrap.parentNode !== hero) { wrap.classList.remove('below'); hero.appendChild(wrap); } };
+    place(); if (mq.addEventListener) mq.addEventListener('change', place);
+  }
 })();

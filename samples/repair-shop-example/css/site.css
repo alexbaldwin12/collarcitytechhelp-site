@@ -573,6 +573,9 @@ html:not(.js) .layers .lay:first-child{opacity:1;transform:none}
 @media (max-width:1100px){.bbw{width:min(270px,30vw)}.bb-st{width:7.6em}}
 @media (max-width:900px){
   .bbw{left:var(--gut);right:var(--gut);top:auto;width:auto;bottom:calc(80px + env(safe-area-inset-bottom))}
+  .bbw.below{position:relative;left:auto;right:auto;bottom:auto;margin:20px var(--gut) 0;width:auto;max-width:520px;animation:none;opacity:1}
+  .bbw.below .bb li:nth-child(n+3){display:grid}
+  .bbw.below .bb-link{display:inline-flex}
   .bb li:nth-child(n+3){display:none}
   .bb-link{display:none}
   .bb li{padding:7px 14px}
