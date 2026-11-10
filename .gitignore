@@ -18,3 +18,7 @@ CLAUDE.md
 # Alex overrule (Nov 9 2026): the two example-section preview clips (small copies, under 700 KB each)
 !assets/showcase/*.mp4
 !assets/showcase/*.webm
+
+# Tier showcase: Starter/Business example clip + posters (Nov 10 2026, branch tier-showcase)
+!assets/tiers/*.mp4
+!assets/tiers/*.webm
