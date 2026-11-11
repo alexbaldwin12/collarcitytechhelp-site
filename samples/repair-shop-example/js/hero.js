@@ -20,7 +20,7 @@
   function go() { setTimeout(attach, 150); }
   function afterPoster() {
     var ready = img && img.decode ? img.decode().catch(function () {}) : Promise.resolve();
-    ready.then(function () { if (d.readyState === 'complete') go(); else addEventListener('load', go, { once: true }); });
+    ready.then(function () { if (root.classList.contains('door-on')) attach(); else if (d.readyState === 'complete') go(); else addEventListener('load', go, { once: true }); });
   }
   afterPoster();
   if ('IntersectionObserver' in window) {

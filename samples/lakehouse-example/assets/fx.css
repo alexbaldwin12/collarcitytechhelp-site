@@ -1,7 +1,7 @@
 /* CCTH motion layer for the two showpieces (original code, no third-party code). Transform + opacity only (plus a short blur on text).
    Personality comes from html[data-fx]: workshop (Bay Nine) or lakeside (Kettle Point). Everything is off or instant under reduced motion. */
 html[data-fx=workshop]{--fx-accent:#f0a83a;--fx-glow:rgba(240,168,58,.085);--fx-ease:cubic-bezier(.7,0,.2,1);--fx-dur:.8s;--fx-bg:#0a0b0c;--fx-sb:#2c3035}
-html[data-fx=lakeside]{--fx-accent:#ffe2a6;--fx-glow:rgba(255,226,166,.07);--fx-ease:cubic-bezier(.25,.8,.25,1);--fx-dur:1.2s;--fx-bg:#0a0e16;--fx-sb:#2a3550}
+html[data-fx=lakeside]{--fx-accent:#f0e9d8;--fx-glow:rgba(240,233,216,.07);--fx-ease:cubic-bezier(.25,.8,.25,1);--fx-dur:1.2s;--fx-bg:#0c1816;--fx-sb:#26382f}
 
 /* subtle scrollbar + focus */
 html{scrollbar-width:thin;scrollbar-color:var(--fx-sb) var(--fx-bg)}

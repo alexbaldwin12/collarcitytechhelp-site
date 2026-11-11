@@ -49,7 +49,7 @@
       }, { threshold: 0.7 });
       tn.nodeValue = orig.replace(/\d[\d,]*/g, '0'); o.observe(el);
     });
-    var hb = d.querySelector('.hero-note b'); /* hero price on the lake site */
+    var hb = d.querySelector('.hero-note b.cnt'); /* hero price on the lake site */
     if (hb && /\$\d/.test(hb.textContent)) { var og = hb.textContent, n = +og.replace(/\D/g, ''), t0 = performance.now() + 900; hb.style.fontVariantNumeric = 'tabular-nums'; (function f(t) { var p = clamp((t - t0) / 900, 0, 1); hb.textContent = '$' + Math.round(n * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(f); else hb.textContent = og; })(t0 - 900); }
   }
 
