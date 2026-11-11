@@ -29,7 +29,7 @@ h2{font-size:clamp(2rem,4.2vw,3.6rem);line-height:1.04;max-width:19ch}
 .js .sec.el-in .wrap>h2:first-child::before,.rf-fail .sec .wrap>h2:first-child::before{transform:scaleX(1)}
 .tier-eyebrow,.kicker,.st-tag,.sc-tag,.step .n,.crumbs{font-family:var(--mono)}
 .tier-eyebrow,.kicker{font-size:.78rem;letter-spacing:.12em;font-weight:600}
-mark.rf-mark,.js mark.rf-mark{background:none;padding:0;margin:0;border-radius:0}
+mark.rf-mark,.js mark.rf-mark{color:inherit;background:none;padding:0;margin:0;border-radius:0}
 
 /* ---- focus + buttons: teal ring, fill sweeps in from the left ---- */
 :focus-visible,.hero :focus-visible,.phero :focus-visible,.sec.dark :focus-visible,.sec.blueprint :focus-visible,.site-footer :focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:6px}
@@ -102,7 +102,7 @@ html[data-theme=dark] .sec.paper,html[data-theme=dark] .sec.surface-paper{backgr
 .js .hframe:not(.hf-final):not(.hf-skip) .hf-site .hf-btn{opacity:0;transform:translateX(-26px)}
 .js .hframe .hf-base{transition:opacity .9s var(--ease),transform 1.6s var(--out),filter .8s}
 .js .hf-site.s-base .hf-base,.js .hf-site.s-nav .hf-nav,.js .hf-site.s-head .hf-head,.js .hf-site.s-btn .hf-btn{opacity:1!important;transform:none!important}
-.rf-fail .hf-site .hf-l,.rf-fail .hf-site .hf-base{opacity:1!important;transform:none!important}
+.rf-fail .hframe .hf-site .hf-l,.rf-fail .hframe .hf-site .hf-base{opacity:1!important;transform:none!important}
 .hf-win.idle{animation:hf-float 14s ease-in-out infinite alternate}
 @keyframes hf-float{from{transform:translateY(0)}to{transform:translateY(-7px)}}
 .hf-pause{position:absolute;left:0;bottom:-44px;width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:transparent;cursor:pointer;padding:0;opacity:.7;transition:opacity .2s,background .2s}
@@ -118,7 +118,6 @@ html[data-theme=dark] .sec.paper,html[data-theme=dark] .sec.surface-paper{backgr
 .svc-list{border-top:1px solid var(--line);margin-top:48px}
 .svc{grid-template-columns:56px minmax(0,1fr);gap:8px 24px;padding:36px 0;align-items:start;transition:transform .5s var(--out)}
 .svc svg{width:48px;height:48px;color:var(--accent);overflow:visible}
-.svc svg *{vector-effect:non-scaling-stroke}
 .svc svg path,.svc svg rect,.svc svg circle{stroke-dasharray:1;stroke-dashoffset:0}
 .js .svc svg [pathLength]{stroke-dashoffset:1;transition:stroke-dashoffset 1.4s var(--ease) .15s}
 .js .svc.rf-in svg [pathLength],.rf-fail .svc svg [pathLength]{stroke-dashoffset:0}
@@ -158,7 +157,7 @@ html[data-theme=dark] .gauge{background:var(--surface);--text:#e4eaf5;--muted:#a
 /* ---- sample + showpiece bands: same system, one display voice ---- */
 .tiers-starter h2,.showcase h2{max-width:16ch}
 .st-cap h3,.sc-body h3{font-weight:600;letter-spacing:-.03em;line-height:1.1}
-.st-cap h3{font-size:clamp(1.6rem,2.6vw,2.1rem)}.sc-body h3{font-size:clamp(1.7rem,3vw,2.3rem)}
+.st-cap h3{font-size:clamp(1.6rem,2.6vw,2.1rem);color:var(--st-ink)}.sc-body h3{font-size:clamp(1.7rem,3vw,2.3rem)}
 .tier-eyebrow{align-items:center}
 .tiers-more{background:var(--bg)}
 

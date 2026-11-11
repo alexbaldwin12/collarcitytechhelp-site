@@ -44,8 +44,8 @@
     function skip() { timers.forEach(clearTimeout); $$('.hf-site', hf).forEach(function (s) { s.classList.add('s-base', 's-nav', 's-head', 's-btn'); }); hf.classList.add('hf-skip'); stopped = true; win.classList.add('idle'); }
     if (seen) { hf.classList.add('hf-final'); if (!rm) win.classList.add('idle'); return; }
     cur.classList.add('is-on');
-    var go = function () { ready(cur).then(function () { later(function () { play(cur); }, 250); }); };
-    if (d.readyState === 'complete') go(); else addEventListener('load', go);
+    var go = function () { ready(cur).then(function () { later(function () { play(cur); }, 120); }); };
+    if (d.readyState !== 'loading') go(); else d.addEventListener('DOMContentLoaded', go);
     /* the other two sites come in after the page has settled; cycle only on wide screens */
     var wide = matchMedia('(min-width:960px)').matches;
     function next() {
