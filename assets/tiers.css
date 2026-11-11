@@ -49,6 +49,7 @@
 /* C: tilt card with a soft light that follows the pointer */
 .st-c{display:grid;gap:26px;align-items:center}
 .st-tilt{perspective:1000px;min-width:0}
+.st-c .st-tilt{order:-1}
 .st-tiltin{position:relative;border-radius:12px;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .35s cubic-bezier(.2,.7,.2,1);will-change:transform}
 .st-tiltin .st-chrome{box-shadow:0 0 0 1px var(--st-rule),0 34px 50px -30px rgba(29,36,51,.6)}
 .st-tiltin .st-stage{aspect-ratio:16/10}
