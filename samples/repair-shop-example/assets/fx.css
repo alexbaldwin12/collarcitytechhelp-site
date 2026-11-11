@@ -1,6 +1,6 @@
 /* CCTH motion layer for the two showpieces (original code, no third-party code). Transform + opacity only (plus a short blur on text).
    Personality comes from html[data-fx]: workshop (Bay Nine) or lakeside (Kettle Point). Everything is off or instant under reduced motion. */
-html[data-fx=workshop]{--fx-accent:#f0a83a;--fx-glow:rgba(240,168,58,.085);--fx-ease:cubic-bezier(.7,0,.2,1);--fx-dur:.8s;--fx-bg:#0a0b0c;--fx-sb:#2c3035}
+html[data-fx=workshop]{--fx-accent:#ece8df;--fx-glow:rgba(236,232,223,.05);--fx-ease:cubic-bezier(.7,0,.2,1);--fx-dur:.8s;--fx-bg:#0f1113;--fx-sb:#2c3035}
 html[data-fx=lakeside]{--fx-accent:#ffe2a6;--fx-glow:rgba(255,226,166,.07);--fx-ease:cubic-bezier(.25,.8,.25,1);--fx-dur:1.2s;--fx-bg:#0a0e16;--fx-sb:#2a3550}
 
 /* subtle scrollbar + focus */
@@ -9,7 +9,7 @@ html{scrollbar-width:thin;scrollbar-color:var(--fx-sb) var(--fx-bg)}
 ::-webkit-scrollbar-track{background:var(--fx-bg)}
 ::-webkit-scrollbar-thumb{background:var(--fx-sb);border-radius:6px;border:2px solid var(--fx-bg)}
 ::-webkit-scrollbar-thumb:hover{background:var(--fx-accent)}
-::selection{background:var(--fx-accent);color:#0a0b0c}
+::selection{background:var(--fx-accent);color:#0f1113}
 a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--fx-accent);outline-offset:3px;box-shadow:0 0 0 7px rgba(255,255,255,.07)}
 .paper a:focus-visible,.paper button:focus-visible{box-shadow:0 0 0 7px rgba(0,0,0,.08)}
 
