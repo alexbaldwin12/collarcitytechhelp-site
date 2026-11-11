@@ -7,7 +7,7 @@
 <meta name="description" content="Example website for a made-up lake house: scroll from the water through the door, walk every room in 360, check sample dates and send a demo booking request.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0a0e16">
+<meta name="theme-color" content="#0c1816">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' 'unsafe-inline'; connect-src 'self' blob: data:; form-action 'none'; base-uri 'none'; frame-src 'none'; object-src 'none'">
 <script>var r=document.documentElement;r.classList.remove('nojs');r.classList.add('js');try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)r.classList.add('rm')}catch(e){}</script>
 <link rel="icon" href="data:,">
@@ -15,7 +15,7 @@
 <link rel="preload" as="image" href="media/hero-2-poster.webp" type="image/webp" fetchpriority="high">
 <link rel="stylesheet" href="css/site.css">
 <link rel="stylesheet" href="assets/fx.css">
-<script>(function(){try{var r=document.documentElement;if(sessionStorage.getItem('fxi')||matchMedia('(prefers-reduced-motion: reduce)').matches)return;sessionStorage.setItem('fxi','1');r.classList.add('fx-i');setTimeout(function(){r.classList.add('fx-i-out')},620);setTimeout(function(){r.classList.remove('fx-i','fx-i-out')},1100)}catch(e){}})()</script>
+<script>(function(){try{var r=document.documentElement;if(sessionStorage.getItem('firstli')||matchMedia('(prefers-reduced-motion: reduce)').matches)return;sessionStorage.setItem('firstli','1');r.classList.add('fl-on');var done=function(){r.classList.add('fl-done');['pointerdown','wheel','keydown','touchstart','scroll'].forEach(function(e){removeEventListener(e,done)})};['pointerdown','wheel','keydown','touchstart','scroll'].forEach(function(e){addEventListener(e,done,{passive:true})});setTimeout(done,2200)}catch(e){}})()</script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -93,15 +93,13 @@
 </script>
 </head>
 <body>
-<div class="fx-intro" aria-hidden="true"><svg viewBox="0 0 22 30" aria-hidden="true" style="width:54px;height:72px"><path pathLength="1" d="M8 5a3 3 0 0 1 6 0"/><path pathLength="1" d="M6 8h10l1.5 14h-13z"/><path pathLength="1" d="M5 22h12v3H5z"/><path pathLength="1" d="M11 13.3v3.4"/></svg></div>
 <a class="skip" href="#main">Skip to the page</a>
 <div class="hdr">
 <div class="strip"><span><b>Example design - not a real client.</b> Made-up house on a made-up lake. Sample site by <a href="https://collarcitytechhelp.com/websites/">Collar City Tech Help</a>.</span></div>
 <div class="bar">
 <a class="logo" href="index.html" aria-label="Kettle Point, home"><svg viewBox="0 0 22 30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5a3 3 0 0 1 6 0"/><path d="M6 8h10l1.5 14h-13z"/><path d="M5 22h12v3H5z"/><circle cx="11" cy="15" r="1.7" fill="currentColor" stroke="none"/></svg>Kettle Point</a>
-<nav class="nav" id="nav" aria-label="Main"><a href="stay.html">Stay</a><a href="tour.html">Tour</a><a href="area.html">The area</a><a href="about.html">Host</a><a href="contact.html">Contact</a></nav>
-<span class="pill-status" role="status"><i></i><span data-status>Phone desk, 8 am to 8 pm</span></span>
-<a class="call btn ghost" href="tel:+15550100142">Call (555)&#8209;010&#8209;0142</a>
+<nav class="nav" id="nav" aria-label="Main"><a href="stay.html">Stay</a><a href="tour.html">Tour</a><a href="area.html">The area</a><a href="about.html">Host</a><a href="contact.html" class="nav-m">Contact</a></nav>
+<a class="tel" href="tel:+15550100142">(555)&#8209;010&#8209;0142</a>
 <a class="btn" href="contact.html#book">Check availability</a>
 <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
 </div>
@@ -119,14 +117,16 @@
 <div class="shot s3"><img class="m" data-src="img/real/in-living-dusk-2400.webp" width="2400" height="1800" alt="" decoding="async"></div>
 </div>
 <div class="vig" aria-hidden="true"></div>
+<div class="fl" aria-hidden="true"><i class="fl-grade"></i><i class="fl-warm"></i><i class="fl-fog a"></i><i class="fl-fog b"></i></div>
 <div class="hero-wrap"><div class="hero-col">
-<p class="kicker">Little Kettle Lake &middot; sleeps five</p>
-<h1>Kettle Point</h1>
+<p class="eyebrow pill-status" role="status"><i></i><span data-status>Phone desk, 8 am to 8 pm</span></p>
+<h1 aria-label="Kettle Point"><span aria-hidden="true"><span class="ch" style="--k:0">K</span><span class="ch" style="--k:1">e</span><span class="ch" style="--k:2">t</span><span class="ch" style="--k:3">t</span><span class="ch" style="--k:4">l</span><span class="ch" style="--k:5">e</span> <span class="ch" style="--k:7">P</span><span class="ch" style="--k:8">o</span><span class="ch" style="--k:9">i</span><span class="ch" style="--k:10">n</span><span class="ch" style="--k:11">t</span></span></h1>
+<i class="wl" aria-hidden="true"></i>
 <p class="hero-sub">A lake house for five, thirty steps from the water and a stove that is already laid.</p>
-<div class="hero-act"><a class="btn" href="contact.html#book">Check availability</a><a class="btn ghost" href="tel:+15550100142">Call (555)&#8209;010&#8209;0142</a></div>
-<p class="hero-note">Sample price: from <b>$240</b> a night. Next open weekend: <span id="nextwk">pick your dates</span></p>
+<div class="hero-act"><a class="btn" href="contact.html#book">Check availability</a><a class="quiet" href="tel:+15550100142">Call (555)&#8209;010&#8209;0142</a></div>
+<p class="hero-note">From <b>$240</b> a night (sample) &middot; next open weekend <span id="nextwk">pick your dates</span></p>
 </div></div>
-<div class="tod" role="group" aria-label="Time of day on the lake"><span class="tod-l">Light</span><div class="tod-b"><button type="button" data-tod="dawn" aria-pressed="false">Dawn</button><button type="button" data-tod="day" aria-pressed="false">Day</button><button type="button" data-tod="dusk" aria-pressed="true">Dusk</button><button type="button" data-tod="night" aria-pressed="false">Night</button></div><p class="tod-say" id="todsay" aria-live="polite">Fire in the woodstove. Dinner for five at the long table.</p></div>
+<div class="tod" role="group" aria-label="Time of day on the lake"><div class="tod-b"><button type="button" data-tod="dawn" aria-pressed="false">Dawn</button><button type="button" data-tod="day" aria-pressed="false">Day</button><button type="button" data-tod="dusk" aria-pressed="true">Dusk</button><button type="button" data-tod="night" aria-pressed="false">Night</button></div><p class="sr" id="todsay" aria-live="polite">Fire in the woodstove. Dinner for five at the long table.</p></div>
 <div class="cap"><h2>Start on the water.</h2><p>Little Kettle Lake at dusk, the last light on the far shore.</p></div>
 <div class="cap"><h2>Walk the dock.</h2><p>Two chairs at the end of the dock, the best seats for the last light.</p></div>
 <div class="cap"><h2>Past the boathouse.</h2><p>Gravel under your boots, and you will turn around twice to look back.</p></div>
@@ -144,7 +144,7 @@
 
 <section class="sec slate" style="padding-bottom:clamp(40px,6vw,80px)"><div class="wrap tix-head"><h2><span class="mask"><span>Open weekends, this season</span></span></h2><p class="lede" style="margin:0">Friday to Sunday, two nights. Tap an open ticket and the dates are filled in for you. <span class="k">Sample calendar, made up.</span></p></div>
 <ul class="tix" id="tix" aria-label="Open weekends"><li class="open"><a href="contact.html#book"><div class="d">This weekend</div><div class="m">Pick your own dates</div><div class="s"><span>Ask us</span><b>from $240</b></div></a></li></ul>
-<div class="wrap"><p class="k">Longer stays, midweek and holidays: <a href="stay.html#calendar" style="color:var(--lantern)">use the calendar</a>.</p></div></section>
+<div class="wrap"><p class="k">Longer stays, midweek and holidays: <a href="stay.html#calendar" style="color:var(--mist)">use the calendar</a>.</p></div></section>
 
 <section class="rs" id="rooms" aria-label="Room by room"><div class="rs-pin"><div class="wrap rs-wrap">
 <div class="rs-head"><div><p class="kicker">Room by room</p><h2>Walk through the house</h2></div><p class="rs-count" aria-hidden="true"><b id="rs-n">01</b> / 05</p></div>

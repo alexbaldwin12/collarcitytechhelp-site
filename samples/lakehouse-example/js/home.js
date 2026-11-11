@@ -22,7 +22,7 @@
       v.load(); v.addEventListener('playing', function () { v.classList.add('on'); }, { once: true }); play();
     };
     var go = function () { setTimeout(attach, 150); };
-    (poster && poster.decode ? poster.decode().catch(function () {}) : Promise.resolve()).then(function () { if (d.readyState === 'complete') go(); else addEventListener('load', go, { once: true }); });
+    (poster && poster.decode ? poster.decode().catch(function () {}) : Promise.resolve()).then(function () { if (root.classList.contains('fl-on')) attach(); else if (d.readyState === 'complete') go(); else addEventListener('load', go, { once: true }); });
     d.addEventListener('visibilitychange', function () { if (!started) return; if (d.hidden) v.pause(); else if (!stage.hasAttribute('data-away')) play(); });
   }
 
