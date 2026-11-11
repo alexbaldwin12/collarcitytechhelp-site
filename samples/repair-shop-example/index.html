@@ -16,7 +16,7 @@
 <link rel="preload" as="image" href="media/hero-1-poster-960.webp" fetchpriority="high" media="(max-width:900px)">
 <link rel="stylesheet" href="css/site.css">
 <link rel="stylesheet" href="assets/fx.css">
-<script>(function(){try{var r=document.documentElement;if(sessionStorage.getItem('fxi')||matchMedia('(prefers-reduced-motion: reduce)').matches)return;sessionStorage.setItem('fxi','1');r.classList.add('fx-i');setTimeout(function(){r.classList.add('fx-i-out')},620);setTimeout(function(){r.classList.remove('fx-i','fx-i-out')},1100)}catch(e){}})()</script>
+<script>(function(){try{var r=document.documentElement;if(sessionStorage.getItem('doori')||matchMedia('(prefers-reduced-motion: reduce)').matches)return;sessionStorage.setItem('doori','1');r.classList.add('door-on');var done=function(){r.classList.add('door-done');['pointerdown','wheel','keydown','touchstart','scroll'].forEach(function(e){removeEventListener(e,done)})};['pointerdown','wheel','keydown','touchstart','scroll'].forEach(function(e){addEventListener(e,done,{passive:true})});setTimeout(done,2200)}catch(e){}})()</script>
 <script type="application/ld+json">{
  "@context": "https://schema.org",
  "@type": "AutoRepair",
@@ -191,19 +191,14 @@
 }</script>
 </head>
 <body>
-<div class="fx-intro" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true"><rect pathLength="1" x="6" y="6" width="52" height="52" rx="9"/><path pathLength="1" d="M40 27a9 9 0 1 0-9 9"/><path pathLength="1" d="M40 27c0 9-3 16-11 19"/></svg></div>
 <a class="skip" href="#main">Skip to content</a>
 <div class="hdr">
 <div class="strip"><b>Example design - not a real client.</b><span class="x"> Made-up shop, example phone, sample price ranges.</span></div>
 <div class="bar">
 <a class="logo" href="index.html" aria-label="Bay Nine Auto, home"><i>9</i>Bay Nine Auto</a>
 <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
-<nav class="nav" id="nav" aria-label="Main"><a href="services.html">Services</a><a href="fleet.html">Fleet</a><a href="shop.html">The shop</a><a href="the-bay.html">The bay</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
-<div class="bar-r">
-<span class="pill-status hd"><span class="dot"></span><span data-status>Mon to Fri 7:30 am to 5:30 pm</span></span>
-<a class="btn sm ghost call" href="tel:+15550100177">Call (555) 010‑0177</a>
-<a class="btn sm" href="contact.html#book">Book a repair</a>
-</div></div></div>
+<nav class="nav" id="nav" aria-label="Main"><a href="services.html">Services</a><a href="fleet.html">Fleet</a><a href="shop.html">The shop</a><a href="about.html">About</a><a href="the-bay.html" class="nav-m">The bay</a><a href="contact.html" class="nav-m">Contact</a></nav>
+<div class="bar-r"><a class="tel" href="tel:+15550100177">(555) 010‑0177</a><a class="btn sm" href="contact.html#book">Book a repair</a></div></div></div>
 <div class="dip" aria-hidden="true"><svg viewBox="0 0 26 200"><circle cx="13" cy="7" r="5" fill="none" stroke="#9aa2aa" stroke-width="1.5"/><rect x="11" y="12" width="4" height="188" fill="#2a2e33"/><rect id="dipLvl" class="lvl" x="11" y="190" width="4" height="10" fill="#ece8df"/><g stroke="#9aa2aa" stroke-width="1"><path d="M2 20h14"/><path d="M2 38h9"/><path d="M2 56h9"/><path d="M2 74h9"/><path d="M2 92h9"/><path d="M2 110h14"/><path d="M2 128h9"/><path d="M2 146h9"/><path d="M2 164h9"/><path d="M2 182h9"/></g></svg></div>
 <div class="dock"><a class="btn ghost" href="tel:+15550100177">Call</a><a class="btn" href="contact.html#book">Book or quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div>
 <main id="main">
@@ -212,11 +207,12 @@
 <picture><source media="(max-width:900px)" srcset="media/hero-1-poster-960.webp" type="image/webp"><source srcset="media/hero-1-poster.webp" type="image/webp"><img class="m" src="media/hero-1-poster.jpg" width="1920" height="1080" alt="" fetchpriority="high" decoding="async"></picture>
 <video class="m" data-src="media/hero-1" muted loop playsinline preload="none" tabindex="-1"></video>
 </div>
+<div class="door" aria-hidden="true"><i class="door-line"></i><div class="door-panel"></div></div>
 <div class="wrap hero-in"><div class="hero-col">
-<div class="kicker">Bay Nine Auto Repair</div>
-<h1 aria-label="Tell us what it’s doing."><span class="l" style="--i:0"><span>Tell us what</span></span><span class="l" style="--i:1"><span>it&rsquo;s doing.</span></span></h1>
-<p class="hero-sub">Maintenance to major repair, for everyday cars and for fleets. Drop it off or wait, and expect a written estimate before anything is touched.</p>
-<div class="hero-act"><a class="btn lg" href="contact.html#book">Book a repair <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a><a class="btn lg ghost" href="fleet.html">Fleet accounts</a></div>
+<p class="eyebrow pill-status"><span class="dot"></span><span data-status>Mon to Fri 7:30 am to 5:30 pm</span></p>
+<div class="h1w"><h1 aria-label="Tell us what it’s doing."><span class="l" style="--i:0"><span>Tell us what</span></span><span class="l" style="--i:1"><span>it&rsquo;s doing.</span></span></h1></div>
+<p class="hero-sub">Brakes to engines, for everyday cars and for fleets. A written estimate before anything is touched.</p>
+<div class="hero-act"><a class="btn lg" href="contact.html#book">Book a repair <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a><a class="quiet" href="fleet.html">Fleet accounts <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div>
 </div></div>
 <div class="bbw"><p class="sr">Sample bay board for illustration: Bay 1 brakes ready at 2:30, Bay 3 alignment in progress. The full bay board with every bay and technician is on the shop page.</p>
 <div class="bb" aria-hidden="true"><div class="bb-h"><span class="t">Bay board</span><span class="s">Sample data</span><span class="c" id="bbClock">1:52 pm</span></div><i class="bb-tick"></i><ul><li data-k="ready"><b>Bay 1</b><span class="sw bb-job"><span>Brakes</span></span><span class="bb-st"><i></i><span class="sw"><span>Ready 2:30</span></span></span></li><li data-k="busy"><b>Bay 2</b><span class="sw bb-job"><span>Oil service</span></span><span class="bb-st"><i></i><span class="sw"><span>In progress</span></span></span></li><li data-k="busy"><b>Bay 3</b><span class="sw bb-job"><span>Alignment</span></span><span class="bb-st"><i></i><span class="sw"><span>In progress</span></span></span></li><li data-k="busy"><b>Bay 4</b><span class="sw bb-job"><span>Check-engine</span></span><span class="bb-st"><i></i><span class="sw"><span>Diagnosing</span></span></span></li></ul></div>
