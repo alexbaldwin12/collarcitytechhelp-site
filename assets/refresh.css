@@ -1,0 +1,172 @@
+/* Collar City Tech Help: shared look-and-feel layer (site refresh, Case 17).
+   Loaded after site.css (and showcase.css / tiers.css on pages that use them). Look and feel only: no words, prices or links live here.
+   Personality "Practice": steady and reassuring. Calm base, a few crafted moments, quiet reveals everywhere else.
+   Hidden "before" states only exist under html.js (set by the inline head script), so every page is complete without JavaScript.
+   Revert: remove the refresh.css link, the refresh.js script and the inline head snippet from each page (see REPORT.md). */
+:root{--rf-ease:cubic-bezier(.4,0,.2,1);--rf-dur:.8s;--rf-st:.06s;--rf-r:18px;--rf-rc:12px;--rf-beam:var(--accent,#0b6f65)}
+.hero,.phero,.sec.dark,.sec.blueprint,.site-footer{--rf-beam:var(--teal-light,#6fd9cb)}
+
+/* 1. type rhythm */
+h1,h2,h3{text-wrap:balance}p,li,.intro,.lead{text-wrap:pretty}
+.prose{line-height:1.72}.prose h2{margin-top:2.1em;margin-bottom:.55em}.prose h3{margin-top:1.7em}.prose p,.prose li{max-width:68ch}
+.sec h2+.intro{margin-top:-.1em}.intro{max-width:40em}
+.kicker,.tier-eyebrow{letter-spacing:.06em}
+
+/* 2. calm surfaces: one radius, soft depth instead of boxes */
+.cards li,.q,.sample,.optin,.cta,#result,.gallery figure,.tier{border-color:transparent;border-radius:var(--rf-r)}
+.cards li,.tier,.sample,.q{box-shadow:var(--lift)}
+.cta{padding:32px 34px;box-shadow:var(--lift)}
+.cards li{position:relative;padding:0;transition:transform .35s var(--rf-ease),box-shadow .35s var(--rf-ease)}
+.cards li a{display:block;padding:18px 20px;text-decoration:none;border-radius:var(--rf-r)}
+.cards li:hover,.cards li:focus-within{transform:translateY(-3px)}
+.cards li a:hover{text-decoration:none}
+.prose th,.prose td,.sample th,.sample td{border:0;border-bottom:1px solid var(--line)}
+.prose th,.sample th{border-bottom-color:var(--rule)}
+.prose blockquote{border-left-width:2px}
+.trust{border-bottom:0;box-shadow:0 1px 0 var(--line)}
+.field input[type=text],.field input[type=email],.field input[type=url],.field select,.field textarea,.mockform input,.mockform textarea,.optform input[type=email],.optform input[type=text],.optin input[type=email]{border-radius:var(--rf-rc);transition:border-color .2s,box-shadow .2s}
+.btn,button.btn{transition:background .2s,border-color .2s,color .2s,transform .25s var(--rf-ease),box-shadow .25s var(--rf-ease)}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 22px -14px rgba(15,29,56,.55)}
+.btn:active{transform:none}
+:focus-visible{outline-color:var(--accent,#0b6f65)}
+.hero :focus-visible,.phero :focus-visible,.sec.dark :focus-visible,.sec.blueprint :focus-visible,.site-footer :focus-visible{outline-color:#fff}
+
+/* lists on index pages line up with the page text; blog titles read as titles, underline on hover */
+.prose ul.list,.prose ul.cards{padding-left:0}
+.list li{transition:transform .35s var(--rf-ease)}.list h2 a{text-decoration:none}.list h2 a:hover{text-decoration:underline;text-underline-offset:.2em}
+
+/* 3. section transitions: soft sheets instead of hard edges */
+.hero,.phero{border-radius:0 0 28px 28px}
+.sec.blueprint,.sec.dark{border-radius:28px}
+.sec.dark{margin-bottom:-28px;padding-bottom:calc(96px + 28px);position:relative;z-index:1}
+.site-footer{border-radius:28px 28px 0 0;position:relative}
+.sec.paper{background-image:linear-gradient(to bottom,var(--bg),transparent 90px),linear-gradient(to top,var(--bg),transparent 90px),var(--grain-k);box-shadow:none}
+@media(max-width:720px){.hero,.phero{border-radius:0 0 20px 20px}.sec.blueprint,.sec.dark{border-radius:20px}.sec.dark{margin-bottom:-20px;padding-bottom:calc(56px + 20px)}.site-footer{border-radius:20px 20px 0 0}.sec.paper{background-image:linear-gradient(to bottom,var(--bg),transparent 56px),linear-gradient(to top,var(--bg),transparent 56px),var(--grain-k)}}
+
+/* 4. drawn hairlines (list rows, FAQ, page header): the border is swapped for a line that draws in */
+.phero{position:relative}
+.phero::after{content:"";position:absolute;left:max(var(--pad),calc((100% - var(--wrap))/2 + var(--pad)));right:max(var(--pad),calc((100% - var(--wrap))/2 + var(--pad)));bottom:0;height:1px;background:linear-gradient(90deg,var(--rf-beam),transparent 70%);opacity:.55;transform-origin:left;animation:rf-line 1.4s var(--rf-ease) .3s both}
+.js .svc,.js .row{border-bottom-color:transparent;position:relative}
+.js .svc::after,.js .row::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--line);transform:scaleX(0);transform-origin:left;transition:transform 1.1s var(--rf-ease) calc(var(--i,0)*var(--rf-st))}
+.js .svc.rf-in::after,.js .row.rf-in::after,.rf-fail .svc::after,.rf-fail .row::after{transform:scaleX(1)}
+.js .svc-list,.js .ledger{border-top-color:var(--line)}
+.rf-fail .svc,.rf-fail .row{border-bottom-color:var(--line)}
+.faq details{border-top-color:var(--line)}
+@keyframes rf-line{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* 5. quiet reveals (below-the-fold blocks only; JS adds .rf-r to them, so nothing visible is ever hidden at load) */
+.js .rf-r{opacity:0;transform:translateY(16px);transition:opacity .7s var(--rf-ease),transform var(--rf-dur) var(--rf-ease);transition-delay:calc(var(--i,0)*var(--rf-st))}
+.js .rf-r.rf-in,.rf-fail .rf-r{opacity:1;transform:none}
+.phero .crumbs,.phero .byline,.phero .sub{animation:rf-up .8s var(--rf-ease) .15s both}
+.phero .byline,.phero .sub{animation-delay:.3s}
+.center>*{animation:rf-up .8s var(--rf-ease) both}.center>*:nth-child(2){animation-delay:.1s}.center>*:nth-child(3){animation-delay:.2s}.center>*:nth-child(4){animation-delay:.3s}
+@keyframes rf-up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* 6. highlighter: one key phrase per page */
+mark.rf-mark{color:inherit;padding:0 .12em;margin:0 -.12em;border-radius:3px;background:linear-gradient(color-mix(in srgb,var(--rf-beam) 34%,transparent),color-mix(in srgb,var(--rf-beam) 34%,transparent)) no-repeat 0 90%/100% .5em}
+.js mark.rf-mark{background-size:0% .5em;transition:background-size 1.1s var(--rf-ease) .2s}
+.js mark.rf-mark.rf-in,.rf-fail mark.rf-mark{background-size:100% .5em}
+
+/* 7. smooth accordions (FAQ): the answer slides, native keyboard and screen reader behaviour kept */
+.faq details summary{transition:color .2s}.faq details summary:hover{color:var(--accent)}
+.faq details summary::after{transition:transform .35s var(--rf-ease)}.faq details[open] summary::after{transform:rotate(180deg)}
+@supports selector(::details-content){.faq{interpolate-size:allow-keywords}.faq details::details-content{block-size:0;overflow:clip;transition:block-size .4s var(--rf-ease),content-visibility .4s allow-discrete}.faq details[open]::details-content{block-size:auto}}
+
+/* 8. pricing: border beam on the recommended card, spot light on every card (pointer devices) */
+@property --rf-a{syntax:'<angle>';inherits:false;initial-value:0deg}
+.tier{position:relative;transition:transform .35s var(--rf-ease),box-shadow .35s var(--rf-ease)}
+.tier.hl{border-color:transparent;isolation:isolate}
+.tier.hl::before{content:"";position:absolute;inset:-2px;border-radius:calc(var(--rf-r) + 2px);padding:2px;pointer-events:none;background:conic-gradient(from var(--rf-a),color-mix(in srgb,var(--h) 38%,transparent) 0 58%,var(--rf-beam) 78%,color-mix(in srgb,var(--h) 38%,transparent) 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+@media(prefers-reduced-motion:no-preference){.tier.hl.rf-live::before{animation:rf-spin 7s linear infinite}}
+@keyframes rf-spin{to{--rf-a:360deg}}
+.tier::after,.cards li::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(300px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--accent,#0b6f65) 13%,transparent),transparent 62%)}
+@media(hover:hover){.tier:hover::after,.cards li:hover::after{opacity:1}}
+.tier .price [data-rf-count]{display:inline-block;font-variant-numeric:tabular-nums}
+.tier:hover{transform:translateY(-3px)}
+.tier .btn{position:relative;z-index:1}
+
+/* 9. home hero: the three words of the headline take turns being underlined (existing words only) */
+.rf-w{background:linear-gradient(var(--teal-light,#6fd9cb),var(--teal-light,#6fd9cb)) no-repeat 0 94%/0% .07em}
+@media(prefers-reduced-motion:no-preference){.js .rf-w{animation:rf-w 9s var(--rf-ease) infinite;animation-delay:calc(var(--w)*3s + 2.2s)}}
+@keyframes rf-w{0%{background-size:0% .07em}7%,28%{background-size:100% .07em}35%,100%{background-size:0% .07em}}
+
+/* 10. How it works: a light travels along the four step lines in turn */
+.steps .step{clip-path:inset(-10px 0 -10px 0)}
+.js .steps .step::after{content:"";position:absolute;left:0;top:-2px;height:2px;width:100%;background:linear-gradient(90deg,transparent,#fff 50%,transparent);box-shadow:0 0 12px 1px rgba(111,217,203,.8);transform:translateX(-100%);opacity:0}
+@media(prefers-reduced-motion:no-preference){.js .steps.rf-live .step::after{animation:rf-beam 7s var(--rf-ease) infinite;animation-delay:calc(var(--i)*1.1s)}}
+@keyframes rf-beam{0%{transform:translateX(-100%);opacity:0}4%{opacity:1}22%{transform:translateX(100%);opacity:1}26%,100%{transform:translateX(100%);opacity:0}}
+
+/* 11. security: status rings drawn into the sample table */
+.rf-ring{display:inline-block;width:1.2em;height:1.2em;vertical-align:-.22em;margin-right:.5em;color:var(--muted);--c:50.27}
+.rf-ring svg{display:block;width:100%;height:100%;transform:rotate(-90deg)}
+.rf-ring circle{fill:none;stroke-width:3.4}
+.rf-ring .bg{stroke:currentColor;opacity:.22}
+.rf-ring .fg{stroke:var(--accent,#0b6f65);stroke-linecap:round;stroke-dasharray:50.27;stroke-dashoffset:calc(50.27*(1 - var(--v)))}
+.rf-ring.warn .fg{stroke:#b45309}
+html[data-theme=dark] .rf-ring.warn .fg{stroke:#f0a35a}
+@media(prefers-color-scheme:dark){html[data-themable]:not([data-theme=light]) .rf-ring.warn .fg{stroke:#f0a35a}}
+.js .rf-ring .fg{stroke-dashoffset:50.27;transition:stroke-dashoffset 1.3s var(--rf-ease) .35s}
+.js .rf-in .rf-ring .fg,.rf-fail .rf-ring .fg{stroke-dashoffset:calc(50.27*(1 - var(--v)))}
+[data-rf-scramble]{display:inline-block;font-variant-numeric:tabular-nums}
+
+/* 12. marketing: a month of posts pops in, newest on top (decorative; 4 Google posts, 8 social posts) */
+.rf-posts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:34px 0 8px;max-width:560px}
+.rf-posts i{display:block;height:70px;border-radius:var(--rf-rc);background:var(--surface);box-shadow:var(--lift);position:relative;overflow:hidden}
+.rf-posts i::before,.rf-posts i::after{content:"";position:absolute;left:12px;height:6px;border-radius:3px;background:var(--line)}
+.rf-posts i::before{top:30px;right:12px;opacity:.9}.rf-posts i::after{top:44px;right:34px;opacity:.7}
+.rf-posts i b{position:absolute;left:12px;top:12px;width:22px;height:8px;border-radius:4px;background:var(--navy)}
+.rf-posts i.g b{background:var(--teal)}
+html[data-theme=dark] .rf-posts i b{background:#8fb4ff}html[data-theme=dark] .rf-posts i.g b{background:#5fd0c2}
+@media(prefers-color-scheme:dark){html[data-themable]:not([data-theme=light]) .rf-posts i b{background:#8fb4ff}html[data-themable]:not([data-theme=light]) .rf-posts i.g b{background:#5fd0c2}}
+.js .rf-posts i{opacity:0}
+.js .rf-posts.rf-in i{animation:rf-pop .55s var(--rf-ease) both;animation-delay:calc((11 - var(--i))*80ms)}
+.rf-fail .rf-posts i{opacity:1}
+@keyframes rf-pop{from{opacity:0;transform:translateY(-14px) scale(.94)}to{opacity:1;transform:none}}
+
+/* 13. areas: schematic map, rivers draw in then towns appear (decorative; the list below is the real navigation) */
+.rf-map{position:relative;aspect-ratio:8/6;max-width:760px;margin:6px auto 34px;border-radius:var(--rf-r);background:radial-gradient(circle at 70% 40%,color-mix(in srgb,var(--accent,#0b6f65) 8%,transparent),transparent 60%),var(--paper);overflow:hidden}
+.rf-map svg{position:absolute;inset:0;width:100%;height:100%}
+.rf-map path{fill:none;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.rf-map .hud{stroke:var(--navy);stroke-width:3.2;opacity:.85}.rf-map .moh{stroke:var(--teal);stroke-width:2.4;opacity:.85}
+html[data-theme=dark] .rf-map .hud{stroke:#8fb4ff}html[data-theme=dark] .rf-map .moh{stroke:#5fd0c2}
+@media(prefers-color-scheme:dark){html[data-themable]:not([data-theme=light]) .rf-map .hud{stroke:#8fb4ff}html[data-themable]:not([data-theme=light]) .rf-map .moh{stroke:#5fd0c2}}
+.js .rf-map path{stroke-dasharray:3000;stroke-dashoffset:3000;transition:stroke-dashoffset 2.6s var(--rf-ease)}
+.js .rf-map.rf-in path{stroke-dashoffset:0}.js .rf-map.rf-in .moh{transition-delay:.5s}
+.rf-fail .rf-map path{stroke-dashoffset:0}
+.rf-t{position:absolute;transform:translateY(-50%);padding:0 0 0 .95em;font-size:clamp(.66rem,2.1vw,.92rem);font-weight:600;color:var(--h);white-space:nowrap;line-height:1}
+.rf-t::before{content:"";position:absolute;left:0;top:50%;transform:translate(-50%,-50%);width:.62em;height:.62em;border-radius:50%;background:var(--accent,#0b6f65);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent,#0b6f65) 22%,transparent)}
+.rf-t.l{transform:translate(-100%,-50%);padding:0 .95em 0 0}
+.rf-t.l::before{left:auto;right:0;transform:translate(50%,-50%)}
+.rf-t.home::before{width:.95em;height:.95em;background:var(--navy);box-shadow:0 0 0 4px color-mix(in srgb,var(--navy) 25%,transparent)}
+html[data-theme=dark] .rf-t.home::before{background:#8fb4ff}
+@media(prefers-color-scheme:dark){html[data-themable]:not([data-theme=light]) .rf-t.home::before{background:#8fb4ff}}
+.js .rf-t{opacity:0;transition:opacity .6s var(--rf-ease);transition-delay:calc(1.4s + var(--i)*.14s)}
+.js .rf-map.rf-in .rf-t,.rf-fail .rf-t{opacity:1}
+@media(max-width:640px){.rf-map{aspect-ratio:5/6}}
+
+/* 14. long pages: reading progress (native scroll-driven, no JS cost); wide tables fade at the edge on phones */
+.rf-progress{display:none}
+@supports (animation-timeline:scroll()){@media(prefers-reduced-motion:no-preference){.rf-progress{display:block;position:fixed;inset:0 0 auto;height:3px;background:var(--accent,#0b6f65);transform-origin:0 50%;transform:scaleX(0);z-index:70;animation:rf-grow linear both;animation-timeline:scroll(root block)}}}
+@keyframes rf-grow{to{transform:scaleX(1)}}
+@media(max-width:640px){.tablewrap.rf-edge{-webkit-mask-image:linear-gradient(90deg,#000 86%,transparent);mask-image:linear-gradient(90deg,#000 86%,transparent)}}
+
+/* 15. page-to-page view transitions (Chrome / Edge / Safari 18.2+; other browsers just navigate) */
+@media(prefers-reduced-motion:no-preference){@view-transition{navigation:auto}}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.28s;animation-timing-function:var(--rf-ease)}
+.site-header{view-transition-name:rf-hdr}
+::view-transition-group(rf-hdr){animation-duration:0s}
+
+/* theme toggle sits with the nav on every page now */
+.theme-btn{margin-left:2px}
+.theme-btn:focus-visible{outline-offset:2px}
+
+/* motion off: nothing moves, everything is where it ends up */
+@media(prefers-reduced-motion:reduce){
+ .js .rf-r,.js .rf-posts i,.js .rf-t{opacity:1;transform:none}
+ .js .rf-ring .fg{stroke-dashoffset:calc(50.27*(1 - var(--v)))}
+ .js .rf-map path{stroke-dashoffset:0}
+ .js mark.rf-mark{background-size:100% .5em}
+ .js .svc::after,.js .row::after{transform:scaleX(1)}
+ .phero::after{animation:none}
+ .center>*,.phero .crumbs,.phero .byline,.phero .sub{animation:none}
+}

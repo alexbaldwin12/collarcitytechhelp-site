@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){var d=document.documentElement;d.classList.add('js');d.setAttribute('data-themable','');try{var t=localStorage.getItem('cct-theme');if(t==='dark'||t==='light')d.setAttribute('data-theme',t)}catch(e){}var m=/[?&]theme=(dark|light)/.exec(location.search);if(m)d.setAttribute('data-theme',m[1]);setTimeout(function(){if(!d.classList.contains('rf-ready'))d.classList.add('rf-fail')},4000)})();</script>
 <title>Websites, Security and Marketing for Small Businesses | Collar City Tech Help</title>
 <meta name="description" content="Websites, security checkups and marketing for small businesses across the U.S. Free homepage mockup, free 3-minute security quiz, or a $79 Security Scorecard.">
 <link rel="canonical" href="https://collarcitytechhelp.com/">
@@ -22,6 +23,7 @@
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/showcase.css">
 <link rel="stylesheet" href="/assets/tiers.css">
+<link rel="stylesheet" href="/assets/refresh.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -140,7 +142,6 @@
  ]
 }
 </script>
-<script>(function(){var d=document.documentElement,m=/[?&]theme=(dark|light)/.exec(location.search);if(m)d.setAttribute('data-theme',m[1]);document.addEventListener('DOMContentLoaded',function(){var b=document.querySelector('.theme-btn');if(!b)return;function dk(){var t=d.getAttribute('data-theme');return t?t==='dark':matchMedia('(prefers-color-scheme:dark)').matches}function sy(){b.setAttribute('aria-pressed',dk())}sy();b.addEventListener('click',function(){d.setAttribute('data-theme',dk()?'light':'dark');sy()})})})();</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -151,7 +152,7 @@
 </div></header>
 <main id="main">
 <section class="hero"><div class="wrap herogrid">
-<div><h1 data-split>Get your business online, secure, and found.</h1>
+<div><h1 data-split>Get your business <span class="rf-w" style="--w:0">online,</span> <span class="rf-w" style="--w:1">secure,</span> and <span class="rf-w" style="--w:2">found</span>.</h1>
 <p class="lead">Websites, security checkups and marketing for small businesses across the U.S. Based in Troy, NY.</p>
 <p class="ctas"><a class="btn big" href="/mockup/">Get a free homepage mockup</a><a class="btn alt big" href="#quiz">Take the free security quiz</a></p>
 <p class="note">No passwords, no access to your devices, and no commitment for the mockup. Or see the <a href="#pricing">$79 Security Scorecard</a>.</p></div>
@@ -323,6 +324,7 @@ var m = document.getElementById('optMsg'), em = document.getElementById('optEmai
 <script defer src="/assets/kit/vendor/lenis.min.js"></script>
 <script defer src="/assets/kit/vendor/swiper-bundle.min.js"></script>
 <script defer src="/assets/site.js"></script>
+<script defer src="/assets/refresh.js"></script>
 <script defer src="/assets/showcase.js"></script>
 </body>
 </html>

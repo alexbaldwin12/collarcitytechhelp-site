@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-themable>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){var d=document.documentElement;d.classList.add('js');d.setAttribute('data-themable','');try{var t=localStorage.getItem('cct-theme');if(t==='dark'||t==='light')d.setAttribute('data-theme',t)}catch(e){}var m=/[?&]theme=(dark|light)/.exec(location.search);if(m)d.setAttribute('data-theme',m[1]);setTimeout(function(){if(!d.classList.contains('rf-ready'))d.classList.add('rf-fail')},4000)})();</script>
 <title>Security Scorecard for Retail Shops</title>
 <meta name="description" content="A plain-English security check for retail shops: POS and store admin logins, gift card scams, vendor email spoofing and email protection. $79, online.">
 <link rel="canonical" href="https://collarcitytechhelp.com/industries/retail-shops/">
@@ -19,6 +20,7 @@
 <link rel="preload" href="/assets/kit/fonts/InstrumentSerif-normal-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/kit/fonts/fonts.css">
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/refresh.css">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -91,7 +93,7 @@
 <header class="site-header"><div class="wrap">
 <a class="brand" href="/"><img src="/cct-logo.jpg" width="44" height="44" alt="Collar City Tech Help logo"><span>Collar City Tech Help</span></a>
 <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-<nav class="nav" id="site-nav" aria-label="Main"><a href="/websites/">Websites</a><a href="/security/">Security</a><a href="/marketing/">Marketing</a><a href="/#pricing">Pricing</a><a href="/samples/">Samples</a><a href="/blog/">Blog</a><a class="btn" href="/mockup/">Get a free homepage mockup</a></nav>
+<nav class="nav" id="site-nav" aria-label="Main"><a href="/websites/">Websites</a><a href="/security/">Security</a><a href="/marketing/">Marketing</a><a href="/#pricing">Pricing</a><a href="/samples/">Samples</a><a href="/blog/">Blog</a><a class="btn" href="/mockup/">Get a free homepage mockup</a></nav><button class="theme-btn" type="button" aria-label="Switch between light and dark theme" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg></button>
 </div></header>
 <main id="main">
 <section class="phero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/industries/">Industries</a></nav><h1 data-split>Security for shops with a counter, a website, or both</h1><p class="byline">By Alex, founder, Collar City Tech Help, Troy, NY. Last updated 2026-10-08.</p></div></section>
@@ -133,14 +135,10 @@
 </div>
 <h2>Common questions</h2>
 <div class="faq">
-<h3>Do you test my online store?</h3>
-<p>No. We never log in to or probe your website or store. We use your answers and public email DNS records only.</p>
-<h3>Does this make me PCI compliant?</h3>
-<p>No. It is general security guidance, not a compliance review. Your card processor can explain its own requirements.</p>
-<h3>I only sell at markets and online. Does it apply?</h3>
-<p>Yes. The questionnaire covers phones, payment accounts and email, which matter wherever you sell.</p>
-<h3>What do I get at the end?</h3>
-<p>A graded report with your top risks, a fix list in order, and free tools to do each fix. It is prepared by Alex using modern tools, including AI, and checked before it is sent.</p>
+<details><summary>Do you test my online store?</summary><div class="ans"><p>No. We never log in to or probe your website or store. We use your answers and public email DNS records only.</p></div></details>
+<details><summary>Does this make me PCI compliant?</summary><div class="ans"><p>No. It is general security guidance, not a compliance review. Your card processor can explain its own requirements.</p></div></details>
+<details><summary>I only sell at markets and online. Does it apply?</summary><div class="ans"><p>Yes. The questionnaire covers phones, payment accounts and email, which matter wherever you sell.</p></div></details>
+<details><summary>What do I get at the end?</summary><div class="ans"><p>A graded report with your top risks, a fix list in order, and free tools to do each fix. It is prepared by Alex using modern tools, including AI, and checked before it is sent.</p></div></details>
 </div>
 <h2>Other industries</h2>
 <ul class="cards">
@@ -165,5 +163,6 @@
 <script defer src="/assets/kit/vendor/SplitText.min.js"></script>
 <script defer src="/assets/kit/vendor/lenis.min.js"></script>
 <script defer src="/assets/site.js"></script>
+<script defer src="/assets/refresh.js"></script>
 </body>
 </html>
