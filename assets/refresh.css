@@ -31,6 +31,10 @@ h1,h2,h3{text-wrap:balance}p,li,.intro,.lead{text-wrap:pretty}
 :focus-visible{outline-color:var(--accent,#0b6f65)}
 .hero :focus-visible,.phero :focus-visible,.sec.dark :focus-visible,.sec.blueprint :focus-visible,.site-footer :focus-visible{outline-color:#fff}
 
+/* lists on index pages line up with the page text; blog titles read as titles, underline on hover */
+.prose ul.list,.prose ul.cards{padding-left:0}
+.list li{transition:transform .35s var(--rf-ease)}.list h2 a{text-decoration:none}.list h2 a:hover{text-decoration:underline;text-underline-offset:.2em}
+
 /* 3. section transitions: soft sheets instead of hard edges */
 .hero,.phero{border-radius:0 0 28px 28px}
 .sec.blueprint,.sec.dark{border-radius:28px}
