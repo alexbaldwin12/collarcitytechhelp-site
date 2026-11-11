@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-themable>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){var d=document.documentElement;d.classList.add('js');d.setAttribute('data-themable','');try{var t=localStorage.getItem('cct-theme');if(t==='dark'||t==='light')d.setAttribute('data-theme',t)}catch(e){}var m=/[?&]theme=(dark|light)/.exec(location.search);if(m)d.setAttribute('data-theme',m[1]);setTimeout(function(){if(!d.classList.contains('rf-ready'))d.classList.add('rf-fail')},4000)})();</script>
 <title>Security Scorecard for Restaurants and Cafes</title>
 <meta name="description" content="A plain-English security check for restaurants and cafes: logins, shared tablets, email scams, backups and domain protection. $79, done online.">
 <link rel="canonical" href="https://collarcitytechhelp.com/industries/restaurants-cafes/">
@@ -19,6 +20,7 @@
 <link rel="preload" href="/assets/kit/fonts/InstrumentSerif-normal-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/kit/fonts/fonts.css">
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/refresh.css">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -91,7 +93,7 @@
 <header class="site-header"><div class="wrap">
 <a class="brand" href="/"><img src="/cct-logo.jpg" width="44" height="44" alt="Collar City Tech Help logo"><span>Collar City Tech Help</span></a>
 <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-<nav class="nav" id="site-nav" aria-label="Main"><a href="/websites/">Websites</a><a href="/security/">Security</a><a href="/marketing/">Marketing</a><a href="/#pricing">Pricing</a><a href="/samples/">Samples</a><a href="/blog/">Blog</a><a class="btn" href="/mockup/">Get a free homepage mockup</a></nav>
+<nav class="nav" id="site-nav" aria-label="Main"><a href="/websites/">Websites</a><a href="/security/">Security</a><a href="/marketing/">Marketing</a><a href="/#pricing">Pricing</a><a href="/samples/">Samples</a><a href="/blog/">Blog</a><a class="btn" href="/mockup/">Get a free homepage mockup</a></nav><button class="theme-btn" type="button" aria-label="Switch between light and dark theme" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg></button>
 </div></header>
 <main id="main">
 <section class="phero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/industries/">Industries</a></nav><h1 data-split>A security check built around how a restaurant or cafe really runs</h1><p class="byline">By Alex, founder, Collar City Tech Help, Troy, NY. Last updated 2026-10-08.</p></div></section>
@@ -135,14 +137,10 @@
 </div>
 <h2>Common questions</h2>
 <div class="faq">
-<h3>Do you look at my point-of-sale system?</h3>
-<p>No. We never connect to your POS, tablets or accounts. The report is built from your questionnaire answers and public DNS records for your email domain.</p>
-<h3>I only run a small cafe with three staff. Is this too much?</h3>
-<p>Probably not. The questionnaire takes about 10 minutes and the report is scaled to your size. Fewer people usually means fewer things to fix, and you will see the order to do them in.</p>
-<h3>Do I need to give you any passwords?</h3>
-<p>Never. Please do not type or send a password anywhere. If one slips into a message, tell us and change it right away.</p>
-<h3>How fast do I get the report?</h3>
-<p>Within 2 business days of paying and submitting the questionnaire. The report is prepared by Alex using modern tools, including AI, and checked before it is sent.</p>
+<details><summary>Do you look at my point-of-sale system?</summary><div class="ans"><p>No. We never connect to your POS, tablets or accounts. The report is built from your questionnaire answers and public DNS records for your email domain.</p></div></details>
+<details><summary>I only run a small cafe with three staff. Is this too much?</summary><div class="ans"><p>Probably not. The questionnaire takes about 10 minutes and the report is scaled to your size. Fewer people usually means fewer things to fix, and you will see the order to do them in.</p></div></details>
+<details><summary>Do I need to give you any passwords?</summary><div class="ans"><p>Never. Please do not type or send a password anywhere. If one slips into a message, tell us and change it right away.</p></div></details>
+<details><summary>How fast do I get the report?</summary><div class="ans"><p>Within 2 business days of paying and submitting the questionnaire. The report is prepared by Alex using modern tools, including AI, and checked before it is sent.</p></div></details>
 </div>
 <h2>Other industries</h2>
 <ul class="cards">
@@ -167,5 +165,6 @@
 <script defer src="/assets/kit/vendor/SplitText.min.js"></script>
 <script defer src="/assets/kit/vendor/lenis.min.js"></script>
 <script defer src="/assets/site.js"></script>
+<script defer src="/assets/refresh.js"></script>
 </body>
 </html>

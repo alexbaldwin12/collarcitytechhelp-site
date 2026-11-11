@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-themable>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){var d=document.documentElement;d.classList.add('js');d.setAttribute('data-themable','');try{var t=localStorage.getItem('cct-theme');if(t==='dark'||t==='light')d.setAttribute('data-theme',t)}catch(e){}var m=/[?&]theme=(dark|light)/.exec(location.search);if(m)d.setAttribute('data-theme',m[1]);setTimeout(function(){if(!d.classList.contains('rf-ready'))d.classList.add('rf-fail')},4000)})();</script>
 <title>Security Scorecard for Salons and Barbershops</title>
 <meta name="description" content="Plain-English security check for salons and barbers: booking app logins, client lists, shared front-desk accounts, social pages and email. $79, online.">
 <link rel="canonical" href="https://collarcitytechhelp.com/industries/salons-barbers/">
@@ -19,6 +20,7 @@
 <link rel="preload" href="/assets/kit/fonts/InstrumentSerif-normal-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/kit/fonts/fonts.css">
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/refresh.css">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -91,7 +93,7 @@
 <header class="site-header"><div class="wrap">
 <a class="brand" href="/"><img src="/cct-logo.jpg" width="44" height="44" alt="Collar City Tech Help logo"><span>Collar City Tech Help</span></a>
 <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-<nav class="nav" id="site-nav" aria-label="Main"><a href="/websites/">Websites</a><a href="/security/">Security</a><a href="/marketing/">Marketing</a><a href="/#pricing">Pricing</a><a href="/samples/">Samples</a><a href="/blog/">Blog</a><a class="btn" href="/mockup/">Get a free homepage mockup</a></nav>
+<nav class="nav" id="site-nav" aria-label="Main"><a href="/websites/">Websites</a><a href="/security/">Security</a><a href="/marketing/">Marketing</a><a href="/#pricing">Pricing</a><a href="/samples/">Samples</a><a href="/blog/">Blog</a><a class="btn" href="/mockup/">Get a free homepage mockup</a></nav><button class="theme-btn" type="button" aria-label="Switch between light and dark theme" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg></button>
 </div></header>
 <main id="main">
 <section class="phero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/industries/">Industries</a></nav><h1 data-split>Keep your chairs full and your client list safe</h1><p class="byline">By Alex, founder, Collar City Tech Help, Troy, NY. Last updated 2026-10-08.</p></div></section>
@@ -133,14 +135,10 @@
 </div>
 <h2>Common questions</h2>
 <div class="faq">
-<h3>I rent a chair. Is this still for me?</h3>
-<p>Yes. The questionnaire asks how many people use work devices and accounts, and the advice fits a solo operator or a full shop.</p>
-<h3>Will you check my booking software?</h3>
-<p>No. We never sign in to your apps. We work from your answers and from public email domain records only.</p>
-<h3>Is it technical?</h3>
-<p>It is written in plain English. Each fix says how long it takes, whether it costs anything and how hard it is.</p>
-<h3>What if I use a Gmail address for the shop?</h3>
-<p>That is fine. Tell us on the form and we adjust the email section. Your answers still drive most of the report.</p>
+<details><summary>I rent a chair. Is this still for me?</summary><div class="ans"><p>Yes. The questionnaire asks how many people use work devices and accounts, and the advice fits a solo operator or a full shop.</p></div></details>
+<details><summary>Will you check my booking software?</summary><div class="ans"><p>No. We never sign in to your apps. We work from your answers and from public email domain records only.</p></div></details>
+<details><summary>Is it technical?</summary><div class="ans"><p>It is written in plain English. Each fix says how long it takes, whether it costs anything and how hard it is.</p></div></details>
+<details><summary>What if I use a Gmail address for the shop?</summary><div class="ans"><p>That is fine. Tell us on the form and we adjust the email section. Your answers still drive most of the report.</p></div></details>
 </div>
 <h2>Other industries</h2>
 <ul class="cards">
@@ -165,5 +163,6 @@
 <script defer src="/assets/kit/vendor/SplitText.min.js"></script>
 <script defer src="/assets/kit/vendor/lenis.min.js"></script>
 <script defer src="/assets/site.js"></script>
+<script defer src="/assets/refresh.js"></script>
 </body>
 </html>
