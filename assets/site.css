@@ -169,3 +169,7 @@ h1{font-size:clamp(2.3rem,5.4vw,3.9rem);line-height:1.06}h2{font-size:clamp(1.8r
 
 /* very small phones: the contact band's single column may shrink below its widest content */
 @media(max-width:480px){.contact-band{grid-template-columns:minmax(0,1fr)}}
+
+/* site-health fix: ".sec.dark a{color:#fff}" out-ranked ".dark .btn" so the white contact button had white text; restore the intended colours (no new colours) */
+.sec.dark a.btn{color:#1e407d}.sec.dark a.btn:hover{color:#fff}.sec.dark a.btn.alt{color:#fff}.sec.dark a.btn.alt:hover{color:#1e407d}
+.sec.dark .note{color:#b9c6dd}
