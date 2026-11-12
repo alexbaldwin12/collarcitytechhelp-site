@@ -15,10 +15,10 @@
  --ease:cubic-bezier(.4,0,.2,1);--out:cubic-bezier(.2,.7,.2,1);--gut:max(var(--pad),calc((100vw - var(--wrap))/2 + var(--pad)))}
 html[data-themable][data-theme=dark]{--bg:#0b1429;--surface:#12203f;--paper:#0f1b38;--ink:#050b1b;--ink-2:#0b1733;--text:#e4eaf5;--muted:#aab7d0;--h:#f2f6fc;--line:rgba(255,255,255,.15);--rule:rgba(255,255,255,.3);--accent:#6fd9cb;--focus:#6fd9cb;--link:#8fb4ff}
 @media(prefers-color-scheme:dark){html[data-themable]:not([data-theme=light]){--bg:#0b1429;--surface:#12203f;--paper:#0f1b38;--ink:#050b1b;--ink-2:#0b1733;--text:#e4eaf5;--muted:#aab7d0;--h:#f2f6fc;--line:rgba(255,255,255,.15);--rule:rgba(255,255,255,.3);--accent:#6fd9cb;--focus:#6fd9cb;--link:#8fb4ff}}
-.hero,.phero,.sec.dark,.sec.blueprint,.showcase,.site-footer,.tier.hl,.hf-win{--h:#fff;--text:#e6ecf7;--muted:#b9c6dd;--line:rgba(255,255,255,.16);--rule:rgba(255,255,255,.3);--accent:#6fd9cb;--focus:#6fd9cb;--link:#fff;--rf-beam:#6fd9cb;color:var(--text)}
+.hero,.phero,.sec.dark,.sec.blueprint,.site-footer,.tier.hl,.hf-win{--h:#fff;--text:#e6ecf7;--muted:#b9c6dd;--line:rgba(255,255,255,.16);--rule:rgba(255,255,255,.3);--accent:#6fd9cb;--focus:#6fd9cb;--link:#fff;--rf-beam:#6fd9cb;color:var(--text)}
 
 /* ---- type ---- */
-h1,h2,.svc h3,.about .name,.tier .price,.row .amt,.step .n,.gauge .gscore,#result .score,.st-cap h3,.sc-body h3,form .sec,h2.sec-h{font-family:var(--display);font-weight:600;letter-spacing:-.035em;color:var(--h)}
+h1,h2,.svc h3,.about .name,.tier .price,.row .amt,.step .n,.gauge .gscore,#result .score,form .sec,h2.sec-h{font-family:var(--display);font-weight:600;letter-spacing:-.035em;color:var(--h)}
 h1{font-size:clamp(2.4rem,5.2vw,4.5rem);line-height:1.03;letter-spacing:-.04em}
 h2{font-size:clamp(2rem,4.2vw,3.6rem);line-height:1.04;max-width:19ch}
 .prose h2,.cta h2,.optin h3{font-size:clamp(1.7rem,3vw,2.3rem);line-height:1.1;max-width:none}
@@ -27,8 +27,8 @@ h2{font-size:clamp(2rem,4.2vw,3.6rem);line-height:1.04;max-width:19ch}
 .sec .wrap>h2:first-child::before{content:"";display:block;width:40px;height:2px;margin-bottom:22px;background:var(--accent);transform-origin:left}
 .js .sec .wrap>h2:first-child::before{transform:scaleX(0);transition:transform 1s var(--ease)}
 .js .sec.el-in .wrap>h2:first-child::before,.rf-fail .sec .wrap>h2:first-child::before{transform:scaleX(1)}
-.tier-eyebrow,.kicker,.st-tag,.sc-tag,.step .n,.crumbs{font-family:var(--mono)}
-.tier-eyebrow,.kicker{font-size:.78rem;letter-spacing:.12em;font-weight:600}
+.kicker,.step .n,.crumbs{font-family:var(--mono)}
+.kicker{font-size:.78rem;letter-spacing:.12em;font-weight:600}
 mark.rf-mark,.js mark.rf-mark{color:inherit;background:none;padding:0;margin:0;border-radius:0}
 
 /* ---- focus + buttons: teal ring, fill sweeps in from the left ---- */
@@ -43,24 +43,19 @@ mark.rf-mark,.js mark.rf-mark{color:inherit;background:none;padding:0;margin:0;b
 .hero .btn.alt:hover,.dark .btn.alt:hover,.phero .btn.alt:hover,.blueprint .btn.alt:hover{background-color:transparent;color:var(--ink);border-color:#fff}
 .nav a.btn,.nav a.btn:hover{color:#fff}
 @media(min-width:961px){.nav{gap:22px;flex-wrap:nowrap}.nav a.btn{padding:11px 22px;font-size:.95rem;white-space:nowrap}}
-.tiers-starter .btn{--fill:var(--st-acc);background-color:var(--st-navy)}.tiers-starter .btn.alt{--fill:var(--st-navy);background-color:transparent;color:var(--st-navy)}
-.tiers-starter .btn.alt:hover,.tiers-starter .btn.alt:focus-visible{color:#fff;background-color:transparent}
 .btn.soon{background-image:none}
 a:not(.btn){text-underline-offset:.2em}
 
 /* ---- surfaces and rhythm: ink / paper / white, never two alike in a row; no boxed sheets ---- */
 body{background:var(--bg)}
-.hero,.phero,.sec.dark,.sec.blueprint,.showcase,.site-footer{border-radius:0;margin-bottom:0;background-color:var(--ink);background-image:var(--grain-w);background-repeat:repeat;color:var(--text);position:relative}
+.hero,.phero,.sec.dark,.sec.blueprint,.site-footer{border-radius:0;margin-bottom:0;background-color:var(--ink);background-image:var(--grain-w);background-repeat:repeat;color:var(--text);position:relative}
 .sec.dark{padding-bottom:96px}
 .sec.dark#contact{background-color:var(--ink-2)}
 .sec.blueprint{background-image:var(--grain-w);background-color:var(--ink)}
-.showcase{background-image:radial-gradient(900px 480px at 8% -10%,rgba(15,139,126,.2),transparent 62%),var(--grain-w);background-color:var(--ink)}
 .sec.blueprint .step::before{display:none}
 .sec.paper,.sec.surface-paper{background-color:var(--paper);background-image:var(--grain-k);box-shadow:none}
 html[data-theme=dark] .sec.paper,html[data-theme=dark] .sec.surface-paper{background-image:none}
 @media(prefers-color-scheme:dark){html[data-themable]:not([data-theme=light]) .sec.paper{background-image:none}}
-.tiers-starter{--st-bg:#f1ece7}
-.tiers-starter::before{opacity:.35}
 .sec{padding:112px 0}.sec.tight{padding:64px 0}
 @media(max-width:720px){.sec{padding:64px 0}.sec.tight{padding:40px 0}.sec.dark{padding-bottom:64px}}
 .trust{background:var(--bg);border:0;box-shadow:none;position:relative}
@@ -96,7 +91,6 @@ html[data-theme=dark] .sec.paper,html[data-theme=dark] .sec.surface-paper{backgr
 .hf-site img{position:absolute;display:block;height:auto;max-width:none;user-select:none;-webkit-user-drag:none}
 .hf-base{left:0;top:0;width:100%}
 .hf-l{transition:opacity .7s var(--ease),transform .9s var(--out)}
-.js .hframe:not(.hf-final):not(.hf-skip) .hf-site .hf-base{opacity:0;transform:scale(1.045)}
 .js .hframe:not(.hf-final):not(.hf-skip) .hf-site .hf-nav{opacity:0;transform:translateY(-110%)}
 .js .hframe:not(.hf-final):not(.hf-skip) .hf-site .hf-head{opacity:0;transform:translateY(20px)}
 .js .hframe:not(.hf-final):not(.hf-skip) .hf-site .hf-btn{opacity:0;transform:translateX(-26px)}
@@ -154,11 +148,6 @@ html[data-theme=dark] .gauge{background:var(--surface);--text:#e4eaf5;--muted:#a
 .optin{background:var(--paper);border:0;border-radius:18px}
 #qprog{font-family:var(--mono);font-size:.82rem;margin-top:22px}
 
-/* ---- sample + showpiece bands: same system, one display voice ---- */
-.tiers-starter h2,.showcase h2{max-width:16ch}
-.st-cap h3,.sc-body h3{font-weight:600;letter-spacing:-.03em;line-height:1.1}
-.st-cap h3{font-size:clamp(1.6rem,2.6vw,2.1rem);color:var(--st-ink)}.sc-body h3{font-size:clamp(1.7rem,3vw,2.3rem)}
-.tier-eyebrow{align-items:center}
 .tiers-more{background:var(--bg)}
 
 /* ---- HOW IT WORKS: pinned scroll story on desktop, stacked everywhere else ---- */
@@ -323,3 +312,20 @@ html[data-theme=dark] .pg-blog .phero{--text:#e4eaf5;--muted:#aab7d0;--line:rgba
  .troy img{transform:none!important}
  .hs *{transition:none!important}
 }
+
+/* ---- SAMPLE BANDS STAY AS THEY WERE (Alex, Nov 12): Starter + Business example sections keep main's look. Everything below only undoes this file inside them. ---- */
+@font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/kit/fonts/InstrumentSerif-normal-400.woff2) format('woff2')}
+.tiers-starter,.showcase{--display:'Instrument Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;--muted:#4b5565;--line:#d7dde6;--paper:#f5f7fa;--h:#1e407d;--rule:#0f1d38;--accent:#0b6f65;--focus:#0b6f65;--text:#17202e}
+.sec.tiers-starter,.sec.showcase{padding:104px 0 112px}
+.tiers-starter h2,.showcase h2{font-size:clamp(1.8rem,3.6vw,2.5rem);line-height:1.12;letter-spacing:-.028em}
+.tiers-starter h2{max-width:16ch}.showcase h2{max-width:14ch}
+.sec.tiers-starter .wrap>h2::before,.sec.showcase .wrap>h2::before{content:none}
+.tiers-starter .intro,.showcase .intro{max-width:36em}
+.tiers-starter .btn,.showcase .btn{background-image:none;transition:background .2s,border-color .2s,color .2s,transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s cubic-bezier(.4,0,.2,1)}
+.tiers-starter .btn:hover,.showcase .btn:hover{transform:translateY(-1px);box-shadow:0 10px 22px -14px rgba(15,29,56,.55)}
+.showcase .btn:not(.alt){background-color:var(--btnbg);border-color:var(--btnbg);color:#fff}
+.showcase .btn:not(.alt):hover,.showcase .btn:not(.alt):focus-visible{background-color:var(--teal-dark);border-color:var(--teal-dark);color:#fff}
+.tiers-starter :focus-visible{outline:3px solid var(--st-acc);outline-offset:3px;border-radius:4px}
+.showcase :focus-visible{outline:3px solid #5fd0c3;outline-offset:3px;border-radius:4px}
+@media(max-width:720px){.sec.showcase{padding:64px 0 72px}}
+.sec.tiers-more{padding-top:40px;padding-bottom:40px}
