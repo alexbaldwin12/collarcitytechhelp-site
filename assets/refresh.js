@@ -60,7 +60,7 @@
 
   /* hairlines on list rows, section highlighter, rings and lists: reveal once when seen */
   $$('.svc, .row').forEach(function (el, i) { el.style.setProperty('--i', i % 4); once.observe(el); });
-  $$('mark.rf-mark, .rf-posts, .rf-map, table.rf-tbl').forEach(function (el) {
+  $$('.rf-posts, .rf-map, table.rf-tbl').forEach(function (el) {
     if (el.matches('.rf-posts')) seq($$('i', el));
     if (el.matches('.rf-map')) seq($$('.rf-t', el));
     once.observe(el);
@@ -106,11 +106,6 @@
 
   /* pointer devices: spot light follows the pointer on cards, the main button leans toward it */
   if (fine) {
-    $$('.tier, .cards li').forEach(function (c) {
-      c.addEventListener('pointermove', function (e) {
-        var r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px');
-      }, { passive: true });
-    });
     var mb = $('.hero .btn.big') || $('main .ctas .btn.big') || $('main .formcard .btn.big') || $('main .center .btn');
     if (mb) {
       var tx = 0, ty = 0, cx = 0, cy = 0, run = false;

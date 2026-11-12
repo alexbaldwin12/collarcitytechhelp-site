@@ -26,8 +26,7 @@
     var tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
     tl.from(sp.lines, { yPercent: 105, duration: .85, stagger: .1 });
     if (document.querySelector('.hero')) {
-      tl.from('.hero .lead, .hero .ctas, .hero .note', { y: 18, opacity: 0, duration: .6, stagger: .1 }, '-=.5').from('.gauge', { y: 28, opacity: 0, duration: .8 }, '-=.9');
-      if (ring) { ring.style.strokeDashoffset = C; var o = { v: 0 }; gsap.to(ring, { strokeDashoffset: C * 0.3, duration: 1.6, delay: .7, ease: 'power2.out' }); gsap.to(o, { v: 7, duration: 1.6, delay: .7, ease: 'power2.out', onUpdate: function () { score.textContent = Math.round(o.v); } }); gsap.from('.gauge li', { x: -14, opacity: 0, stagger: .15, duration: .5, delay: 1.1 }); }
+      tl.from('.hero .lead, .hero .ctas, .hero .note', { y: 18, opacity: 0, duration: .6, stagger: .1 }, '-=.5');
     }
   }
   gsap.utils.toArray('main > section.sec > .wrap, main .reveal').forEach(function (el) { gsap.from(el, { y: 36, opacity: 0, duration: .8, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true } }); });
