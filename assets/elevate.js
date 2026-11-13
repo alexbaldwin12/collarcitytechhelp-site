@@ -137,10 +137,16 @@
     var tall = innerHeight >= 600;
     if (innerWidth >= 960 && !rm && tall && pin) {
       sec.classList.add('pin-on');
-      var cur = 0, tk = false;
+      var cur = 0, tk = false, sticky = $('.how-sticky', sec), top = 0, span = 1;
+      /* size the pin to the content: no blank band under the steps when the section unpins */
+      function size() {
+        var h = sticky.offsetHeight; top = Math.max(80, Math.round((innerHeight - h) / 2));
+        sticky.style.top = top + 'px'; pin.style.height = Math.round(h + innerHeight * 1.7) + 'px'; span = pin.offsetHeight - h;
+      }
+      size();
       function upd() {
-        tk = false; var r = pin.getBoundingClientRect(), span = pin.offsetHeight - innerHeight;
-        var p = Math.max(0, Math.min(1, -r.top / span)); sec.style.setProperty('--p', p.toFixed(3));
+        tk = false; var r = pin.getBoundingClientRect();
+        var p = Math.max(0, Math.min(1, (top - r.top) / span)); sec.style.setProperty('--p', p.toFixed(3));
         var i = Math.min(3, Math.floor(p * 4 + .001));
         if (i !== cur) { cur = i; hw.setAttribute('data-s', i + 1); steps.forEach(function (s, j) { s.classList.toggle('on', j === i); }); }
       }

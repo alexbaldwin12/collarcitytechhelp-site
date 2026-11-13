@@ -410,3 +410,6 @@ html[data-theme=light] .troy img{filter:saturate(1.08) contrast(1.03)}html[data-
 .sec.how .hw-card p.hw-h{color:var(--c);font-size:.76rem}
 .sec.how .hw-card p.hw-from,.sec.how .hw-card p.hw-pre{color:#5b667a;font-size:.84rem}
 .sec.how .hw-card p.hw-sub{color:#121a2b;font-size:.98rem}
+
+@media(min-width:960px){.sec.how.pin-on .how-sticky{height:auto;padding-top:24px;padding-bottom:24px}}
+.sec.how.pin-on{padding-bottom:80px}.sec.how.pin-on .wrap>:last-child{margin-bottom:0}
