@@ -46,11 +46,12 @@
   /* Clips */
   if (RM || c.saveData || !window.IntersectionObserver) return;
   [].forEach.call(document.querySelectorAll('.sc-card[data-clip],.st-card[data-clip]'), function (card) {
-    var stage = card.querySelector('.sc-stage,.st-stage'), v = card.querySelector('video'), base = card.getAttribute('data-clip'), loaded = false, vis = false, hov = false;
+    var stage = card.querySelector('.sc-stage,.st-stage'), v = card.querySelector('video'), base = card.getAttribute('data-clip'), lightBase = card.getAttribute('data-clip-light'), loaded = false, vis = false, hov = false;
     var hoverMode = card.hasAttribute('data-hover') && fine;
     if (!stage || !v) return;
     function load() {
       if (loaded) return; loaded = true;
+      if (lightBase) { var de = document.documentElement, t = de.getAttribute('data-theme'); if (t ? t === 'light' : !matchMedia('(prefers-color-scheme: dark)').matches) base = lightBase; }
       [['webm', 'video/webm; codecs="vp9"'], ['mp4', 'video/mp4']].forEach(function (t) { var s = document.createElement('source'); s.src = base + '.' + t[0]; s.type = t[1]; v.appendChild(s); });
       v.muted = true; v.preload = 'auto'; v.load();
       v.addEventListener('playing', function () { stage.classList.add('live'); }, { once: true });

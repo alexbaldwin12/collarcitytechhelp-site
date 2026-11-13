@@ -83,11 +83,37 @@
     timers.push(later(function () { if (!$('.hf-site .hf-base', hf)) return; }, 6000));
   })();
 
+
+  /* ---- hero score card: rise, ring fill, count to 7, checks land, then float ---- */
+  var hs = $('.hscore');
+  if (hs) (function () {
+    var ring = $('.ring', hs), num = $('.gscore', hs), to = +(num && num.getAttribute('data-to') || 7);
+    var C = 2 * Math.PI * 52;
+    if (ring) { ring.style.strokeDasharray = C; ring.style.strokeDashoffset = rm ? C * (1 - to / 10) : C; }
+    if (rm) return;
+    hs.classList.add('hs-pre'); if (num) num.textContent = '0';
+    var started = false;
+    function go() {
+      if (started) return; started = true;
+      requestAnimationFrame(function () {
+        hs.classList.remove('hs-pre');
+        later(function () {
+          if (ring) { ring.style.transition = 'stroke-dashoffset 1.6s cubic-bezier(.2,.7,.2,1)'; ring.style.strokeDashoffset = C * (1 - to / 10); }
+          var t0 = performance.now();
+          (function tick(t) { var k = Math.min(1, (t - t0) / 1500), e = 1 - Math.pow(1 - k, 3); if (num) num.textContent = Math.round(e * to); if (k < 1) requestAnimationFrame(tick); })(t0);
+        }, 350);
+        later(function () { hs.classList.add('hs-float'); }, 2900);
+      });
+    }
+    if (d.readyState === 'complete') later(go, 150); else addEventListener('load', function () { later(go, 150); });
+    later(go, 2500); /* safety */
+  })();
+
   /* ---- generic reveals (sections, icons, art) ---- */
   if ('IntersectionObserver' in window && !rm) {
     var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('el-in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -10% 0px' });
     $$('.sec, .ph-web, .ph-sec').forEach(function (el) { io.observe(el); });
-    var ringEl = $('.gauge .ring');
+    var ringEl = $('.gauge:not(.hs-card) .ring');
     if (ringEl) {
       var C = 2 * Math.PI * 52, off = C * .3; ringEl.style.strokeDashoffset = C;
       new IntersectionObserver(function (es, o) { if (es[0].isIntersecting) { ringEl.style.strokeDashoffset = off; o.disconnect(); } }, { threshold: .4 }).observe(ringEl);
@@ -103,32 +129,32 @@
     addEventListener('scroll', function () { if (vis && !tk) { tk = true; requestAnimationFrame(upd); } }, { passive: true });
   }
 
-  /* ---- how it works ---- */
+  /* ---- how it works: four different scenes (form, inbox, quote, live site) ---- */
   $$('.how').forEach(function (sec) {
     var steps = $$('.step', sec); if (!steps.length) return;
-    var stageHost = $('.how-stage', sec), pin = $('.how-pin', sec);
-    function frame(s) {
-      var w = d.createElement('div'); w.className = 'hs hs-frame'; w.setAttribute('aria-hidden', 'true'); w.setAttribute('data-s', s);
-      w.innerHTML = '<div class="hf-win"><div class="hf-bar"><i></i><i></i><i></i><span></span></div><div class="hf-view"></div></div><div class="hs-check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>';
-      var v = $('.hf-view', w), el = site('ridge', true); v.appendChild(el); return w;
-    }
+    var stageHost = $('.how-stage', sec), pin = $('.how-pin', sec), hw = stageHost && $('.hw', stageHost);
+    if (!hw) return;
     var tall = innerHeight >= 600;
-    if (innerWidth >= 960 && !rm && tall && stageHost && pin) {
+    if (innerWidth >= 960 && !rm && tall && pin) {
       sec.classList.add('pin-on');
-      var fr = frame(1); stageHost.appendChild(fr);
       var cur = 0, tk = false;
       function upd() {
         tk = false; var r = pin.getBoundingClientRect(), span = pin.offsetHeight - innerHeight;
         var p = Math.max(0, Math.min(1, -r.top / span)); sec.style.setProperty('--p', p.toFixed(3));
-        var i = Math.min(3, Math.floor(p * 4 + .001)); if (p > .995) i = 3;
-        if (i !== cur) { cur = i; fr.setAttribute('data-s', i + 1); steps.forEach(function (s, j) { s.classList.toggle('on', j === i); }); }
+        var i = Math.min(3, Math.floor(p * 4 + .001));
+        if (i !== cur) { cur = i; hw.setAttribute('data-s', i + 1); steps.forEach(function (s, j) { s.classList.toggle('on', j === i); }); }
       }
       steps.forEach(function (s, j) { s.classList.toggle('on', j === 0); });
       upd();
       addEventListener('scroll', function () { if (!tk) { tk = true; requestAnimationFrame(upd); } }, { passive: true });
       addEventListener('resize', function () { if (innerWidth < 960) location.reload(); });
     } else {
-      steps.forEach(function (s, j) { var f = frame(j + 1); f.classList.add('hs-stack'); s.appendChild(f); });
+      /* phones: each step gets its own scene, shown as it scrolls in */
+      $$('.hw-card', hw).forEach(function (c, j) {
+        if (!steps[j]) return; var w = d.createElement('div'); w.className = 'hw hw-stack'; w.setAttribute('aria-hidden', 'true'); w.setAttribute('data-s', j + 1); w.appendChild(c); steps[j].appendChild(w);
+        if ('IntersectionObserver' in window && !rm) { w.classList.add('hw-wait'); new IntersectionObserver(function (es, o) { if (es[0].isIntersecting) { w.classList.remove('hw-wait'); o.disconnect(); } }, { threshold: .35 }).observe(w); }
+      });
     }
   });
+
 })();

@@ -82,3 +82,7 @@ footer{background:var(--band);color:var(--band-ink);padding:1.75rem var(--gut);f
 
 /* very small phones: let the contact block shrink and wrap long addresses/emails */
 @media(max-width:899px){.contact .two{grid-template-columns:minmax(0,1fr)}.contact a,.contact p,.contact li,.contact h2{overflow-wrap:anywhere}}
+
+/* Light mode: photos in full color (Collar City, Nov 13). Dark mode keeps the moody treatment. */
+:root[data-theme="light"] .hero-pic img,:root[data-theme="light"] .hero:hover .hero-pic img,:root[data-theme="light"] .pg img{filter:contrast(1.02)}:root[data-theme="light"] .hero-pic::after,:root[data-theme="light"] .pg .ph::after{opacity:0}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .hero-pic img,:root:not([data-theme="dark"]) .hero:hover .hero-pic img,:root:not([data-theme="dark"]) .pg img{filter:contrast(1.02)}:root:not([data-theme="dark"]) .hero-pic::after,:root:not([data-theme="dark"]) .pg .ph::after{opacity:0}}

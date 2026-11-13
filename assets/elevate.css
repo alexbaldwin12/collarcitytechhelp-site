@@ -172,7 +172,7 @@ html[data-theme=dark] .gauge{background:var(--surface);--text:#e4eaf5;--muted:#a
 .hs[data-s="4"] .hs-check{opacity:1;transform:none}
 .hs-stack{margin:18px 0 6px;max-width:560px}
 @media(min-width:960px){
- .how.pin-on .how-pin{height:calc(100vh + 230vh);position:relative}
+ .how.pin-on .how-pin{height:calc(100vh + 170vh);position:relative}
  .how.pin-on .how-sticky{position:sticky;top:0;height:100vh;box-sizing:border-box;padding-top:88px;padding-bottom:24px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:center}
  .how.pin-on .how-stage{display:block}
  .how.pin-on .step{opacity:.38}.how.pin-on .step.on{opacity:1}
@@ -329,3 +329,84 @@ html[data-theme=dark] .pg-blog .phero{--text:#e4eaf5;--muted:#aab7d0;--line:rgba
 .showcase :focus-visible{outline:3px solid #5fd0c3;outline-offset:3px;border-radius:4px}
 @media(max-width:720px){.sec.showcase{padding:64px 0 72px}}
 .sec.tiers-more{padding-top:40px;padding-bottom:40px}
+
+/* ---- HERO SCORE CARD (Nov 13): the example quiz result is back up top, with motion ---- */
+.hscore{position:relative;min-width:0;max-width:480px;justify-self:center;width:100%}
+.hs-glow{position:absolute;inset:-12% -10%;z-index:-1;background:radial-gradient(closest-side,rgba(111,217,203,.28),transparent 72%);filter:blur(8px);pointer-events:none}
+.hs-card{padding:30px 30px 26px;box-shadow:0 2px 0 rgba(255,255,255,.06) inset,0 40px 80px -36px rgba(0,0,0,.75)}
+.hs-kicker{display:flex;align-items:center;gap:9px;margin:0 0 18px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.hs-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(15,139,126,.45);animation:hsPing 2.4s infinite}
+@keyframes hsPing{0%{box-shadow:0 0 0 0 rgba(15,139,126,.45)}70%{box-shadow:0 0 0 9px rgba(15,139,126,0)}100%{box-shadow:0 0 0 0 rgba(15,139,126,0)}}
+.hs-card .gtop{gap:22px}.hs-card svg{width:128px;height:128px}
+.hs-card .gscore{font-size:4.2rem;font-variant-numeric:tabular-nums}
+.hs-card li{align-items:baseline}
+.hs-card .ok,.hs-card .fix{display:inline-grid;place-items:center;width:20px;flex:none}
+.hs-cta{margin-top:18px;width:100%;justify-content:center;text-align:center}
+.hero .hs-cta{background-color:var(--ink);color:#fff;border-color:var(--ink)}
+.hero .hs-cta:hover{color:#fff}
+html[data-theme=dark] .hero .hs-cta{background-color:#fff;color:var(--ink);border-color:#fff}
+@media(prefers-color-scheme:dark){html[data-themable]:not([data-theme=light]) .hero .hs-cta{background-color:#fff;color:var(--ink);border-color:#fff}}
+/* motion: card rises, ring fills, score counts, checks land one by one, then a slow float */
+.js .hscore.hs-pre .hs-card{opacity:0;transform:translateY(26px) scale(.98)}
+.js .hscore.hs-pre .hs-card li,.js .hscore.hs-pre .hs-card .gnote,.js .hscore.hs-pre .hs-cta{opacity:0;transform:translateX(-14px)}
+.js .hscore .hs-card{transition:opacity .9s var(--ease),transform 1.1s var(--out)}
+.js .hscore .hs-card li,.js .hscore .hs-card .gnote,.js .hscore .hs-cta{transition:opacity .5s var(--ease),transform .6s var(--out)}
+.js .hscore .hs-card li:nth-child(1){transition-delay:1.0s}.js .hscore .hs-card li:nth-child(2){transition-delay:1.15s}.js .hscore .hs-card li:nth-child(3){transition-delay:1.3s}.js .hscore .hs-card li:nth-child(4){transition-delay:1.55s}.js .hscore .hs-card li:nth-child(5){transition-delay:1.7s}
+.js .hscore .hs-card .gnote{transition-delay:1.9s}.js .hscore .hs-cta{transition-delay:2s}
+.js .hscore.hs-pre .hs-card li .fix{transform:scale(.4)}
+.hs-card .fix{transition:transform .5s var(--out) 1.8s}
+.hscore.hs-float .hs-card{animation:hsFloat 7s ease-in-out infinite}
+@keyframes hsFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media(prefers-reduced-motion:reduce){.hs-dot,.hscore.hs-float .hs-card{animation:none}}
+/* quiz section without the side card: questions in two columns on wide screens */
+.quizgrid.solo{display:block}
+@media(min-width:980px){.quizgrid.solo .qmain{max-width:none}.quizgrid.solo .qmain>h2,.quizgrid.solo .qmain>.intro{max-width:44rem}
+ .quizgrid.solo .quiz{display:grid;grid-template-columns:1fr 1fr;column-gap:56px}.quizgrid.solo .quiz>:not(fieldset){grid-column:1/-1}}
+/* Light mode is the vibrant one: Troy photo in true color */
+html[data-theme=light] .troy img{filter:saturate(1.08) contrast(1.03)}html[data-theme=light] .troy::after{opacity:0}html[data-theme=light] .troy::before{background:linear-gradient(180deg,rgba(10,21,48,.25),transparent 45%,rgba(10,21,48,.45))}
+@media(prefers-color-scheme:light){html:not([data-theme=dark]) .troy img{filter:saturate(1.08) contrast(1.03)}html:not([data-theme=dark]) .troy::after{opacity:0}html:not([data-theme=dark]) .troy::before{background:linear-gradient(180deg,rgba(10,21,48,.25),transparent 45%,rgba(10,21,48,.45))}}
+
+/* ---- HOW IT WORKS scenes (Nov 13): form, inbox, quote, live site. One scene per step, no repeated photo ---- */
+.hw{position:relative;--c:#0f8b7e;--c2:#6fd9cb;--ink2:#0a1530}
+.hw-card{background:#fff;color:#1a2233;border-radius:18px;padding:26px 26px 24px;box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 40px 80px -36px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.08);position:relative;overflow:hidden}
+.hw-h{font-size:.76rem;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--c);margin:0 0 16px}
+.hw-f{border:1px solid #d6dce6;border-radius:10px;padding:9px 12px;margin-bottom:10px;display:grid;gap:2px}
+.hw-f span{font-size:.72rem;color:#5b667a}.hw-f b{font-weight:600;font-size:.98rem;color:#121a2b}
+.hw-type::after{content:"";display:inline-block;width:2px;height:1em;background:var(--c);margin-left:2px;vertical-align:-2px;animation:hwBlink 1s steps(1) infinite}
+@keyframes hwBlink{50%{opacity:0}}
+.hw-btn{display:inline-block;margin-top:6px;background:var(--ink2);color:#fff;font-weight:600;font-size:.92rem;padding:10px 18px;border-radius:999px}
+.hw-mail{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:start;padding:12px;border-radius:12px;background:#eef8f6;border:1px solid #cfe9e4}
+.hw-dot{width:9px;height:9px;border-radius:50%;background:var(--c);margin-top:6px}
+.hw-from{font-size:.8rem;color:#5b667a;margin:0}.hw-sub{font-weight:700;margin:2px 0;color:#121a2b;font-size:.98rem}.hw-pre{font-size:.86rem;color:#5b667a;margin:0}.hw-time{font-size:.74rem;color:#5b667a}
+.hw-att{display:flex;gap:14px;align-items:center;margin-top:14px;padding:10px;border:1px solid #d6dce6;border-radius:12px}
+.hw-att img{width:64px;height:84px;object-fit:cover;object-position:top;border-radius:8px;box-shadow:0 6px 16px -8px rgba(0,0,0,.4);flex:none}
+.hw-row{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-top:1px solid #e3e7ee;font-size:.95rem}.hw-row b{color:#121a2b}
+.hw-tot{border-top:2px solid #121a2b;font-weight:700}.hw-tot b{font-size:1.15rem}
+.hw-stamp{position:absolute;right:20px;top:18px;border:2px solid var(--c);color:var(--c);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;padding:5px 12px;border-radius:8px;transform:rotate(-8deg)}
+.hw-4{padding:0;background:#141c2c}
+.hw-bar{display:flex;align-items:center;gap:6px;padding:10px 12px;background:#1d2638}
+.hw-bar i{width:9px;height:9px;border-radius:50%;background:#3b465c}.hw-bar span{flex:1;margin-left:8px;background:#2a3448;color:#c9d3e4;border-radius:999px;padding:3px 12px;font-size:.76rem}
+.hw-live{font-style:normal;font-size:.72rem;font-weight:700;color:#06231f;background:var(--c2);border-radius:999px;padding:3px 10px;display:inline-flex;align-items:center;gap:6px}
+.hw-live::before{content:"";width:6px;height:6px;border-radius:50%;background:#06231f;animation:hwBlink 1.4s steps(1) infinite}
+.hw-4 picture,.hw-4 img{display:block;width:100%;height:auto}
+.hw-check{position:absolute;right:16px;bottom:16px;width:50px;height:50px;border-radius:50%;background:var(--c2);display:grid;place-items:center;box-shadow:0 10px 30px -8px rgba(111,217,203,.7)}
+.hw-check svg{width:24px;height:24px;stroke:#06231f;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+/* desktop pinned: scenes crossfade and slide as the steps advance */
+.how.pin-on .hw{display:grid}
+.how.pin-on .hw-card{grid-area:1/1;align-self:center;opacity:0;transform:translateY(28px) scale(.97);transition:opacity .55s var(--ease),transform .8s var(--out);pointer-events:none}
+.how.pin-on .hw[data-s="1"] .hw-1,.how.pin-on .hw[data-s="2"] .hw-2,.how.pin-on .hw[data-s="3"] .hw-3,.how.pin-on .hw[data-s="4"] .hw-4{opacity:1;transform:none}
+.how.pin-on .hw-1,.how.pin-on .hw-2,.how.pin-on .hw-3{max-width:470px;justify-self:center;width:100%}
+.how.pin-on .hw .hw-stamp,.how.pin-on .hw .hw-check{opacity:0;transform:rotate(-8deg) scale(1.6);transition:opacity .4s var(--ease) .35s,transform .5s var(--out) .35s}
+.how.pin-on .hw .hw-check{transform:scale(.6)}
+.how.pin-on .hw[data-s="3"] .hw-stamp{opacity:1;transform:rotate(-8deg)}
+.how.pin-on .hw[data-s="4"] .hw-check{opacity:1;transform:none}
+/* phones: one scene per step */
+.hw-stack{margin:18px 0 6px;max-width:520px}
+.hw-stack .hw-card{transition:opacity .6s var(--ease),transform .8s var(--out)}
+.hw-stack.hw-wait .hw-card{opacity:0;transform:translateY(22px)}
+.hw-stack .hw-stamp{transition:opacity .4s .5s,transform .5s var(--out) .5s}.hw-stack.hw-wait .hw-stamp{opacity:0;transform:rotate(-8deg) scale(1.6)}
+@media(prefers-reduced-motion:reduce){.hw-type::after,.hw-live::before{animation:none}}
+.sec.how .hw-card p{max-width:none;font-size:inherit}
+.sec.how .hw-card p.hw-h{color:var(--c);font-size:.76rem}
+.sec.how .hw-card p.hw-from,.sec.how .hw-card p.hw-pre{color:#5b667a;font-size:.84rem}
+.sec.how .hw-card p.hw-sub{color:#121a2b;font-size:.98rem}

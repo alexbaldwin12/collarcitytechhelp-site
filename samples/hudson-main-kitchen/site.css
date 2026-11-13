@@ -86,3 +86,7 @@ h1{font-size:clamp(2.1rem,8vw,2.9rem);line-height:1.02;font-weight:800;letter-sp
 @media(min-width:900px){.visit .two{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}}
 footer{background:var(--band);color:var(--band-ink);padding-block:1.75rem;font-size:.9375rem;line-height:1.5}footer p{margin:0 0 .5rem;max-width:72ch}footer a{color:var(--band-ink)}
 .cct-foot{font-size:.85rem;opacity:.9;margin-top:10px}
+
+/* Light mode: photos in full color (Collar City, Nov 13). Dark mode keeps the moody treatment. */
+:root[data-theme="light"] .rail img,:root[data-theme="light"] .gp img,:root[data-theme="light"] .gal img{filter:none}:root[data-theme="light"] .rail figure::after,:root[data-theme="light"] .gp::after,:root[data-theme="light"] .gal figure::after{opacity:0;box-shadow:none}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .rail img,:root:not([data-theme="dark"]) .gp img,:root:not([data-theme="dark"]) .gal img{filter:none}:root:not([data-theme="dark"]) .rail figure::after,:root:not([data-theme="dark"]) .gp::after,:root:not([data-theme="dark"]) .gal figure::after{opacity:0;box-shadow:none}}

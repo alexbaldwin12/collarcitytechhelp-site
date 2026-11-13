@@ -80,3 +80,7 @@ footer{background:var(--band);color:var(--band-ink);padding:2rem var(--gut);font
 
 /* very small phones: let the visit block shrink and wrap long addresses/emails */
 @media(max-width:899px){.visit{grid-template-columns:minmax(0,1fr)}.visit a,.visit p,.visit li{overflow-wrap:anywhere}}
+
+/* Light mode: photos in full color (Collar City, Nov 13). Dark mode keeps the moody treatment. */
+:root[data-theme="light"] .win img,:root[data-theme="light"] .pic img,:root[data-theme="light"] .pic:hover img{filter:contrast(1.02) brightness(1)}:root[data-theme="light"] .win::before,:root[data-theme="light"] .pic::after{opacity:0}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .win img,:root:not([data-theme="dark"]) .pic img,:root:not([data-theme="dark"]) .pic:hover img{filter:contrast(1.02) brightness(1)}:root:not([data-theme="dark"]) .win::before,:root:not([data-theme="dark"]) .pic::after{opacity:0}}

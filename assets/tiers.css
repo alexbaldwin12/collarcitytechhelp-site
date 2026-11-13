@@ -68,3 +68,8 @@
 }
 @media(prefers-reduced-motion:reduce){.st-stage video{display:none}.st-tiltin{transform:none!important;transition:none}.st-tiltin .st-stage::after{display:none}}
 @media(hover:none){.st-hint{display:none}}
+
+/* Light mode: Starter previews in full color (Nov 13). Dark mode keeps the moody grey captures. */
+.pv-c{display:none}
+html[data-theme=light] .pv-g{display:none}html[data-theme=light] .pv-c{display:block}
+@media(prefers-color-scheme:light){html:not([data-theme=dark]) .pv-g{display:none}html:not([data-theme=dark]) .pv-c{display:block}}
